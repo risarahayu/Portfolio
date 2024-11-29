@@ -1,0 +1,227 @@
+.bgcolor-custom{
+    background-color: #f18701;
+    color: white;
+}
+
+.bgcolor-custom:hover{
+    background-color: #f35b04;
+    color: white;
+}
+.container-bg{
+    background-image: url('image/Frame 4513.png'); /* Lokasi gambar */
+    background-size: cover; /* Mengatur ukuran gambar agar menutupi elemen */
+    background-position: center; /* Menyesuaikan posisi gambar di tengah */
+    background-repeat: no-repeat; /* Mencegah pengulangan gambar */
+    z-index: -2;
+}
+.bgcolor-ivory{
+    background-color: ivory;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.content {
+  position: relative;
+  animation: animatop 0.9s cubic-bezier(0.425, 1.140, 0.470, 1.125) forwards;
+}
+
+.card-custom {
+  width: 100%;
+  min-height: 100px;
+  padding: 20px;
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-custom::after {
+  content: '';
+  display: block;
+  width: 190px;
+  height: 150%;
+  background: #ffc107;
+  position: absolute;
+  animation: rotatemagic 0.75s cubic-bezier(0.425, 1.040, 0.470, 1.105) 1s both;
+}
+
+.badgescard {
+  padding: 5px 20px;
+  border-radius: 3px;
+  background-color: #ECECEC;
+  width: 480px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  /* position: absolute; */
+  z-index: -1;
+  left: 10px;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: animainfos 0.5s cubic-bezier(0.425, 1.040, 0.470, 1.105) 0.75s forwards;
+}
+
+.badgescard span {
+  font-size: 1.6em;
+  margin: 0px 6px;
+  opacity: 100;
+}
+
+.firstinfo {
+  display: flex;
+  flex-direction: row;
+  z-index: 2;
+  position: relative;
+}
+
+.firstinfo img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
+
+.firstinfo .profileinfo {
+  padding: 0px 20px;
+}
+
+.firstinfo .profileinfo h1 {
+  font-size: 1.8em;
+}
+
+.firstinfo .profileinfo h3 {
+  font-size: 1.2em;
+  color: #0077b6;
+  font-style: italic;
+}
+
+.firstinfo .profileinfo p.bio {
+  padding: 10px 0px;
+  color: #5A5A5A;
+  line-height: 1.2;
+  font-style: initial;
+}
+
+@keyframes animatop {
+  0% {
+    opacity: 0;
+    bottom: -500px;
+  }
+  100% {
+    opacity: 1;
+    bottom: 0px;
+  }
+}
+
+@keyframes animainfos {
+  0% {
+    bottom: 10px;
+  }
+  100% {
+    bottom: -42px;
+  }
+}
+
+@keyframes rotatemagic {
+  0% {
+    opacity: 0;
+    transform: rotate(-0deg);
+    top: -24px;
+    left: -253px;
+  }
+  100% {
+    transform: rotate(-30deg);
+    top: -24px;
+    left: -78px;
+  }
+}
+
+/* edu */
+
+.btn-lg, a:focus, a:active {
+    outline: none !important;
+    box-shadow: none !important;        
+}
+
+.card-1{
+    box-shadow: 2px 4px 15px 0px #ffbe0b;
+}
+
+p{
+    font-size: 13px ;
+}
+        
+.small{
+    font-size: 9px !important;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.btn-round-lg {
+    border-radius: 22.5px;
+    background-color: #ffffff;
+    color: #f77f00;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.9px;
+    padding: 8px 20px  8px  20px !important;
+    border: 1px solid #fff;
+}
+
+.btn-round-lg:hover{
+    background-color: #fff;
+    color: #f77f00;
+    border: 1px solid #fff;
+}
+
+.btn-round-lg:focus{
+    border: 1px solid #fff !important;
+}
+
+.card{
+    background-color: #f77f00 !important;
+    color: rgb(255, 255, 255);
+}
+
+/* logo */
+.marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+    background-color: #ffffff; /* Opsional untuk kontras */
+    padding: 10px 0;
+}
+
+.marquee-content {
+    display: inline-flex;
+    animation: marquee 20s linear infinite;
+}
+
+.marquee-content img {
+    height: 50px; /* Atur tinggi gambar */
+    object-fit: contain;
+    margin-right: 100px; /* Tambahkan jarak antar gambar */
+}
+
+/* Animasi marquee */
+@keyframes marquee {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* accordion */
+
+
