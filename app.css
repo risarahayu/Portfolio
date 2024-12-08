@@ -316,6 +316,9 @@ p{
     object-fit: contain;
     margin-right: 100px; /* Tambahkan jarak antar gambar */
 }
+.img-fluid{
+  max-width: 70% !important;
+}
 
 /* Animasi marquee */
 @keyframes marquee {
@@ -351,5 +354,16 @@ p{
 }
 
 .owl-carousel .item img {
-  width: 60% !important;
+  width: 60%;
+}
+
+@media (max-width: 767.98px) {
+  .owl-carousel .item img {
+    width: 100%;
+  } 
+
+  
+  .img-fluid{
+    width: 50% !important;
+  }
 }
