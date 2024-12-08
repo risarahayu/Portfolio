@@ -1,22 +1,126 @@
 .bgcolor-custom{
-    background-color: #f18701;
+    background-color: #3c096c;
     color: white;
 }
 
 .bgcolor-custom:hover{
-    background-color: #f35b04;
+    background-color: #5a189a;
     color: white;
 }
 .container-bg{
-    background-image: url('image/Frame 4513.png'); /* Lokasi gambar */
+    background-image: url('image/Frame 4513.svg');
     background-size: cover; /* Mengatur ukuran gambar agar menutupi elemen */
-    background-position: center; /* Menyesuaikan posisi gambar di tengah */
-    background-repeat: no-repeat; /* Mencegah pengulangan gambar */
+    background-position: center top; /* Posisi awal */
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh; /* Sesuaikan ukuran elemen */
+    position: relative;
+    /* z-index: 0; */
+}
+
+.container-bg-2 {
+    /* background-image: url('image/bg-block.svg'); */
+    background-size: cover;
+    background-position: center top; /* Posisi awal */
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh; /* Sesuaikan ukuran elemen */
+    position: relative;
     z-index: -2;
 }
-.bgcolor-ivory{
-    background-color: ivory;
+
+.container-bg-3 {
+  background-image: url('image/Frame 4521.svg');
+  background-size: cover;
+  background-position: center top; /* Posisi awal */
+  background-repeat: no-repeat;
+  width: 100%;
+  z-index: -2;
 }
+
+.bgcolor-purple{
+    background-color: #3c096c;
+    color: white;
+}
+
+.color-neon-blue{
+  color: #00FFFF;
+}
+
+.bgcolor-pink{
+  background-color: #ff007f;
+}
+
+.bgcolor-lilac{
+  background-color:#b79ced;
+}
+
+.color-black{
+  color: black;
+}
+
+/* box glow */
+/* Efek 3D dan Glow untuk kotak */
+.glow-box {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek 3D */
+  position: relative;
+  overflow: hidden; /* Memastikan konten tetap di dalam kotak */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Glow efek saat hover */
+.glow-box:hover {
+  box-shadow: 0 0 10px #ffffff, 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4); /* Efek glow menyala */
+  transform: translateY(-5px); /* Sedikit naik untuk efek interaktif */
+}
+
+/* Efek teks menyala */
+.glow-box:hover::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 10%, transparent 70%);
+  opacity: 0.5;
+  transform: rotate(45deg);
+  z-index: -1; /* Efek glow di belakang */
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Jarak antar item */
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333; /* Warna teks */
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Jarak antara ikon dan teks */
+}
+
+.icon {
+  width: 30px;
+  height: 30px; /* Menyesuaikan ukuran ikon */
+}
+
+/* Warna teks neon */
+.glow-box {
+  text-shadow: 0 0 0 #d5b1b1, 0 0 10px rgba(255, 255, 255, 0.8);
+  
+}
+
+/* Responsive tambahan */
+@media (max-width: 576px) {
+  .glow-box {
+    font-size: 14px; /* Ukuran lebih kecil di layar sempit */
+  }
+}
+
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
 
@@ -226,3 +330,26 @@ p{
 /* accordion */
 
 
+/* animasi gambar */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0); /* Posisi awal dan akhir gambar */
+  }
+  50% {
+    transform: translateY(-20px); /* Gambar naik 20px */
+  }
+}
+
+.img-bounce {
+  animation: bounce 2s infinite ease-in-out;
+}
+
+.owl-carousel .item {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.owl-carousel .item img {
+  width: 60% !important;
+}
