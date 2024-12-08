@@ -12,11 +12,19 @@
     backgroundPosition: "center 50px", // Bergerak vertikal
     repeat: -1, // Ulang terus
     yoyo: true, // Bergerak naik-turun
-    duration: 5, // Durasi animasi
+    duration: 2, // Durasi animasi
     ease: "power1.inOut"
   });
 
   gsap.to(".container-bg-3", {
+    backgroundPosition: "center 50px", // Bergerak vertikal
+    repeat: -1, // Ulang terus
+    yoyo: true, // Bergerak naik-turun
+    duration: 5, // Durasi animasi
+    ease: "power1.inOut"
+  });
+
+  gsap.to(".img-computer", {
     backgroundPosition: "center 50px", // Bergerak vertikal
     repeat: -1, // Ulang terus
     yoyo: true, // Bergerak naik-turun
