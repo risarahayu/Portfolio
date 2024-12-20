@@ -14,8 +14,9 @@
     <link rel="stylesheet" href="app.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
 </head>
-<body>
-    <section style="background: rgb(255,179,193); background: radial-gradient(circle, rgba(255,179,193,1) 10%, rgba(255,240,243,1) 100%); max-height: 100vh;">
+<body class="bg-light">
+    <!-- <section style="background: rgb(255,179,193); background: radial-gradient(circle, rgba(255,179,193,1) 10%, rgba(255,240,243,1) 100%); max-height: 100vh;"> -->
+    <section>
         <div class="container-bg d-flex align-items-center p-5">
             <div class="container pt-5 h-100 d-flex flex-column justify-content-center justify-content-lg-start" style="gap: 50px; ">
                 <div class="px-4 text-center">
@@ -48,8 +49,29 @@
                 </div>
                 <div class="col-lg-8 mx-auto">
                     <div class="row w-100 position-relative">
-                        <img class="animate__animated animate__zoomInUp img-computer" alt="" src="image/Computer 3D.svg" style="z-index: 2; " />
-                        <div class="position-absolute bottom-0" style="z-index: 1">
+                        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active" data-bs-interval="1500">
+                                <img src="image/portfolio img/Ads Reporting.jpg" class="d-block w-100 shadow p-3 mb-5 bg-body rounded" alt="...">
+                                </div>
+                                <div class="carousel-item" data-bs-interval="1500">
+                                <img src="image/portfolio img/Metriks Analyst.jpg" class="d-block w-100 shadow p-3 mb-5 bg-body rounded" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                <img src="image/portfolio img/SEO.jpg" class="d-block w-100 shadow p-3 mb-5 bg-body rounded" alt="...">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                            </div>
+                        <!-- <img class="animate__animated animate__zoomInUp img-computer" alt="" src="image/Computer 3D.svg" style="z-index: 2; " /> -->
+                        <!-- <div class="position-absolute bottom-0" style="z-index: 1"> -->
                             <!-- <img class="img-fluid" alt="" src="image/ellipse.svg" /> -->
                         </div>
                     </div>
@@ -58,9 +80,23 @@
         </div>
     </section>
     <!-- section 2 -->
-    <div class="container-fluid px-5 bgcolor-purple position-relative" style="z-index: 999;">
-        <div class="container-bg-2">
-            <div class="row align-items-center" style="min-height: 100vh;">
+     <div class="container-fluid">
+         <div class="row mt-3 d-flex flex-column flex-lg-row">
+             <div class="col border-end p-5 text-white  glow-box align-content-center display-6" style="background-color: #71a3c3;">
+             10+ UI Design Project
+             </div>
+             <div class="col border-end p-5 text-white  glow-box align-content-center display-6" style="background-color: #817bc9;">
+             10+ Website Developt
+             </div>
+             <div class="col border-end p-5 text-white  glow-box align-content-center display-6" style="background-color: #c575bc;">
+             10+ Digital Marketing Project
+             </div>
+         </div>
+
+     </div>
+    <div class="container-fluid bgcolor-purple position-relative" style="z-index: 999;">
+        <!-- <div class="container-bg-2"> -->
+            <!-- <div class="row align-items-center" style="min-height: 100vh;">
                 <div class="col-md-6 text-center animate__animated animate__backInLeft">
                     <img src="image/Robote Hi.svg" alt="" class="img-fluid animated-img img-bounce animate__backInLeft" height="300em">
                 </div>
@@ -83,15 +119,10 @@
                               10+ Digital Marketing Project
                             </div>
                         </div>
-                        <!-- <div class="row mt-3 d-flex flex-column d-sm-none">
-                                <div class="py-2 col border-bottom">10+ UI Design Project</div>
-                                <div class="py-2 col border-bottom">10+ Website Developt</div>
-                                <div class="py-2 col">10+ Digital Marketing Project</div>
-                        </div> -->
                     </div>
                 </div>
-            </div>
-        </div>
+            </div> -->
+        <!-- </div> -->
     </div>
     <!-- section 3 -->
     <div class="container-fluid bgcolor-lilac position-relative">
@@ -111,15 +142,12 @@
                         </svg>
                         Bali
                     </h5>
-                    <div class="fs-6">
+                    <div class="fs-5">
                         With nearly 3 years of experience as a UI/UX Designer and a
                         background in System Analysis, I've completed 10+ projects and
                         worked with international companies to build websites from the
                         ground up. 
-                        My skills in Figma, XD, HTML, CSS, Laravel, and
-                        MySQL, combined with my experience in Agile Scrum, allow me to
-                        create intuitive interfaces and seamless user experiences. I'm
-                        currently expanding my knowledge in Digital Marketing to
+                        I'm currently expanding my knowledge in Digital Marketing to
                         enhance the relevance of my work. I aim to be a reliable team
                         member, empathetic to user needs, and contribute to creating
                         impactful solutions.
@@ -127,8 +155,8 @@
                     <div class="row px-3 mt-5">
                         <!-- edu -->
                          <h4>My Education Path</h4>
-                         <p class=" fs-6 border-end p-3 text-white rounded glow-box" style="background-color: #b43e8f;">Bachelor of Information System in Primakara University</p>
-                         <p class=" fs-6 border-end p-3 text-white rounded glow-box" style="background-color: #884ab2;">Bootcamp Digital Marketing in Dibimbing.id for 6 month</p>
+                         <p class=" fs-5 border-end p-3 text-white rounded glow-box" style="background-color: #b43e8f;">Bachelor of Information System in Primakara University</p>
+                         <p class=" fs-5 border-end p-3 text-white rounded glow-box" style="background-color: #884ab2;">Bootcamp Digital Marketing in Dibimbing.id for 6 month</p>
                     </div>
                     <h4 class="mt-5">Find Me Online</h4>
                     <div class="contact-info">
@@ -147,11 +175,11 @@
     </div>
     
     <!-- section 3 -->
-    <div class="container-fluid my-5 text-center">
+    <div class="container-fluid my-5 text-center ">
         <div class="display-6">
             Tools that I use
         </div>
-        <div class="marquee my-5">
+        <div class="marquee my-5 bg-light">
             <div class="marquee-content">
                 <img src="image/logo/2ae173_13d3b6ee867f46f583fb923205de78f9~mv2.webp" alt="">
                 <img src="image/logo/Canva-Logo.png" alt="">
@@ -164,9 +192,134 @@
                 <img src="image/logo/WordPress.com-Logo.wine.png" alt="">
             </div>
         </div>
+        <div class="display-6">
+            My Skill
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <img src="image/Digital Marketing.gif" width="90%" alt="">
+            </div>
+            <div class="col text-start d-flex align-items-center">
+                <!-- <p>This is my skill in digital marketing</p> -->
+                <div class="row">
+                    <div class="col">
+                        <div class="row justify-content-center">
+                            <!-- Number 1 -->
+                            <div class="col-12 number-item">
+                                <div class="circle">1</div>
+                                <div class="number-text">Content Creation</div>
+                            </div>
+                            <!-- Number 2 -->
+                            <div class="col-12 number-item">
+                                <div class="circle">2</div>
+                                <div class="number-text">SEO</div>
+                            </div>
+                            <!-- Number 3 -->
+                            <div class="col-12 number-item">
+                                <div class="circle">3</div>
+                                <div class="number-text">SEM / Ads</div>
+                            </div>
+                            <!-- Number 4 -->
+                            <div class="col-12 number-item">
+                                <div class="circle">4</div>
+                                <div class="number-text">Social Media Management</div>
+                            </div>
+                            <!-- Number 5 -->
+                            <div class="col-12 number-item">
+                                <div class="circle">5</div>
+                                <div class="number-text">CRM (Email Marketing, Whatsapp Marketing)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6  align-content-center">
+                <div class="row">
+                    <div class="col offset-md-3">
+                        <div class="row justify-content-center">
+                            <!-- Number 1 -->
+                            <div class="col-12 number-item ">
+                                <div class="circle">1</div>
+                                <div class="number-text">Wireframing and Prototyping</div>
+                            </div>
+                            <!-- Number 2 -->
+                            <div class="col-12 number-item ">
+                                <div class="circle">2</div>
+                                <div class="number-text">Visual Design</div>
+                            </div>
+                            <!-- Number 3 -->
+                            <div class="col-12 number-item ">
+                                <div class="circle">3</div>
+                                <div class="number-text">Interaction Design</div>
+                            </div>
+                            <!-- Number 4 -->
+                            <div class="col-12 number-item ">
+                                <div class="circle">4</div>
+                                <div class="number-text">Usability Testing</div>
+                            </div>
+                            <!-- Number 5 -->
+                            <div class="col-12 number-item ">
+                                <div class="circle">5</div>
+                                <div class="number-text">Problem-Solving and Empathy</div>
+                            </div>
+                            <!-- Number 6 -->
+                            <div class="col-12 number-item ">
+                                <div class="circle">6</div>
+                                <div class="number-text">Design Systems and Guidelines</div>
+                            </div>
+                            <!-- Number 7 -->
+                            <div class="col-12 number-item ">
+                                <div class="circle">7</div>
+                                <div class="number-text">Responsive Design</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 text-start d-flex align-items-center justify-content-start">
+                <!-- <p>This is my skill in digital marketing</p> -->
+                <img src="image/UIUX.gif" width="80%" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <img src="image/Web Develop.gif" width="50%" alt="">
+            </div>
+            <div class="col text-start d-flex align-items-center">
+                <!-- <p>This is my skill in digital marketing</p> -->
+                <div class="row">
+                    <div class="col">
+                        <div class="row justify-content-center">
+                            <!-- Number 1 -->
+                            <div class="col-12 number-item">
+                                <div class="circle">1</div>
+                                <div class="number-text">HTML</div>
+                            </div>
+                            <!-- Number 2 -->
+                            <div class="col-12 number-item">
+                                <div class="circle">2</div>
+                                <div class="number-text">CSS</div>
+                            </div>
+                            <!-- Number 3 -->
+                            <div class="col-12 number-item">
+                                <div class="circle">3</div>
+                                <div class="number-text">Bootstrap</div>
+                            </div>
+                            <!-- Number 4 -->
+                            <div class="col-12 number-item">
+                                <div class="circle">4</div>
+                                <div class="number-text">Laravel</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
     </div>
     <!-- section 4 -->
-     <div class="container mt-5 vh-100">
+     <!-- <div class="container mt-5 vh-100">
         <div class="display-6 text-center mb-3">Digital Marketing Portfolio</div>
         <div class="row">
             <div class="col-lg-6 text-justify">
@@ -180,22 +333,24 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="owl-carousel owl-theme">
+        </div> -->
+        <!-- <div class="owl-carousel owl-theme">
             <div class="item"><img src="image/portfolio img/Ads Report.jpg" alt="" width=""></div>
             <div class="item"><img src="image/portfolio img/Metriks Analyst.jpg" alt=""></div>
             <div class="item"><img src="image/portfolio img/SEO.jpg" alt=""></div>
-        </div>
-     </div>
+        </div> -->
+     <!-- </div> -->
      <!-- section 5 -->
     
     <!-- section 5 -->
-    <div class="container vh-100 mb-0 my-5 d-flex align-items-center">
+    <div class="container-fluid vh-100 mb-0 my-5 d-flex align-items-center bgcolor-purple justify-content-center">
         <div class="row flex-column-reverse flex-md-row ">
-            <div class="col-12 col-md-6">
-                <img class="img-fluid" src="image/freepik__background__22445.png" alt="">
+            <div class="col-12">
+                <!-- <img class="img-fluid" src="image/freepik__background__22445.png" alt=""> -->
+                 <div class="display-5 text-center">Digital Marketing Portfolio</div>
+                 <div class="fs-6 text-center">Enjoy my digital marketing portfolios</p>
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-12  d-flex align-self-center justify-content-center">
                 <div class="display-6">
                     <!-- Digital Portfolio -->
                 </div>
@@ -208,6 +363,7 @@
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
+                                    <p>As a digital marketer, I tried to <strong>create a dummy product from scratch</strong>. The goal was <strong>to raise awareness about the brand</strong>. The strategy involved <strong>clarifying the brand first</strong> <br>—defining what they sell and mapping out the customer journey. After that, we could create content for social media to introduce the brand based on its description.</p>
                                 <ul>
                                     <li>
                                         <a class="text-decoration-none" href="https://drive.google.com/file/d/1ZkCfO7QPKLeS6aerPlWuG-M9yXx3rJSv/view?usp=sharing">Creating User Persona & CJM</a>
@@ -230,6 +386,7 @@
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
+                                <p>After executing the content, we need to <strong>evaluate its performance based on the metrics</strong>. <br>The goal is to <strong>improve and understand how the audience engages with our content</strong>. <br>Using the right analytics strategy, we can identify which content they like or dislike and how many people engage with it.</p>
                                 <li>
                                     <a class="text-decoration-none" href="https://drive.google.com/file/d/1OodefcrqnuWivHJgm06XQuXtMEI_44wX/view?usp=sharing">Tiktok Content Planning & Implementation</a>
                                 </li>
@@ -247,6 +404,9 @@
                         </h2>
                         <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
+                                <p>
+                                    After managing social media, if the brand needs it, we can also build a website. <br>The goal is to make it easier for people to <strong>consider and engage in conversations</strong> about the brand. <br>To achieve this, I would choose a good website template and include some discounts to attract visitors.
+                                </p>
                                 <li>
                                     <a class="text-decoration-none" href="https://koalaskincare.dibimbingpractice.site">Koala Skincare Website</a>
                                 </li>
@@ -261,6 +421,9 @@
                         </h2>
                         <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
+                                <p>
+                                    <strong>To optimize the website</strong>, we can start by investing in organic marketing. <br>The goal is to save costs while assessing the quality of our content keywords before launching paid ads. <br>With a good SEO strategy, such as researching effective keywords, identifying negative keywords, <br>and evaluating performance, we can achieve better results.
+                                </p>
                                 <li>
                                     <a class="text-decoration-none" href="https://docs.google.com/spreadsheets/d/1bof-_a6PSIZY_FjEhtpEdMsbuIO94lMJOheWHoXnQfQ/edit?usp=sharing">Keyword Research</a>
                                 </li>
@@ -284,6 +447,7 @@
                         </h2>
                         <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
+                                <p>Finally, the brand starts running ads to achieve greater impressions. <br>The goal is to gain as many impressions as possible while <strong>maintaining low costs and efficiency</strong>. <br>The strategy I implemented is to use a "Maximize Clicks" bidding approach initially and increase bids for keywords with good performance. <br>Additionally, it's important to regularly update the images to increase impressions further.</p>
                                 <li>
                                     <a class="text-decoration-none" href="https://drive.google.com/file/d/1zzzIWrWKtAUZf3HaaU6dtzmMJNF0OIw0/view?usp=sharing">Set Up Google Ads Account & GA Tracking, Set Up FB Business Manager, FB Ad Account, & Pixel Tracking</a>
                                 </li>
@@ -306,6 +470,7 @@
                             </h2>
                             <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
+                                    <p>Here are some of different study case I try to solve</p>
                                     <li>
                                         <a class="text-decoration-none" href="https://drive.google.com/file/d/1zyFoj8INb8gmjl74GZymyGQNKBYurgAK/view?usp=sharing">User Interview Study Case Simulation (Organic Marketing)</a>
                                     </li>
