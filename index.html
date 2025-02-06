@@ -15,476 +15,387 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
 </head>
 <body class="bg-light">
-    <!-- <section style="background: rgb(255,179,193); background: radial-gradient(circle, rgba(255,179,193,1) 10%, rgba(255,240,243,1) 100%); max-height: 100vh;"> -->
-    <section>
-        <div class="container-bg d-flex align-items-center p-5">
-            <div class="container pt-5 h-100 d-flex flex-column justify-content-center justify-content-lg-start" style="gap: 50px; ">
-                <div class="px-4 text-center">
-                    <!-- <img class="d-block mx-auto mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
-                    <h1 class="display-5 fw-bold text-body-emphasis">
-                        Your partner in growth:
+   <div class="container-fluid d-flex align-items-end" style="min-height: 100vh;">
+    <div class="row h-100 flex-column-reverse flex-md-row">
+        <div class="col-12 col-md-4 m-auto px-5">
+            <img class="img-fluid py-4" src="./image/Risa text.svg" alt="" >
+            <p class="fs-5 text">
+                With nearly three years of experience as a UI/UX Designer and a background in System Analysis, I've completed 10+ projects and collaborated with international companies to build websites from the ground up. I’m currently expanding my knowledge in Digital Marketing to enhance the relevance of my work and create more impactful solutions.
+                <br><br><strong>Technology has always fascinated me </strong>—it evolves every day, which is why I’ve explored various fields throughout my career. Right now, digital marketing is particularly exciting, and I would love to contribute to this industry.
+                <br><br>My passion lies in <strong>problem-solving, analysis, strategy development, and design</strong>. These drive me to continuously learn and grow, allowing me to adapt to new challenges and opportunities.
+                <br>I look forward to the possibility of working together in the future!
+            </p>
+        </div>
+        <div class="col-12 col-md-4 mt-auto">
+            <img src="./image/Risa Rahayu S.png" alt="" style="max-width: 496px; width: 100%;">
+        </div>
+        <div class="col-12 col-md-4 m-auto px-5">
+            <div class="px-4 text-center">
+                <!-- <img class="d-block mx-auto mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+                <h1 class="display-5 fw-bold text-body-emphasis pt-3">
+                    Your partner in growth:
+                </h1>
+                <!-- dinamic world -->
+                <div class="rotating-text m-5">
+                    <h1 id="text1" class="animate__animated animate__fadeIn">
+                        Digital Marketer
                     </h1>
-                    <!-- dinamic world -->
-                    <div class="rotating-text m-5">
-                        <h1 id="text1" class="animate__animated animate__fadeIn">
-                            Digital Marketer
-                        </h1>
-                        <h1 id="text2" class="animate__animated animate__fadeIn" style="display: none">
-                            UI/UX Designer
-                        </h1>
-                        <h1 id="text3" class="animate__animated animate__fadeIn" style="display: none" >
-                            Web Developer
-                        </h1>
-                    </div>
-                    <div class="d-flex flex-column align-items-center">
-                        <button type="button" class="btn bgcolor-custom btn-lg" fdprocessedid="vous39" >
-                            <a class="text-decoration-none fw-light text-white" href="mailto:rrisa329@gmail.com?subject=Hello&body=Hi there, I would like to discuss...">Send me an email</a>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-arrow-up" viewBox="0 0 16 16">
-                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4.5a.5.5 0 0 1-1 0V5.383l-7 4.2-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h5.5a.5.5 0 0 1 0 1H2a2 2 0 0 1-2-1.99zm1 7.105 4.708-2.897L1 5.383zM1 4v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1"/>
-                                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.354-5.354 1.25 1.25a.5.5 0 0 1-.708.708L13 12.207V14a.5.5 0 0 1-1 0v-1.717l-.28.305a.5.5 0 0 1-.737-.676l1.149-1.25a.5.5 0 0 1 .722-.016"/>
-                            </svg>
-                        </button>
-                        <!-- <button type="button" class="btn btn-primary btn-lg px-4" fdprocessedid="wvlgcf">Start to know me</button> -->
-                    </div>
+                    <h1 id="text2" class="animate__animated animate__fadeIn" style="display: none">
+                        UI/UX Designer
+                    </h1>
+                    <h1 id="text3" class="animate__animated animate__fadeIn" style="display: none" >
+                        Web Developer
+                    </h1>
                 </div>
-                <div class="col-lg-8 mx-auto">
-                    <div class="row w-100 position-relative">
-                        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active" data-bs-interval="1500">
-                                <img src="image/portfolio img/Ads reporting.jpg" class="d-block w-100 shadow p-3 mb-5 bg-body rounded" alt="...">
-                                </div>
-                                <div class="carousel-item" data-bs-interval="1500">
-                                <img src="image/portfolio img/Metriks Analyst.jpg" class="d-block w-100 shadow p-3 mb-5 bg-body rounded" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                <img src="image/portfolio img/SEO.jpg" class="d-block w-100 shadow p-3 mb-5 bg-body rounded" alt="...">
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                            </div>
-                        <!-- <img class="animate__animated animate__zoomInUp img-computer" alt="" src="image/Computer 3D.svg" style="z-index: 2; " /> -->
-                        <!-- <div class="position-absolute bottom-0" style="z-index: 1"> -->
-                            <!-- <img class="img-fluid" alt="" src="image/ellipse.svg" /> -->
-                        </div>
-                    </div>
+                <div class="d-flex flex-column align-items-center">
+                    <button type="button" class="btn bgcolor-custom btn-lg" fdprocessedid="vous39" >
+                        <a class="text-decoration-none fw-light text-white" href="mailto:rrisa329@gmail.com?subject=Hello&body=Hi there, I would like to discuss...">Check my CV</a>                        
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-arrow-up" viewBox="0 0 16 16">
+                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4.5a.5.5 0 0 1-1 0V5.383l-7 4.2-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h5.5a.5.5 0 0 1 0 1H2a2 2 0 0 1-2-1.99zm1 7.105 4.708-2.897L1 5.383zM1 4v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1"/>
+                            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.354-5.354 1.25 1.25a.5.5 0 0 1-.708.708L13 12.207V14a.5.5 0 0 1-1 0v-1.717l-.28.305a.5.5 0 0 1-.737-.676l1.149-1.25a.5.5 0 0 1 .722-.016"/>
+                        </svg> -->
+                    </button>
+                    <!-- <button type="button" class="btn btn-primary btn-lg px-4" fdprocessedid="wvlgcf">Start to know me</button> -->
                 </div>
-            </div>
-        </div>
-    </section>
-    <!-- section 2 -->
-     <div class="container-fluid">
-         <div class="row mt-3 d-flex flex-column flex-lg-row">
-             <div class="col border-end p-5 text-white  glow-box align-content-center display-6" style="background-color: #71a3c3;">
-             10+ UI Design Project
-             </div>
-             <div class="col border-end p-5 text-white  glow-box align-content-center display-6" style="background-color: #817bc9;">
-             10+ Website Developt
-             </div>
-             <div class="col border-end p-5 text-white  glow-box align-content-center display-6" style="background-color: #c575bc;">
-             10+ Digital Marketing Project
-             </div>
-         </div>
-
-     </div>
-    <div class="container-fluid bgcolor-purple position-relative" style="z-index: 999;">
-        <!-- <div class="container-bg-2"> -->
-            <!-- <div class="row align-items-center" style="min-height: 100vh;">
-                <div class="col-md-6 text-center animate__animated animate__backInLeft">
-                    <img src="image/Robote Hi.svg" alt="" class="img-fluid animated-img img-bounce animate__backInLeft" height="300em">
-                </div>
-                <div class="col-md-6">
-                    <div class="row justify-content-center">
-                        <div class="fs-2 color-neon-blue">Enjoy My Portfolio</div>
-                        <p class="lead my-4">
-                                Specializing in crafting seamless user experiences, driving growth
-                                with effective marketing strategies, and building responsive, modern
-                                websites.
-                        </p>
-                        <div class="row mt-3 d-flex gap-3 flex-column flex-lg-row">
-                            <div class="col border-end p-3 text-white rounded glow-box align-content-center" style="background-color: #71a3c3;">
-                              10+ UI Design Project
-                            </div>
-                            <div class="col border-end p-3 text-white rounded glow-box align-content-center" style="background-color: #817bc9;">
-                              10+ Website Developt
-                            </div>
-                            <div class="col border-end p-3 text-white rounded glow-box align-content-center" style="background-color: #c575bc;">
-                              10+ Digital Marketing Project
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-        <!-- </div> -->
-    </div>
-    <!-- section 3 -->
-    <div class="container-fluid bgcolor-lilac position-relative">
-        <!-- <div class="container-bg-3">
-
-        </div> -->
-        <div class="container-bg-3 d-flex align-items-end" style="min-height: 100vh;">
-            <div class="row pt-5 gap-5 flex-column-reverse flex-lg-row">
-                <div class="col-lg-4 p-0">
-                    <img class="img-fluid" src="image/Risa Rahayu.png" alt="">
-                </div>
-                <div class="col-lg-6  px-5">
-                    <h1>Risa Rahayu</h1>
-                    <h5>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16" >
-                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
-                        </svg>
-                        Bali
-                    </h5>
-                    <div class="fs-5">
-                        With nearly 3 years of experience as a UI/UX Designer and a
-                        background in System Analysis, I've completed 10+ projects and
-                        worked with international companies to build websites from the
-                        ground up. 
-                        I'm currently expanding my knowledge in Digital Marketing to
-                        enhance the relevance of my work. I aim to be a reliable team
-                        member, empathetic to user needs, and contribute to creating
-                        impactful solutions.
-                    </div>
-                    <div class="row px-3 mt-5">
-                        <!-- edu -->
-                         <h4>My Education Path</h4>
-                         <p class=" fs-5 border-end p-3 text-white rounded glow-box" style="background-color: #b43e8f;">Bachelor of Information System in Primakara University</p>
-                         <p class=" fs-5 border-end p-3 text-white rounded glow-box" style="background-color: #884ab2;">Bootcamp Digital Marketing in Dibimbing.id for 6 month</p>
-                    </div>
-                    <h4 class="mt-5">Find Me Online</h4>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <img src="image/icon/skill-icons--gmail-light.svg" alt="Gmail Icon" class="icon">
-                            <span class="text-black">rrisa329@gmail.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <img src="image/icon/skill-icons--linkedin.svg" alt="LinkedIn Icon" class="icon">
-                            <a class="text-decoration-none text-black" href="https://www.linkedin.com/in/risa-rahayu-875432195/"><span>Risa Rahayu</span></a>
-                        </div>
-                        </div>                          
+                <div class="d-flex flex-column align-items-center mt-2">
+                    <button type="button" class="btn bgcolor-custom btn-lg" fdprocessedid="vous39" >
+                        <a class="text-decoration-none fw-light text-white" href="#portfolio">Go to my Portfolio</a>                        
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M17.71 11.29a1 1 0 0 0-1.42 0L13 14.59V7a1 1 0 0 0-2 0v7.59l-3.29-3.3a1 1 0 0 0-1.42 1.42l5 5a1 1 0 0 0 .33.21a.94.94 0 0 0 .76 0a1 1 0 0 0 .33-.21l5-5a1 1 0 0 0 0-1.42"/></svg>
+                    </button>
+                    <!-- <button type="button" class="btn btn-primary btn-lg px-4" fdprocessedid="wvlgcf">Start to know me</button> -->
                 </div>
             </div>
         </div>
     </div>
-    
-    <!-- section 3 -->
-    <div class="container-fluid my-5 text-center ">
-        <div class="display-6">
-            Tools that I use
-        </div>
-        <div class="marquee my-5 bg-light">
-            <div class="marquee-content">
-                <img src="image/logo/2ae173_13d3b6ee867f46f583fb923205de78f9~mv2.webp" alt="">
-                <img src="image/logo/Canva-Logo.png" alt="">
-                <img src="image/logo/CapCut-Logo.jpg" alt="">
-                <img src="image/logo/google_ads_logo_icon_169088.png" alt="">
-                <img src="image/logo/Logo_Google_Analytics.svg.png" alt="">
-                <img src="image/logo/looker-studio.webp" alt="">
-                <img src="image/logo/Meta-Logo.png" alt="">
-                <img src="image/logo/TikTok_logo.svg.png" alt="">
-                <img src="image/logo/WordPress.com-Logo.wine.png" alt="">
-            </div>
-        </div>
-        <div class="display-6">
-            My Skill
-        </div>
-        <div class="row pb-4 pb-md-0">
-            <div class="col-md-8">
-                <img src="image/Digital Marketing.gif" width="90%" alt="">
-            </div>
-            <div class="col text-start d-flex align-items-center">
-                <!-- <p>This is my skill in digital marketing</p> -->
-                <div class="row">
-                    <div class="col">
-                        <div class="row justify-content-center">
-                            <!-- Number 1 -->
-                            <div class="col-12 number-item">
-                                <div class="circle">1</div>
-                                <div class="number-text">Content Creation</div>
-                            </div>
-                            <!-- Number 2 -->
-                            <div class="col-12 number-item">
-                                <div class="circle">2</div>
-                                <div class="number-text">SEO</div>
-                            </div>
-                            <!-- Number 3 -->
-                            <div class="col-12 number-item">
-                                <div class="circle">3</div>
-                                <div class="number-text">SEM / Ads</div>
-                            </div>
-                            <!-- Number 4 -->
-                            <div class="col-12 number-item">
-                                <div class="circle">4</div>
-                                <div class="number-text">Social Media Management</div>
-                            </div>
-                            <!-- Number 5 -->
-                            <div class="col-12 number-item">
-                                <div class="circle">5</div>
-                                <div class="number-text">CRM (Email Marketing, Whatsapp Marketing)</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row bgcolor-lilac-2 flex-column-reverse flex-md-row">
-            <div class="col-md-6  align-content-center">
-                <div class="row">
-                    <div class="col offset-md-3">
-                        <div class="row justify-content-center">
-                            <!-- Number 1 -->
-                            <div class="col-12 number-item ">
-                                <div class="circle">1</div>
-                                <div class="number-text">Wireframing and Prototyping</div>
-                            </div>
-                            <!-- Number 2 -->
-                            <div class="col-12 number-item ">
-                                <div class="circle">2</div>
-                                <div class="number-text">Visual Design</div>
-                            </div>
-                            <!-- Number 3 -->
-                            <div class="col-12 number-item ">
-                                <div class="circle">3</div>
-                                <div class="number-text">Interaction Design</div>
-                            </div>
-                            <!-- Number 4 -->
-                            <div class="col-12 number-item ">
-                                <div class="circle">4</div>
-                                <div class="number-text">Usability Testing</div>
-                            </div>
-                            <!-- Number 5 -->
-                            <div class="col-12 number-item ">
-                                <div class="circle">5</div>
-                                <div class="number-text">Problem-Solving and Empathy</div>
-                            </div>
-                            <!-- Number 6 -->
-                            <div class="col-12 number-item ">
-                                <div class="circle">6</div>
-                                <div class="number-text">Design Systems and Guidelines</div>
-                            </div>
-                            <!-- Number 7 -->
-                            <div class="col-12 number-item ">
-                                <div class="circle">7</div>
-                                <div class="number-text">Responsive Design</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 text-start d-flex align-items-center justify-content-start">
-                <!-- <p>This is my skill in digital marketing</p> -->
-                <img src="image/UIUX.gif" width="80%" alt="">
-            </div>
-        </div>
+   </div>
+   <!-- section logo -->
+   <div class="container-fluid m-2 text-center bgcolor-lilac">
         <div class="row">
-            <div class="col-md-8">
-                <img src="image/Web Develop.gif" width="50%" alt="">
-            </div>
-            <div class="col text-start d-flex align-items-center">
-                <!-- <p>This is my skill in digital marketing</p> -->
-                <div class="row">
-                    <div class="col">
-                        <div class="row justify-content-center">
-                            <!-- Number 1 -->
-                            <div class="col-12 number-item">
-                                <div class="circle">1</div>
-                                <div class="number-text">HTML</div>
-                            </div>
-                            <!-- Number 2 -->
-                            <div class="col-12 number-item">
-                                <div class="circle">2</div>
-                                <div class="number-text">CSS</div>
-                            </div>
-                            <!-- Number 3 -->
-                            <div class="col-12 number-item">
-                                <div class="circle">3</div>
-                                <div class="number-text">Bootstrap</div>
-                            </div>
-                            <!-- Number 4 -->
-                            <div class="col-12 number-item">
-                                <div class="circle">4</div>
-                                <div class="number-text">Laravel</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> 
-    </div>
-    <!-- section 4 -->
-     <!-- <div class="container mt-5 vh-100">
-        <div class="display-6 text-center mb-3">Digital Marketing Portfolio</div>
-        <div class="row">
-            <div class="col-lg-6 text-justify">
-                <div class="row">
-                    <div class="col">
-                        <h6>Story</h6>
-                        As a marketer at a startup company, I was tasked with driving free account sign-ups through Google Search Ads. Previously, the company had run a one-month campaign and utilized keyword performance data to develop further optimization strategies.
-                    </div>
-                    <div class="col">
-
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- <div class="owl-carousel owl-theme">
-            <div class="item"><img src="image/portfolio img/Ads Report.jpg" alt="" width=""></div>
-            <div class="item"><img src="image/portfolio img/Metriks Analyst.jpg" alt=""></div>
-            <div class="item"><img src="image/portfolio img/SEO.jpg" alt=""></div>
-        </div> -->
-     <!-- </div> -->
-     <!-- section 5 -->
-    
-    <!-- section 5 -->
-    <div class="container-fluid vh-100 mb-0 my-5 d-flex align-items-center bgcolor-purple justify-content-center">
-        <div class="row  " style="max-width: 800px; width: 100%;">
-            <div class="col-12">
-                <!-- <img class="img-fluid" src="image/freepik__background__22445.png" alt=""> -->
-                 <div class="display-5 text-center">Digital Marketing Portfolio</div>
-                 <div class="fs-6 text-center">Enjoy my digital marketing portfolios</div>
-            </div>
-            <div class="col-12 d-flex align-self-center justify-content-center w-100">
+            <div class="col-12 col-md-3 d-flex align-items-center">
                 <div class="display-6">
-                    <!-- Digital Portfolio -->
+                    Tools that I use
                 </div>
-                <div class="accordion mt-5 w-100" id="accordionExample">
-                    <div class="accordion-item border-0">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Content Creation & Branding Product
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                    <p>As a digital marketer, I tried to <strong>create a dummy product from scratch</strong>. The goal was <strong>to raise awareness about the brand</strong>. <br>The strategy involved <strong>clarifying the brand first</strong> <br>—defining what they sell and mapping out the customer journey. <br>After that, we could create content for social media to introduce the brand based on its description.</p>
-                                <ul>
-                                    <li>
-                                        <a class="text-decoration-none" href="https://drive.google.com/file/d/1ZkCfO7QPKLeS6aerPlWuG-M9yXx3rJSv/view?usp=sharing">Creating User Persona & CJM</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-decoration-none" href="https://drive.google.com/file/d/1qbujE-K0rBuy-doMcvHyo5-E1q4Kc1Jj/view?usp=sharing">Content Research & Planning</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-decoration-none" href="https://drive.google.com/file/d/16bDLjFxeCLvD-ysXjPP77nYBtxMckN7k/view?usp=sharing">Content Creation</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+            </div>
+            <div class="col-12 col-md-9">
+                <div class="marquee">
+                    <div class="marquee-content">
+                        <img src="image/logo/2ae173_13d3b6ee867f46f583fb923205de78f9~mv2.svg" alt="">
+                        <img src="image/logo/Canva-Logo.svg" alt="">
+                        <img src="image/logo/CapCut-Logo 1.svg" alt="">
+                        <img src="image/logo/google_ads_logo_icon_169088.svg" alt="">
+                        <img src="image/logo/Logo_Google_Analytics.svg.svg" alt="">
+                        <img src="image/logo/looker-studio.webp" alt="">
+                        <img src="image/logo/Meta-Logo.svg" alt="">
+                        <img src="image/logo/TikTok_logo.svg.svg" alt="">
+                        <img src="image/logo/WordPress.com-Logo.wine.svg" alt="">
                     </div>
-                    <div class="accordion-item border-0">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Social Media Content & Analytic
-                            </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <p>After executing the content, we need to <strong>evaluate its performance based on the metrics</strong>. <br>The goal is to <strong>improve and understand how the audience engages with our content</strong>. <br>Using the right analytics strategy, we can identify which content they like or dislike and how many people engage with it.</p>
-                                <li>
-                                    <a class="text-decoration-none" href="https://drive.google.com/file/d/1OodefcrqnuWivHJgm06XQuXtMEI_44wX/view?usp=sharing">Tiktok Content Planning & Implementation</a>
-                                </li>
-                                <li>
-                                    <a class="text-decoration-none" href="https://drive.google.com/file/d/1L_R_--b2ArRK3vuoEskRB9OQmr7XE8k5/view?usp=sharing">Social Media Analytics</a>
-                                </li>
-                            </div>
-                        </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+    <!-- section experience -->
+     <div class="container-fluid p-5">
+        <div class="row">
+            <div class="col">
+                <h2 class="mb-4">Work Experience</h2>
+        
+                <div class="card mb-3 max-width-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Denpasar Industrial Training Center</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">IT Officer | April – September 2024</h6>
+                        <p class="card-text">Designed UI/UX for internal web systems, ensuring mobile responsiveness and user-friendly interfaces. Maintained PCs and managed software/hardware updates.</p>
                     </div>
-                    <div class="accordion-item border-0">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Website Building
-                            </button>
-                        </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <p>
-                                    After managing social media, if the brand needs it, we can also build a website. <br>The goal is to make it easier for people to <strong>consider and engage in conversations</strong> about the brand. <br>To achieve this, I would choose a good website template and include some discounts to attract visitors.
-                                </p>
-                                <li>
-                                    <a class="text-decoration-none" href="https://koalaskincare.dibimbingpractice.site">Koala Skincare Website</a>
-                                </li>
-                            </div>
-                        </div>
+                </div>
+        
+                <div class="card mb-3 max-width-card">
+                    <div class="card-body">
+                        <h5 class="card-title">PT Konverto (Business Consulting)</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">UI/UX Designer | May 2023 – March 2024</h6>
+                        <p class="card-text">Developed high-quality website designs, including landing pages and educational platforms using CMS Kajabi and HTML/CSS/JS. Created graphic designs, edited videos, and designed presentation slides.</p>
                     </div>
-                    <div class="accordion-item border-0">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                SEO 
-                            </button>
-                        </h2>
-                        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <p>
-                                    <strong>To optimize the website</strong>, we can start by investing in organic marketing. <br>The goal is to save costs while assessing the quality of our content keywords before launching paid ads. <br>With a good SEO strategy, such as researching effective keywords, identifying negative keywords, <br>and evaluating performance, we can achieve better results.
-                                </p>
-                                <li>
-                                    <a class="text-decoration-none" href="https://docs.google.com/spreadsheets/d/1bof-_a6PSIZY_FjEhtpEdMsbuIO94lMJOheWHoXnQfQ/edit?usp=sharing">Keyword Research</a>
-                                </li>
-                                <li>
-                                    <a class="text-decoration-none" href="https://drive.google.com/file/d/1b1smlxeaz39QnGpm3P-S3DHjBOCLrh_c/view?usp=sharing">Planning Backlink Building (Off-Page Optimization and Backlinks)</a>
-                                </li>
-                                <li>
-                                    <a class="text-decoration-none" href="https://koalaskincare.dibimbingpractice.site/rekomendasi-serum-untuk-kulit-berminyak/">Writing SEO-Friendly Article (On Page Optimization)</a>
-                                </li>
-                                <li>
-                                    <a class="text-decoration-none" href="https://drive.google.com/file/d/1QSp6OTyomObgopj35X54LxXJbbLZidBE/view?usp=sharing">SEO Analysis and Reporting</a>
-                                </li>
-                            </div>
-                        </div>
+                </div>
+        
+                <div class="card mb-3 max-width-card">
+                    <div class="card-body">
+                        <h5 class="card-title">AIDHUB Foundation</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">UI/UX Designer | November 2021 – April 2023</h6>
+                        <p class="card-text">Collaborated on UI/UX guidelines, user flows, and prototyping using Figma and Adobe XD. Optimized designs for mobile and web, researched Google Material Design, and worked closely with clients and developers.</p>
                     </div>
-                    <div class="accordion-item border-0">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                Ads
-                            </button>
-                        </h2>
-                        <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <p>Finally, the brand starts running ads to achieve greater impressions. <br>The goal is to gain as many impressions as possible while <strong>maintaining low costs and efficiency</strong>. <br>The strategy I implemented is to use a "Maximize Clicks" bidding approach initially and increase bids for keywords with good performance. <br>Additionally, it's important to regularly update the images to increase impressions further.</p>
-                                <li>
-                                    <a class="text-decoration-none" href="https://drive.google.com/file/d/1zzzIWrWKtAUZf3HaaU6dtzmMJNF0OIw0/view?usp=sharing">Set Up Google Ads Account & GA Tracking, Set Up FB Business Manager, FB Ad Account, & Pixel Tracking</a>
-                                </li>
-                                <li>
-                                    <a class="text-decoration-none" href="https://drive.google.com/file/d/1oPYfpaMWOLvuGFgRkuSiAuGYp32mSMp-/view?usp=sharing">Planning, Set Up, & Running Meta Ads Campaign</a>
-                                </li>
-                                <li>
-                                    <a class="text-decoration-none" href="https://drive.google.com/file/d/1OTrtl_BIEfvi6I-_Q2UvP4N7Hi05ssYe/view?usp=sharing">Planning, Set Up, & Running SEM and GDN Ads</a>
-                                </li>
-                                <li>
-                                    <a class="text-decoration-none" href="https://drive.google.com/file/d/1m0oUKVoPGv8EEwqjXsVZdk7nQ4hOs-hb/view?usp=sharing">Planning & Set Up Tiktok Ads Campaign</a>
-                                </li>
-                            </div>
-                        </div>
-                        <div class="accordion-item border-0">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                    Study Case
-                                </button>
-                            </h2>
-                            <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <p>Here are some of different study case I try to solve</p>
-                                    <li>
-                                        <a class="text-decoration-none" href="https://drive.google.com/file/d/1zyFoj8INb8gmjl74GZymyGQNKBYurgAK/view?usp=sharing">User Interview Study Case Simulation (Organic Marketing)</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-decoration-none" href="https://drive.google.com/file/d/11NIj6MDo2Mm8HkDWdc9o2rWkgIkQUaYU/view?usp=sharing">User Interview Study Case Simulation (Search Engine Optimization)</a>
-                                    </li>
-                                </div>
-                            </div>
-                        </div>
+                </div>
+        
+                <div class="card mb-3 max-width-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Lesku.id</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Internship Graphic Designer & Web Developer | October – December 2020</h6>
+                        <p class="card-text">Developed website and social media content. Designed Instagram posts, managed scheduling, and built an employee salary calculation system based on attendance.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <h2 class="mb-4">Education</h2>
+                <div class="education-card">
+                    <img src="./image/logo/Primakara.png" alt="Primakara University Logo">
+                    <div>
+                        <h5>Primakara University</h5>
+                        <h6 class="text-muted">Bachelor of Computer Science | Sep 2022 - Oct 2024</h6>
+                        <p>GPA: 3.78</p>
+                    </div>
+                </div>
+                
+                <div class="education-card">
+                    <img src="./image/logo/ITB-RESMI-MINI.png" alt="ITB STIKOM Bali Logo">
+                    <div>
+                        <h5>ITB STIKOM Bali</h5>
+                        <h6 class="text-muted">Associate Degree in Computer Science | Sep 2018 - Oct 2021</h6>
+                        <p>GPA: 3.87</p>
+                    </div>
+                </div>
+                
+                <div class="education-card">
+                    <img src="./image/logo/dibimbing.jpg" alt="Dibimbing.id Logo">
+                    <div>
+                        <h5>Dibimbing.id</h5>
+                        <h6 class="text-muted">Digital Marketing Bootcamp | Agust 2024 - now</h6>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+     </div>
+     <!-- portfolio -->
+      <div class="bgcolor-custom p-5" id="portfolio">
+        <img src="./image/portolios.svg" class="img-fluid" alt="" style="min-width:280px;">
+        <!-- <div class="text-center fw-bold" style="font-size: 10rem;">Portfolio</div> -->
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Digital Marketing Button -->
+            <div class="col-md-4">
+              <div class="button-item">
+                <img src="./image/Digital Marketing.gif" alt="Digital Marketing" class="">
+                <a href="#Digital Marketing"><button class="btn btn-light">Digital Marketing</button></a>
+              </div>
+            </div>
+            
+            <!-- UI/UX Button -->
+            <div class="col-md-4">
+              <div class="button-item">
+                <img src="./image/UIUX.gif" alt="UI/UX" class="">
+                <a href="#UI/UX"><button class="btn btn-light">UI/UX</button></a>
+              </div>
+            </div>
+        
+            <!-- Web Development Button -->
+            <div class="col-md-4">
+              <div class="button-item">
+                <img src="./image/Web Develop.gif" alt="Web Development" class="">
+                <a href="#WebDevelop"><button class="btn btn-light" >Web Development</button></a>
+              </div>
+            </div>
+          </div>
+      </div>
+      <!-- galery -->
+       <div class="container-fluid p-5" id="Digital Marketing">
+        <h2 class="my-5 fw-lighter">Digital Marketing Gallery</h2>
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col">
+              <div class="card h-100">
+                <img src="./image/portfolio img/SEO/cover.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <a href="./Digmar/SEO.html" class="text-dark">
+                        <h5 class="card-title">SEO</h5>
+                    </a>
+                  <p class="card-text">Digital Marketing</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img src="./image/portfolio img/Content Creator/cover.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <a href="./Digmar/SEO.html" class="text-dark">
+                        <h5 class="card-title">Content Creation & Branding Product</h5>
+                    </a>
+                  <p class="card-text">Digital Marketing</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img src="./image/portfolio img/Social Media analytic/cover.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <a href="./Digmar/Social Media Analytic.html" class="text-dark">
+                        <h5 class="card-title">Social Media Analytic</h5>
+                    </a>                  
+                    <p class="card-text">Digital Marketing</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img src="./image/portfolio img/Tiktok Ads/cover.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <a href="./Digmar/Social Media Analytic.html" class="text-dark">
+                        <h5 class="card-title">TikTok Ads Planning</h5>
+                    </a>  
+                    <p class="card-text">Digital Marketing</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                  <img src="./image/portfolio img/Meta Ads/cover.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                      <a href="./Digmar/Meta Ads.html" class="text-dark">
+                          <h5 class="card-title">Meta Ads</h5>
+                      </a>
+                    <p class="card-text">Digital Marketing</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="./image/portfolio img/SEM GDN/proses optimasi.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <a href="./Digmar/Google Ads.html" class="text-dark">
+                          <h5 class="card-title">Google Ads (Search Engine Marketing & Google Display Network)</h5>
+                      </a>  
+                      <p class="card-text">Digital Marketing</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                  <img src="./image/portfolio img/CRM Email/cover.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                      <a href="./Digmar/CRM Email.html" class="text-dark">
+                          <h5 class="card-title">Customer Relationship Management <br> Email Campaign</h5>
+                      </a>
+                    <p class="card-text">Digital Marketing</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                  <img src="./image/portfolio img/CRM PN/cover.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                      <a href="./Digmar/Push Notification.html" class="text-dark">
+                          <h5 class="card-title">Customer Relationship Management <br> Push Notification</h5>
+                      </a>
+                    <p class="card-text">Digital Marketing</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid d-flex flex-column my-5 p-5 vh-100 bgcolor-lilac" id="UI/UX" style="background-image: url('./image/Dribble.gif');">
+            <!-- <h2 class="py-5 ps-3 fw-lighter" style="">UI/UX Presentation</h2> -->
+                <div class="row h-100 ">
+                    <!-- Bagian kiri: iframe -->
+                    <div class="col-lg-6 d-flex flex-column justify-content-center">
+                        <iframe class=" w-100 h-100 border rounded" 
+                            src="https://embed.figma.com/deck/lwqtQ5HFYijwuGREoYAXE4/Portfolio?node-id=1-26&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&embed-host=share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+            
+                    <!-- Bagian kanan: Gambar -->
+                    <div class="col-lg-6 d-flex align-items-center justify-content-center flex-column ">
+                        <div class="d-flex flex-column align-items-center">
+                            <img src="./image/UIUX title.svg" alt="UI/UX Preview" class="img-fluid ">
+                            <!-- <img src="./image/Dribble.gif" alt="UI/UX Preview" class="img-fluid rounded shadow"> -->
+                            <a href="https://dribbble.com/risa2000"><button type="button" class="btn mt-2 p-4 fw-light" style="background-color: #a276cd; color: white;">Another design in Dribble</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>    
+        <div class="container-fluid d-flex flex-column align-items-center justify-content-center pt-5 overflow-hidden" id="WebDevelop" style="background-image: url(./image/bg\ code.jpg); min-height: 100vh;">
+            <img src="./image/Web Develop title.svg" class="img-fluid" alt="">
+            <a href="https://github.com/risarahayu"><button type="button" class="btn btn-dark bg-black p-4 fw-light" style="border-color: #e0feca;">Visit My GitHub</button></a>
+        </div>       
+        <div class="container-fluid p-5 d-flex flex-wrap justify-content-around" style="background-color:black;">
+            <div class="card mb-3" style="max-width: 400px;">
+                <div class="row g-0">
+                  <div class="col-md-6">
+                    <img src="./image/Website Koala.png" class="img-fluid rounded-start" alt="..." style="width: 100%; height: 100%; object-fit: cover;">
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card-body">
+                      <a class="text-black" href="https://koalaskincare.dibimbingpractice.site/"><h5 class="card-title">Koala Skincare Website</h5></a>
+                      <p class="card-text">Tools:</p>
+                      <p class="card-text"><small class="text-body-secondary">
+                        <img src="./image/logo/WordPress.com-Logo.wine.svg" width="48px" height="32px" alt=""> 
+                      </small></p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="card mb-3" style="max-width: 400px;">
+                <div class="row g-0">
+                  <div class="col-md-6">
+                    <img src="./image/Website Mission Pawsible.png" class="img-fluid rounded-start" alt="..." style="width: 100%; height: 100%; object-fit: cover;">
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card-body">
+                      <a class="text-black" href="https://github.com/risarahayu/mission-pawsible"><h5 class="card-title">Dog Adoption Website</h5></a>
+                      <p class="card-text">Tools :</p>
+                      <p class="card-text">
+                        <img src="./image/logo/Laravel.png" width="32px" height="32px" alt=""> 
+                        <img src="./image/logo/Bootstrap_logo.svg" width="32px" height="" alt="">
+                        <img src="./image/logo/jquery-original-wordmark-icon-485x512-7kn0h2yt.png" width="32px" height="32px" alt="">
+                      </p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="card mb-3" style="max-width: 400px;">
+                <div class="row g-0">
+                  <div class="col-md-6">
+                    <img src="./image/Website BFP.png" class="img-fluid rounded-start" alt="..." style="width: 100%; height: 100%; object-fit: cover;">
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card-body">
+                      <a class="text-black" href="https://www.beyondfoodprogram.com/"><h5 class="card-title">Beyond Food Program Website</h5></a>
+                      <p class="card-text">Tools:</p>
+                      <p class="card-text"><small class="text-body-secondary">
+                        <img src="./image/logo/WordPress.com-Logo.wine.svg" width="48px" height="32px" alt=""> 
+                      </small></p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="card mb-3" style="max-width: 400px;">
+                <div class="row g-0">
+                  <div class="col-md-6">
+                    <img src="./image/Website RAH.png" class="img-fluid rounded-start" alt="..." style="width: 100%; height: 100%; object-fit: cover;">
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card-body">
+                      <a class="text-black" href="https://rumahanakhebatmalang.web.id/"><h5 class="card-title">Daycare Website</h5></a>
+                      <p class="card-text">Tools:</p>
+                      <p class="card-text"><small class="text-body-secondary">
+                        <img src="./image/logo/WordPress.com-Logo.wine.svg" width="48px" height="32px" alt=""> 
+                      </small></p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+      <!-- contact -->
+       <div class="container text-center vh-100 align-content-center px-5">
+            <img src="./image/Lets work together.svg" class="img-fluid" alt="">
+            <!-- <h4 class="mt-5 text-center">Find Me Online</h4> -->
+            <div class="d-flex flex-wrap justify-content-start justify-content-md-around">
+                <div class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><path fill="#575555" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 4l-8 5l-8-5V6l8 5l8-5z"/></svg>
+                    <a href="mailto:rrisa329@gmail.com?subject=Hello&body=Hi there, I would like to discuss...">
+                        <span class="text-black">rrisa329@gmail.com</span>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 20 20"><path fill="#575555" d="M17.04 17.043h-2.962v-4.64c0-1.107-.023-2.531-1.544-2.531c-1.544 0-1.78 1.204-1.78 2.449v4.722H7.793V7.5h2.844v1.3h.039c.397-.75 1.364-1.54 2.808-1.54c3.001 0 3.556 1.974 3.556 4.545zM4.447 6.194c-.954 0-1.72-.771-1.72-1.72s.767-1.72 1.72-1.72a1.72 1.72 0 0 1 0 3.44m1.484 10.85h-2.97V7.5h2.97zM18.522 0H1.476C.66 0 0 .645 0 1.44v17.12C0 19.355.66 20 1.476 20h17.042c.815 0 1.482-.644 1.482-1.44V1.44C20 .646 19.333 0 18.518 0z"/></svg>
+                    <a class="text-black" href="https://www.linkedin.com/in/risa-rahayu-875432195/"><span>Risa Rahayu</span></a>
+                </div>
+            </div>  
+       </div>
+       
     <!-- boostrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous" ></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous" ></script>

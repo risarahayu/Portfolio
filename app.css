@@ -38,6 +38,24 @@
   z-index: -2;
 }
 
+.button-container {
+  margin-top: 50px;
+}
+.button-item {
+  text-align: center;
+  padding: 30px;
+}
+.button-item img {
+  max-width: 90%;
+  object-fit: cover;
+  margin-bottom: 20px; /* Spacing between image and button */
+}
+.button-item button {
+  font-size: 18px;
+  padding: 15px 30px;
+  width: 100%;
+}
+
 .bgcolor-purple{
     background-color: #3c096c;
     color: white;
@@ -52,7 +70,7 @@
 }
 
 .bgcolor-lilac{
-  background-color:#b79ced;
+  background-color:#e3d6ff;
 }
 
 .bgcolor-lilac-2{
@@ -316,8 +334,28 @@ p{
 }
 
 .card{
-    background-color: #f77f00 !important;
-    color: rgb(255, 255, 255);
+    /* background-color: #f77f00 !important; */
+    /* color: rgb(255, 255, 255); */
+}
+
+.max-width-card{
+  max-width: 600px;
+  width: 100%;
+}
+
+.education-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background: #f8f9fa;
+}
+.education-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
 }
 
 /* logo */
@@ -326,7 +364,7 @@ p{
     white-space: nowrap;
     position: relative;
     width: 100%;
-    background-color: #ffffff; /* Opsional untuk kontras */
+    /* background-color: #ffffff; Opsional untuk kontras */
     padding: 10px 0;
 }
 
@@ -341,7 +379,7 @@ p{
     margin-right: 100px; /* Tambahkan jarak antar gambar */
 }
 .img-fluid{
-  max-width: 70% !important;
+  /* max-width: 70% !important; */
 }
 
 /* Animasi marquee */
@@ -388,6 +426,6 @@ p{
 
   
   .img-fluid{
-    width: 50% !important;
+    /* width: 50% !important; */
   }
 }
