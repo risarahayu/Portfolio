@@ -11,13 +11,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="./owl/assets/owl.carousel.min.css" />
     <link rel="stylesheet" href="./owl/assets/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="../app.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 </head>
 <body class="bg-light">
-    <div class="container-fluid d-flex flex-column my-5 p-5 vh-100 bgcolor-lilac" id="UI/UX" style="background-image: url('./image/Dribble.gif');">
+    <!-- Tempat navbar -->
+    <div id="nav-placeholder" class="bgcolor-purple"></div>
+
+    <!-- JS untuk load nav -->
+    <script>
+        fetch("../nav.html")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("nav-placeholder").innerHTML = data;
+        });
+    </script>
+    <div class="container-fluid" style="background-image: url('./image/Dribble.gif'); height: 40vh;">
+
+    </div>
+    <div class="container-fluid d-flex flex-column my-5 p-5 vh-100 bgcolor-lilac" id="UI/UX" >
         <!-- <h2 class="py-5 ps-3 fw-lighter" style="">UI/UX Presentation</h2> -->
             <div class="row h-100 ">
                 <!-- Bagian kiri: iframe -->
@@ -33,7 +47,7 @@
                     <div class="d-flex flex-column align-items-center">
                         <img src="./image/UIUX title.svg" alt="UI/UX Preview" class="img-fluid ">
                         <!-- <img src="./image/Dribble.gif" alt="UI/UX Preview" class="img-fluid rounded shadow"> -->
-                        <a href="https://dribbble.com/risa2000"><button type="button" class="btn mt-2 p-4 fw-light" style="background-color: #a276cd; color: white;">Another design in Dribble</button></a>
+                        <a href="https://dribbble.com/risa2000"><button type="button" class="btn mt-2 p-4 fw-light bgcolor-custom" style="">Another design in Dribble</button></a>
                     </div>
                 </div>
             </div>

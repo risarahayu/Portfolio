@@ -77,6 +77,10 @@
   background-color:#e6dbfc;
 }
 
+.bgcolor-ivory{
+  background-color: #fefae0;
+}
+
 .color-black{
   color: black;
 }
@@ -382,6 +386,13 @@ p{
   /* max-width: 70% !important; */
 }
 
+.text-purple{
+  color: #5a189a;
+}
+
+.place-center{
+  place-items: center;
+}
 /* Animasi marquee */
 @keyframes marquee {
     from {
@@ -427,5 +438,16 @@ p{
   
   .img-fluid{
     /* width: 50% !important; */
+  }
+}
+
+@media (max-width: 575.98px) { 
+  .socmed-container {
+    gap: 10px; overflow-x: scroll;
+    flex-wrap: nowrap;
+  }
+  
+  .socmed-container>* {
+    padding: 0;
   }
 }

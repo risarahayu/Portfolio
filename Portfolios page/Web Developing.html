@@ -11,12 +11,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="./owl/assets/owl.carousel.min.css" />
     <link rel="stylesheet" href="./owl/assets/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="../app.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 </head>
 <body class="bg-light">
+    <!-- Tempat navbar -->
+    <div id="nav-placeholder" class="bgcolor-purple"></div>
+
+    <!-- JS untuk load nav -->
+    <script>
+        fetch("../nav.html")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("nav-placeholder").innerHTML = data;
+        });
+    </script>
     <div class="container-fluid d-flex flex-column align-items-center justify-content-center pt-5 overflow-hidden" id="WebDevelop" style="background-image: url(./image/bg\ code.jpg); min-height: 100vh;">
         <img src="./image/Web Develop title.svg" class="img-fluid" alt="">
         <a href="https://github.com/risarahayu"><button type="button" class="btn btn-dark bg-black p-4 fw-light" style="border-color: #e0feca;">Visit My GitHub</button></a>
