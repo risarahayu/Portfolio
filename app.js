@@ -56,6 +56,15 @@
   }
 ];
 
+// active state
+document.querySelectorAll(".social-icons li a").forEach(link => {
+  link.addEventListener("click", () => {
+    link.classList.add("clicked");
+  });
+});
+
+// show
+
 const containers = document.querySelectorAll(".social-icons");
 
 containers.forEach((container) => {

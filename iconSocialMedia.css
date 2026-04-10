@@ -49,6 +49,7 @@
   z-index: 1;
 }
 
+
 /* hover effects */
 .social-icons li:hover a::before {
   top: 0;
@@ -57,6 +58,16 @@
 .social-icons li:hover a i {
   color: #ffffff;
   transform: rotateY(360deg);
+}
+
+
+.social-icons li a:active {
+  transform: scale(0.92);
+}
+.social-icons li a.clicked {
+  background: #24292e;
+  color: #ffffff;
+  border-color: #24292e;
 }
 
 /* =========================

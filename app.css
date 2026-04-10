@@ -135,6 +135,8 @@ p {
 #contentTop {
   padding-block: 8rem;
 }
+
+
 .editorial-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -160,6 +162,8 @@ p {
   /* border: 1px solid rgba(255, 228, 196, 0.6);  */
   transition: transform 0.4s ease;
 }
+
+
 
 .editorial-card:nth-child(1) {
   transform: translateY(-40px);
@@ -249,6 +253,21 @@ p {
 }
 .red-wine-color-button:hover {
   background-color: #c90629;
+}
+/* saat fokus (keyboard/tab) */
+.red-wine-color-button:focus {
+  outline: 3px solid #ffb3b3;
+  outline-offset: 3px;
+}
+
+/* saat ditekan */
+.red-wine-color-button:active {
+  transform: scale(0.97);
+}
+
+.red-wine-color-button.clicked {
+  background-color: #2e0f14;
+  color: #ffd6d6;
 }
 
 .pink-color-bg{
