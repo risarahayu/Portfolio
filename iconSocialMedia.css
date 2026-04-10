@@ -1,0 +1,90 @@
+/* =========================
+   SOCIAL ICONS
+========================= */
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.social-icons li {
+  list-style: none;
+  position: relative; /* anchor tooltip */
+}
+
+/* circle button */
+.social-icons li a {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  color: #262626;
+  font-size: 26px;
+  border: 2px solid #ffffff;
+  position: relative;
+  overflow: hidden; /* ONLY for hover bg */
+  transition: all 0.4s ease;
+}
+
+/* icon */
+.social-icons li a i {
+  position: relative;
+  z-index: 2;
+  transition: transform 0.6s ease, color 0.4s ease;
+}
+
+/* hover background layer */
+.social-icons li a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  top: 100%;
+  background: #24292e; /* default dark */
+  transition: top 0.4s ease;
+  z-index: 1;
+}
+
+/* hover effects */
+.social-icons li:hover a::before {
+  top: 0;
+}
+
+.social-icons li:hover a i {
+  color: #ffffff;
+  transform: rotateY(360deg);
+}
+
+/* =========================
+   TOOLTIP
+========================= */
+
+.social-icons li::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: -46px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  color: #000000;
+  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* show tooltip */
+.social-icons li:hover::after {
+  opacity: 1;
+  bottom: -54px;
+  transform: translateX(-50%) scale(1);
+}

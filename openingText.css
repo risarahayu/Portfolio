@@ -1,0 +1,91 @@
+.title{
+  /* font-size: 4rem; */
+  text-transform: uppercase;
+  color: #F1FAEE;
+  line-height: 1.1;
+}
+
+.roller {
+  display: inline-block;
+  height: 4.5rem;        /* ⬅️ tambahin sedikit */
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.rolltext {
+  display: block;
+  line-height: 4.5rem;   /* ⬅️ SAMA DENGAN HEIGHT */
+  color: var(--red-wine);
+  animation: rollOnce 2.2s ease-in-out forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes rollOnce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-4.5rem); /* ⬅️ SAMA */
+  }
+}
+
+.gradient-dev {
+  background: linear-gradient(
+    90deg,
+    #f1faee,
+    #d8304f,
+    #181818,
+    #9a031e,
+    #f1faee
+  );
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: gradientLoop 6s ease-in-out infinite;
+}
+
+@keyframes gradientLoop {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+.floating {
+  position: absolute;
+  width: 100px;
+  pointer-events: none; /* tidak ganggu klik */
+  z-index: 20;
+  opacity: 0.85;
+}
+
+@keyframes floatY {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes floatX {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(16px); }
+  100% { transform: translateX(0); }
+}
+
+.xd-float {
+  top: 18%;
+  left: 6%;
+  animation: floatY 6s ease-in-out infinite;
+}
+
+.figma-float {
+  bottom: 20%;
+  right: 8%;
+  animation: floatX 7.5s ease-in-out infinite;
+}
+

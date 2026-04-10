@@ -1,186 +1,274 @@
-.bgcolor-custom{
-    background-color: #3c096c;
-    color: white;
+/* ======================================================
+   IMPORTS
+====================================================== */
+@import url("./nav.css");
+@import url("./marquee.css");
+@import url("./portfolioButton.css");
+@import url("./openingText.css");
+@import url("./hologram.css");
+@import url("./iconSocialMedia.css");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
+
+/* ======================================================
+   CSS VARIABLES
+====================================================== */
+:root {
+  --red-wine: #9a031e;
+  --pink:#dd2d4a;
+  --purple-dark: #3c096c;
+  --purple-light: #5a189a;
+  --neon-blue: #00ffff;
+
+  /* slider vars */
+  --bg: hsl(0, 0%, 8%);
+  --size: 50vmin;
+  --height: var(--size);
+  --width: calc(1.6875 * var(--size));
+  --font-size: calc(0.74 * var(--size));
+  --gap: calc(0.22 * var(--size));
 }
 
-.bgcolor-custom:hover{
-    background-color: #5a189a;
-    color: white;
+/* ======================================================
+   RESET & BASE
+====================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-.container-bg{
-    background-image: url('image/Frame 4513.svg');
-    background-size: cover; /* Mengatur ukuran gambar agar menutupi elemen */
-    background-position: center top; /* Posisi awal */
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100vh; /* Sesuaikan ukuran elemen */
-    position: relative;
-    /* z-index: 0; */
+
+p {
+  font-size: 13px;
+}
+
+.small {
+  font-size: 9px !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.hero-section {
+  z-index: 5;
+}
+
+.button-secondary {
+  background-color: white;
+  color: black;
+}
+
+.button-secondary:hover {
+  background-color: #f0f0f0;
+}
+
+#contentTop {
+  padding-block: 8rem;
+}
+.editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  position: relative;
+}
+
+.editorial-card {
+  /* From https://css.glass */
+  background: rgba(96, 96, 96, 0.2);
+  /* border-radius: 16px; */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(96, 96, 96, 0.3);
+
+  color: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+
+  /* border: 1px solid rgba(255, 228, 196, 0.6);  */
+  transition: transform 0.4s ease;
+}
+
+.editorial-card:nth-child(1) {
+  transform: translateY(-40px);
+}
+
+.editorial-card:nth-child(2) {
+  transform: translateY(100px);
+}
+
+.editorial-card:nth-child(3) {
+  transform: translateY(-10px);
+}
+
+.editorial-card:nth-child(4) {
+  transform: translateY(130px);
+}
+
+#contentTop .card {
+  min-width: 260px;
+}
+/* ======================================================
+   COLORS & BACKGROUND UTILITIES
+====================================================== */
+.bgcolor-custom {
+  background-color: var(--purple-dark);
+  color: white;
+}
+.bgcolor-custom:hover {
+  background-color: var(--purple-light);
+}
+
+.glass-white {
+  background: rgba(255, 255, 255, 0.2);
+  /* border-radius: 16px; */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  /* border: 1px solid rgba(255, 255, 255, 0.3); */
+  color: black;
+}
+
+.bgcolor-purple {
+  background-color: var(--purple-dark);
+  color: white;
+}
+
+
+.bgcolor-lilac {
+  background-color: #e3d6ff;
+}
+
+.bgcolor-lilac-2 {
+  background-color: #e6dbfc;
+}
+
+.bgcolor-ivory {
+  background-color: #fefae0;
+}
+
+.color-neon-blue {
+  color: var(--neon-blue);
+}
+
+.color-black {
+  color: black;
+}
+
+.text-purple {
+  color: var(--purple-light);
+}
+
+/* red wine */
+.red-wine-color {
+  color: var(--red-wine);
+}
+.red-wine-color-bg {
+  background-color: var(--red-wine);
+  color: white;
+  overflow-x: visible;
+}
+.red-wine-color-border {
+  border-color: var(--red-wine);
+}
+.red-wine-color-button {
+  background-color: var(--red-wine);
+  color: white;
+}
+.red-wine-color-button:hover {
+  background-color: #c90629;
+}
+
+.pink-color-bg{
+  background-color: var(--pink);
+  color: white;
+}
+
+/* ======================================================
+   CONTAINER BACKGROUNDS
+====================================================== */
+.container-bg {
+  background-image: url("image/Frame 4513.svg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  position: relative;
 }
 
 .container-bg-2 {
-    /* background-image: url('image/bg-block.svg'); */
-    background-size: cover;
-    background-position: center top; /* Posisi awal */
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100vh; /* Sesuaikan ukuran elemen */
-    position: relative;
-    z-index: -2;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  z-index: -2;
 }
 
 .container-bg-3 {
-  background-image: url('image/Frame 4521.svg');
+  background-image: url("image/Frame 4521.svg");
   background-size: cover;
-  background-position: center top; /* Posisi awal */
+  background-position: center top;
   background-repeat: no-repeat;
   width: 100%;
   z-index: -2;
 }
 
+/* ======================================================
+   BUTTONS
+====================================================== */
 .button-container {
   margin-top: 50px;
 }
+
 .button-item {
   text-align: center;
   padding: 30px;
 }
+
 .button-item img {
   max-width: 90%;
   object-fit: cover;
-  margin-bottom: 20px; /* Spacing between image and button */
+  margin-bottom: 20px;
 }
+
 .button-item button {
   font-size: 18px;
   padding: 15px 30px;
   width: 100%;
 }
 
-.bgcolor-purple{
-    background-color: #3c096c;
-    color: white;
+.btn-lg,
+a:focus,
+a:active {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
-.color-neon-blue{
-  color: #00FFFF;
+.btn-round-lg {
+  border-radius: 22.5px;
+  background-color: #ffffff;
+  color: #f77f00;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.9px;
+  padding: 8px 20px !important;
+  border: 1px solid #fff;
 }
 
-.bgcolor-pink{
-  background-color: #ff007f;
+.btn-round-lg:hover,
+.btn-round-lg:focus {
+  background-color: #fff;
+  color: #f77f00;
+  border: 1px solid #fff;
 }
 
-.bgcolor-lilac{
-  background-color:#e3d6ff;
-}
-
-.bgcolor-lilac-2{
-  background-color:#e6dbfc;
-}
-
-.bgcolor-ivory{
-  background-color: #fefae0;
-}
-
-.color-black{
-  color: black;
-}
-
-.circle {
-  width: 50px;
-  height: 50px;
-  background-color: black;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-}
-.number-item {
-  display: flex;
-  align-items: center;
-  margin: 10px 0;
-}
-.number-text {
-  margin-left: 15px;
-  font-size: 18px;
-  color: #333;
-}
-/* box glow */
-/* Efek 3D dan Glow untuk kotak */
-.glow-box {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek 3D */
-  position: relative;
-  overflow: hidden; /* Memastikan konten tetap di dalam kotak */
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-
-/* Glow efek saat hover */
-.glow-box:hover {
-  box-shadow: 0 0 10px #ffffff, 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4); /* Efek glow menyala */
-  transform: translateY(-5px); /* Sedikit naik untuk efek interaktif */
-}
-
-/* Efek teks menyala */
-.glow-box:hover::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 10%, transparent 70%);
-  opacity: 0.5;
-  transform: rotate(45deg);
-  z-index: -1; /* Efek glow di belakang */
-}
-
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 10px; /* Jarak antar item */
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  color: #333; /* Warna teks */
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* Jarak antara ikon dan teks */
-}
-
-.icon {
-  width: 30px;
-  height: 30px; /* Menyesuaikan ukuran ikon */
-}
-
-/* Warna teks neon */
-.glow-box {
-  text-shadow: 0 0 0 #d5b1b1, 0 0 10px rgba(255, 255, 255, 0.8);
-  
-}
-
-/* Responsive tambahan */
-@media (max-width: 576px) {
-  .glow-box {
-    font-size: 14px; /* Ukuran lebih kecil di layar sempit */
-  }
-}
-
-
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
-
-
-
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
-.content {
-  position: relative;
-  animation: animatop 0.9s cubic-bezier(0.425, 1.140, 0.470, 1.125) forwards;
-}
-
+/* ======================================================
+   CARDS
+====================================================== */
 .card-custom {
   width: 100%;
   min-height: 100px;
@@ -193,299 +281,263 @@
 }
 
 .card-custom::after {
-  content: '';
-  display: block;
+  content: "";
   width: 190px;
   height: 150%;
   background: #ffc107;
   position: absolute;
-  animation: rotatemagic 0.75s cubic-bezier(0.425, 1.040, 0.470, 1.105) 1s both;
+  animation: rotatemagic 0.75s cubic-bezier(0.425, 1.04, 0.47, 1.105) 1s both;
 }
 
-.badgescard {
-  padding: 5px 20px;
-  border-radius: 3px;
-  background-color: #ECECEC;
-  width: 100%;
-  max-width: 480px;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-  /* position: absolute; */
-  z-index: -1;
-  left: 10px;
-  bottom: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: animainfos 0.5s cubic-bezier(0.425, 1.040, 0.470, 1.105) 0.75s forwards;
+.card-1 {
+  box-shadow: 2px 4px 15px 0px #ffbe0b;
 }
 
-.badgescard span {
-  font-size: 1.6em;
-  margin: 0px 6px;
-  opacity: 100;
-}
-
-.firstinfo {
-  display: flex;
-  flex-direction: row;
-  z-index: 2;
-  position: relative;
-}
-
-.firstinfo img {
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-}
-
-.firstinfo .profileinfo {
-  padding: 0px 20px;
-}
-
-.firstinfo .profileinfo h1 {
-  font-size: 1.8em;
-}
-
-.firstinfo .profileinfo h3 {
-  font-size: 1.2em;
-  color: #0077b6;
-  font-style: italic;
-}
-
-.firstinfo .profileinfo p.bio {
-  padding: 10px 0px;
-  color: #5A5A5A;
-  line-height: 1.2;
-  font-style: initial;
-}
-
-@keyframes animatop {
-  0% {
-    opacity: 0;
-    bottom: -500px;
-  }
-  100% {
-    opacity: 1;
-    bottom: 0px;
-  }
-}
-
-@keyframes animainfos {
-  0% {
-    bottom: 10px;
-  }
-  100% {
-    bottom: -42px;
-  }
-}
-
-@keyframes rotatemagic {
-  0% {
-    opacity: 0;
-    transform: rotate(-0deg);
-    top: -24px;
-    left: -253px;
-  }
-  100% {
-    transform: rotate(-30deg);
-    top: -24px;
-    left: -78px;
-  }
-}
-
-/* edu */
-
-.btn-lg, a:focus, a:active {
-    outline: none !important;
-    box-shadow: none !important;        
-}
-
-.card-1{
-    box-shadow: 2px 4px 15px 0px #ffbe0b;
-}
-
-p{
-    font-size: 13px ;
-}
-        
-.small{
-    font-size: 9px !important;
-}
-
-.cursor-pointer{
-    cursor: pointer;
-}
-
-.btn-round-lg {
-    border-radius: 22.5px;
-    background-color: #ffffff;
-    color: #f77f00;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.9px;
-    padding: 8px 20px  8px  20px !important;
-    border: 1px solid #fff;
-}
-
-.btn-round-lg:hover{
-    background-color: #fff;
-    color: #f77f00;
-    border: 1px solid #fff;
-}
-
-.btn-round-lg:focus{
-    border: 1px solid #fff !important;
-}
-
-.card{
-    /* background-color: #f77f00 !important; */
-    /* color: rgb(255, 255, 255); */
-}
-
-.max-width-card{
+.max-width-card {
   max-width: 600px;
   width: 100%;
 }
 
-.education-card {
+/* ======================================================
+   GLOW BOX
+====================================================== */
+.glow-box {
+  position: relative;
+  overflow: hidden;
+  text-shadow: 0 0 0 #d5b1b1, 0 0 10px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2),
+              0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.glow-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 10px #fff,
+              0 0 20px rgba(255, 255, 255, 0.6),
+              0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+.glow-box:hover::after {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(circle, rgba(255,255,255,.5) 10%, transparent 70%);
+  opacity: .5;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+/* ======================================================
+  EXPERIENCE IMPACT BOX
+====================================================== */
+
+.impact-box{
+  border:1px solid #dcdcdc;
+  border-radius:16px;
+  padding:20px;
+  background:white;
+}
+
+/* ======================================================
+   CONTACT
+====================================================== */
+.contact-info {
   display: flex;
-  align-items: flex-start;
-  /* gap: 15px; */
-  margin-bottom: 10px;
-  /* padding: 15px; */
-  border-radius: 8px;
-  background: #f8f9fa;
-}
-.education-card img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 16px;
+  color: #333;
 }
 
-/* logo */
-.marquee {
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-    width: 100%;
-    /* background-color: #ffffff; Opsional untuk kontras */
-    padding: 10px 0;
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.marquee-content {
-    display: inline-flex;
-    animation: marquee 20s linear infinite;
+.icon {
+  width: 30px;
+  height: 30px;
 }
 
-.marquee-content img {
-    height: 50px; /* Atur tinggi gambar */
-    object-fit: contain;
-    margin-right: 100px; /* Tambahkan jarak antar gambar */
-}
-.img-fluid{
-  /* max-width: 70% !important; */
-}
-
-.text-purple{
-  color: #5a189a;
+/* ======================================================
+   TIMELINE
+====================================================== */
+ul.timeline {
+  list-style: none;
+  position: relative;
 }
 
-.place-center{
-  place-items: center;
+ul.timeline::before {
+  content: "";
+  position: absolute;
+  left: 29px;
+  width: 2px;
+  height: 100%;
+  background: #d4d9df;
 }
 
-/* timeline */
-
- ul.timeline {
-    list-style-type: none;
-    position: relative;
-}
-ul.timeline:before {
-    content: ' ';
-    background: #d4d9df;
-    display: inline-block;
-    position: absolute;
-    left: 29px;
-    width: 2px;
-    height: 100%;
-    z-index: 400;
-}
 ul.timeline > li {
-    margin: 20px 0;
-    padding-left: 20px;
+  margin: 20px 0;
+  padding-left: 20px;
 }
-ul.timeline > li:before {
-    content: ' ';
-    background: white;
-    display: inline-block;
-    position: absolute;
-    border-radius: 50%;
-    border: 3px solid #5a189a;
-    left: 20px;
-    width: 20px;
-    height: 20px;
-    z-index: 400;
+
+ul.timeline > li::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border: 3px solid var(--purple-light);
+  border-radius: 50%;
 }
-/*  */
 
+/* ======================================================
+   ANIMATIONS
+====================================================== */
+@keyframes animatop {
+  from { opacity: 0; bottom: -500px; }
+  to   { opacity: 1; bottom: 0; }
+}
 
+@keyframes animainfos {
+  from { bottom: 10px; }
+  to   { bottom: -42px; }
+}
 
+@keyframes rotatemagic {
+  from { opacity: 0; left: -253px; transform: rotate(0); }
+  to   { left: -78px; transform: rotate(-30deg); }
+}
 
-/* Animasi marquee */
 @keyframes marquee {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(-100%);
-    }
+  from { transform: translateX(100%); }
+  to   { transform: translateX(-100%); }
 }
 
-/* accordion */
-
-
-/* animasi gambar */
 @keyframes bounce {
-  0%, 100% {
-    transform: translateY(0); /* Posisi awal dan akhir gambar */
-  }
-  50% {
-    transform: translateY(-20px); /* Gambar naik 20px */
-  }
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-20px); }
 }
 
-.img-bounce {
-  animation: bounce 2s infinite ease-in-out;
+/* ======================================================
+   SLIDER – TOP PICKS
+====================================================== */
+.top-picks {
+  max-width: 100%;
+  padding: 0 2rem;
 }
 
-.owl-carousel .item {
+.top-picks__track {
+  height: var(--height);
   display: flex;
-  width: 100%;
-  justify-content: center;
+  padding: 0 var(--gap);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  counter-reset: index;
 }
 
-.owl-carousel .item img {
-  width: 60%;
+.top-picks__item {
+  flex: 0 0 calc(var(--width) + var(--gap));
+  position: relative;
+  padding-left: var(--gap);
+  scroll-snap-align: center;
+  counter-increment: index;
+}
+
+.top-picks__item::after {
+  content: counter(index);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: var(--font-size);
+  font-weight: 900;
+  color: var(--bg);
+  -webkit-text-stroke: .5vmin white;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+@media (max-width: 576px) {
+  .glow-box { font-size: 14px; }
 }
 
 @media (max-width: 767.98px) {
-  .owl-carousel .item img {
-    width: 100%;
-  } 
+  .owl-carousel .item img { width: 100%; }
+}
 
+/* Disable grid di layar kecil */
+@media (max-width: 767.98px) { 
+  .editorial-grid {
+    display: block; /* biar jadi linear stack di mobile */
+  }
   
-  .img-fluid{
-    /* width: 50% !important; */
+}
+
+@media (max-width: 767.98px) {
+  #carouselExampleAutoplaying {
+    padding-top: 2rem; /* lebih kecil di HP */
+    max-width: 100%;   /* full width di mobile */
+  }
+  #carouselExampleAutoplaying .carousel-inner img {
+    height: auto;      /* biar gambar proporsional */
+    max-height: 300px; /* batasi tinggi di mobile */
   }
 }
 
-@media (max-width: 575.98px) { 
-  .socmed-container {
-    gap: 10px; overflow-x: scroll;
-    flex-wrap: nowrap;
+.hero-carousel-wrapper {
+  height: 70vh;
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+
+/* Responsive untuk HP */
+@media (max-width: 767.98px) {
+  .hero-carousel-wrapper {
+    height: auto;       /* biar tidak terlalu tinggi di HP */
+    padding-left: 1rem; 
+    padding-right: 1rem;
   }
-  
-  .socmed-container>* {
-    padding: 0;
+
+  .main {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
+
+@media (max-width: 900px) {
+  .editorial-card:nth-child(1) {
+    transform: unset;
+  }
+
+  .editorial-card:nth-child(2) {
+    transform: unset;
+  }
+
+  .editorial-card:nth-child(3) {
+    transform: unset;
+  }
+
+  .editorial-card:nth-child(4) {
+    transform: unset
+  }
+
+  #contentTop{
+    display: flex;
+    padding-block: 1rem;
+  }
+}
+

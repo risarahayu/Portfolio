@@ -1,0 +1,32 @@
+.filter-buttons button {
+  all: unset;
+  cursor: pointer;
+  position: relative; /* WAJIB buat ::after */
+}
+
+/* hanya muncul saat active */
+.filter-buttons button.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: #9a031e;
+}
+
+.filter-buttons button::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #9a031e;
+  transition: all 0.3s ease;
+}
+
+.filter-buttons button.active::after {
+  width: 100%;
+  left: 0;
+}
