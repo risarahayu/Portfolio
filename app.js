@@ -311,44 +311,6 @@ experiences.forEach(exp => {
   `;
 });
 
-// logo
-const logos = [
-  { src: "image/logo/tools/html.png", alt: "Logo 1" },
-  { src: "image/logo/tools/css.png", alt: "Logo 2" },
-  { src: "image/logo/tools/js.png", alt: "Logo 3" },
-  { src: "image/logo/tools/figma.png", alt: "Logo 4" },
-  { src: "image/logo/tools/bootstrap.png", alt: "Logo 5" },
-  { src: "image/logo/tools/laravel.png", alt: "Logo 5" },
-  { src: "image/logo/tools/adobe xd.png", alt: "Logo 6" },
-];
-
-const carouselInner = document.getElementById('carousel-inner');
-console.log(carouselInner);
-const logosPerSlide = 3;
-
-for (let i = 0; i < logos.length; i += logosPerSlide){
-  const slideLogos = logos.slice(i, i + logosPerSlide);
-
-
-  const slideDiv = document.createElement('div');
-  slideDiv.classList.add("carousel-item");
-  if(i===0) slideDiv.classList.add("active");
-
-  const logoContainer = document.createElement('div');
-  logoContainer.classList.add("d-flex", "justify-content-center", "gap-3");
-
-  slideLogos.forEach(logo => {
-    const img = document.createElement('img');
-    img.src = logo.src;
-    img.alt = logo.alt;
-    img.style.width = "100px";
-    img.style.objectFit = "cover";
-    logoContainer.appendChild(img);
-  } );
-
-  slideDiv.appendChild(logoContainer);
-  carouselInner.appendChild(slideDiv);
-} 
 
 // nav
 document.addEventListener("DOMContentLoaded", () => {
@@ -388,3 +350,230 @@ document.addEventListener("DOMContentLoaded", () => {
 
   console.log("Nav links:", navLinks.length, "Sections:", sections.length);
 });
+
+
+
+// Skill
+const skills = [
+  {
+    title: "Design Thinking",
+    category: "UI/UX Designer"
+  },
+  {
+    title: "User Research",
+    category: "UI/UX Designer"
+  },
+  {
+    title: "Responsive Wireframing",
+    category: "UI/UX Designer"
+  },
+  {
+    title: "Prototyping",
+    category: "UI/UX Designer"
+  },
+  {
+    title: "Usability Testing",
+    category: "UI/UX Designer"
+  },
+  {
+    title: "HTML",
+    category: "Web Developer"
+  },
+  {
+    title: "CSS",
+    category: "Web Developer"
+  },
+  {
+    title: "Laravel",
+    category: "Web Developer"
+  },
+  {
+    title: "Bootsrap / Tailwind",
+    category: "Web Developer"
+  },
+  {
+    title: "SEO",
+    category: "Digital Marketing"
+  },
+  {
+    title: "Social Media Management",
+    category: "Digital Marketing"
+  },
+  {
+    title: "CRM",
+    category: "Digital Marketing"
+  },
+  {
+    title: "Ads",
+    category: "Digital Marketing"
+  },
+]
+
+const softwares = [
+  {
+    label: "Figma",
+    src: "./image/logo/tools/figma.png", 
+    alt: "Figma",
+    category: "UI/UX Designer"
+  },
+  {
+    label: "Adobe XD",
+    src: "image/logo/tools/adobe xd.png", 
+    alt: "Adobe XD",
+    category: "UI/UX Designer"
+  },
+  {
+    label: "Github",
+    src: "image/logo/tools/gitHub.png", 
+    alt: "Github",
+    category: "Web Developer"
+  },
+  {
+    label: "Wodpress",
+    src: "image/logo/tools/wordpress.png", 
+    alt: "Wodpress",
+    category: "Web Developer"
+  },
+  {
+    label: "Shopify",
+    src: "image/logo/tools/Shopify.png", 
+    alt: "Shopify",
+    category: "Web Developer"
+  },
+  {
+    label: "Wix",
+    src: "image/logo/tools/Wix.png", 
+    alt: "Wix",
+    category: "Web Developer"
+  },
+  {
+    label: "Google Ads",
+    src: "image/logo/tools/GoogleAds.png", 
+    alt: "Google Ads",
+    category: "Digital Marketing"
+  },
+  {
+    label: "Google Analytic",
+    src: "image/logo/tools/GoogleAnalytic.png", 
+    alt: "Google Analytic",
+    category: "Digital Marketing"
+  },
+  // {
+  //   label: "Google Search Console",
+  //   src: "image/logo/tools/GoogleSearchConsole.png", 
+  //   alt: "Google Search Console",
+  //   category: "Digital Marketing"
+  // },
+  {
+    label: "MailChimp",
+    src: "image/logo/tools/MailChimp.png", 
+    alt: "MailChimp",
+    category: "Digital Marketing"
+  },
+   {
+    label: "Canva",
+    src: "image/logo/tools/Canva.png", 
+    alt: "Canva",
+    category: "Digital Marketing"
+  },
+]
+
+const UIUXhardSkill=document.getElementById("UIUXhardSkill");
+const uiuxSkills = skills.filter(skill => skill.category === "UI/UX Designer");
+uiuxSkills.forEach(skill=>{
+  const li = document.createElement("li");
+  li.textContent = skill.title;
+  UIUXhardSkill.appendChild(li);
+})
+
+const UIUXsoftwareUsed=document.getElementById("UIUXsoftwareUsed");
+const uiuxSoftwares= softwares.filter(software => software.category === "UI/UX Designer");
+
+uiuxSoftwares.forEach(software=>{
+  const img = document.createElement("img");
+  img.src = software.src;
+  img.alt = software.label;
+  img.style.height = "30px";
+  UIUXsoftwareUsed.appendChild(img);
+})
+
+const WebDevHardSkillEl = document.getElementById("WebDevHardSkill");
+const WebDevSkills = skills.filter(skill=> skill.category === "Web Developer");
+
+WebDevSkills.forEach(skill=>{
+  const li = document.createElement("li");
+  li.textContent= skill.title;
+  WebDevHardSkillEl.appendChild(li);
+})
+
+const WebDevSoftwareUsedEl = document.getElementById("WebDevSoftwareUsed");
+const WebDevSoftwares =  softwares.filter(software=>software.category==="Web Developer");
+WebDevSoftwares.forEach(software=>{
+  const img = document.createElement("img");
+  img.src=software.src;
+  img.alt=software.alt;
+  img.style.height = "30px";
+  WebDevSoftwareUsedEl.appendChild(img);
+})
+
+const DigMarHardSkill = document.getElementById("DigMarHardSkill");
+const DigMarSkills = skills.filter(skill=> skill.category==="Digital Marketing");
+DigMarSkills.forEach(skill=>{
+  const li = document.createElement("li");
+  li.textContent= skill.title;
+  DigMarHardSkill.appendChild(li);
+})
+
+const DigMarSoftwareUsedEl = document.getElementById("DigMarSoftwareUsed");
+const DigMarSoftwares =  softwares.filter(software=>software.category==="Digital Marketing");
+DigMarSoftwares.forEach(software=>{
+  const img = document.createElement("img");
+  img.src=software.src;
+  img.alt=software.alt;
+  img.style.height = "30px";
+  DigMarSoftwareUsedEl.appendChild(img);
+})
+
+// animation
+let currentIndex = 0;
+      const texts = ["Digital Marketer", "UI/UX Designer", "Web Developer"];
+      const elements = ["#text1", "#text2", "#text3"];
+
+      function changeText() {
+        // Sembunyikan teks yang aktif
+        const currentElement = document.querySelector(elements[currentIndex]);
+        currentElement.style.display = "none";
+
+        // Hapus class animasi agar dapat di-trigger kembali
+        currentElement.classList.remove("animate__fadeInDown");
+
+        // Pindah ke teks berikutnya
+        currentIndex = (currentIndex + 1) % texts.length;
+
+        // Tampilkan teks baru
+        const nextElement = document.querySelector(elements[currentIndex]);
+        nextElement.style.display = "block";
+
+        // Tambahkan kembali class animasi
+        nextElement.classList.add("animate__fadeInDown");
+      }
+
+      // Mulai rotasi teks setiap 2 detik
+      setInterval(changeText, 2000);
+
+      $(function () {
+        var owl = $(".owl-carousel");
+        owl.owlCarousel({
+          items: 1,
+          loop: true,
+          margin: 10,
+          autoplay: true,
+          autoplayTimeout: 2000,
+        });
+        $(".play").on("click", function () {
+          owl.trigger("play.owl.autoplay", [1000]);
+        });
+        $(".stop").on("click", function () {
+          owl.trigger("stop.owl.autoplay");
+        });
+      });

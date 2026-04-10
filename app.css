@@ -73,6 +73,11 @@ p {
   position: relative;
 }
 
+.skill-card{
+  height: 26rem;
+  background-color: white;
+}
+
 .editorial-card {
   /* From https://css.glass */
   background: rgba(96, 96, 96, 0.2);

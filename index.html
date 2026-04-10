@@ -147,46 +147,93 @@
             </div>
           </div>
         </div>
-        <div class="container">
+      </section>
+
+      <!-- skill -->
+      <section id="skill" class="align-content-center bg-light" style="height: 100vh;">
+        <div class="container d-flex  flex-column ">
+          <h2 class="fs-4 align-content-center text-center mt-auto pb-3">
+            Skills
+          </h2>
         
           <div class="row mt-4" style="">
             <!-- <h2 class="fs-5 align-content-center text-center mt-auto">Worked Project</h2> -->
             <div class="col-12 col-md-4">
-              <div class="card text-bg-light mb-3 border-0" style="">
+              <div class="card text-bg-light mb-3 border-1 border rounded-4" style="">
                 <div class="card-header border-0">Support Skill</div>
-                <div class="card-body">
+                <div class="card-body skill-card rounded-4">
                   <h5 class="card-title">Web Developer</h5>
                   <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card’s content.
+                    3 Project Done 2025
                   </p>
+                  <div class="row">
+                    <div class="col-12">
+                      <p class="fw-semibold fs-6" >Hard Skill</p>
+                      <ul id="WebDevHardSkill">
+                        
+                      </ul>
+                    </div>
+                    <div class="col-12">
+                      <p class="fw-semibold fs-6">Software used</p>
+                      <div class="d-flex flex-wrap gap-3" id="WebDevSoftwareUsed">
+                        
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="col-12 col-md-4">
               <div
-                class="card text-bg-light mb-3 border-1 red-wine-color-border"
+                class="card  mb-3 border-1 border rounded-4"
                 style=""
               >
-                <div class="card-header border-0">Main Skill</div>
-                <div class="card-body">
+                <div class="card-header border-0 fs-6 red-wine-color-bg">Main Skill</div>
+                <div class="card-body skill-card  rounded-4">
                   <h5 class="card-title red-wine-color fs-3">UI/UX Designer</h5>
                   <p class="card-text fs-5">
                     <span class="fs-4 fw-semibold red-wine-color">10++</span
                     >Project done since 2021
                   </p>
+                  <div class="row">
+                    <div class="col-12">
+                      <p class="fw-semibold fs-6" >Hard Skill</p>
+                      <ul id="UIUXhardSkill">
+                        
+                      </ul>
+                    </div>
+                    <div class="col-12">
+                      <p class="fw-semibold fs-6">Software used</p>
+                      <div class="d-flex flex-wrap gap-3" id="UIUXsoftwareUsed">
+                        
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="col-12 col-md-4">
-              <div class="card text-bg-light mb-3 border-0" style="">
+              <div class="card text-bg-light mb-3 border-1 border rounded-4" style="">
                 <div class="card-header border-0">Support Skill</div>
-                <div class="card-body">
+                <div class="card-body skill-card rounded-4">
                   <h5 class="card-title">Digital Marketing</h5>
                   <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card’s content.
+                    Experienced as a Social Media Specialist through an internship program to enhance brand awareness and engagement.
                   </p>
+                  <div class="row">
+                    <div class="col-12">
+                      <p class="fw-semibold fs-6" >Hard Skill</p>
+                      <ul id="DigMarHardSkill">
+                        
+                      </ul>
+                    </div>
+                    <div class="col-12">
+                      <p class="fw-semibold fs-6">Software used</p>
+                      <div class="d-flex flex-wrap gap-3" id="DigMarSoftwareUsed">
+                        
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -279,49 +326,6 @@
     <script src="./owl/owl.carousel.min.js"></script>
     <script src="app.js"></script>
 
-    <script>
-      let currentIndex = 0;
-      const texts = ["Digital Marketer", "UI/UX Designer", "Web Developer"];
-      const elements = ["#text1", "#text2", "#text3"];
-
-      function changeText() {
-        // Sembunyikan teks yang aktif
-        const currentElement = document.querySelector(elements[currentIndex]);
-        currentElement.style.display = "none";
-
-        // Hapus class animasi agar dapat di-trigger kembali
-        currentElement.classList.remove("animate__fadeInDown");
-
-        // Pindah ke teks berikutnya
-        currentIndex = (currentIndex + 1) % texts.length;
-
-        // Tampilkan teks baru
-        const nextElement = document.querySelector(elements[currentIndex]);
-        nextElement.style.display = "block";
-
-        // Tambahkan kembali class animasi
-        nextElement.classList.add("animate__fadeInDown");
-      }
-
-      // Mulai rotasi teks setiap 2 detik
-      setInterval(changeText, 2000);
-
-      $(function () {
-        var owl = $(".owl-carousel");
-        owl.owlCarousel({
-          items: 1,
-          loop: true,
-          margin: 10,
-          autoplay: true,
-          autoplayTimeout: 2000,
-        });
-        $(".play").on("click", function () {
-          owl.trigger("play.owl.autoplay", [1000]);
-        });
-        $(".stop").on("click", function () {
-          owl.trigger("stop.owl.autoplay");
-        });
-      });
-    </script>
+  
   </body>
 </html>
