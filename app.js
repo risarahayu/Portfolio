@@ -79,7 +79,7 @@ const ITEMS = [
     src: "image/portfolio img/UIUX/Impact Portal Dashboard.png",
     description: "Impact Portal Dashboard showcases 4ocean’s clean-up impact for investors, ensuring transparency through a data-driven web dashboard and a mobile app used by field crews to report daily results.",
     category: "UI/UX",
-    badge:["Design", "Figma", "WordPress", "Elementor"],
+    badge:["UI/UX Design", "Figma","Dashboard"],
     top: true
   },
   {
@@ -88,7 +88,7 @@ const ITEMS = [
     src: "image/portfolio img/UIUX/BalI Teak Company Website.png",
     description: "This website was built for a furniture company that chose not to fully implement e-commerce.",
     category: "UI/UX",
-    badge:["Semi E-Commerce", "Figma"],
+    badge:["UI/UX Design and Web Development", "Semi E-Commerce", "Figma", "Wordpress", "Elementor"],
     top: true
   },
   {
@@ -97,7 +97,7 @@ const ITEMS = [
     src: "image/portfolio img/UIUX/The Donor Dashoard Landing Page.png",
     description: "The Donor Dashboard Landing Page was designed to provide donors with a clear and engaging overview of their impact, featuring key metrics, project highlights, and a user-friendly interface.",
     category: "UI/UX",
-    badge:["Design", "Figma"],
+    badge:["UI/UX Design", "Figma"],
 
   },
   {
@@ -106,7 +106,7 @@ const ITEMS = [
     src: "image/portfolio img/UIUX/Dog Adoption Website.png",
     description: "A website dedicated to rescuing stray dogs and connecting them with loving adopters.",
     category: "UI/UX",
-    badge:["Design", "Figma", "Bootsratp Frontend", "Laravel Backend"],
+    badge:["UI/UX Design and Web Development",  "Figma", "Bootsratp Frontend", "Laravel Backend"],
     top: true
   },
   {
