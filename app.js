@@ -466,7 +466,7 @@ const softwares = [
   // },
   {
     label: "MailChimp",
-    src: "image/logo/tools/MailChimp.png", 
+    src: "image/logo/tools/Mailchimp.png", 
     alt: "MailChimp",
     category: "Digital Marketing"
   },
@@ -494,6 +494,7 @@ uiuxSoftwares.forEach(software=>{
   img.src = software.src;
   img.alt = software.label;
   img.style.height = "30px";
+  img.style.width = "48%";
   UIUXsoftwareUsed.appendChild(img);
 })
 
