@@ -77,12 +77,12 @@ p {
 }
 
 .carousel-indicators [data-bs-target] {
-  background-color: var(--red-wine);
+  background-color: rgba(241, 62, 62, 0.63);
   opacity: 1 !important;
 }
 
 .carousel-indicators .active {
-  background-color: red;
+  background-color: var(--red-wine);
 }
 
 /* play video */
