@@ -78,7 +78,7 @@
 }
 
 .xd-float {
-  top: 18%;
+  top: 9%;
   left: 6%;
   animation: floatY 6s ease-in-out infinite;
 }
@@ -89,3 +89,15 @@
   animation: floatX 7.5s ease-in-out infinite;
 }
 
+@media (max-width: 767.98px) {
+  .xd-float {
+  top: 13%;
+  left: 2%;
+  animation: floatY 6s ease-in-out infinite;
+}
+.figma-float {
+  bottom: 25%;
+  right: 2%;
+  animation: floatX 7.5s ease-in-out infinite;
+}
+}
