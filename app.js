@@ -291,12 +291,9 @@ experiences.forEach(exp => {
             <img src="${exp.logo}" style="max-width:100%;max-height:100%;object-fit:contain;">
           </div>
         </div>
-        <p class="fs-5 fw-semibold mb-0">${exp.company}</p>
+        <p class="fs-6 fs-md-5 fw-semibold mb-0">${exp.company}</p>
 
-        <div class="d-flex align-items-center gap-2 mb-1">
-          <i class="bi bi-geo-alt"></i>
-          
-        </div>
+   
 
         <p class="fs-6 mb-1">${exp.title}</p>
 
@@ -483,6 +480,7 @@ const uiuxSkills = skills.filter(skill => skill.category === "UI/UX Designer");
 uiuxSkills.forEach(skill=>{
   const li = document.createElement("li");
   li.textContent = skill.title;
+  li.classList.add("fs-6", "fs-md-5");
   UIUXhardSkill.appendChild(li);
 })
 
@@ -503,6 +501,7 @@ const WebDevSkills = skills.filter(skill=> skill.category === "Web Developer");
 WebDevSkills.forEach(skill=>{
   const li = document.createElement("li");
   li.textContent= skill.title;
+  li.classList.add("fs-6", "fs-md-5");
   WebDevHardSkillEl.appendChild(li);
 })
 
@@ -521,6 +520,7 @@ const DigMarSkills = skills.filter(skill=> skill.category==="Digital Marketing")
 DigMarSkills.forEach(skill=>{
   const li = document.createElement("li");
   li.textContent= skill.title;
+  li.classList.add("fs-6", "fs-md-5");
   DigMarHardSkill.appendChild(li);
 })
 
@@ -576,4 +576,10 @@ let currentIndex = 0;
         $(".stop").on("click", function () {
           owl.trigger("stop.owl.autoplay");
         });
+      });
+
+      // mail
+      document.getElementById("sendEmailBtn").addEventListener("click", function () {
+        const email = document.querySelector('input[type="email"]').value;
+        this.href = `mailto:${email}`;
       });

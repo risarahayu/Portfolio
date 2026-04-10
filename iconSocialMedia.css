@@ -4,7 +4,7 @@
 
 .social-icons {
   display: flex;
-  gap: 20px;
+  gap: 10px;
   padding: 0;
   margin-top: 20px;
 }
@@ -85,6 +85,6 @@
 /* show tooltip */
 .social-icons li:hover::after {
   opacity: 1;
-  bottom: -54px;
+  bottom: 26px;
   transform: translateX(-50%) scale(1);
 }

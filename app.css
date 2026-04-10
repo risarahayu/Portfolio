@@ -368,6 +368,16 @@ a:active {
   max-width: 600px;
   width: 100%;
 }
+/* contact */
+.contact{
+  padding: 4px;
+  border-radius: 4px;
+}
+.contact:hover{
+  background-color: #d4d9df54;
+  /* opacity: 0.5; */
+
+}
 
 /* ======================================================
    GLOW BOX
@@ -585,9 +595,10 @@ ul.timeline > li::before {
     padding-right: 1rem;
   }
 
-  .main {
+  main {
     padding-left: 0;
     padding-right: 0;
+    gap: 3rem;
   }
 }
 
@@ -617,16 +628,20 @@ ul.timeline > li::before {
 /* carousel */
 /* default (mobile) */
 .carousel-custom {
-  height: 60vh;
+  height: 50vh;
   padding-top: 3rem;
 }
+
 
 /* tablet */
 @media (min-width: 768px) {
   .carousel-custom {
     height: 70vh;
   }
+
+  
 }
+
 
 /* desktop */
 @media (min-width: 992px) {
