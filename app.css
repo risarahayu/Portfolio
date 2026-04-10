@@ -37,6 +37,9 @@
 *::after {
   box-sizing: border-box;
 }
+main{
+  gap: 6rem;
+}
 
 p {
   font-size: 13px;
@@ -59,6 +62,72 @@ p {
   color: black;
 }
 
+.carousel-item {
+  height: 100%;
+}
+
+.carousel-item > div {
+  height: 100%;
+}
+
+.carousel-item img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain; /* atau cover kalau mau full */
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: var(--red-wine);
+  opacity: 1 !important;
+}
+
+.carousel-indicators .active {
+  background-color: red;
+}
+
+/* play video */
+.play-btn {
+  position: relative;
+}
+
+/* bubble text */
+.play-btn::after {
+  content: "Play to see my introduction";
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  background: white;
+  color: black;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  white-space: nowrap;
+  
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  animation: float 2s ease-in-out infinite;
+}
+
+
+
+/* animasi */
+@keyframes float {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -5px); }
+}
+
+/* .custom-arrow i {
+  font-size: 2rem;
+  color: red;
+  transition: 0.3s;
+}
+
+.custom-arrow i:hover {
+  color: #ff4d4f;
+  transform: scale(1.2);
+} */
+
 .button-secondary:hover {
   background-color: #f0f0f0;
 }
@@ -73,10 +142,7 @@ p {
   position: relative;
 }
 
-.skill-card{
-  height: 26rem;
-  background-color: white;
-}
+
 
 .editorial-card {
   /* From https://css.glass */
@@ -509,6 +575,8 @@ ul.timeline > li::before {
   padding-right: 10rem;
 }
 
+
+
 /* Responsive untuk HP */
 @media (max-width: 767.98px) {
   .hero-carousel-wrapper {
@@ -546,3 +614,24 @@ ul.timeline > li::before {
   }
 }
 
+/* carousel */
+/* default (mobile) */
+.carousel-custom {
+  height: 60vh;
+  padding-top: 3rem;
+}
+
+/* tablet */
+@media (min-width: 768px) {
+  .carousel-custom {
+    height: 70vh;
+  }
+}
+
+/* desktop */
+@media (min-width: 992px) {
+  .carousel-custom {
+    height: 90vh;
+    padding-top: 5rem;
+  }
+}

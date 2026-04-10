@@ -238,7 +238,7 @@ const experiences = [
     location: "Bali, Indonesia",
     impact: [
       {
-        icon: "bi-bar-chart",
+        // icon: "bi-bar-chart",
         text: "Collaborated with a team of 22 developers to design and build the Mission Empowerment Platform, ensuring a fully responsive experience across desktop and mobile devices."
       }
     ]
@@ -251,7 +251,7 @@ const experiences = [
     location: "Bali, Indonesia",
     impact: [
       {
-        icon: "bi-bar-chart",
+        // icon: "bi-bar-chart",
         text: "Redesigned and developed an online course platform using Kajabi CMS while supporting website maintenance and social media optimization."
       }
     ]
@@ -264,7 +264,7 @@ const experiences = [
     location: "Bali, Indonesia",
     impact: [
       {
-        icon: "bi-bar-chart",
+        // icon: "bi-bar-chart",
         text: "Designed user interfaces for multiple client projects, translating business requirements into responsive and user-centered digital experiences."
       }
     ]

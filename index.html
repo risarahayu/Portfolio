@@ -12,6 +12,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     
     <!--  js -->
     <link
@@ -38,7 +39,7 @@
         </nav>
       </div>
     </header> -->
-    <main class="d-flex flex-column gap-5 px-3 px-md-0 my-5">
+    <main class="d-flex flex-column px-3 px-md-0 my-5">
       <section id="about">
         <div class="container">
           <div class="row bg-light rounded-4 pt-5 align-content-center   position-relative hero-section">
@@ -75,8 +76,8 @@
                     Download CV
                   </button>
                 </div>
-                <div class="col pb-5">
-                  <div class="d-flex gap-3 mt-0 justify-content-center">
+                <div class="col pb-5 ">
+                  <div class="d-flex gap-3 mt-0 justify-content-center" style="height: 10rem;">
                     <ul class="social-icons "></ul>
                   </div>
                 </div>
@@ -96,20 +97,22 @@
             <!-- What I Made -->
             <div class=" mt-5 position-relative px-4 px-md-5 h-75">
               <button
-                class="position-absolute top-0 start-50 translate-middle
+                class="play-btn position-absolute top-0 start-50 translate-middle
                       rounded-circle border-0 shadow
                       d-flex align-items-center justify-content-center
-                      bg-dark"
+                      bg-dark text-white"
                 style="width:100px; height:100px; z-index:10;"
-                data-bs-toggle="modal"
-                data-bs-target="#videoModal"
               >
-                <span class="text-white fs-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 80 80"><path fill="none" stroke="#fafafa" stroke-linecap="round" stroke-linejoin="round" d="M57.961 38.264c1.344.767 1.344 2.705 0 3.472L21.992 62.29c-1.333.762-2.992-.2-2.992-1.736V19.446c0-1.535 1.659-2.498 2.992-1.736z" stroke-width="1.7"/></svg>
-                </span>
+                 ▶
               </button>
-              <div id="carouselExampleAutoplaying" class="carousel slide h-100  rounded-top-4 glass-white" style="padding-top: 5rem;" data-bs-ride="carousel">
-                <div class="carousel-inner h-100">
+              <div id="carouselExampleIndicators" class="carousel carousel-custom slide rounded-top-4 glass-white"  style=" padding-top: 5rem;"
+                  data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner h-100 text-center">
                   <div class="carousel-item h-100 active">
                     <div class="d-flex gap-3 flex-column align-items-center">
                       <p class="fs-5">B2B Platform</p>
@@ -118,7 +121,7 @@
                   </div>
                   <div class="carousel-item h-100 text-center">
                     <p class="fs-5 pb-3">Mobile Apps / Responsive Design</p>
-                    <div class="d-flex gap-3 align-items-center">
+                    <div class="d-flex gap-3">
                       <div class="holo-img">
                         <img src="image/what i made/DCA Mobile.png" width="" alt="">
                       </div>
@@ -131,19 +134,25 @@
                     </div>
                   </div>
                   <div class="carousel-item h-100 text-center">
-                    <p class="fs-5">Make team keep consistent in design</p>
-                    <img src="image/what i made/Design Guideline.png" class="d-block w-100" alt="...">
+                    <div class="d-flex gap-3 flex-column ">
+                      <p class="fs-5">Make team keep consistent in design</p>
+                      <img src="image/what i made/Design Guideline.png" class="d-block w-100" alt="...">
+                    </div>
                   </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
               </div>
+              <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="custom-arrow" aria-hidden="true">
+                  <i class="bi bi-arrow-left"></i>
+                </span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="custom-arrow" aria-hidden="true">
+                  <i class="bi bi-arrow-right-short"></i>
+                </span>
+                <span class="visually-hidden">Next</span>
+              </button> -->
             </div>
           </div>
         </div>
@@ -158,10 +167,10 @@
         
           <div class="row mt-4" style="">
             <!-- <h2 class="fs-5 align-content-center text-center mt-auto">Worked Project</h2> -->
-            <div class="col-12 col-md-4">
-              <div class="card text-bg-light mb-3 border-1 border rounded-4" style="">
+            <div class="col-12 col-md-4 d-flex">
+              <div class="card w-100 text-bg-light mb-3 border-1 border rounded-4" style="">
                 <div class="card-header border-0">Support Skill</div>
-                <div class="card-body skill-card rounded-4">
+                <div class="card-body  rounded-4">
                   <h5 class="card-title">Web Developer</h5>
                   <p class="card-text">
                     3 Project Done 2025
@@ -183,13 +192,13 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-4 d-flex">
               <div
-                class="card  mb-3 border-1 border rounded-4"
+                class="card w-100  mb-3 border-1 border rounded-4"
                 style=""
               >
                 <div class="card-header border-0 fs-6 red-wine-color-bg">Main Skill</div>
-                <div class="card-body skill-card  rounded-4">
+                <div class="card-body   rounded-4">
                   <h5 class="card-title red-wine-color fs-3">UI/UX Designer</h5>
                   <p class="card-text fs-5">
                     <span class="fs-4 fw-semibold red-wine-color">10++</span
@@ -212,10 +221,10 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-md-4">
-              <div class="card text-bg-light mb-3 border-1 border rounded-4" style="">
+            <div class="col-12 col-md-4 d-flex">
+              <div class="card w-100 text-bg-light mb-3 border-1 border rounded-4" style="">
                 <div class="card-header border-0">Support Skill</div>
-                <div class="card-body skill-card rounded-4">
+                <div class="card-body  rounded-4">
                   <h5 class="card-title">Digital Marketing</h5>
                   <p class="card-text">
                     Experienced as a Social Media Specialist through an internship program to enhance brand awareness and engagement.
