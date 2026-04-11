@@ -1,5 +1,12 @@
 
 
+import { loadGallery } from "./exercise.js";
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadGallery();
+});
+  
+  
   gsap.to(".container-bg-2", {
     backgroundPosition: "center 50px", // Bergerak vertikal
     repeat: -1, // Ulang terus
@@ -158,8 +165,9 @@ const ITEMS = [
 const contentTop = document.getElementById('contentTop');
 const topItems = ITEMS.filter(item => item.top);
 topItems.forEach(item => {
-  const card = document.createElement('div');
-  card.className = 'card editorial-card text-start';
+  const card = document.createElement('a');
+  card.href = "/detail.html";
+  card.className = 'card editorial-card text-start text-decoration-none';
   const badgeHTML = item.badge ? item.badge.map(b => `<span class="badge red-wine-color-bg">${b}</span>`).join(' ') : '';
   card.innerHTML = `
     <img src="${item.src}" class="card-img-top" alt="">

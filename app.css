@@ -9,6 +9,7 @@
 @import url("./iconSocialMedia.css");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
+@import url("./Exercise.css");
 
 /* ======================================================
    CSS VARIABLES
@@ -161,25 +162,34 @@ p {
   padding: 1.5rem;
 
   /* border: 1px solid rgba(255, 228, 196, 0.6);  */
-  transition: transform 0.4s ease;
+
+ --y: 0px;
+
+  transform: translateY(var(--y));
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
 }
 
+.editorial-card:hover {
+  transform: translateY(var(--y, 0)) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
 
 
 .editorial-card:nth-child(1) {
-  transform: translateY(-40px);
+  --y: -40px;
 }
 
 .editorial-card:nth-child(2) {
-  transform: translateY(100px);
+  --y: 100px;
 }
 
 .editorial-card:nth-child(3) {
-  transform: translateY(-10px);
+  --y: -10px;
 }
 
 .editorial-card:nth-child(4) {
-  transform: translateY(130px);
+  --y: 130px;
 }
 
 #contentTop .card {

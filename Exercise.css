@@ -1,0 +1,151 @@
+
+
+/* .title {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 30px;
+} */
+
+/* =========================
+   CONTAINER
+========================= */
+.marquee-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+  height: 500px;
+  isolation: isolate;
+  overflow: hidden;
+
+  border-radius: 20px;
+  padding: 30px;
+
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.see-all-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 25px;
+  transform: translateX(-50%);
+  z-index: 20;
+
+  padding: 12px 22px;
+  border-radius: 999px;
+
+  text-decoration: none;
+  color:var(--red-wine);
+
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.see-all-btn:hover {
+  transform: translateX(-50%) translateY(-2px);
+}
+
+/* =========================
+   COLUMN
+========================= */
+
+
+/* =========================
+   TRACK
+========================= */
+.track {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: max-content;
+
+  transform: translate3d(0,0,0);
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+.card-custom-dribble{
+  width: 100%;
+  height: 220px;   /* atur tinggi card */
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.card-custom-dribble img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes moveUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(calc(-50% - 8px));
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    transform: translateY(calc(-50% - 8px));
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   APPLY ANIMATION
+========================= */
+
+.col-1 .track {
+  animation: moveUp 28s linear infinite;
+}
+
+.col-2 .track {
+  animation: moveDown 28s linear infinite;
+}
+
+.col-3 .track {
+  animation: moveUp 28s linear infinite;
+}
+
+.col-4 .track {
+  animation: moveDown 28s linear infinite;
+}
+
+
+
+/* =========================
+   OVERLAY
+========================= */
+
+.marquee-container::after {
+  
+
+  content: "";
+  position: absolute;
+  left:-1px;
+  right:-1px;
+  bottom:-1px;
+  height:180px;
+  transform: translateZ(0);
+
+  background: linear-gradient(
+    to top,
+    rgba(255,255,255,1) 0%,
+    rgba(255,255,255,1) 40%,
+    rgba(255,255,255,.92) 60%,
+    rgba(255,255,255,.55) 80%,
+    rgba(255,255,255,0) 100%
+  );
+
+  z-index: 10;
+  pointer-events: none;
+}
