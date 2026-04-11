@@ -48,17 +48,17 @@ document.addEventListener("DOMContentLoaded", () => {
   },
   {
     label: "Dribbble",
-    url: "#",
+    url: "https://dribbble.com/risa2000",
     icon: "fa-brands fa-dribbble"
   },
   {
     label: "Email",
-    url: "mailto:your@email.com",
+    url: "mailto:rrisa329@gmail.com",
     icon: "fa-solid fa-envelope"
   },
   {
     label: "LinkedIn",
-    url: "https://linkedin.com/in/username",
+    url: "https://www.linkedin.com/in/risarahayu",
     icon: "fa-brands fa-linkedin-in"
   }
 ];
