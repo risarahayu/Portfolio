@@ -15,7 +15,7 @@
 .rolltext {
   display: block;
   line-height: 4.5rem;   /* ⬅️ SAMA DENGAN HEIGHT */
-  color: var(--red-wine);
+  color: var(--dark-black);
   animation: rollOnce 2.2s ease-in-out forwards;
   animation-delay: 0.6s;
 }
@@ -33,7 +33,7 @@
   background: linear-gradient(
     90deg,
     #f1faee,
-    #d8304f,
+    #03071e,
     #181818,
     #9a031e,
     #f1faee

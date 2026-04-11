@@ -19,6 +19,7 @@
   --purple-dark: #3c096c;
   --purple-light: #5a189a;
   --neon-blue: #00ffff;
+  --dark-black:#03071e;
 
   /* slider vars */
   --bg: hsl(0, 0%, 8%);
@@ -228,7 +229,7 @@ p {
 }
 
 .color-black {
-  color: black;
+  color: var(--dark-black);
 }
 
 .text-purple {
