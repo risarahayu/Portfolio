@@ -300,7 +300,7 @@ experiences.forEach(exp => {
             <img src="${exp.logo}" style="max-width:100%;max-height:100%;object-fit:contain;">
           </div>
         </div>
-        <p class="fs-6 fs-md-5 fw-semibold mb-0">${exp.company}</p>
+        <p class= "fs-5 fw-semibold mb-0">${exp.company}</p>
 
    
 
@@ -489,7 +489,7 @@ const uiuxSkills = skills.filter(skill => skill.category === "UI/UX Designer");
 uiuxSkills.forEach(skill=>{
   const li = document.createElement("li");
   li.textContent = skill.title;
-  li.classList.add("fs-6", "fs-md-5");
+  li.classList.add("fs-5");
   UIUXhardSkill.appendChild(li);
 })
 
@@ -510,7 +510,7 @@ const WebDevSkills = skills.filter(skill=> skill.category === "Web Developer");
 WebDevSkills.forEach(skill=>{
   const li = document.createElement("li");
   li.textContent= skill.title;
-  li.classList.add("fs-6", "fs-md-5");
+  li.classList.add("fs-5");
   WebDevHardSkillEl.appendChild(li);
 })
 
@@ -529,7 +529,7 @@ const DigMarSkills = skills.filter(skill=> skill.category==="Digital Marketing")
 DigMarSkills.forEach(skill=>{
   const li = document.createElement("li");
   li.textContent= skill.title;
-  li.classList.add("fs-6", "fs-md-5");
+  li.classList.add("fs-5");
   DigMarHardSkill.appendChild(li);
 })
 
