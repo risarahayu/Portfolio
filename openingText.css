@@ -130,14 +130,14 @@
   opacity: 0.85;
 }
 
-/* coding */
-.xd-float {
-    top: 20%;
+  /* coding */
+  .xd-float {
+    top: 13%;
     left: 78%;
     animation: floatY 6s ease-in-out infinite;
   }
   .figma-float {
-    bottom: 75%;
+    bottom: 69%;
     right: 75%;
     animation: floatX 7.5s ease-in-out infinite;
   }

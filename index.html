@@ -107,39 +107,32 @@
               >
                  ▶
               </button>
-              <div id="carouselExampleIndicators" class="carousel carousel-custom slide rounded-top-4 glass-white"  style=" padding-top: 5rem;"
-                  data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner h-100 text-center">
-                  <div class="carousel-item h-100 active">
-                    <div class="d-flex gap-3 flex-column align-items-center">
-                      <p class="fs-5">B2B Platform</p>
-                      <img src="image/what i made/Partner (1).png" class="w-100 px-4 object-fit-contain" style="max-height: 60vh;" alt="...">
+              <div class="rounded-top-4 glass-white" style="padding-top: 5rem; padding-bottom: 50px;">
+                <div id="carouselExampleIndicators" class="carousel carousel-custom slide pt-0">
+                  <div class="carousel-inner h-100 text-center">
+                    <div class="carousel-item h-100 active">
+                      <div>
+                        <p class="fs-5">B2B Platform</p>
+                        <img src="image/what i made/Partner (1).png" class="w-100 px-4 object-fit-contain" alt="...">
+                      </div>
                     </div>
-                  </div>
-                  <div class="carousel-item h-100 text-center">
-                    <p class="fs-5">Mobile Apps / Responsive Design</p>
-                    <div class="d-flex gap-3 ">
-                      <div class="holo-img align-self-start">
-                        <img src="image/what i made/DCA Mobile.png" width="" alt="">
+                    <div class="carousel-item h-100 text-center">
+                      <p class="fs-5">Mobile Apps / Responsive Design</p>
+                      <div class="d-flex gap-3 ">
+                        <img src="image/what i made/phones.png" class="d-block w-100" alt="...">
                       </div>
-                      <div class="holo-img align-self-start">
-                        <img src="image/what i made/Cake Mobile.png" alt="">
-                      </div>
-                      <div class="holo-img align-self-start">
-                        <img src="image/what i made/Mission Pawsible Mobile.png" alt="">
+                    </div>
+                    <div class="carousel-item h-100 text-center">
+                      <div>
+                        <p class="fs-5">Make team keep <br>consistent in design</p>
+                        <img src="image/what i made/Design_Guideline.png" class="d-block w-100" alt="...">
                       </div>
                     </div>
                   </div>
-                  <div class="carousel-item h-100 text-center">
-                    <div class="d-flex gap-3 flex-column ">
-                      <p class="fs-5">Make team keep <br>consistent in design</p>
-                      <img src="image/what i made/Design Guideline.png" class="d-block w-100" alt="...">
-                    </div>
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                   </div>
                 </div>
               </div>
@@ -169,87 +162,117 @@
         
           <div class="row mt-4" style="">
             <!-- <h2 class="fs-6 fs-md-5 align-content-center text-center mt-auto">Worked Project</h2> -->
-            <div class="col-12 col-xl-4 d-flex">
-              <div class="card w-100 text-bg-light mb-3 border-1 border rounded-4" style="">
-                <div class="card-header border-0">Support Skill</div>
-                <div class="card-body d-flex flex-row rounded-4">
-                  <div>
-                    <h5 class="card-title">Web Developer</h5>
-                    <p class="card-text fs-5">
-                      3 Project Done 2025
-                    </p>
-                  </div>
-                  <div class="row">
-                    <div class="col-12">
-                      <p class="fw-semibold fs-6" >Hard Skill</p>
-                      <ul id="WebDevHardSkill">
-                        
-                      </ul>
+            <div class="col-12 col-xl-4 d-flex order-2 order-xl-1">
+              <div class="accordion w-100 mb-3" id="webDevAccordion">
+                <div class="accordion-item border-1 border rounded-2">
+                  <h2 class="accordion-header" id="headingWebDev">
+                    <button class="accordion-button rounded-2 fs-6 rounded-bottom-0 bg-body-secondary d-xl-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWebDev" aria-expanded="false" aria-controls="collapseWebDev">
+                      Support Skill <span class="ms-2 d-block d-xl-none">(Web Developer)</span>
+                    </button>
+                  </h2>
+                  <div id="collapseWebDev" class="accordion-collapse collapse d-xl-block" aria-labelledby="headingWebDev">
+                    <div class="accordion-body p-0 card rounded-top-0 border-0 border-top">
+                      <div class="card-header border-0 d-none d-xl-block">Support Skill</div>
+                      <div class="skill-body card-body d-flex flex-column flex-sm-row flex-xl-column gap-4 rounded-4">
+                        <div class="w-100">
+                          <h5 class="card-title">Web Developer</h5>
+                          <p class="card-text fs-5">
+                            3 Project Done 2025
+                          </p>
+                        </div>
+                        <div class="row w-100">
+                          <div class="col-12">
+                            <p class="fw-semibold fs-6" >Hard Skill</p>
+                            <ul id="WebDevHardSkill">
+                              
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="skill-footer card-footer">
+                        <p class="fw-semibold fs-6">Software used</p>
+                        <div class="d-flex flex-wrap gap-3 software-used" id="WebDevSoftwareUsed">
+                          
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div class="card-footer">
-                  <p class="fw-semibold fs-6">Software used</p>
-                  <div class="d-flex flex-wrap gap-3" id="WebDevSoftwareUsed">
-                    
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-xl-4 d-flex">
-              <div
-                class="card w-100  mb-3 border-1 border rounded-4"
-                style=""
-              >
-                <div class="card-header border-0 fs-6 red-wine-color-bg">Main Skill</div>
-                <div class="card-body d-flex flex-row rounded-4">
-                  <div>
-                    <h5 class="card-title red-wine-color fs-3">UI/UX Designer</h5>
-                    <p class="card-text fs-5">
-                      <span class="fs-4 fw-semibold red-wine-color">10++</span
-                      >Project done since 2021
-                    </p>
-                  </div>
-                  <div class="row">
-                    <div class="col-12">
-                      <p class="fw-semibold fs-6" >Hard Skill</p>
-                      <ul id="UIUXhardSkill">
-                        
-                      </ul>
+            <div class="col-12 col-xl-4 d-flex order-1 order-xl-2">
+              <div class="accordion w-100 mb-3" id="skillAccordion">
+                <div class="accordion-item border-1 border rounded-2">
+                  <h2 class="accordion-header" id="headingMainSkill">
+                    <button class="accordion-button rounded-2 red-wine-color-bg text-white fs-6 rounded-bottom-0 d-xl-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMainSkill" aria-expanded="false" aria-controls="collapseMainSkill">
+                      Main Skill <span class="ms-2 d-block d-xl-none">(UI/UX Designer)</span>
+                    </button>
+                  </h2>
+                  <div id="collapseMainSkill" class="accordion-collapse collapse show" aria-labelledby="headingMainSkill">
+                    <div class="accordion-body p-0 card rounded-top-0 border-0 border-top">
+                      <div class="card-header border-0 fs-6 red-wine-color-bg d-none d-xl-block">Main Skill</div>
+                      <div class="skill-body card-body d-flex flex-column flex-sm-row flex-xl-column gap-4 rounded-4">
+                        <div class="w-100">
+                          <h5 class="card-title red-wine-color fs-3">UI/UX Designer</h5>
+                          <p class="card-text fs-5">
+                            <span class="fs-4 fw-semibold red-wine-color">10++</span>
+                            Project done since 2021
+                          </p>
+                        </div>
+                        <div class="row w-100">
+                          <div class="col-12">
+                            <p class="fw-semibold fs-6" >Hard Skill</p>
+                            <ul id="UIUXhardSkill">
+                              
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="skill-footer card-footer">
+                        <p class="fw-semibold fs-6">Software used</p>
+                        <div class="d-flex flex-wrap gap-3 software-used" id="UIUXsoftwareUsed">
+                          
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div class="card-footer">
-                  <p class="fw-semibold fs-6">Software used</p>
-                  <div class="d-flex flex-wrap gap-3" id="UIUXsoftwareUsed">
-                    
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-xl-4 d-flex">
-              <div class="card w-100 text-bg-light mb-3 border-1 border rounded-4" style="">
-                <div class="card-header border-0">Support Skill</div>
-                <div class="card-body d-flex flex-row rounded-4">
-                  <div>
-                    <h5 class="card-title">Digital Marketing</h5>
-                    <p class="card-text fs-6">
-                      Experienced as a Social Media Specialist through an internship program to enhance brand awareness and engagement.
-                    </p>
-                  </div>
-                  <div class="row">
-                    <div class="col-12">
-                      <p class="fw-semibold fs-6" >Hard Skill</p>
-                      <ul id="DigMarHardSkill">
-                        
-                      </ul>
+            <div class="col-12 col-xl-4 d-flex order-3 order-xl-3">
+              <div class="accordion w-100 mb-3" id="digMarAccordion">
+                <div class="accordion-item border-1 border rounded-2">
+                  <h2 class="accordion-header" id="headingDigMar">
+                    <button class="accordion-button fs-6 rounded-2 rounded-bottom-0 bg-body-secondary d-xl-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDigMar" aria-expanded="false" aria-controls="collapseDigMar">
+                      Support Skill <span class="ms-2 d-block d-xl-none">(Digital Marketing)</span>
+                    </button>
+                  </h2>
+                  <div id="collapseDigMar" class="accordion-collapse collapse d-xl-block" aria-labelledby="headingDigMar">
+                    <div class="accordion-body p-0 card rounded-top-0 border-0 border-top">
+                      <div class="card-header border-0 fs-6 d-none d-xl-block">Support Skill</div>
+                      <div class="skill-body card-body d-flex flex-column flex-sm-row flex-xl-column gap-4 rounded-4">
+                        <div class="w-100">
+                          <h5 class="card-title">Digital Marketing</h5>
+                          <p class="card-text fs-6">
+                            Experienced as a Social Media Specialist through an internship program to enhance brand awareness and engagement.
+                          </p>
+                        </div>
+                        <div class="row w-100">
+                          <div class="col-12">
+                            <p class="fw-semibold fs-6" >Hard Skill</p>
+                            <ul id="DigMarHardSkill">
+                              
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="skill-footer card-footer">
+                        <p class="fw-semibold fs-6">Software used</p>
+                        <div class="d-flex flex-wrap gap-3 software-used" id="DigMarSoftwareUsed">
+                          
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div class="card-footer">
-                  <p class="fw-semibold fs-6">Software used</p>
-                  <div class="d-flex flex-wrap gap-3" id="DigMarSoftwareUsed">
-                    
                   </div>
                 </div>
               </div>

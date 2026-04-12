@@ -69,13 +69,17 @@ p {
 }
 
 .carousel-item > div {
-  height: 100%;
+  height: calc(100% - 50px);
 }
 
 .carousel-item img {
   height: 100%;
   width: 100%;
   object-fit: contain; /* atau cover kalau mau full */
+}
+
+.carousel-indicators {
+  bottom: -50px;
 }
 
 .carousel-indicators [data-bs-target] {
@@ -290,7 +294,7 @@ p {
   color: var(--red-wine);
 }
 .red-wine-color-bg {
-  background-color: var(--red-wine);
+  background-color: var(--red-wine) !important;
   color: white;
   overflow-x: visible;
 }
@@ -446,6 +450,16 @@ a:active {
   background-color: #d4d9df54;
   /* opacity: 0.5; */
 
+}
+
+.software-used img {
+  height: 30px !important;
+}
+
+@media (max-width: 450px){
+  .software-used img {
+    height: 20px !important;
+  }
 }
 
 /* ======================================================
@@ -702,17 +716,17 @@ ul.timeline > li::before {
 }
 
 /* skill */
-  #skill{
-      min-height: 90vh;
-  }
+#skill{
+    min-height: 90vh;
+}
 
-  .feature-list{
-    display:grid;
-    grid-template-columns: repeat(2,1fr);
-    gap:10px 40px;
-    padding:0;
-    list-style:none;
-  }
+.feature-list{
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
+  gap:10px 40px;
+  padding:0;
+  list-style:none;
+}
 
 /* tablet */
 @media (max-width: 1199px) {
@@ -728,5 +742,11 @@ ul.timeline > li::before {
   .carousel-custom {
     height: 90vh;
     padding-top: 5rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .carousel-custom {
+    height: 30vh;
   }
 }

@@ -7,40 +7,40 @@ document.addEventListener("DOMContentLoaded", () => {
 });
   
   
-  gsap.to(".container-bg-2", {
-    backgroundPosition: "center 50px", // Bergerak vertikal
-    repeat: -1, // Ulang terus
-    yoyo: true, // Bergerak naik-turun
-    duration: 5, // Durasi animasi
-    ease: "power1.inOut"
-  });
+gsap.to(".container-bg-2", {
+  backgroundPosition: "center 50px", // Bergerak vertikal
+  repeat: -1, // Ulang terus
+  yoyo: true, // Bergerak naik-turun
+  duration: 5, // Durasi animasi
+  ease: "power1.inOut"
+});
 
-  gsap.to(".container-bg", {
-    backgroundPosition: "center 50px", // Bergerak vertikal
-    repeat: -1, // Ulang terus
-    yoyo: true, // Bergerak naik-turun
-    duration: 2, // Durasi animasi
-    ease: "power1.inOut"
-  });
+gsap.to(".container-bg", {
+  backgroundPosition: "center 50px", // Bergerak vertikal
+  repeat: -1, // Ulang terus
+  yoyo: true, // Bergerak naik-turun
+  duration: 2, // Durasi animasi
+  ease: "power1.inOut"
+});
 
-  gsap.to(".container-bg-3", {
-    backgroundPosition: "center 50px", // Bergerak vertikal
-    repeat: -1, // Ulang terus
-    yoyo: true, // Bergerak naik-turun
-    duration: 5, // Durasi animasi
-    ease: "power1.inOut"
-  });
+gsap.to(".container-bg-3", {
+  backgroundPosition: "center 50px", // Bergerak vertikal
+  repeat: -1, // Ulang terus
+  yoyo: true, // Bergerak naik-turun
+  duration: 5, // Durasi animasi
+  ease: "power1.inOut"
+});
 
-  gsap.to(".img-computer", {
-    backgroundPosition: "center 50px", // Bergerak vertikal
-    repeat: -1, // Ulang terus
-    yoyo: true, // Bergerak naik-turun
-    duration: 5, // Durasi animasi
-    ease: "power1.inOut"
-  });
+gsap.to(".img-computer", {
+  backgroundPosition: "center 50px", // Bergerak vertikal
+  repeat: -1, // Ulang terus
+  yoyo: true, // Bergerak naik-turun
+  duration: 5, // Durasi animasi
+  ease: "power1.inOut"
+});
 
-  // social media
-  const socialLinks = [
+// social media
+const socialLinks = [
   {
     label: "GitHub",
     url: "https://github.com/username",
@@ -592,50 +592,94 @@ DigMarSoftwares.forEach(software=>{
 
 // animation
 let currentIndex = 0;
-      const texts = ["Digital Marketer", "UI/UX Designer", "Web Developer"];
-      const elements = ["#text1", "#text2", "#text3"];
+const texts = ["Digital Marketer", "UI/UX Designer", "Web Developer"];
+const elements = ["#text1", "#text2", "#text3"];
 
-      function changeText() {
-        // Sembunyikan teks yang aktif
-        const currentElement = document.querySelector(elements[currentIndex]);
-        currentElement.style.display = "none";
+function changeText() {
+  // Sembunyikan teks yang aktif
+  const currentElement = document.querySelector(elements[currentIndex]);
+  currentElement.style.display = "none";
 
-        // Hapus class animasi agar dapat di-trigger kembali
-        currentElement.classList.remove("animate__fadeInDown");
+  // Hapus class animasi agar dapat di-trigger kembali
+  currentElement.classList.remove("animate__fadeInDown");
 
-        // Pindah ke teks berikutnya
-        currentIndex = (currentIndex + 1) % texts.length;
+  // Pindah ke teks berikutnya
+  currentIndex = (currentIndex + 1) % texts.length;
 
-        // Tampilkan teks baru
-        const nextElement = document.querySelector(elements[currentIndex]);
-        nextElement.style.display = "block";
+  // Tampilkan teks baru
+  const nextElement = document.querySelector(elements[currentIndex]);
+  nextElement.style.display = "block";
 
-        // Tambahkan kembali class animasi
-        nextElement.classList.add("animate__fadeInDown");
+  // Tambahkan kembali class animasi
+  nextElement.classList.add("animate__fadeInDown");
+}
+
+// Mulai rotasi teks setiap 2 detik
+setInterval(changeText, 2000);
+
+$(function () {
+  var owl = $(".owl-carousel");
+  owl.owlCarousel({
+    items: 1,
+    loop: true,
+    margin: 10,
+    autoplay: true,
+    autoplayTimeout: 2000,
+  });
+  $(".play").on("click", function () {
+    owl.trigger("play.owl.autoplay", [1000]);
+  });
+  $(".stop").on("click", function () {
+    owl.trigger("stop.owl.autoplay");
+  });
+
+  // Function to equalize skill body and footer heights
+  function equalizeSkillBodyHeights() {
+    var skillBodies = $(".skill-body");
+    var skillFooters = $(".skill-footer");
+    var maxBodyHeight = 0;
+    var maxFooterHeight = 0;
+    
+    // Reset heights first to get natural heights
+    skillBodies.css("height", "auto");
+    skillFooters.css("height", "auto");
+    
+    // Find the maximum body height
+    skillBodies.each(function() {
+      var height = $(this).outerHeight();
+      if (height > maxBodyHeight) {
+        maxBodyHeight = height;
       }
+    });
+    
+    // Find the maximum footer height
+    skillFooters.each(function() {
+      var height = $(this).outerHeight();
+      if (height > maxFooterHeight) {
+        maxFooterHeight = height;
+      }
+    });
+    
+    // Set all bodies to the max body height
+    skillBodies.css("height", maxBodyHeight + "px");
+    
+    // Set all footers to the max footer height
+    skillFooters.css("height", maxFooterHeight + "px");
+  }
 
-      // Mulai rotasi teks setiap 2 detik
-      setInterval(changeText, 2000);
+  // Call on page load with delay to ensure DOM is fully rendered
+  setTimeout(function() {
+    equalizeSkillBodyHeights();
+  }, 100);
 
-      $(function () {
-        var owl = $(".owl-carousel");
-        owl.owlCarousel({
-          items: 1,
-          loop: true,
-          margin: 10,
-          autoplay: true,
-          autoplayTimeout: 2000,
-        });
-        $(".play").on("click", function () {
-          owl.trigger("play.owl.autoplay", [1000]);
-        });
-        $(".stop").on("click", function () {
-          owl.trigger("stop.owl.autoplay");
-        });
-      });
+  // Call on window resize
+  $(window).on("resize", function() {
+    equalizeSkillBodyHeights();
+  });
+});
 
-      // mail
-      document.getElementById("sendEmailBtn").addEventListener("click", function () {
-        const email = document.querySelector('input[type="email"]').value;
-        this.href = `mailto:${email}`;
-      });
+// mail
+document.getElementById("sendEmailBtn").addEventListener("click", function () {
+  const email = document.querySelector('input[type="email"]').value;
+  this.href = `mailto:${email}`;
+});
