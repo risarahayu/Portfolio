@@ -59,7 +59,8 @@
 
 .floating {
   position: absolute;
-  width: 100px;
+  width: auto;
+  height: 4rem;
   pointer-events: none; /* tidak ganggu klik */
   z-index: 20;
   opacity: 0.85;
@@ -78,7 +79,7 @@
 }
 
 .xd-float {
-  top: 17%;
+  top: 12%;
   left: 70%;
   animation: floatY 6s ease-in-out infinite;
 }
@@ -91,13 +92,13 @@
 
 @media (max-width: 800.98px) {
   .xd-float {
-    top: 13%;
-    left: 2%;
+    top: 12%;
+    left: 78%;
     animation: floatY 6s ease-in-out infinite;
   }
   .figma-float {
-    bottom: 25%;
-    right: 2%;
+    bottom: 70%;
+    right: 74%;
     animation: floatX 7.5s ease-in-out infinite;
   }
   .roller {
