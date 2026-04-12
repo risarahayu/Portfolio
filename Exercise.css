@@ -54,7 +54,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  width: max-content;
+   width:100%;
 
   transform: translate3d(0,0,0);
   backface-visibility: hidden;
@@ -72,6 +72,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display:block;
 }
 
 /* =========================
@@ -100,19 +101,16 @@
    APPLY ANIMATION
 ========================= */
 
-.col-1 .track {
+.marquee-col {
+  overflow: hidden;
+  width:100%;
+}
+
+.up .track {
   animation: moveUp 28s linear infinite;
 }
 
-.col-2 .track {
-  animation: moveDown 28s linear infinite;
-}
-
-.col-3 .track {
-  animation: moveUp 28s linear infinite;
-}
-
-.col-4 .track {
+.down .track {
   animation: moveDown 28s linear infinite;
 }
 
@@ -144,4 +142,52 @@
 
   z-index: 10;
   pointer-events: none;
+}
+@media (max-width:992px){
+
+  .marquee-container{
+    display:block;
+    height:287px;
+    overflow:hidden;
+    padding:20px;
+  }
+
+  .marquee-col{
+    display:block;
+    margin-bottom:16px;
+  }
+
+  /* sembunyikan kolom selain pertama */
+  .marquee-col:nth-child(2),
+  .marquee-col:nth-child(3),
+  .marquee-col:nth-child(4){
+    display:none;
+  }
+
+  .marquee-col .track{
+    flex-direction:row;
+    width:max-content;
+    animation:scrollX 30s linear infinite;
+  }
+
+  .card-custom-dribble{
+    width:260px;
+    height:180px;
+    flex-shrink:0;
+  }
+
+  .see-all-btn {
+    left: 37%;
+    padding: 0;
+  }
+
+  @keyframes scrollX{
+  from{
+    transform:translateX(0);
+  }
+  to{
+    transform:translateX(-50%);
+  }
+}
+
 }

@@ -205,6 +205,17 @@ p {
   transform:scale(1.03);
 }
 
+/* .badge-wrap{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+} */
+.badge{
+  white-space: normal !important;
+  word-break: break-word;
+  text-align: left;
+}
+
 .progress-overlay{
   position:absolute;
   inset:0;
@@ -690,19 +701,30 @@ ul.timeline > li::before {
   padding-top: 3rem;
 }
 
-
-/* tablet */
-@media (min-width: 768px) {
-  .carousel-custom {
-    height: 70vh;
+/* skill */
+  #skill{
+      min-height: 90vh;
   }
 
+  .feature-list{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:10px 40px;
+    padding:0;
+    list-style:none;
+  }
+
+/* tablet */
+@media (max-width: 1199px) {
+  .carousel-custom {
+    height: 60vh;
+  }
   
 }
 
 
 /* desktop */
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .carousel-custom {
     height: 90vh;
     padding-top: 5rem;

@@ -104,7 +104,7 @@ const ITEMS = [
     src: "image/portfolio img/UIUX/BalI Teak Company Website.png",
     description: "This website was built for a furniture company that chose not to fully implement e-commerce.",
     category: "UI/UX",
-    badge:["UI/UX Design and Web Development", "Semi E-Commerce", "Figma", "Wordpress", "Elementor"],
+    badge:["UI/UX Design", "Web Development", "Semi E-Commerce", "Figma", "Wordpress", "Elementor"],
     top: true
   },
   {
@@ -122,7 +122,7 @@ const ITEMS = [
     src: "image/portfolio img/UIUX/Dog Adoption Website.png",
     description: "A website dedicated to rescuing stray dogs and connecting them with loving adopters.",
     category: "UI/UX",
-    badge:["UI/UX Design and Web Development",  "Figma", "Bootsratp Frontend", "Laravel Backend"],
+    badge:["UI/UX Design", "Web Development",  "Figma", "Bootsratp Frontend", "Laravel Backend"],
     top: true,
     status:"Case Study in Progress"
   },
@@ -187,7 +187,7 @@ topItems.forEach(item => {
    /* =========================
    BADGE
   ========================= */
-  const badgeHTML = item.badge ? item.badge.map(b => `<span class="badge red-wine-color-bg">${b}</span>`).join(' ') : '';
+  const badgeHTML = item.badge ? item.badge.map(b => `<span class="badge badge-wrap red-wine-color-bg">${b}</span>`).join(' ') : '';
 
   /* =========================
    OVERLAY
