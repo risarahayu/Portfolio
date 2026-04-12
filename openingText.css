@@ -93,12 +93,12 @@
 @media (max-width: 800.98px) {
   .xd-float {
     top: 12%;
-    left: 78%;
+    left: 70%;
     animation: floatY 6s ease-in-out infinite;
   }
   .figma-float {
-    bottom: 70%;
-    right: 74%;
+    bottom: 66%;
+    right: 71%;
     animation: floatX 7.5s ease-in-out infinite;
   }
   .roller {
@@ -110,7 +110,7 @@
   
 }
 
-@media (max-width: 450px){
+@media (max-width: 420px){
   .title{
     font-size: 28px;
   }
@@ -132,19 +132,54 @@
 
   /* coding */
   .xd-float {
-    top: 13%;
-    left: 78%;
+    top: 17%;
+    left: 73%;
     animation: floatY 6s ease-in-out infinite;
   }
   .figma-float {
-    bottom: 69%;
+    bottom: 76%;
     right: 75%;
     animation: floatX 7.5s ease-in-out infinite;
   }
   
 }
 
-@media (max-width: 370px){
+@media (width: 430px){
+  .title{
+    font-size: 28px;
+  }
+  .roller {
+    display: inline-block;
+    height: 3.24rem;        /* ⬅️ tambahin sedikit */
+    overflow: hidden;
+    vertical-align: bottom;
+  }
+
+  .floating {
+  position: absolute;
+  width: auto;
+  height: 2.5rem;
+  pointer-events: none; /* tidak ganggu klik */
+  z-index: 20;
+  opacity: 0.85;
+}
+
+  /* coding */
+  .xd-float {
+    top: 17%;
+    left: 73%;
+    animation: floatY 6s ease-in-out infinite;
+  }
+  .figma-float {
+    bottom: 80%;
+    right: 75%;
+    animation: floatX 7.5s ease-in-out infinite;
+  }
+  
+}
+
+
+@media (max-width: 360px){
   .title{
     font-size: 24px;
   }
@@ -166,13 +201,13 @@
 
 /* coding */
 .xd-float {
-    top: 20%;
-    left: 78%;
+    top: 16.7%;
+    left: 69%;
     animation: floatY 6s ease-in-out infinite;
   }
   .figma-float {
-    bottom: 76%;
-    right: 75%;
+    bottom: 75%;
+    right: 73%;
     animation: floatX 7.5s ease-in-out infinite;
   }
   

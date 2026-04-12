@@ -631,6 +631,10 @@ ul.timeline > li::before {
   margin-bottom: 3rem;
 }
 
+.main-skill-button::after{
+  filter: brightness(0) invert(1);
+}
+
 
 /* ======================================================
    RESPONSIVE
@@ -731,22 +735,31 @@ ul.timeline > li::before {
 /* tablet */
 @media (max-width: 1199px) {
   .carousel-custom {
-    height: 60vh;
+    height: max-content;
+  }
+  
+}
+
+@media (max-width: 920px) {
+  .carousel-custom {
+    height: max-content;
   }
   
 }
 
 
+
+
 /* desktop */
 @media (min-width: 1200px) {
   .carousel-custom {
-    height: 90vh;
+    height: max-content;
     padding-top: 5rem;
   }
 }
 
 @media (max-width: 450px) {
   .carousel-custom {
-    height: 30vh;
+    height: max-content;
   }
 }
