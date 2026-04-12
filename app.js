@@ -91,7 +91,7 @@ containers.forEach((container) => {
 const ITEMS = [
   {
     title: 'Impact Portal Dashboard',
-    link: "https://codepen.io/jh3y/pen/LYNZwGm",
+    link: "https://drive.google.com/file/d/1PYiFxNPW_olCayFu6lXeO3-S-i1EheqM/view?usp=sharing",
     src: "image/portfolio img/UIUX/Impact Portal Dashboard.png",
     description: "Impact Portal Dashboard showcases 4ocean’s clean-up impact for investors, ensuring transparency through a data-driven web dashboard and a mobile app used by field crews to report daily results.",
     category: "UI/UX",
@@ -100,7 +100,7 @@ const ITEMS = [
   },
   {
     title: "Bali Teak Company Page",
-    link: "https://codepen.io/jh3y/pen/abzeaWJ",
+    link: "https://drive.google.com/file/d/12b2xMGBuddQtsaVr1NZJP39JDjG5QeQ1/view?usp=sharing",
     src: "image/portfolio img/UIUX/BalI Teak Company Website.png",
     description: "This website was built for a furniture company that chose not to fully implement e-commerce.",
     category: "UI/UX",
@@ -114,7 +114,7 @@ const ITEMS = [
     description: "The Donor Dashboard Landing Page was designed to provide donors with a clear and engaging overview of their impact, featuring key metrics, project highlights, and a user-friendly interface.",
     category: "UI/UX",
     badge:["UI/UX Design", "Figma"],
-
+    status:"Case Study in Progress"
   },
   {
     title: "Stray Dog Adoption Website",
@@ -123,7 +123,8 @@ const ITEMS = [
     description: "A website dedicated to rescuing stray dogs and connecting them with loving adopters.",
     category: "UI/UX",
     badge:["UI/UX Design and Web Development",  "Figma", "Bootsratp Frontend", "Laravel Backend"],
-    top: true
+    top: true,
+    status:"Case Study in Progress"
   },
   {
     title: "AidHub Foundation Landing Page",
@@ -156,7 +157,8 @@ const ITEMS = [
     description: "A landing page website developed to represent Aidhub Foundation, highlighting its mission, programs, and impact in a clear and trustworthy manner.",
     category: "UI/UX",
     badge:["Design", "Adobe XD"],
-    top: true
+    top: true,
+    status:"Case Study in Progress"
   }
 ];
 
@@ -165,18 +167,55 @@ const ITEMS = [
 const contentTop = document.getElementById('contentTop');
 const topItems = ITEMS.filter(item => item.top);
 topItems.forEach(item => {
+  const isProgress = item.status === "Case Study in Progress";
   const card = document.createElement('a');
-  card.href = "/detail.html";
-  card.className = 'card editorial-card text-start text-decoration-none';
+  card.href = item.link;
+  card.className = 'card editorial-card text-start text-decoration-none position-relative';
+
+  if (isProgress) {
+    // nonaktif
+    card.href = "javascript:void(0)";
+    card.style.pointerEvents = "none";
+    card.style.cursor = "default";
+  } else {
+    // aktif
+    card.href = item.link;
+    card.target = "_blank";
+    card.rel = "noopener noreferrer";
+  }
+
+   /* =========================
+   BADGE
+  ========================= */
   const badgeHTML = item.badge ? item.badge.map(b => `<span class="badge red-wine-color-bg">${b}</span>`).join(' ') : '';
+
+  /* =========================
+   OVERLAY
+  ========================= */
+  const overlayHTML = isProgress
+  ? `
+    <div class="progress-overlay">
+      <span>${item.status}</span>
+    </div>
+  `
+  : '';
+
+  /* =========================
+   HTML
+  ========================= */
   card.innerHTML = `
-    <img src="${item.src}" class="card-img-top" alt="">
+    <div class="position-relative">
+      <img src="${item.src}" class="card-img-top ${isProgress ? 'opacity-75' : ''}" alt="">
+      ${overlayHTML}
+    </div>
+
     <div class="card-body d-flex flex-column">
       <h5 class="card-title" style="color: bisque;">${item.title}</h5>
       <p class="card-text fs-6">${item.description}</p>
       <span class="mt-auto">${badgeHTML}</span>
     </div>
   `;
+
   contentTop.appendChild(card);
 });
 
