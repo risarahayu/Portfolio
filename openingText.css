@@ -7,7 +7,7 @@
 
 .roller {
   display: inline-block;
-  height: 4.5rem;        /* ⬅️ tambahin sedikit */
+  height: 4.2rem;        /* ⬅️ tambahin sedikit */
   overflow: hidden;
   vertical-align: bottom;
 }
@@ -78,26 +78,45 @@
 }
 
 .xd-float {
-  top: 9%;
-  left: 6%;
+  top: 17%;
+  left: 70%;
   animation: floatY 6s ease-in-out infinite;
 }
 
 .figma-float {
-  bottom: 20%;
-  right: 8%;
+  bottom: 86%;
+  right: 74%;
   animation: floatX 7.5s ease-in-out infinite;
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 800.98px) {
   .xd-float {
-  top: 13%;
-  left: 2%;
-  animation: floatY 6s ease-in-out infinite;
+    top: 13%;
+    left: 2%;
+    animation: floatY 6s ease-in-out infinite;
+  }
+  .figma-float {
+    bottom: 25%;
+    right: 2%;
+    animation: floatX 7.5s ease-in-out infinite;
+  }
+  .roller {
+    display: inline-block;
+    height: 3.8rem;        /* ⬅️ tambahin sedikit */
+    overflow: hidden;
+    vertical-align: bottom;
+  }
+  
 }
-.figma-float {
-  bottom: 25%;
-  right: 2%;
-  animation: floatX 7.5s ease-in-out infinite;
-}
+
+@media (max-width: 400px){
+  .title{
+    font-size: 28px;
+  }
+  .roller {
+    display: inline-block;
+    height: 3.24rem;        /* ⬅️ tambahin sedikit */
+    overflow: hidden;
+    vertical-align: bottom;
+  }
 }
