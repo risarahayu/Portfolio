@@ -110,7 +110,7 @@
   
 }
 
-@media (max-width: 400px){
+@media (max-width: 450px){
   .title{
     font-size: 28px;
   }
@@ -119,5 +119,64 @@
     height: 3.24rem;        /* ⬅️ tambahin sedikit */
     overflow: hidden;
     vertical-align: bottom;
+  }
+
+  .floating {
+  position: absolute;
+  width: auto;
+  height: 2.5rem;
+  pointer-events: none; /* tidak ganggu klik */
+  z-index: 20;
+  opacity: 0.85;
+}
+
+/* coding */
+.xd-float {
+    top: 20%;
+    left: 78%;
+    animation: floatY 6s ease-in-out infinite;
+  }
+  .figma-float {
+    bottom: 75%;
+    right: 75%;
+    animation: floatX 7.5s ease-in-out infinite;
+  }
+  
+}
+
+@media (max-width: 370px){
+  .title{
+    font-size: 24px;
+  }
+  .roller {
+    display: inline-block;
+    height: 3.1rem;        /* ⬅️ tambahin sedikit */
+    overflow: hidden;
+    vertical-align: bottom;
+  }
+
+  .floating {
+  position: absolute;
+  width: auto;
+  height: 2.5rem;
+  pointer-events: none; /* tidak ganggu klik */
+  z-index: 20;
+  opacity: 0.85;
+}
+
+/* coding */
+.xd-float {
+    top: 20%;
+    left: 78%;
+    animation: floatY 6s ease-in-out infinite;
+  }
+  .figma-float {
+    bottom: 76%;
+    right: 75%;
+    animation: floatX 7.5s ease-in-out infinite;
+  }
+  
+  .hero-caption{
+    font-size: 16px !important;
   }
 }
