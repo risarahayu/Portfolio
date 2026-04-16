@@ -683,3 +683,5 @@ document.getElementById("sendEmailBtn").addEventListener("click", function () {
   const email = document.querySelector('input[type="email"]').value;
   this.href = `mailto:${email}`;
 });
+
+// video

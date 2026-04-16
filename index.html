@@ -99,14 +99,43 @@
             <!-- What I Made -->
             <div class=" mt-5 position-relative px-4 px-md-5 h-75">
               <button
+              data-bs-toggle="modal" data-bs-target="#introduceVideo"
                 class="play-btn position-absolute top-0 start-50 translate-middle
                       rounded-circle border-0 shadow
                       d-flex align-items-center justify-content-center
                       bg-dark text-white"
-                style="width:100px; height:100px; z-index:10;"
+                style="width:100px; height:100px; z-index:10;
+                width:100px;
+                height:100px;
+                z-index:10;
+                background-image:url('image/Risa.jpg');
+                background-size:cover;
+                background-position:bottom;
+                background-repeat:no-repeat;"
+                
               >
                  ▶
               </button>
+              
+              <!-- Modal -->
+              <div class="modal fade" id="introduceVideo" tabindex="-1" aria-labelledby="introduceVideoLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="introduceVideoLabel">Introduction Video</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <video src="video/Introduction.mp4"></video>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
               <div class="rounded-top-4 glass-white" style="padding-top: 5rem; padding-bottom: 50px;">
                 <div id="carouselExampleIndicators" class="carousel carousel-custom slide pt-0">
                   <div class="carousel-inner h-100 text-center">
