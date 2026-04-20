@@ -638,25 +638,15 @@ $(function () {
     var skillBodies = $(".skill-body");
     var skillFooters = $(".skill-footer");
     var maxBodyHeight = 0;
-    var maxFooterHeight = 0;
     
     // Reset heights first to get natural heights
     skillBodies.css("height", "auto");
-    skillFooters.css("height", "auto");
     
     // Find the maximum body height
     skillBodies.each(function() {
       var height = $(this).outerHeight();
       if (height > maxBodyHeight) {
         maxBodyHeight = height;
-      }
-    });
-    
-    // Find the maximum footer height
-    skillFooters.each(function() {
-      var height = $(this).outerHeight();
-      if (height > maxFooterHeight) {
-        maxFooterHeight = height;
       }
     });
     
