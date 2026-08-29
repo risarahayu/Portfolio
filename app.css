@@ -464,6 +464,33 @@ body {
 /* =========================
    WORK EXPERIENCE
 ========================= */
+.experience-marquee {
+    width: 100%;
+    overflow: hidden;
+}
+
+.experience-track {
+    display: flex;
+    width: max-content;
+    gap: 48px;
+
+    animation: marquee 25s linear infinite;
+}
+
+.experience-item {
+    flex: 0 0 auto;
+    width: 180px;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
 
 .experience-section {
 

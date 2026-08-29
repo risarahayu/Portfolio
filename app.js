@@ -120,23 +120,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Render Experience Items
   const experienceContainer = document.getElementById("experienceContainer");
+
   if (experienceContainer) {
     let experienceHTML = "";
-    experienceData.forEach(exp => {
+
+    // Duplicate data supaya marquee bisa looping tanpa putus
+    const marqueeData = [...experienceData, ...experienceData];
+
+    marqueeData.forEach(exp => {
       experienceHTML += `
-                <div class="experience-item">
-                  <div class="img-fluid">
-                    <img src="${exp.logo}" class="w-75" alt="${exp.company}">
-                  </div>
-                  <div class="fs-5">
-                    ${exp.role}
-                  </div>
-                  <div class="fs-6 fw-light">
-                    ${exp.company} | ${exp.duration}
-                  </div>
-                </div>
-      `;
+      <div class="experience-item">
+        <div>
+          <img 
+            src="${exp.logo}" 
+            class="img-fluid w-75" 
+            alt="${exp.company}"
+          >
+        </div>
+
+        <div class="fs-5">
+          ${exp.role}
+        </div>
+
+        <div class="fs-6 fw-light">
+          ${exp.company} | ${exp.duration}
+        </div>
+      </div>
+    `;
     });
+
     experienceContainer.innerHTML = experienceHTML;
   }
 });
