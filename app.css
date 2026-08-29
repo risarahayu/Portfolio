@@ -224,8 +224,6 @@ body {
 
     font-size: 0.85rem;
 
-    font-weight: 600;
-
     margin-bottom: 8px;
 
 }
@@ -267,7 +265,7 @@ body {
 
     color: var(--text-secondary);
 
-    font-size: 0.8rem;
+    font-size: 0.85rem;
 
     margin-bottom: 10px;
 
@@ -305,6 +303,7 @@ body {
     min-height: 620px;
 
     position: relative;
+    z-index: 5;
 
 }
 
@@ -334,7 +333,7 @@ body {
             rgba(123,
                 85,
                 141,
-                0.25) 0%,
+                0.25) 30%,
 
             rgba(123,
                 85,
@@ -358,14 +357,15 @@ body {
 
     position: absolute;
 
-    z-index: 2;
+    z-index: 10;
+
 
     bottom: 0;
 
     left: 50%;
 
     transform:
-        translateX(-50%);
+        translateX(-54%);
 
     width: 100%;
 
@@ -383,40 +383,18 @@ body {
 ========================= */
 
 .floating-badge {
-
     position: absolute;
-
-    z-index: 5;
-
-    padding:
-        10px 24px;
-
-    border-radius: 999px;
-
-    color: var(--white);
-
-    font-weight: 600;
-
-    box-shadow:
-
-        0 5px 12px rgba(0,
-            0,
-            0,
-            0.12);
-
+    z-index: 15;
 }
 
 
 /* DESIGN */
 
-.badge-design {
+.badge-designing {
+    top: 300px;
+    left: -14px;
+    animation: float-left-right 4s ease-in-out infinite;
 
-    top: 130px;
-
-    left: 0;
-
-    background:
-        var(--blue);
 
 }
 
@@ -424,14 +402,54 @@ body {
 /* CODING */
 
 .badge-coding {
+    top: 132px;
+    right: 48px;
+    animation: float-right-left 4.5s ease-in-out infinite;
 
-    top: 310px;
 
-    right: -15px;
+}
 
-    background:
-        var(--purple);
+/* MARKETING */
 
+.badge-marketing {
+    top: 396px;
+    right: 3px;
+    animation: float-right-left 5s ease-in-out infinite;
+
+
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes float-left-right {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(25px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes float-right-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-25px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 
@@ -451,6 +469,8 @@ body {
 
 
 .experience-bar {
+    position: relative;
+    z-index: 1;
 
     padding:
         24px 20px;
@@ -458,7 +478,6 @@ body {
     border-radius:
 
         20px 20px 0 0;
-
     color:
         var(--white);
 
@@ -491,9 +510,12 @@ body {
 ========================= */
 
 .experience-item {
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-
+    gap: 2px;
 }
 
 
@@ -508,22 +530,6 @@ body {
 }
 
 
-.experience-company {
-
-    font-size: 1.05rem;
-
-    font-weight: 600;
-
-}
-
-
-.experience-role {
-
-    font-size: 0.9rem;
-
-    opacity: 0.9;
-
-}
 
 
 /* =========================
@@ -585,11 +591,8 @@ body {
 
 
     .profile-glow {
-
         width: 420px;
-
         height: 420px;
-
     }
 
 
