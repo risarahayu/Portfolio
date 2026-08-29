@@ -1,12 +1,12 @@
 
 
-import { loadGallery } from "./exercise.js";
+import { loadGallery } from "../exercise.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   loadGallery();
 });
-  
-  
+
+
 gsap.to(".container-bg-2", {
   backgroundPosition: "center 50px", // Bergerak vertikal
   repeat: -1, // Ulang terus
@@ -86,7 +86,7 @@ containers.forEach((container) => {
   });
 });
 
-  // slider
+// slider
 
 const ITEMS = [
   {
@@ -95,7 +95,7 @@ const ITEMS = [
     src: "image/portfolio img/UIUX/Impact Portal Dashboard.png",
     description: "Impact Portal Dashboard showcases 4ocean’s clean-up impact for investors, ensuring transparency through a data-driven web dashboard and a mobile app used by field crews to report daily results.",
     category: "UI/UX",
-    badge:["UI/UX Design", "Figma","Dashboard"],
+    badge: ["UI/UX Design", "Figma", "Dashboard"],
     top: true
   },
   {
@@ -104,7 +104,7 @@ const ITEMS = [
     src: "image/portfolio img/UIUX/BalI Teak Company Website.png",
     description: "This website was built for a furniture company that chose not to fully implement e-commerce.",
     category: "UI/UX",
-    badge:["UI/UX Design", "Web Development", "Semi E-Commerce", "Figma", "Wordpress", "Elementor"],
+    badge: ["UI/UX Design", "Web Development", "Semi E-Commerce", "Figma", "Wordpress", "Elementor"],
     top: true
   },
   {
@@ -113,8 +113,8 @@ const ITEMS = [
     src: "image/portfolio img/UIUX/The Donor Dashoard Landing Page.png",
     description: "The Donor Dashboard Landing Page was designed to provide donors with a clear and engaging overview of their impact, featuring key metrics, project highlights, and a user-friendly interface.",
     category: "UI/UX",
-    badge:["UI/UX Design", "Figma"],
-    status:"Case Study in Progress"
+    badge: ["UI/UX Design", "Figma"],
+    status: "Case Study in Progress"
   },
   {
     title: "Stray Dog Adoption Website",
@@ -122,9 +122,9 @@ const ITEMS = [
     src: "image/portfolio img/UIUX/Dog Adoption Website.png",
     description: "A website dedicated to rescuing stray dogs and connecting them with loving adopters.",
     category: "UI/UX",
-    badge:["UI/UX Design", "Web Development",  "Figma", "Bootsratp Frontend", "Laravel Backend"],
+    badge: ["UI/UX Design", "Web Development", "Figma", "Bootsratp Frontend", "Laravel Backend"],
     top: true,
-    status:"Case Study in Progress"
+    status: "Case Study in Progress"
   },
   {
     title: "AidHub Foundation Landing Page",
@@ -132,23 +132,23 @@ const ITEMS = [
     src: "image/portfolio img/UIUX/AidHub Landing Page.png",
     description: "A landing page website developed to represent Aidhub Foundation, highlighting its mission, programs, and impact in a clear and trustworthy manner.",
     category: "UI/UX",
-    badge:["Design", "Adobe XD"]
+    badge: ["Design", "Adobe XD"]
   },
-   {
+  {
     title: "Beyond Food Program Course Website",
     link: "https://codepen.io/jh3y/pen/abzeaWJ",
     src: "image/portfolio img/UIUX/Beyond Food Program Website.png",
     description: "A landing page website developed to represent Aidhub Foundation, highlighting its mission, programs, and impact in a clear and trustworthy manner.",
     category: "UI/UX",
-    badge:["Design", "Figma"]
+    badge: ["Design", "Figma"]
   },
-   {
+  {
     title: "Presence and Payroll Website",
     link: "https://codepen.io/jh3y/pen/abzeaWJ",
     src: "image/portfolio img/UIUX/Lesku Payroll Website.png",
     description: "A landing page website developed to represent Aidhub Foundation, highlighting its mission, programs, and impact in a clear and trustworthy manner.",
     category: "UI/UX",
-    badge:["Design", "Adobe XD"]
+    badge: ["Design", "Adobe XD"]
   },
   {
     title: "Mission Empowerment Platform",
@@ -156,9 +156,9 @@ const ITEMS = [
     src: "image/portfolio img/UIUX/MEP Website.png",
     description: "A landing page website developed to represent Aidhub Foundation, highlighting its mission, programs, and impact in a clear and trustworthy manner.",
     category: "UI/UX",
-    badge:["Design", "Adobe XD"],
+    badge: ["Design", "Adobe XD"],
     top: true,
-    status:"Case Study in Progress"
+    status: "Case Study in Progress"
   }
 ];
 
@@ -184,21 +184,21 @@ topItems.forEach(item => {
     card.rel = "noopener noreferrer";
   }
 
-   /* =========================
-   BADGE
-  ========================= */
+  /* =========================
+  BADGE
+ ========================= */
   const badgeHTML = item.badge ? item.badge.map(b => `<span class="badge badge-wrap red-wine-color-bg">${b}</span>`).join(' ') : '';
 
   /* =========================
    OVERLAY
   ========================= */
   const overlayHTML = isProgress
-  ? `
+    ? `
     <div class="progress-overlay">
       <span>${item.status}</span>
     </div>
   `
-  : '';
+    : '';
 
   /* =========================
    HTML
@@ -257,7 +257,7 @@ topItems.forEach(item => {
 //     card.className = 'col-12 col-md-6 col-lg-4';
 //     const badgeHTML = item.badge ? item.badge.map(b => `<span class="badge red-wine-color-bg">${b}</span>`).join(' ') : '';
 //     card.innerHTML = `
-    
+
 //         <div class="card text-start" style="min-height: 500px;">
 //           <img src="${item.src}" class="card-img-top" alt="...">
 //           <div class="card-body d-flex flex-column">
@@ -374,10 +374,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll("body section");
 
   const observerOptions = {
-  root: null,
-  rootMargin: "0px 0px -80% 0px", // trigger begitu section masuk dari atas
-  threshold: 0,
-};
+    root: null,
+    rootMargin: "0px 0px -80% 0px", // trigger begitu section masuk dari atas
+    threshold: 0,
+  };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -465,49 +465,49 @@ const skills = [
 const softwares = [
   {
     label: "Figma",
-    src: "./image/logo/tools/figma.png", 
+    src: "./image/logo/tools/figma.png",
     alt: "Figma",
     category: "UI/UX Designer"
   },
   {
     label: "Adobe XD",
-    src: "image/logo/tools/adobe xd.png", 
+    src: "image/logo/tools/adobe xd.png",
     alt: "Adobe XD",
     category: "UI/UX Designer"
   },
   {
     label: "Github",
-    src: "image/logo/tools/gitHub.png", 
+    src: "image/logo/tools/gitHub.png",
     alt: "Github",
     category: "Web Developer"
   },
   {
     label: "Wodpress",
-    src: "image/logo/tools/wordpress.png", 
+    src: "image/logo/tools/wordpress.png",
     alt: "Wodpress",
     category: "Web Developer"
   },
   {
     label: "Shopify",
-    src: "image/logo/tools/Shopify.png", 
+    src: "image/logo/tools/Shopify.png",
     alt: "Shopify",
     category: "Web Developer"
   },
   {
     label: "Wix",
-    src: "image/logo/tools/Wix.png", 
+    src: "image/logo/tools/Wix.png",
     alt: "Wix",
     category: "Web Developer"
   },
   {
     label: "Google Ads",
-    src: "image/logo/tools/GoogleAds.png", 
+    src: "image/logo/tools/GoogleAds.png",
     alt: "Google Ads",
     category: "Digital Marketing"
   },
   {
     label: "Google Analytic",
-    src: "image/logo/tools/GoogleAnalytic.png", 
+    src: "image/logo/tools/GoogleAnalytic.png",
     alt: "Google Analytic",
     category: "Digital Marketing"
   },
@@ -519,31 +519,31 @@ const softwares = [
   // },
   {
     label: "MailChimp",
-    src: "image/logo/tools/Mailchimp.png", 
+    src: "image/logo/tools/Mailchimp.png",
     alt: "MailChimp",
     category: "Digital Marketing"
   },
-   {
+  {
     label: "Canva",
-    src: "image/logo/tools/Canva.png", 
+    src: "image/logo/tools/Canva.png",
     alt: "Canva",
     category: "Digital Marketing"
   },
 ]
 
-const UIUXhardSkill=document.getElementById("UIUXhardSkill");
+const UIUXhardSkill = document.getElementById("UIUXhardSkill");
 const uiuxSkills = skills.filter(skill => skill.category === "UI/UX Designer");
-uiuxSkills.forEach(skill=>{
+uiuxSkills.forEach(skill => {
   const li = document.createElement("li");
   li.textContent = skill.title;
   li.classList.add("fs-6");
   UIUXhardSkill.appendChild(li);
 })
 
-const UIUXsoftwareUsed=document.getElementById("UIUXsoftwareUsed");
-const uiuxSoftwares= softwares.filter(software => software.category === "UI/UX Designer");
+const UIUXsoftwareUsed = document.getElementById("UIUXsoftwareUsed");
+const uiuxSoftwares = softwares.filter(software => software.category === "UI/UX Designer");
 
-uiuxSoftwares.forEach(software=>{
+uiuxSoftwares.forEach(software => {
   const img = document.createElement("img");
   img.src = software.src;
   img.alt = software.label;
@@ -552,40 +552,40 @@ uiuxSoftwares.forEach(software=>{
 })
 
 const WebDevHardSkillEl = document.getElementById("WebDevHardSkill");
-const WebDevSkills = skills.filter(skill=> skill.category === "Web Developer");
+const WebDevSkills = skills.filter(skill => skill.category === "Web Developer");
 
-WebDevSkills.forEach(skill=>{
+WebDevSkills.forEach(skill => {
   const li = document.createElement("li");
-  li.textContent= skill.title;
+  li.textContent = skill.title;
   li.classList.add("fs-6");
   WebDevHardSkillEl.appendChild(li);
 })
 
 const WebDevSoftwareUsedEl = document.getElementById("WebDevSoftwareUsed");
-const WebDevSoftwares =  softwares.filter(software=>software.category==="Web Developer");
-WebDevSoftwares.forEach(software=>{
+const WebDevSoftwares = softwares.filter(software => software.category === "Web Developer");
+WebDevSoftwares.forEach(software => {
   const img = document.createElement("img");
-  img.src=software.src;
-  img.alt=software.alt;
+  img.src = software.src;
+  img.alt = software.alt;
   img.style.height = "30px";
   WebDevSoftwareUsedEl.appendChild(img);
 })
 
 const DigMarHardSkill = document.getElementById("DigMarHardSkill");
-const DigMarSkills = skills.filter(skill=> skill.category==="Digital Marketing");
-DigMarSkills.forEach(skill=>{
+const DigMarSkills = skills.filter(skill => skill.category === "Digital Marketing");
+DigMarSkills.forEach(skill => {
   const li = document.createElement("li");
-  li.textContent= skill.title;
+  li.textContent = skill.title;
   li.classList.add("fs-6");
   DigMarHardSkill.appendChild(li);
 })
 
 const DigMarSoftwareUsedEl = document.getElementById("DigMarSoftwareUsed");
-const DigMarSoftwares =  softwares.filter(software=>software.category==="Digital Marketing");
-DigMarSoftwares.forEach(software=>{
+const DigMarSoftwares = softwares.filter(software => software.category === "Digital Marketing");
+DigMarSoftwares.forEach(software => {
   const img = document.createElement("img");
-  img.src=software.src;
-  img.alt=software.alt;
+  img.src = software.src;
+  img.alt = software.alt;
   img.style.height = "30px";
   DigMarSoftwareUsedEl.appendChild(img);
 })
@@ -638,42 +638,32 @@ $(function () {
     var skillBodies = $(".skill-body");
     var skillFooters = $(".skill-footer");
     var maxBodyHeight = 0;
-    var maxFooterHeight = 0;
-    
+
     // Reset heights first to get natural heights
     skillBodies.css("height", "auto");
-    skillFooters.css("height", "auto");
-    
+
     // Find the maximum body height
-    skillBodies.each(function() {
+    skillBodies.each(function () {
       var height = $(this).outerHeight();
       if (height > maxBodyHeight) {
         maxBodyHeight = height;
       }
     });
-    
-    // Find the maximum footer height
-    skillFooters.each(function() {
-      var height = $(this).outerHeight();
-      if (height > maxFooterHeight) {
-        maxFooterHeight = height;
-      }
-    });
-    
+
     // Set all bodies to the max body height
     skillBodies.css("height", maxBodyHeight + "px");
-    
+
     // Set all footers to the max footer height
     skillFooters.css("height", maxFooterHeight + "px");
   }
 
   // Call on page load with delay to ensure DOM is fully rendered
-  setTimeout(function() {
+  setTimeout(function () {
     equalizeSkillBodyHeights();
   }, 100);
 
   // Call on window resize
-  $(window).on("resize", function() {
+  $(window).on("resize", function () {
     equalizeSkillBodyHeights();
   });
 });
