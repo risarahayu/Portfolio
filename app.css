@@ -74,7 +74,6 @@ body {
 
 .hero-title {
 
-    color: var(--purple);
 
     font-size: clamp(3.8rem,
             6vw,
@@ -85,6 +84,13 @@ body {
     line-height: 0.95;
 
     letter-spacing: -0.04em;
+    background: linear-gradient(145deg,
+            var(--purple),
+            var(--lilac));
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 
 }
 
@@ -105,6 +111,8 @@ body {
     margin-bottom: 0;
 
 }
+
+
 
 
 /* =========================
