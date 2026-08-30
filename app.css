@@ -923,3 +923,57 @@ body {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     color: #fff;
 }
+
+.testimonial-slider {
+    height: 500px;
+    overflow: hidden;
+}
+
+.testimonial-track {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    animation: testimonial-scroll 12s linear infinite;
+}
+
+@keyframes testimonial-scroll {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-50%);
+    }
+
+}
+
+.testimonial-card {
+    width: 85%;
+    padding: 28px;
+    border-radius: 20px;
+    background: color-mix(in srgb, var(--lilac) 10%, transparent);
+    transition: transform 0.3s ease;
+}
+
+/* Zig-zag */
+
+.testimonial-card:nth-child(odd) {
+    align-self: flex-start;
+}
+
+.testimonial-card:nth-child(even) {
+    align-self: flex-end;
+}
+
+.testimonial-team-image {
+    width: 100%;
+    opacity: 1;
+    /* display: block; */
+    transition: opacity 0.5s ease;
+}
+
+.testimonial-team-image.fade-out {
+    opacity: 0;
+}

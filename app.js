@@ -92,7 +92,7 @@ const projectsData = [
     id: 2,
     projectTitle: "Bali Teak Company Website",
     company: "Bali Teak",
-    companyURL: "baliteak.ca",
+    companyURL: "https://baliteak.ca",
     description: "A digital showcase for a local furniture company looking to build an online presence without fully implementing e-commerce functionality.",
     impact: ["Strengthened online visibility and brand presence.",
       "Improved customer engagement and inquiries.",
@@ -109,7 +109,7 @@ const projectsData = [
     id: 3,
     projectTitle: "Stray Dog Adoption Website",
     company: "Mission Pawsible Bali",
-    companyURL: "missionpawsible.org",
+    companyURL: "https://missionpawsible.org",
     description: "A website dedicated to rescuing stray dogs and connecting them with loving adopters, developed in collaboration with MissionPawsible Bali.",
     impact: ["Streamlined the adoption process for potential adopters.",
       "Increased visibility for stray dogs in need of adoption.",
@@ -124,6 +124,109 @@ const projectsData = [
     ]
   }
 ];
+
+const testimonials = [
+  {
+    name: "John Doe",
+    role: "Founder & CEO",
+    company: "1zero",
+    quote: "Risa brings a great balance of creativity, technical understanding, and attention to detail."
+  },
+  {
+    name: "Jane Smith",
+    role: "Product Manager",
+    company: "Company Name",
+    quote: "Working with Risa was seamless. She understood the problem quickly and translated it into a clear digital experience."
+  },
+  {
+    name: "Alex Johnson",
+    role: "Creative Director",
+    company: "Company Name",
+    quote: "Risa is thoughtful, collaborative, and always focused on creating meaningful user experiences."
+  }
+];
+
+const teamPhotos = [
+  "image/team photo/photo 1.png",
+  "image/team photo/photo 2.png",
+  "image/team photo/photo 3.jpg"
+];
+// Preload images
+teamPhotos.forEach((photo) => {
+  const img = new Image();
+  img.src = photo;
+});
+
+// testimony
+const testimonialTrack = document.getElementById("testimonialTrack");
+
+if (testimonialTrack) {
+
+  testimonials.forEach((testimonial, index) => {
+
+    testimonialTrack.innerHTML += `
+      <article class="testimonial-card">
+
+        <div class="testimonial-person">
+
+          <h3 class="fs-5 fw-semibold mb-1">
+            ${testimonial.name}
+          </h3>
+
+          <p class="small text-secondary mb-0">
+            ${testimonial.role} · ${testimonial.company}
+          </p>
+
+        </div>
+
+        <blockquote class="testimonial-quote">
+          “${testimonial.quote}”
+        </blockquote>
+
+      </article>
+    `;
+
+  });
+
+}
+
+const testimonialTeamImage =
+  document.getElementById("testimonialTeamImage");
+let currentTeamPhoto = 0;
+
+// FOTO PERTAMA
+// kalau punya foto, masukan foto pertama
+if (testimonialTeamImage) {
+  testimonialTeamImage.src =
+    teamPhotos[currentTeamPhoto];
+}
+// GANTI FOTO
+function updateTeamPhoto() {
+
+  testimonialTeamImage.classList.add("fade-out");
+
+  setTimeout(() => {
+
+    currentTeamPhoto++;
+
+    if (currentTeamPhoto >= teamPhotos.length) {
+      currentTeamPhoto = 0;
+    }
+
+    testimonialTeamImage.src =
+      teamPhotos[currentTeamPhoto];
+
+    testimonialTeamImage.classList.remove("fade-out");
+
+  }, 500);
+}
+
+
+// GANTI SETIAP 4 DETIK
+setInterval(updateTeamPhoto, 4000);
+
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   // Smooth parallax scroll for "See Portfolio" button
