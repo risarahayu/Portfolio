@@ -568,6 +568,13 @@ body {
 }
 
 
+.company-logo {
+    width: 100px;
+    max-width: 100px;
+    height: 40px;
+    object-fit: contain;
+}
+
 
 
 /* =========================
@@ -716,21 +723,26 @@ body {
 }
 
 .role-badge-purple {
-    background-color: rgba(123, 85, 141, 0.15);
-    color: var(--lilac);
-    border: 1px solid var(--lilac);
+    background-color: var(--purple);
+    color: var(--white);
+    border: 1px solid var(--white);
+    box-shadow: rgba(154, 3, 30, 0.15) 0px 2px 13px 0px;
 }
 
 .role-badge-blue {
-    background-color: rgba(8, 167, 177, 0.12);
-    color: var(--blue);
-    border: 1px solid var(--blue);
+    background-color: var(--blue);
+    color: var(--white);
+    border: 1px solid var(--white);
+    box-shadow: rgba(154, 3, 30, 0.15) 0px 2px 13px 0px;
+
 }
 
 .role-badge-red {
-    background-color: rgba(154, 3, 30, 0.12);
-    color: var(--red);
-    border: 1px solid var(--red);
+    background-color: var(--red);
+    color: var(--white);
+    border: 1px solid var(--white);
+    box-shadow: rgba(154, 3, 30, 0.15) 0px 2px 13px 0px;
+
 }
 
 .role-badge-default {

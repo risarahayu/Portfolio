@@ -76,6 +76,8 @@ const projectsData = [
   {
     id: 1,
     projectTitle: "Impact Portal Dashboard",
+    company: "4Ocean",
+    companyURL: "https://www.4ocean.com/",
     description: "A data-driven web dashboard and mobile app designed for investors to track and showcase 4ocean's clean-up impact with transparent daily results.",
     impact: ["Improved investor engagement with real-time clean-up data.", "Enhanced transparency of environmental clean-up efforts."],
     role: ["UI/UX", "Web Development"],
@@ -89,6 +91,8 @@ const projectsData = [
   {
     id: 2,
     projectTitle: "Bali Teak Company Website",
+    company: "Bali Teak",
+    companyURL: "baliteak.ca",
     description: "A digital showcase for a local furniture company looking to build an online presence without fully implementing e-commerce functionality.",
     impact: ["Strengthened online visibility and brand presence.",
       "Improved customer engagement and inquiries.",
@@ -103,7 +107,9 @@ const projectsData = [
   },
   {
     id: 3,
-    projectTitle: "Stray Dog Adoption Website - MissionPawsible Bali",
+    projectTitle: "Stray Dog Adoption Website",
+    company: "Mission Pawsible Bali",
+    companyURL: "missionpawsible.org",
     description: "A website dedicated to rescuing stray dogs and connecting them with loving adopters, developed in collaboration with MissionPawsible Bali.",
     impact: ["Streamlined the adoption process for potential adopters.",
       "Increased visibility for stray dogs in need of adoption.",
@@ -272,9 +278,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // company 
     const companyLogoMap = {
-      "4Ocean": "image/logo/company/4Ocean.png",
-      "Bali Teak": "image/logo/company/BaliTeak.png",
-      "Mission Pawsible Bali": "image/logo/company/MissionPawsibleBali.png"
+      "4Ocean": "image/logo/company/4Ocean.webp",
+      "Bali Teak": "image/logo/company/Bali Teak.png",
+      "Mission Pawsible Bali": "image/logo/company/Mission Pawsible.webp"
     }
 
     // Tool → logo image path mapping
@@ -338,6 +344,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="card-body d-flex flex-column">
               <h5 class="card-title fw-semibold">${project.projectTitle}</h5>
               <p class="card-text text-muted small mb-3">${project.description}</p>
+              
 
               <div class="mt-3">
                 <div class="mb-2">
@@ -371,14 +378,31 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
                 </div>
                 </div>
-                <div class="d-flex flex-column align-items-start gap-2 card-footer mt-auto pt-3 pb-3">
+                <div class="d-flex flex-column gap-2 card-footer mt-auto pt-3 pb-3">
                   <div class="mb-2 d-flex flex-wrap gap-2">
                     ${rolesHTML} 
                   </div>
-                  <span class="text-secondary small fw-bold">Tools:</span>
-                    <div class="d-flex flex-wrap gap-2">
-                      ${toolsHTML}
+                  <div class="d-flex justify-content-between gap-4">
+                    <!-- TOOLS -->
+                    <div class="d-flex flex-column gap-2">
+                      <span class="text-secondary small fw-bold">Tools:</span>
+                      <div class="d-flex flex-wrap gap-2">
+                        ${toolsHTML}
+                      </div>
                     </div>
+                    <!-- COMPANY -->
+                    <div class="d-flex flex-column gap-2">
+                      <span class="text-secondary small fw-bold">Company:</span>
+
+                      <a href="${project.companyURL}" target="_blank">
+                        <img 
+                          src="${companyLogoMap[project.company]}" 
+                          alt="${project.company}"
+                          class="company-logo"
+                        >
+                      </a>
+                    </div>
+                  </div>
                 </div>
           </div>
         </div>
