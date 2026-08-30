@@ -17,6 +17,9 @@
 
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 /* =========================
    GLOBAL
@@ -512,7 +515,7 @@ body {
 
     border-radius:
 
-        20px 20px 0 0;
+        20px 20px 20px 20px;
     color:
         var(--white);
 
@@ -671,4 +674,94 @@ body {
 
     }
 
+}
+
+/* =========================
+   PORTFOLIO FILTER BUTTONS
+========================= */
+
+.filter-btn {
+    border-radius: 999px;
+    padding: 6px 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.25s ease;
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+.filter-btn:hover {
+    background-color: rgba(154, 3, 30, 0.1);
+    border-color: var(--red);
+    color: var(--red);
+}
+
+.filter-btn.active {
+    background-color: var(--red);
+    border-color: var(--red);
+    color: #fff;
+}
+
+/* =========================
+   ROLE BADGES
+========================= */
+
+.role-badge {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.role-badge-purple {
+    background-color: rgba(123, 85, 141, 0.15);
+    color: var(--lilac);
+    border: 1px solid var(--lilac);
+}
+
+.role-badge-blue {
+    background-color: rgba(8, 167, 177, 0.12);
+    color: var(--blue);
+    border: 1px solid var(--blue);
+}
+
+.role-badge-red {
+    background-color: rgba(154, 3, 30, 0.12);
+    color: var(--red);
+    border: 1px solid var(--red);
+}
+
+.role-badge-default {
+    background-color: #e0e0e0;
+    color: #555;
+    border: 1px solid #ccc;
+}
+
+/* =========================
+   TOOL ICONS
+========================= */
+
+.tool-icon-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tool-icon-wrap:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tool-icon-img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
 }

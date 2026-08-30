@@ -77,12 +77,12 @@ const projectsData = [
     id: 1,
     projectTitle: "Impact Portal Dashboard",
     description: "A data-driven web dashboard and mobile app designed for investors to track and showcase 4ocean's clean-up impact with transparent daily results.",
-    impact: "Increased investor engagement and transparency by providing real-time data on environmental clean-up efforts.",
+    impact: ["Improved investor engagement with real-time clean-up data.", "Enhanced transparency of environmental clean-up efforts."],
     role: ["UI/UX", "Web Development"],
     projectType: ["Platform Building"],
-    tools: ["Figma", "React JS", "Node.js"],
+    tools: ["Figma", "React JS", "Next.js", "Tailwindcss"],
     images: [
-      "image/portfolio img/UIUX/Impact Portal Dashboard.png",
+      "image/portfolio img/UIUX/Impact Portal Dashboard-mockup.jpg",
       "image/portfolio img/UIUX/Impact Portal Dashboard 2.png"
     ]
   },
@@ -90,12 +90,14 @@ const projectsData = [
     id: 2,
     projectTitle: "Bali Teak Company Website",
     description: "A digital showcase for a local furniture company looking to build an online presence without fully implementing e-commerce functionality.",
-    impact: "Boosted online visibility and customer inquiries by 40% within the first three months of launch.",
-    role: ["UI/UX", "Digital Marketing"],
+    impact: ["Strengthened online visibility and brand presence.",
+      "Improved customer engagement and inquiries.",
+      "Created a clearer and more effective digital experience."],
+    role: ["UI/UX", "Web Development"],
     projectType: ["Redesign", "Platform Building"],
     tools: ["Figma", "WordPress", "Elementor", "Google Ads"],
     images: [
-      "image/portfolio img/UIUX/BalI Teak Company Website.png",
+      "image/portfolio img/UIUX/BalI Teak Company Website-mockup.jpg",
       "image/portfolio img/UIUX/BalI Teak Company Website 2.png"
     ]
   },
@@ -103,18 +105,54 @@ const projectsData = [
     id: 3,
     projectTitle: "Stray Dog Adoption Website - MissionPawsible Bali",
     description: "A website dedicated to rescuing stray dogs and connecting them with loving adopters, developed in collaboration with MissionPawsible Bali.",
-    impact: "Streamlined the adoption process and increased rescue visibility for stray dogs.",
+    impact: ["Streamlined the adoption process for potential adopters.",
+      "Increased visibility for stray dogs in need of adoption.",
+      "Improved access to adoption information and opportunities."
+    ],
     role: ["UI/UX", "Web Development"],
     projectType: ["Platform Building"],
     tools: ["Figma", "Bootstrap", "Laravel"],
     images: [
-      "image/portfolio img/UIUX/Dog Adoption Website.png",
+      "image/portfolio img/UIUX/Dog Adoption Website-mockup.jpg",
       "image/portfolio img/UIUX/Dog Adoption Website 2.png"
     ]
   }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Smooth parallax scroll for "See Portfolio" button
+  const seePortfolioBtn = document.getElementById("seePortfolioBtn");
+  if (seePortfolioBtn) {
+    seePortfolioBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const target = document.getElementById("portfolio");
+      if (!target) return;
+
+      const targetY = target.getBoundingClientRect().top + window.scrollY;
+      const startY = window.scrollY;
+      const distance = targetY - startY;
+      const duration = 900; // ms
+      let startTime = null;
+
+      // Easing: easeInOutCubic untuk efek parallax yang smooth
+      function easeInOutCubic(t) {
+        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      }
+
+      function scrollStep(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const elapsed = timestamp - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easedProgress = easeInOutCubic(progress);
+        window.scrollTo(0, startY + distance * easedProgress);
+        if (progress < 1) requestAnimationFrame(scrollStep);
+      }
+
+      requestAnimationFrame(scrollStep);
+    });
+  }
+
+
   // Render Skill Cards
   const skillCardsContainer = document.getElementById("skillCardsContainer");
   if (skillCardsContainer) {
@@ -224,6 +262,41 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // 4. Render Projects Function
+
+    // Role → badge color mapping
+    const roleBadgeColor = {
+      "UI/UX": "role-badge-purple",
+      "Web Development": "role-badge-blue",
+      "Digital Marketing": "role-badge-red"
+    };
+
+    // company 
+    const companyLogoMap = {
+      "4Ocean": "image/logo/company/4Ocean.png",
+      "Bali Teak": "image/logo/company/BaliTeak.png",
+      "Mission Pawsible Bali": "image/logo/company/MissionPawsibleBali.png"
+    }
+
+    // Tool → logo image path mapping
+    const toolLogoMap = {
+      "Figma": "image/logo/tools/figma-color.svg",
+      "Adobe XD": "image/logo/tools/adobe xd.png",
+      "GitHub": "image/logo/tools/gitHub.png",
+      "WordPress": "image/logo/tools/wordpress-color.svg",
+      "Shopify": "image/logo/tools/Shopify.png",
+      "Wix": "image/logo/tools/Wix.png",
+      "Google Ads": "image/logo/tools/GoogleAds.png",
+      "Google Analytic": "image/logo/tools/GoogleAnalytic.png",
+      "Mailchimp": "image/logo/tools/Mailchimp.png",
+      "Canva": "image/logo/tools/Canva.png",
+      "React JS": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      "Next.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+      "Bootstrap": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
+      "Laravel": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg",
+      "Elementor": "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/elementor.svg",
+      "Tailwindcss": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+    };
+
     function renderProjects(filterTag) {
       const filteredData = filterTag === "All"
         ? projectsData
@@ -231,39 +304,82 @@ document.addEventListener("DOMContentLoaded", () => {
 
       let projectsHTML = "";
       filteredData.forEach(project => {
-        const rolesHTML = project.role.map(r => `<span class="badge bg-primary me-1">${r}</span>`).join("");
-        const typesHTML = project.projectType.map(pt => `<span class="badge bg-secondary me-1">${pt}</span>`).join("");
-        const toolsHTML = project.tools.map(tool => `<span class="badge bg-dark me-1">${tool}</span>`).join("");
+        // Role badges with per-role color
+        const rolesHTML = project.role.map(r => {
+          const colorClass = roleBadgeColor[r] || "role-badge-default";
+          return `<span class="role-badge ${colorClass}">${r}</span>`;
+        }).join("");
+
+        const typesHTML = project.projectType.map(pt =>
+          `<span class="badge bg-secondary me-1">${pt}</span>`
+        ).join("");
+
+        // Tools as logo icons (with text fallback)
+        const toolsHTML = project.tools.map(tool => {
+          const logo = toolLogoMap[tool];
+          if (logo) {
+            return `<span class="tool-icon-wrap" title="${tool}">
+              <img src="${logo}" alt="${tool}" class="tool-icon-img">
+            </span>`;
+          }
+          return `<span class="badge bg-dark me-1">${tool}</span>`;
+        }).join("");
 
         // Render 2 detail images inside the card
-        const imagesHTML = project.images.map(imgSrc => `<img src="${imgSrc}" class="img-fluid w-50 p-1 rounded" alt="Detail Image" style="object-fit: cover; height: 80px;">`).join("");
+        const imagesHTML = project.images.map(imgSrc =>
+          `<img src="${imgSrc}" class="img-fluid w-50 p-1 rounded" alt="Detail Image" style="object-fit: cover; height: 80px;">`
+        ).join("");
 
         projectsHTML += `
         <div class="col-md-6 col-lg-4">
-          <div class="card h-100 shadow-sm border-0 project-card">
+          <div class="card h-100 shadow-sm border-0 project-card" style="border-radius: 20px;">
             <!-- Thumbnail utama diambil dari gambar pertama -->
-            <img src="${project.images[0]}" class="card-img-top" alt="${project.projectTitle}" style="height: 220px; object-fit: cover;">
-            
+            <img src="${project.images[0]}" class="card-img-top p-3" alt="${project.projectTitle}" style="height: 220px; object-fit: cover; border-radius: 36px;">
             <div class="card-body d-flex flex-column">
-              <h5 class="card-title fw-bold">${project.projectTitle}</h5>
+              <h5 class="card-title fw-semibold">${project.projectTitle}</h5>
               <p class="card-text text-muted small mb-3">${project.description}</p>
-              
-              <div class="mt-auto">
+
+              <div class="mt-3">
                 <div class="mb-2">
                   <span class="text-secondary small fw-bold">Impact:</span><br>
-                  <span class="small">${project.impact}</span>
+                  <div class="my-3">
+                    <ul class="list-unstyled d-flex flex-column gap-2 mb-0 small">
+                      ${project.impact.map(i => `
+                        <li class="d-flex align-items-start gap-2">
+                          
+                          <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="1.25rem" 
+                            height="1.25rem" 
+                            viewBox="0 0 24 24"
+                            class="flex-shrink-0"
+                          >
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            
+                            <path 
+                              fill="#268003" 
+                              d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8z"
+                            />
+                          </svg>
+
+                          <span>${i}</span>
+
+                        </li>
+                      `).join('')}
+                    </ul>
+                  </div>
                 </div>
-                <div class="mb-2">
-                  ${rolesHTML} ${typesHTML}
                 </div>
-                <div class="mb-3">
-                  ${toolsHTML}
                 </div>
-                <div class="d-flex justify-content-start border-top pt-2">
-                  ${imagesHTML}
+                <div class="d-flex flex-column align-items-start gap-2 card-footer mt-auto pt-3 pb-3">
+                  <div class="mb-2 d-flex flex-wrap gap-2">
+                    ${rolesHTML} 
+                  </div>
+                  <span class="text-secondary small fw-bold">Tools:</span>
+                    <div class="d-flex flex-wrap gap-2">
+                      ${toolsHTML}
+                    </div>
                 </div>
-              </div>
-            </div>
           </div>
         </div>
         `;
@@ -276,3 +392,4 @@ document.addEventListener("DOMContentLoaded", () => {
     renderProjects("All");
   }
 });
+
