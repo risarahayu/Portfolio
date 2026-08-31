@@ -10,6 +10,8 @@
   --color-4Ocean-white: #ffffff;
   --color-4Ocean-surface-muted: #D7EAFF;
   --color-surface-dark: #1c1c1c;
+  --color-red: #FF5A79;
+  --color-green: #1D5745;
 
   --section-padding-inline: clamp(1.25rem, 4vw, 4rem);
   --section-padding-block-start: clamp(2rem, 5vw, 4rem);
@@ -534,6 +536,21 @@
   height: auto;
 }
 
+.check-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding-left: 0;
+}
+
+.check-list__icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  margin-right: 0.5rem;
+}
+
 /* ==========================================================================
    Wireframing — design tokens reference (color table, Tailwind CSS
    variables, logo)
@@ -625,4 +642,12 @@
   width: 100%;
   max-width: max-content;
   height: auto;
+}
+
+.cross-container {
+  border: 1px solid var(--color-red) !important;
+}
+
+.check-container {
+  border: 1px solid var(--color-green) !important;
 }

@@ -78,7 +78,7 @@ const projectsData = [
     projectTitle: "Impact Portal Dashboard",
     company: "4Ocean",
     companyURL: "https://www.4ocean.com/",
-    projectURL: "portfolio/4Ocean.html",
+    projectURL: "portfolio/4ocean.html",
     description: "A data-driven web dashboard and mobile app designed for investors to track and showcase 4ocean's clean-up impact with transparent daily results.",
     impact: ["Improved investor engagement with real-time clean-up data.", "Enhanced transparency of environmental clean-up efforts."],
     role: ["UI/UX", "Web Development"],
@@ -129,22 +129,16 @@ const projectsData = [
 
 const testimonials = [
   {
-    name: "John Doe",
-    role: "Founder & CEO",
+    name: "Dharma Putra",
+    role: "IT Manager",
     company: "1zero",
-    quote: "Risa brings a great balance of creativity, technical understanding, and attention to detail."
+    quote: "It was a absolute pleasure working alongside Risa Rahayu. They pick up new tools and concepts at lightning speed and never hesitate to take full ownership of their deliverables. Dependable and deadline-driven, Risa consistently balances speed with thoughtful, user-centered design. They would be an outstanding asset to any product team."
   },
   {
-    name: "Jane Smith",
-    role: "Product Manager",
-    company: "Company Name",
-    quote: "Working with Risa was seamless. She understood the problem quickly and translated it into a clear digital experience."
-  },
-  {
-    name: "Alex Johnson",
-    role: "Creative Director",
-    company: "Company Name",
-    quote: "Risa is thoughtful, collaborative, and always focused on creating meaningful user experiences."
+    name: "Mutia Rosa",
+    role: "Executive Assistant",
+    company: "1zero",
+    quote: " was always impressed by her passion and dedication to her work. She is highly responsible, responsive, and efficient, and it is clear that she genuinely enjoys what she does. Risa is also always willing to learn new things and continuously improve her skills. I truly enjoyed working alongside Risa and would highly recommend her to any team or company looking for a passionate, dedicated, talented, and supportive UI/UX professional. I’m confident she will continue to grow and achieve great things in her career."
   }
 ];
 
@@ -385,7 +379,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // company 
     const companyLogoMap = {
-      "4ocean": "image/logo/company/4Ocean.webp",
+      "4Ocean": "image/logo/company/4Ocean.png",
       "Bali Teak": "image/logo/company/Bali Teak.png",
       "Mission Pawsible Bali": "image/logo/company/Mission Pawsible.webp"
     }
@@ -623,9 +617,9 @@ function renderBreadcrumb() {
                     <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                   </svg>
                 </button>
-                <p class="fw-bold m-0 fs-4">
+                <a class="fw-bold m-0 fs-4 text-decoration-none" href="../index.html">
                     Risa's Project
-                </p>
+                </a>
             </div>
 
             <ol class="breadcrumb text-white m-0">
@@ -698,14 +692,18 @@ function renderBreadcrumb() {
     }
   }, 100);
 }
-const image = document.getElementById("zoomableImage");
-const viewer = document.getElementById("imageViewer");
+document.querySelectorAll(".image-viewer").forEach((viewer) => {
 
-const zoomIn = document.getElementById("zoomIn");
-const zoomOut = document.getElementById("zoomOut");
-const zoomReset = document.getElementById("zoomReset");
+  const image = viewer.querySelector(".zoomable-image");
+  const modal = viewer.closest(".modal");
 
-if (image && viewer && zoomIn && zoomOut && zoomReset) {
+  if (!image || !modal) return;
+
+  const zoomIn = modal.querySelector(".zoom-in-btn");
+  const zoomOut = modal.querySelector(".zoom-out-btn");
+  const zoomReset = modal.querySelector(".zoom-reset-btn");
+
+  if (!zoomIn || !zoomOut || !zoomReset) return;
 
   let scale = 1;
   const baseWidth = 1000;
@@ -797,5 +795,52 @@ if (image && viewer && zoomIn && zoomOut && zoomReset) {
 
   });
 
-}
+});
 renderBreadcrumb();
+
+// Page loader — waits for every image on the page to finish loading
+// before revealing the content (index page only).
+const pageLoader = document.getElementById("pageLoader");
+
+if (pageLoader) {
+
+  document.body.classList.add("is-loading");
+
+  function hidePageLoader() {
+    pageLoader.classList.add("is-hidden");
+    document.body.classList.remove("is-loading");
+    setTimeout(() => pageLoader.remove(), 600);
+  }
+
+  function waitForImages() {
+    const images = Array.from(document.images);
+
+    return Promise.all(
+      images.map((img) => {
+        if (img.complete) return Promise.resolve();
+
+        return new Promise((resolve) => {
+          img.addEventListener("load", resolve, { once: true });
+          img.addEventListener("error", resolve, { once: true });
+        });
+      })
+    );
+  }
+
+  const windowLoaded = new Promise((resolve) => {
+    if (document.readyState === "complete") {
+      resolve();
+    } else {
+      window.addEventListener("load", resolve, { once: true });
+    }
+  });
+
+  // Safety net in case a resource stalls — never block the page forever.
+  const safetyTimeout = new Promise((resolve) => setTimeout(resolve, 6000));
+
+  Promise.race([
+    windowLoaded.then(waitForImages),
+    safetyTimeout
+  ]).then(hidePageLoader);
+
+}

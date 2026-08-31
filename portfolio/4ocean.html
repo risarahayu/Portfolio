@@ -13,8 +13,9 @@
 
 <body>
     <div id="breadcrumb"></div>
+
     <header class="project-hero-section">
-        <div class="container d-flex flex-column gap-5 pt-5 ">
+        <div class="container d-flex flex-column gap-5 pt-5">
             <div class="hero-bg rounded-4">
             </div>
             <div class="d-flex flex-wrap justify-content-between color-4Ocean-primary p-5 rounded-4 text-white">
@@ -48,7 +49,7 @@
     </header>
 
     <main class="main">
-        <section id="project-scope" class="container d-flex flex-column gap-3 mt-5 p-5">
+        <section id="project-scope" class="container d-flex flex-column gap-3 p-5 pb-0">
             <h2 class="capsule capsule-border-4Ocean fs-6 m-0">Project Scope</h2>
             <div class="d-flex flex-wrap flex-md-nowrap justify-content-between gap-5">
                 <div class="d-flex  flex-column gap-2 stretch" style="width: stretch;">
@@ -91,9 +92,9 @@
         </section>
 
 
-        <section id="processDiscovery" class="section container process-discovery mt-5 p-5">
+        <section id="processDiscovery" class="section container process-discovery p-5 pb-0">
             <h2 class="capsule capsule-border-4Ocean fs-6">General Process Discovery</h2>
-            <div class="process-discovery__row">
+            <div class="process-discovery__row mt-3">
                 <div class="process-discovery__column gap-3">
                     <div class="process-discovery__column-header rounded-4">
                         <img src="image/4Ocean/cleanup-team.png" alt="" class="process-discovery__column-icon">
@@ -174,9 +175,9 @@
             </div>
         </section>
 
-        <section id="problems" class="section container problem mt-5 p-5">
+        <section id="problems" class="section container problem p-5 pb-0">
             <h2 class="capsule capsule-border-4Ocean fs-6">Problem</h2>
-            <div class="problem__row">
+            <div class="problem__row mt-3">
                 <div class="problem__column">
                     <h3 class="problem__column-title text-16 fw-bold">Non-Standardized Field Data Collection</h3>
                     <p class="problem__column-text text-16">Cleanup teams need a <b>standardized and efficient</b> way
@@ -203,9 +204,9 @@
             </div>
         </section>
 
-        <section id="solutions" class="section container solution mt-5 p-5">
+        <section id="solutions" class="section container solution p-5 pb-0">
             <h2 class="capsule capsule-border-4Ocean fs-6">Solution</h2>
-            <div class="solution__row">
+            <div class="solution__row mt-3">
                 <div class="solution__column">
                     <p class="solution__column-title text-16">How might we help cleanup teams collect and submit
                         standardized field data more efficiently across multiple cleanup locations?</p>
@@ -253,13 +254,13 @@
             </div>
         </section>
 
-        <section id="userFlow" class="section container flow mt-5 p-5">
+        <section id="userFlow" class="section container flow p-5 pb-0">
 
             <h2 class="capsule capsule-border-4Ocean fs-6">
                 User Flow & Lo-fi Wireframing
             </h2>
 
-            <div class="accordion mt-4" id="userFlowAccordion">
+            <div class="accordion mt-3" id="userFlowAccordion">
 
                 <!-- START CLEANUP FLOW -->
                 <div class="accordion-item border-0 rounded-4 overflow-hidden mb-3">
@@ -278,45 +279,45 @@
 
                         <div class="accordion-body secondary-bg-color-4Ocean p-5">
 
-                            <div class="d-flex flex-row flex-wrap justify-content-between ">
+                            <p class="text-16" style="width: stretch;">
+                                Stakeholder : <br>
+                                <b class="fs-6">Cleanup Team</b>
+                            </p>
 
-                                <p class="text-16" style="width: stretch;">
-                                    Stakeholder : <br>
-                                    <b class="fs-6">Cleanup Team</b>
-                                </p>
+                            <p class="fs-6" style="width: stretch;">
+                                <b>Start Cleanup Flow:</b><br>
+                                Login →
+                                View Cleanup List → Create New Cleanup →
+                                Double Check Location → Take Pre-Cleanup Photo →
+                                Start Cleanup
+                            </p>
 
-                                <p class="fs-6 mb-0" style="width: stretch;">
-                                    Start Cleanup Flow:</p>
-                                <div class="d-flex justify-content-between align-items-center gap-3 flex-wrap mb-3">
+                            <img src="image/4Ocean/start-cleanup.png" alt="Start Cleanup Flow"
+                                class="flow__image zoom-image" data-bs-toggle="modal"
+                                data-bs-target="#startCleanupImageModal">
 
-                                    <span class="fw-semibold">Login</span>
+                        </div>
+                    </div>
+                </div>
 
-                                    <span>→</span>
+                <div class="modal fade" id="startCleanupImageModal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-fullscreen">
+                        <div class="modal-content">
 
-                                    <span class="fw-semibold">View Cleanup List</span>
-
-                                    <span>→</span>
-
-                                    <span class="fw-semibold">Create New Cleanup</span>
-
-                                    <span>→</span>
-
-                                    <span class="fw-semibold">Double Check Location</span>
-
-                                    <span>→</span>
-
-                                    <span class="fw-semibold">Take Pre-Cleanup Photo</span>
-
-                                    <span>→</span>
-
-                                    <span class="fw-semibold">Start Cleanup</span>
-
+                            <div class="modal-header gap-3">
+                                <h5 class="modal-title">Start Cleanup Flow</h5>
+                                <div class="d-flex gap-2 align-items-center">
+                                    <button type="button" class="btn btn-outline-secondary zoom-out-btn">−</button>
+                                    <button type="button" class="btn btn-outline-secondary zoom-reset-btn">100%</button>
+                                    <button type="button" class="btn btn-outline-secondary zoom-in-btn">+</button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                 </div>
-
-
                             </div>
 
-                            <img src="image/4Ocean/start-cleanup.png" alt="Start Cleanup Flow" class="flow__image">
+                            <div class="modal-body image-viewer">
+                                <img src="image/4Ocean/start-cleanup.png" class="zoomable-image"
+                                    alt="Start Cleanup Flow">
+                            </div>
 
                         </div>
                     </div>
@@ -339,20 +340,16 @@
 
                         <div class="accordion-body secondary-bg-color-4Ocean p-5">
 
-                            <div class="d-flex justify-content-between gap-4">
+                            <p class="text-16" style="width: stretch;">
+                                Stakeholder : <br>
+                                <b class="fs-6">Cleanup Team</b>
+                            </p>
 
-                                <p class="text-16" style="width: stretch;">
-                                    Stakeholder : <br>
-                                    <b class="fs-6">Cleanup Team</b>
-                                </p>
-
-                                <p class="fs-6" style="width: stretch;">
-                                    <b>During Cleanup Flow:</b><br>
-                                    Cleanup Ongoing →
-                                    Capture Progress Photos → Submit Progress Photos
-                                </p>
-
-                            </div>
+                            <p class="fs-6" style="width: stretch;">
+                                <b>During Cleanup Flow:</b><br>
+                                Cleanup Ongoing →
+                                Capture Progress Photos → Submit Progress Photos
+                            </p>
 
                             <img src="image/4Ocean/during-cleanup.png" alt="During Cleanup Flow" class="flow__image">
 
@@ -379,36 +376,44 @@
 
                         <div class="accordion-body secondary-bg-color-4Ocean p-5">
 
-                            <div class="d-flex flex-row flex-wrap justify-content-between">
+                            <p class="text-16" style="width: stretch;">
+                                Stakeholder : <br>
+                                <b class="fs-6">Cleanup Team</b>
+                            </p>
 
-                                <p class="text-16" style="width: stretch;">
-                                    Stakeholder : <br>
-                                    <b class="fs-6">Cleanup Team</b>
-                                </p>
+                            <p class="fs-6" style="width: stretch;">
+                                <b>Finishing Cleanup Flow:</b><br>
+                                Capture Post-Cleanup Photo →
+                                Enter Daily Cleanup Data → Review →
+                                Submit Finish Cleanup
+                            </p>
 
-                                <p class="fs-6" style="width: stretch;">
-                                    Finishing Cleanup Flow:
-                                <div class="d-flex justify-content-between align-items-center gap-3 flex-wrap mb-3">
+                            <img src="image/4Ocean/after-cleanup.png" alt="After Cleanup Flow"
+                                class="flow__image zoom-image" data-bs-toggle="modal"
+                                data-bs-target="#finishingCleanupImageModal">
 
-                                    <span class="fw-bold">Capture Post-Cleanup Photo</span>
+                        </div>
+                    </div>
+                </div>
 
-                                    <span>→</span>
+                <div class="modal fade" id="finishingCleanupImageModal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-fullscreen">
+                        <div class="modal-content">
 
-                                    <span class="fw-bold">Enter Daily Cleanup Data</span>
-
-                                    <span>→</span>
-
-                                    <span class="fw-bold">Review</span>
-
-                                    <span>→</span>
-
-                                    <span class="fw-bold">Submit Finish Cleanup</span>
+                            <div class="modal-header gap-3">
+                                <h5 class="modal-title">Finishing Cleanup Flow</h5>
+                                <div class="d-flex gap-2 align-items-center">
+                                    <button type="button" class="btn btn-outline-secondary zoom-out-btn">−</button>
+                                    <button type="button" class="btn btn-outline-secondary zoom-reset-btn">100%</button>
+                                    <button type="button" class="btn btn-outline-secondary zoom-in-btn">+</button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                 </div>
-                                </p>
-
                             </div>
 
-                            <img src="image/4Ocean/after-cleanup.png" alt="After Cleanup Flow" class="flow__image">
+                            <div class="modal-body image-viewer">
+                                <img src="image/4Ocean/after-cleanup.png" class="zoomable-image"
+                                    alt="Finishing Cleanup Flow">
+                            </div>
 
                         </div>
                     </div>
@@ -431,25 +436,48 @@
 
                         <div class="accordion-body secondary-bg-color-4Ocean p-5">
 
-                            <div class="d-flex justify-content-between gap-4">
+                            <p class="text-16" style="width: stretch;">
+                                Stakeholder : <br>
+                                <b class="fs-6">
+                                    Cleanup Team / Warehouse Team
+                                </b>
+                            </p>
 
-                                <p class="text-16" style="width: stretch;">
-                                    Stakeholder : <br>
-                                    <b class="fs-6">
-                                        Cleanup Team / Warehouse Team
-                                    </b>
-                                </p>
+                            <p class="fs-6" style="width: stretch;">
+                                <b>Waste Sorting Flow:</b><br>
+                                Get QR Code →
+                                Scan Barcode at Facility → Add New Cleanup →
+                                Input Total Weight → Upload Weight Photo →
+                                Sorter Review Cleanup → Input Sorting Data →
+                                View Sorting Summary
+                            </p>
 
-                                <p class="fs-6" style="width: stretch;">
-                                    <b>Waste Sorting Flow:</b><br>
-                                    Capture Post-Cleanup Photo →
-                                    Enter Daily Cleanup Data →
-                                    Review → Submit Finish Cleanup
-                                </p>
+                            <img src="image/4Ocean/waste-sorting.png" alt="Waste Sorting Flow"
+                                class="flow__image zoom-image" data-bs-toggle="modal"
+                                data-bs-target="#wasteSortingImageModal">
 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="wasteSortingImageModal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-fullscreen">
+                        <div class="modal-content">
+
+                            <div class="modal-header gap-3">
+                                <h5 class="modal-title">Waste Sorting Flow</h5>
+                                <div class="d-flex gap-2 align-items-center">
+                                    <button type="button" class="btn btn-outline-secondary zoom-out-btn">−</button>
+                                    <button type="button" class="btn btn-outline-secondary zoom-reset-btn">100%</button>
+                                    <button type="button" class="btn btn-outline-secondary zoom-in-btn">+</button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
                             </div>
 
-                            <img src="image/4Ocean/waste-sorting.png" alt="Waste Sorting Flow" class="flow__image">
+                            <div class="modal-body image-viewer">
+                                <img src="image/4Ocean/waste-sorting.png" class="zoomable-image"
+                                    alt="Waste Sorting Flow">
+                            </div>
 
                         </div>
                     </div>
@@ -474,25 +502,22 @@
 
                         <div class="accordion-body secondary-bg-color-4Ocean p-5">
 
-                            <div class="d-flex justify-content-between gap-4">
+                            <p class="text-16" style="width: stretch;">
+                                Stakeholder : <br>
+                                <b class="fs-6">
+                                    Donors / 4Ocean Management
+                                </b>
+                            </p>
 
-                                <p class="text-16" style="width: stretch;">
-                                    Stakeholder : <br>
-                                    <b class="fs-6">
-                                        Donors / 4Ocean Management
-                                    </b>
-                                </p>
-
-                                <p class="fs-6" style="width: stretch;">
-                                    <b>Dashboard / Report Flow:</b><br>
-                                    <span class="text-muted">
-                                        Note: This is dummy data.
-                                    </span><br>
-                                    Donors / 4Ocean Management Login →
-                                    Report Ready
-                                </p>
-
-                            </div>
+                            <p class="fs-6" style="width: stretch;">
+                                <b>Dashboard / Report Flow:</b><br>
+                                <span class="text-muted">
+                                    Note: This is dummy data.
+                                </span><br>
+                                Login →
+                                View Latest Impact Summary → View Cleanup Data Table →
+                                View Cleanup Map → View Impact Spotlight
+                            </p>
 
                             <img src="image/4Ocean/dashboard-report.png" alt="Dashboard / Report Flow"
                                 class="flow__image">
@@ -500,12 +525,97 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </section>
 
-        <section id="wireframing" class="section container wireframing mt-5 p-5">
+        <section id="workflow" class="section container workflow p-5 pb-0">
+            <h2 class="capsule capsule-border-4Ocean fs-6">
+                Workflow Transformation
+            </h2>
+            <div class="table-responsive rounded-4 mt-3">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Area</th>
+                            <th scope="col">Issue</th>
+                            <th scope="col">New Direction</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Field Data Collection</th>
+                            <td>
+                                <div
+                                    class="d-flex flex-row gap-2 align-items-start border border-2 p-3 rounded-3 cross-container">
+                                    <img src="image/cross red.svg" alt="" class="cross mt-1 ">
+                                    <p class="m-0">Dozens team manually recorded daily collection result on paper</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div
+                                    class="d-flex flex-row gap-2 align-items-start border border-2 p-3 rounded-3 check-container">
+                                    <img src="image/tick green.svg" alt="" class="check">
+                                    <p class="m-0">Each team member inputs data directly into the Digital Collection Application(DCA)</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Data Consolidation</th>
+                            <td>
+                                <div
+                                    class="d-flex flex-row gap-2 align-items-start border border-2 p-3 rounded-3 cross-container">
+                                    <img src="image/cross red.svg" alt="" class="cross mt-1 ">
+                                    <p class="m-0">Manual recording of each bag leads to inconsitent data and no tranparency in verification</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div
+                                    class="d-flex flex-row gap-2 align-items-start border border-2 p-3 rounded-3 check-container">
+                                    <img src="image/tick green.svg" alt="" class="check">
+                                    <p class="m-0">Data is automatically synced to a centralized system. One bag, one photo, ensuring transparent weigth verification and proper process documentation</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Impact Transparency</th>
+                            <td>
+                                <div
+                                    class="d-flex flex-row gap-2 align-items-start border border-2 p-3 rounded-3 cross-container">
+                                    <img src="image/cross red.svg" alt="" class="cross mt-1 ">
+                                    <p class="m-0">Time-confuming reporting process after field operations</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div
+                                    class="d-flex flex-row gap-2 align-items-start border border-2 p-3 rounded-3 check-container">
+                                    <img src="image/tick green.svg" alt="" class="check">
+                                    <p class="m-0">Reporting time is significantly reduced</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <td>
+                                <div
+                                    class="d-flex flex-row gap-2 align-items-start border border-2 p-3 rounded-3 cross-container">
+                                    <img src="image/cross red.svg" alt="" class="cross mt-1 ">
+                                    <p class="m-0">No real-time visibility of total team progress</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div
+                                    class="d-flex flex-row gap-2 align-items-start border border-2 p-3 rounded-3 check-container">
+                                    <img src="image/tick green.svg" alt="" class="check">
+                                    <p class="m-0">Real-time visibility of team performance</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="wireframing" class="section container wireframing p-5 pb-0">
 
             <h2 class="capsule capsule-border-4Ocean text-20">
                 Hi-Fi Wireframing
@@ -741,12 +851,6 @@
                             <img src="image/4Ocean/wireframing-icon-1.png" alt="4Ocean Icon 1"
                                 class="wireframing__image">
 
-                            <img src="image/4Ocean/wireframing-icon-2.png" alt="4Ocean Icon 2"
-                                class="wireframing__image mt-4">
-
-                            <img src="image/4Ocean/wireframing-icon-3.png" alt="4Ocean Icon 3"
-                                class="wireframing__image mt-4">
-
                         </div>
                     </div>
                 </div>
@@ -767,9 +871,32 @@
                     <div id="components" class="accordion-collapse collapse" data-bs-parent="#wireframingAccordion">
 
                         <div class="accordion-body secondary-bg-color-4Ocean p-5">
+                            <div class="d-flex flex-wrap gap-3">
+                                <div class="d-flex gap-3 align-items-center flex-wrap">
+                                    <div>
+                                        <p class="text-16 fw-bold">
+                                            Figma Techniques
+                                        </p>
+                                        <ul class="check-list">
+                                            <li><img src="image/tick green.svg" alt="" class="check-list__icon">Component
+                                                Property</li>
+                                            <li><img src="image/tick green.svg" alt="" class="check-list__icon">Auto
+                                                Layout</li>
+                                            <li><img src="image/tick green.svg" alt="" class="check-list__icon">Component
+                                                Variation</li>
+                                            <li><img src="image/tick green.svg" alt="" class="check-list__icon">Nested
+                                                Component</li>
+                                        </ul>
+                                    </div>
+                                    <img src="image/4Ocean/wireframing-icon-3.png" alt="4Ocean Icon 3"
+                                        class="wireframing__image">
+                                </div>
+                                <img src="image/4Ocean/wireframing-icon-2.png" alt="4Ocean Icon 2"
+                                    class="wireframing__image mt-4">                                    
+                            </div>
 
                             <img src="image/4Ocean/wireframing-component-1.png" alt="4Ocean Component 1"
-                                class="wireframing__image">
+                                class="wireframing__image mt-4">
 
                             <img src="image/4Ocean/wireframing-component-2.png" alt="4Ocean Component 2"
                                 class="wireframing__image mt-4">
@@ -806,7 +933,7 @@
 
         </section>
 
-        <section id="iterasi" class="section container iterasi mt-5 p-5">
+        <section id="iterasi" class="section container iterasi p-5 pb-0">
 
             <h2 class="capsule capsule-border-4Ocean text-20">
                 Iterasi
@@ -830,6 +957,10 @@
                     <div id="firstVersion" class="accordion-collapse collapse" data-bs-parent="#iterasiAccordion">
 
                         <div class="accordion-body secondary-bg-color-4Ocean p-5">
+                            <p class="text-20 fw-bold">A Simple Dashboard Concept</p>
+                            <p class="text-16">
+                                The first iteration focused on creating a simple, single-screen dashboard to present the key cleanup information at a glance. However, this approach was considered too limited, as 4ocean had a substantial amount of information and impact data to communicate to users. The single-screen layout could not provide enough space to present the information clearly and effectively.
+                            </p>
 
                             <img src="image/4Ocean/iterasi-1.jpg" alt="First Version Iteration" class="iterasi__image">
 
@@ -855,6 +986,12 @@
                     <div id="secondVersion" class="accordion-collapse collapse" data-bs-parent="#iterasiAccordion">
 
                         <div class="accordion-body secondary-bg-color-4Ocean p-5">
+                            <p class="text-20 fw-bold">Expanding the Dashboard Experience</p>
+                            <p class="text-16">
+                                In the second iteration, the dashboard was redesigned into a long-form, vertically structured layout to accommodate more information. This allowed users to explore a wider range of cleanup data and impact metrics within a single dashboard.
+                                <br><br>
+                                Along with the structural change, the UI was refined and several information sections were reorganized to improve hierarchy, readability, and how the data was presented to users.
+                            </p>
 
                             <img src="image/4Ocean/iterasi-2.png" alt="Second Version Iteration" class="iterasi__image">
 
@@ -880,7 +1017,12 @@
                     <div id="finalVersion" class="accordion-collapse collapse" data-bs-parent="#iterasiAccordion">
 
                         <div class="accordion-body secondary-bg-color-4Ocean p-5">
-
+                            <p class="text-20 fw-bold">Refining the Dashboard Experience</p>
+                            <p class="text-16">
+                                The third iteration focused on refining the overall dashboard experience based on the previous version. The information hierarchy, layout, and data presentation were further improved to make the dashboard clearer, more structured, and easier to navigate.
+                                <br><br>
+                                The final design balanced the amount of information 4ocean needed to communicate with the user's need to quickly understand cleanup activities, environmental impact, and key results.
+                            </p>
                             <img src="image/4Ocean/iterasi-3.png" alt="Final Version Iteration" class="iterasi__image">
 
                         </div>
@@ -893,17 +1035,31 @@
 
         </section>
 
-        <section id="learnings" class="section container learnings mt-5 p-5">
+        <section id="learnings" class="section container learnings p-5 pb-0">
             <h2 class="capsule capsule-border-4Ocean text-20">Key Learnings</h2>
-            <div class="row">
-                <div class="col-md-4 mb-3">
-                    Challenge<br>Apa obstacle yang kamu temui.<br>mengatasinya.
+            <div class="problem__row mt-3">
+                <div class="problem__column">
+                    <h3 class="problem__column-title text-16 fw-bold">Designing for Complex Systems</h3>
+                    <p class="problem__column-text text-16">Working with a large organization like 4ocean meant working with a large amount of existing data, processes, and interconnected systems. One of the biggest challenges was ensuring that new features could support their existing workflows from end to end, rather than solving only a single part of the process.
+                        <br><br>
+                        This taught me to think beyond individual screens and consider how each feature fits into the broader system and user journey.
+                    </p>
                 </div>
-                <div class="col-md-4 mb-3">
-                    How I Solved It<br>Apa yang kamu lakukan untuk
+
+                <div class="problem__column">
+                    <h3 class="problem__column-title text-16 fw-bold">Validating Before Building</h3>
+                    <p class="problem__column-text text-16">Requirements and feature requests could change frequently throughout the project. As a UI/UX Designer, I learned the importance of validating assumptions before moving into design and development.
+                        <br><br>
+                        Whenever a new feature was proposed, I would encourage the CTO and team to validate the actual need and expected outcome with 4ocean stakeholders/users first. This helped reduce the risk of building features based on assumptions and ensured that design decisions were grounded in real user and business needs.
+                    </p>
                 </div>
-                <div class="col-md-4 mb-3">
-                    What I Learned<br>Insight atau skill yang kamu dapatkan.
+
+                <div class="problem__column">
+                    <h3 class="problem__column-title text-16 fw-bold">Balancing User Needs & Business Complexity</h3>
+                    <p class="problem__column-text text-16">The project taught me that designing for a large organization is not simply about creating a visually clear interface. The solution also needs to accommodate business processes, existing systems, data requirements, and operational constraints.
+                        <br><br>
+                        As a result, I became more aware of designing solutions that are not only usable for the end user, but also feasible and scalable within the organization's existing ecosystem.
+                    </p>
                 </div>
             </div>
         </section>
