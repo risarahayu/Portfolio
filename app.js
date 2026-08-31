@@ -698,14 +698,18 @@ function renderBreadcrumb() {
     }
   }, 100);
 }
-const image = document.getElementById("zoomableImage");
-const viewer = document.getElementById("imageViewer");
+document.querySelectorAll(".image-viewer").forEach((viewer) => {
 
-const zoomIn = document.getElementById("zoomIn");
-const zoomOut = document.getElementById("zoomOut");
-const zoomReset = document.getElementById("zoomReset");
+  const image = viewer.querySelector(".zoomable-image");
+  const modal = viewer.closest(".modal");
 
-if (image && viewer && zoomIn && zoomOut && zoomReset) {
+  if (!image || !modal) return;
+
+  const zoomIn = modal.querySelector(".zoom-in-btn");
+  const zoomOut = modal.querySelector(".zoom-out-btn");
+  const zoomReset = modal.querySelector(".zoom-reset-btn");
+
+  if (!zoomIn || !zoomOut || !zoomReset) return;
 
   let scale = 1;
   const baseWidth = 1000;
@@ -797,5 +801,5 @@ if (image && viewer && zoomIn && zoomOut && zoomReset) {
 
   });
 
-}
+});
 renderBreadcrumb();
