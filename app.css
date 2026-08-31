@@ -818,8 +818,9 @@ body {
     background: linear-gradient(90deg,
             var(--purple) 50%,
             var(--red) 100%);
-    padding: 2rem 5rem;
+    padding: 1.25rem clamp(1.25rem, 5vw, 5rem);
     border-radius: 0 0 20px 20px;
+    row-gap: 0.75rem;
 }
 
 
@@ -831,6 +832,26 @@ body {
 .breadcrumb-bg a,
 .breadcrumb-bg .breadcrumb-item {
     color: var(--white);
+}
+
+.breadcrumb-bg .breadcrumb {
+    flex-wrap: wrap;
+    row-gap: 0.25rem;
+}
+
+.breadcrumb-bg .breadcrumb-item {
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .breadcrumb-bg {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .breadcrumb-bg .breadcrumb {
+        font-size: 0.85rem;
+    }
 }
 
 @keyframes gradientShift {

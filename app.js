@@ -78,7 +78,7 @@ const projectsData = [
     projectTitle: "Impact Portal Dashboard",
     company: "4Ocean",
     companyURL: "https://www.4ocean.com/",
-    projectURL: "portfolio/4Ocean.html",
+    projectURL: "portfolio/4ocean.html",
     description: "A data-driven web dashboard and mobile app designed for investors to track and showcase 4ocean's clean-up impact with transparent daily results.",
     impact: ["Improved investor engagement with real-time clean-up data.", "Enhanced transparency of environmental clean-up efforts."],
     role: ["UI/UX", "Web Development"],
@@ -623,9 +623,9 @@ function renderBreadcrumb() {
                     <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                   </svg>
                 </button>
-                <p class="fw-bold m-0 fs-4">
+                <a class="fw-bold m-0 fs-4 text-decoration-none" href="../index.html">
                     Risa's Project
-                </p>
+                </a>
             </div>
 
             <ol class="breadcrumb text-white m-0">
