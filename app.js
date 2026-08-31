@@ -797,3 +797,50 @@ document.querySelectorAll(".image-viewer").forEach((viewer) => {
 
 });
 renderBreadcrumb();
+
+// Page loader — waits for every image on the page to finish loading
+// before revealing the content (index page only).
+const pageLoader = document.getElementById("pageLoader");
+
+if (pageLoader) {
+
+  document.body.classList.add("is-loading");
+
+  function hidePageLoader() {
+    pageLoader.classList.add("is-hidden");
+    document.body.classList.remove("is-loading");
+    setTimeout(() => pageLoader.remove(), 600);
+  }
+
+  function waitForImages() {
+    const images = Array.from(document.images);
+
+    return Promise.all(
+      images.map((img) => {
+        if (img.complete) return Promise.resolve();
+
+        return new Promise((resolve) => {
+          img.addEventListener("load", resolve, { once: true });
+          img.addEventListener("error", resolve, { once: true });
+        });
+      })
+    );
+  }
+
+  const windowLoaded = new Promise((resolve) => {
+    if (document.readyState === "complete") {
+      resolve();
+    } else {
+      window.addEventListener("load", resolve, { once: true });
+    }
+  });
+
+  // Safety net in case a resource stalls — never block the page forever.
+  const safetyTimeout = new Promise((resolve) => setTimeout(resolve, 6000));
+
+  Promise.race([
+    windowLoaded.then(waitForImages),
+    safetyTimeout
+  ]).then(hidePageLoader);
+
+}
