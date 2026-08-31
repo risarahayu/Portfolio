@@ -276,9 +276,66 @@
             </div>
         </section>
         <section class="container mt-5">
-            <div class="col-12 col-md-6 d-flex flex-column gap-3">
+            <div>
                 <h2 class="capsule fs-6">Key Screen & Information Architecture</h2>
-                <img src="image/BaliTeak/IA.png" alt="" class="w-100 h-100 mt-3" style="object-fit: contain;">
+
+                <p class="fs-6 fw-semibold mt-3 mb-2">Sitemap Iteration Process</p>
+
+                <p class="m-0">
+                    There is many feature and page that we plan to build, but we need to<br>
+                    priortize what feature and page that we need to build first according<br>
+                    to the client needs.
+                </p>
+
+                <img src="image/BaliTeak/Baliteak.ca Sitemap.png" alt="Bali Teak Sitemap" class="w-100 mt-3 zoom-image"
+                    data-bs-toggle="modal" data-bs-target="#imageModal">
+            </div>
+            <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+
+                <div class="modal-dialog modal-fullscreen">
+
+                    <div class="modal-content">
+
+                        <!-- Toolbar -->
+                        <div class="modal-header gap-3 ">
+
+                            <h5 class="modal-title ">
+                                Bali Teak Sitemap
+                            </h5>
+
+                            <div class="d-flex gap-2 align-items-center ">
+
+                                <button type="button" class="btn btn-outline-secondary" id="zoomOut">
+                                    −
+                                </button>
+
+                                <button type="button" class="btn btn-outline-secondary" id="zoomReset">
+                                    100%
+                                </button>
+
+                                <button type="button" class="btn btn-outline-secondary" id="zoomIn">
+                                    +
+                                </button>
+
+                                <button type="button" class="btn-close" data-bs-dismiss="modal">
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Viewer -->
+                        <div class="modal-body image-viewer" id="imageViewer">
+
+                            <img src="image/BaliTeak/Baliteak.ca Sitemap.png" id="zoomableImage"
+                                alt="Bali Teak Sitemap">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
         </section>
         <section class="container mt-5">
@@ -307,6 +364,37 @@
                     <img src="image/BaliTeak/card slider.png" alt="" class="w-100 mt-3" style="object-fit: contain;">
                 </div>
 
+            </div>
+        </section>
+        <section class="container mt-5 p-5 baliteak-bg-color-secondary rounded-4">
+            <h2 class="capsule fs-6">Implementation Challenges</h2>
+            <div class="d-flex flex-column flex-md-row gap-3">
+                <p class="fs-6 mt-3 flex-grow-1">
+                    The main challenge was bridging the <strong>gap between the UI design and the limitations of
+                        Elementor</strong>
+                    during
+                    implementation. Some layouts initially struggled with responsiveness, particularly when relying
+                    solely
+                    on Elementor's container system. I helped restructure these sections using Flexbox and CSS Grid to
+                    achieve more flexible responsive behavior.</p>
+                <p class="fs-6 mt-3 flex-grow-1">
+                    I also considered Elementor's available components during the design process to ensure that proposed
+                    UI
+                    patterns—such as sliders and carousels—could be realistically implemented without unnecessary custom
+                    development.</p>
+                <p class="fs-6 mt-3 flex-grow-1">
+
+                    <strong>Since Bali Teak also had a limited visual identity</strong>, I developed several color
+                    directions and
+                    presented
+                    them to the client before establishing a simple and consistent color palette.
+                </p>
+                <p class="fs-6 mt-3 flex-grow-1">
+                    Throughout the project, <strong>I balanced visual quality, implementation feasibility, and a fast
+                        delivery
+                        timeline</strong>, while also ensuring the Elementor setup, licensing, and custom code were
+                    suitable for
+                    long-term maintenance.</p>
             </div>
         </section>
         <section class="mt-3 ">

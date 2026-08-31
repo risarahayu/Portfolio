@@ -622,5 +622,106 @@ function renderBreadcrumb() {
         </nav>
     `;
 }
+const image = document.getElementById("zoomableImage");
+const viewer = document.getElementById("imageViewer");
 
+const zoomIn = document.getElementById("zoomIn");
+const zoomOut = document.getElementById("zoomOut");
+const zoomReset = document.getElementById("zoomReset");
+
+let scale = 1;
+
+const baseWidth = 1000;
+
+function updateZoom() {
+
+  const newWidth = baseWidth * scale;
+
+  image.style.width = `${newWidth}px`;
+
+  zoomReset.textContent = `${Math.round(scale * 100)}%`;
+}
+
+zoomIn.addEventListener("click", () => {
+
+  scale += 0.25;
+
+  if (scale > 5) {
+    scale = 5;
+  }
+
+  updateZoom();
+});
+
+zoomOut.addEventListener("click", () => {
+
+  scale -= 0.25;
+
+  if (scale < 0.5) {
+    scale = 0.5;
+  }
+
+  updateZoom();
+});
+
+
+
+viewer.addEventListener("wheel", (event) => {
+
+  event.preventDefault();
+
+  if (event.deltaY < 0) {
+    scale += 0.1;
+  } else {
+    scale -= 0.1;
+  }
+
+  scale = Math.min(Math.max(scale, 0.5), 5);
+
+  updateZoom();
+
+}, { passive: false });
+
+let isDragging = false;
+
+let startX;
+let startY;
+
+let scrollLeft;
+let scrollTop;
+
+viewer.addEventListener("mousedown", (e) => {
+
+  isDragging = true;
+
+  startX = e.pageX - viewer.offsetLeft;
+  startY = e.pageY - viewer.offsetTop;
+
+  scrollLeft = viewer.scrollLeft;
+  scrollTop = viewer.scrollTop;
+});
+
+viewer.addEventListener("mouseleave", () => {
+  isDragging = false;
+});
+
+viewer.addEventListener("mouseup", () => {
+  isDragging = false;
+});
+
+viewer.addEventListener("mousemove", (e) => {
+
+  if (!isDragging) return;
+
+  e.preventDefault();
+
+  const x = e.pageX - viewer.offsetLeft;
+  const y = e.pageY - viewer.offsetTop;
+
+  const walkX = x - startX;
+  const walkY = y - startY;
+
+  viewer.scrollLeft = scrollLeft - walkX;
+  viewer.scrollTop = scrollTop - walkY;
+});
 renderBreadcrumb();
