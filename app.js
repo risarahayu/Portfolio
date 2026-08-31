@@ -538,7 +538,9 @@ function renderPortfolioFooter() {
         <div class="contact-blob blob-2"></div>
 
         <div class="contact-content">
-          <p class="contact-eyebrow">Open to opportunities</p>
+        <img src="../image/face.png" alt="" style="width:5rem; height:5rem; object-fit:contain;">
+          <p class="contact-eyebrow">Thank you for reading this far</p>
+          
           <h2 class="contact-headline">Ready to Turn Ideas<br>Into Reality Together.</h2>
           <p class="contact-subtext">
             Whether you have a project in mind or just want to say hello —<br>
@@ -583,6 +585,10 @@ function renderBreadcrumb() {
 
   if (!breadcrumb) return;
 
+  // Make the wrapper sticky so it actually sticks to the viewport
+  breadcrumb.classList.add("sticky-top");
+  breadcrumb.style.zIndex = "1020";
+
   const currentPage = window.location.pathname
     .split("/")
     .pop()
@@ -600,13 +606,20 @@ function renderBreadcrumb() {
         <nav 
             style="--bs-breadcrumb-divider: '>';" 
             aria-label="breadcrumb"
-            class="breadcrumb-bg d-flex justify-content-between container sticky-top"
+            class="breadcrumb-bg d-flex justify-content-between align-items-center container"
         >
-            <p class="fw-bold m-0 fs-4">
-                Risa's Project
-            </p>
+            <div class="d-flex align-items-center gap-3">
+                <button class="btn btn-outline-light d-flex align-items-center justify-content-center p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#projectSidebar" aria-controls="projectSidebar" style="border-radius: 8px;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                  </svg>
+                </button>
+                <p class="fw-bold m-0 fs-4">
+                    Risa's Project
+                </p>
+            </div>
 
-            <ol class="breadcrumb text-white">
+            <ol class="breadcrumb text-white m-0">
                 <li class="breadcrumb-item">
                     <a href="../index.html">Home</a>
                 </li>
@@ -620,7 +633,61 @@ function renderBreadcrumb() {
                 </li>
             </ol>
         </nav>
+
+        <!-- Offcanvas Sidebar -->
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="projectSidebar" aria-labelledby="projectSidebarLabel" style="background-color: var(--white); color: var(--text-primary);">
+          <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title fw-bold" id="projectSidebarLabel">Project Navigation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="nav flex-column gap-2" id="sidebarNavLinks">
+              <!-- Links will be injected here -->
+            </ul>
+          </div>
+        </div>
     `;
+
+  // Populate Sidebar Links dynamically
+  setTimeout(() => {
+    const sidebarNav = document.getElementById("sidebarNavLinks");
+    if (sidebarNav) {
+      // Find all sections that have an ID in the main content
+      const sections = document.querySelectorAll("main section[id]");
+
+      let linksHTML = "";
+      sections.forEach(section => {
+        // Try to find a heading inside the section to use as link text
+        const heading = section.querySelector("h1, h2, h3, h4, h5, h6");
+        if (heading && section.id && section.id !== "portfolioFooter") {
+          const title = heading.innerText.trim();
+          linksHTML += `
+            <li class="nav-item">
+              <a class="nav-link text-dark rounded px-3 py-2 sidebar-link" 
+                 style="background-color: rgba(0,0,0,0.05); transition: all 0.2s ease; cursor: pointer;" 
+                 onclick="
+                   document.querySelector('#projectSidebar .btn-close').click();
+                   setTimeout(() => {
+                     const target = document.getElementById('${section.id}');
+                     if(target) {
+                       const y = target.getBoundingClientRect().top + window.scrollY - 100;
+                       window.scrollTo({top: y, behavior: 'smooth'});
+                     }
+                   }, 350);
+                 "
+                 onmouseover="this.style.backgroundColor='rgba(0,0,0,0.1)'" 
+                 onmouseout="this.style.backgroundColor='rgba(0,0,0,0.05)'">${title}</a>
+            </li>
+          `;
+        }
+      });
+
+      if (linksHTML === "") {
+        linksHTML = `<p class="text-muted small">No sections found. Please add IDs to your sections.</p>`;
+      }
+      sidebarNav.innerHTML = linksHTML;
+    }
+  }, 100);
 }
 const image = document.getElementById("zoomableImage");
 const viewer = document.getElementById("imageViewer");
