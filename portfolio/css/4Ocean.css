@@ -534,6 +534,21 @@
   height: auto;
 }
 
+.check-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding-left: 0;
+}
+
+.check-list__icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  margin-right: 0.5rem;
+}
+
 /* ==========================================================================
    Wireframing — design tokens reference (color table, Tailwind CSS
    variables, logo)
