@@ -129,22 +129,16 @@ const projectsData = [
 
 const testimonials = [
   {
-    name: "John Doe",
-    role: "Founder & CEO",
+    name: "Dharma Putra",
+    role: "IT Manager",
     company: "1zero",
-    quote: "Risa brings a great balance of creativity, technical understanding, and attention to detail."
+    quote: "It was a absolute pleasure working alongside Risa Rahayu. They pick up new tools and concepts at lightning speed and never hesitate to take full ownership of their deliverables. Dependable and deadline-driven, Risa consistently balances speed with thoughtful, user-centered design. They would be an outstanding asset to any product team."
   },
   {
-    name: "Jane Smith",
-    role: "Product Manager",
-    company: "Company Name",
-    quote: "Working with Risa was seamless. She understood the problem quickly and translated it into a clear digital experience."
-  },
-  {
-    name: "Alex Johnson",
-    role: "Creative Director",
-    company: "Company Name",
-    quote: "Risa is thoughtful, collaborative, and always focused on creating meaningful user experiences."
+    name: "Mutia Rosa",
+    role: "Executive Assistant",
+    company: "1zero",
+    quote: " was always impressed by her passion and dedication to her work. She is highly responsible, responsive, and efficient, and it is clear that she genuinely enjoys what she does. Risa is also always willing to learn new things and continuously improve her skills. I truly enjoyed working alongside Risa and would highly recommend her to any team or company looking for a passionate, dedicated, talented, and supportive UI/UX professional. I’m confident she will continue to grow and achieve great things in her career."
   }
 ];
 
@@ -385,7 +379,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // company 
     const companyLogoMap = {
-      "4ocean": "image/logo/company/4Ocean.webp",
+      "4Ocean": "image/logo/company/4Ocean.png",
       "Bali Teak": "image/logo/company/Bali Teak.png",
       "Mission Pawsible Bali": "image/logo/company/Mission Pawsible.webp"
     }
