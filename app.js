@@ -78,6 +78,7 @@ const projectsData = [
     projectTitle: "Impact Portal Dashboard",
     company: "4Ocean",
     companyURL: "https://www.4ocean.com/",
+    projectURL: "portfolio/4Ocean.html",
     description: "A data-driven web dashboard and mobile app designed for investors to track and showcase 4ocean's clean-up impact with transparent daily results.",
     impact: ["Improved investor engagement with real-time clean-up data.", "Enhanced transparency of environmental clean-up efforts."],
     role: ["UI/UX", "Web Development"],
@@ -93,6 +94,7 @@ const projectsData = [
     projectTitle: "Bali Teak Company Website",
     company: "Bali Teak",
     companyURL: "https://baliteak.ca",
+    projectURL: "portfolio/BaliTeak.html",
     description: "A digital showcase for a local furniture company looking to build an online presence without fully implementing e-commerce functionality.",
     impact: ["Strengthened online visibility and brand presence.",
       "Improved customer engagement and inquiries.",
@@ -105,24 +107,24 @@ const projectsData = [
       "image/portfolio img/UIUX/BalI Teak Company Website 2.png"
     ]
   },
-  {
-    id: 3,
-    projectTitle: "Stray Dog Adoption Website",
-    company: "Mission Pawsible Bali",
-    companyURL: "https://missionpawsible.org",
-    description: "A website dedicated to rescuing stray dogs and connecting them with loving adopters, developed in collaboration with MissionPawsible Bali.",
-    impact: ["Streamlined the adoption process for potential adopters.",
-      "Increased visibility for stray dogs in need of adoption.",
-      "Improved access to adoption information and opportunities."
-    ],
-    role: ["UI/UX", "Web Development"],
-    projectType: ["Platform Building"],
-    tools: ["Figma", "Bootstrap", "Laravel"],
-    images: [
-      "image/portfolio img/UIUX/Dog Adoption Website-mockup.jpg",
-      "image/portfolio img/UIUX/Dog Adoption Website 2.png"
-    ]
-  }
+  // {
+  //   id: 3,
+  //   projectTitle: "Stray Dog Adoption Website",
+  //   company: "Mission Pawsible Bali",
+  //   companyURL: "https://missionpawsible.org",
+  //   description: "A website dedicated to rescuing stray dogs and connecting them with loving adopters, developed in collaboration with MissionPawsible Bali.",
+  //   impact: ["Streamlined the adoption process for potential adopters.",
+  //     "Increased visibility for stray dogs in need of adoption.",
+  //     "Improved access to adoption information and opportunities."
+  //   ],
+  //   role: ["UI/UX", "Web Development"],
+  //   projectType: ["Platform Building"],
+  //   tools: ["Figma", "Bootstrap", "Laravel"],
+  //   images: [
+  //     "image/portfolio img/UIUX/Dog Adoption Website-mockup.jpg",
+  //     "image/portfolio img/UIUX/Dog Adoption Website 2.png"
+  //   ]
+  // }
 ];
 
 const testimonials = [
@@ -441,11 +443,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         projectsHTML += `
         <div class="col-md-6 col-lg-4">
+        <a href="${project.projectURL}" class="text-decoration-none text-reset">
           <div class="card h-100 shadow-sm border-0 project-card" style="border-radius: 20px;">
             <!-- Thumbnail utama diambil dari gambar pertama -->
             <img src="${project.images[0]}" class="card-img-top p-3" alt="${project.projectTitle}" style="height: 220px; object-fit: cover; border-radius: 36px;">
             <div class="card-body d-flex flex-column">
-              <h5 class="card-title fw-semibold">${project.projectTitle}</h5>
+                <h5 class="card-title fw-semibold">${project.projectTitle}</h5>
+              
               <p class="card-text text-muted small mb-3">${project.description}</p>
               
 
@@ -488,7 +492,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   <div class="d-flex justify-content-between gap-4">
                     <!-- TOOLS -->
                     <div class="d-flex flex-column gap-2">
-                      <span class="text-secondary small fw-bold">Tools:</span>
+                      <span class="text-secondary small fw-bold">Core Tools:</span>
                       <div class="d-flex flex-wrap gap-2">
                         ${toolsHTML}
                       </div>
@@ -507,7 +511,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                   </div>
                 </div>
-          </div>
+              </div>
+            </a>
         </div>
         `;
       });
@@ -520,3 +525,102 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+function renderPortfolioFooter() {
+  const footerPortfolio = document.getElementById("portfolioFooter");
+
+  if (!footerPortfolio) return;
+
+  footerPortfolio.innerHTML = `
+            <div class="container  contact-inner">
+
+        <!-- Animated blobs in background -->
+        <div class="contact-blob blob-1"></div>
+        <div class="contact-blob blob-2"></div>
+
+        <div class="contact-content">
+          <p class="contact-eyebrow">Open to opportunities</p>
+          <h2 class="contact-headline">Ready to Turn Ideas<br>Into Reality Together.</h2>
+          <p class="contact-subtext">
+            Whether you have a project in mind or just want to say hello —<br>
+            I'd love to hear from you.
+          </p>
+
+          <!-- Social Links -->
+          <div class="contact-links">
+            <a href="https://www.linkedin.com/in/risarahayu" target="_blank" class="contact-link" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+
+            <a href="mailto:rrisa329@gmail.com" class="contact-link" aria-label="Email">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
+              </svg>
+              <span>rrisa329@gmail.com</span>
+            </a>
+
+            <a href="https://wa.me/6289685788761" target="_blank" class="contact-link" aria-label="WhatsApp">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.38 1.26 4.8L2.05 22l5.42-1.42c1.37.73 2.93 1.14 4.57 1.14 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m4.49 13.39c-.2.57-1.18 1.09-1.63 1.16-.41.06-.93.09-1.5-.09-.35-.12-.79-.27-1.36-.53-2.37-1.02-3.92-3.41-4.04-3.57-.12-.16-.96-1.27-.96-2.43 0-1.15.61-1.72.83-1.96.22-.24.48-.3.64-.3l.46.01c.15 0 .35-.06.55.42.2.48.68 1.66.74 1.78.06.12.1.26.02.42-.08.16-.12.26-.24.4-.12.14-.25.31-.36.42-.12.12-.24.25-.1.49.14.24.62.97 1.33 1.57.91.81 1.68 1.06 1.92 1.18.24.12.38.1.52-.06.14-.16.6-.7.76-.94.16-.24.32-.2.54-.12.22.08 1.4.66 1.64.78.24.12.4.18.46.28.06.1.06.57-.14 1.14z" />
+              </svg>
+              <span>WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    `;
+}
+
+renderPortfolioFooter();
+
+function renderBreadcrumb() {
+  const breadcrumb = document.getElementById("breadcrumb");
+
+  if (!breadcrumb) return;
+
+  const currentPage = window.location.pathname
+    .split("/")
+    .pop()
+    .replace(".html", "");
+
+  const pageNames = {
+    "BaliTeak": "Bali Teak - Redesign Website",
+    "4ocean": "4ocean - Website Redesign",
+    "mission-pawsible": "Mission Pawsible"
+  };
+
+  const currentPageName = pageNames[currentPage] || currentPage;
+
+  breadcrumb.innerHTML = `
+        <nav 
+            style="--bs-breadcrumb-divider: '>';" 
+            aria-label="breadcrumb"
+            class="breadcrumb-bg d-flex justify-content-between container sticky-top"
+        >
+            <p class="fw-bold m-0 fs-4">
+                Risa's Project
+            </p>
+
+            <ol class="breadcrumb text-white">
+                <li class="breadcrumb-item">
+                    <a href="../index.html">Home</a>
+                </li>
+
+                <li class="breadcrumb-item">
+                    <a href="../index.html#portfolios">Portfolios</a>
+                </li>
+
+                <li class="breadcrumb-item active" aria-current="page">
+                    ${currentPageName}
+                </li>
+            </ol>
+        </nav>
+    `;
+}
+
+renderBreadcrumb();

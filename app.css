@@ -65,6 +65,8 @@ body {
 }
 
 
+
+
 /* =========================
    HERO TITLE
 ========================= */
@@ -798,6 +800,43 @@ body {
     animation: gradientShift 6s ease infinite;
 }
 
+.see-more-btn {
+    transition: all 0.2s ease;
+    border: 2px solid var(--white);
+    color: var(--white);
+}
+
+.see-more-btn:hover {
+    background-color: var(--white);
+    color: var(--purple);
+    transform: translateY(-3px);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.see-more-btn:active {
+    transform: translateY(0) scale(0.95);
+    box-shadow: none;
+}
+
+.breadcrumb-bg {
+    color: var(--white);
+    text-decoration: none;
+    background: linear-gradient(90deg,
+            var(--purple) 50%,
+            var(--red) 100%);
+    padding: 2rem 5rem;
+    border-radius: 0 0 20px 20px;
+}
+
+.breadcrumb-bg .breadcrumb-item::before {
+    color: var(--white);
+}
+
+.breadcrumb-bg a,
+.breadcrumb-bg .breadcrumb-item {
+    color: var(--white);
+}
+
 @keyframes gradientShift {
     0% {
         background-position: 0% 50%;
@@ -947,6 +986,20 @@ body {
         transform: translateY(-50%);
     }
 
+}
+
+.project-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    will-change: transform;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+.project-card:active {
+    transform: translateY(-1px) scale(0.97);
 }
 
 .testimonial-card {
