@@ -167,7 +167,7 @@ if (testimonialTrack) {
   testimonials.forEach((testimonial, index) => {
 
     testimonialTrack.innerHTML += `
-      <article class="testimonial-card">
+      <article class="testimonial-card rounded-4">
 
         <div class="testimonial-person">
 
@@ -277,8 +277,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       skillsHTML += `
               <div class="col-md-4">
-                <article class="skill-card ${card.isMain ? 'main-skill' : ''}">
-                  <div class="card-label">
+                <article class="skill-card rounded-4 ${card.isMain ? 'main-skill' : ''}">
+                  <div class="card-label rounded-top-4">
                     ${card.label}
                   </div>
                   <div class="card-body">
@@ -444,9 +444,16 @@ document.addEventListener("DOMContentLoaded", () => {
         projectsHTML += `
         <div class="col-md-6 col-lg-4">
         <a href="${project.projectURL}" class="text-decoration-none text-reset">
-          <div class="card h-100 shadow-sm border-0 project-card" style="border-radius: 20px;">
+          <div class="card h-100 shadow-sm border-0 project-card rounded-4" style="">
             <!-- Thumbnail utama diambil dari gambar pertama -->
-            <img src="${project.images[0]}" class="card-img-top p-3" alt="${project.projectTitle}" style="height: 220px; object-fit: cover; border-radius: 36px;">
+            <div class="p-3">
+                <img 
+                    src="${project.images[0]}" 
+                    class="card-img-top rounded-4" 
+                    alt="${project.projectTitle}" 
+                    style="height: 220px; object-fit: cover;"
+                >
+            </div>
             <div class="card-body d-flex flex-column">
                 <h5 class="card-title fw-semibold">${project.projectTitle}</h5>
               
@@ -531,7 +538,7 @@ function renderPortfolioFooter() {
   if (!footerPortfolio) return;
 
   footerPortfolio.innerHTML = `
-            <div class="container  contact-inner">
+            <div class="container  contact-inner rounded-4">
 
         <!-- Animated blobs in background -->
         <div class="contact-blob blob-1"></div>

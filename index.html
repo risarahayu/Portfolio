@@ -22,80 +22,133 @@
   ========================== -->
   <main>
     <section class="hero-section">
-      <div class="container d-flex flex-column ">
-        <div class="row g-4">
+      <div class="container">
+
+        <div class="row gx-3 gy-0">
+
           <!-- =========================
-               LEFT CONTENT
-          ========================== -->
-          <div class="col-lg-8 d-flex flex-column gap-3">
-            <!-- TITLE -->
-            <h1 class="hero-title">
-              Risa Rahayu
-            </h1>
-            <!-- DESCRIPTION -->
-            <p class="hero-description">
-              Digital & Creative Professional with <strong>nearly 5 years of
-                experience</strong> in the digital industry, working across UI/UX
-              design, web development, graphic design, and digital
-              marketing.
-            </p>
-            <!-- =========================
-                 SKILL CARDS
-            ========================== -->
+           COL 1 — HERO TITLE + DESCRIPTION
+           Desktop: FULL WIDTH
+           Mobile: FIRST
+      ========================== -->
+          <div class="col-12 order-1">
+            <div class="d-flex flex-column gap-3">
+
+              <!-- TITLE -->
+              <h1 class="hero-title">
+                Risa Rahayu
+              </h1>
+
+              <!-- DESCRIPTION -->
+              <p class="hero-description mb-3">
+                Digital & Creative Professional with
+                <strong>nearly 5 years of experience</strong>
+                in the digital industry, working across UI/UX
+                design, web development, graphic design, and
+                digital marketing.
+              </p>
+
+            </div>
+          </div>
+
+
+          <!-- =========================
+           COL 2 — SKILL CARDS
+           Desktop: LEFT
+           Mobile: LAST
+      ========================== -->
+          <div class="col-12 col-lg-8 order-4 order-lg-2">
 
             <div class="row g-3" id="skillCardsContainer">
             </div>
-          </div>
-          <!-- =========================
-               RIGHT PROFILE
-          ========================== -->
 
-          <div class="col-lg-4">
+          </div>
+
+
+          <!-- =========================
+           COL 3 — PROFILE
+           Desktop: RIGHT
+           Mobile: SECOND
+      ========================== -->
+          <div class="col-12 col-lg-4 order-2 order-lg-3">
+
             <div class="profile-column">
+
               <!-- BACKGROUND GLOW -->
               <div class="profile-glow"></div>
+
               <!-- DESIGN BADGE -->
               <div class="floating-badge badge-designing">
                 <img src="image/badge/designing.svg" alt="" height="40">
               </div>
+
               <!-- CODING BADGE -->
               <div class="floating-badge badge-coding">
                 <img src="image/badge/coding.svg" alt="" height="40">
               </div>
+
               <!-- MARKETING BADGE -->
               <div class="floating-badge badge-marketing">
                 <img src="image/badge/marketing.svg" alt="" height="40">
               </div>
+
               <!-- PROFILE IMAGE -->
               <img src="image/Risa Rahayu Main Image.png" alt="Risa Rahayu" class="profile-image">
+
             </div>
           </div>
-        </div>
-        <div class="experience-bar">
-          <div class="row align-items-center align-items-stretch ">
-            <!-- TITLE -->
-            <div class="col-lg-2 border-end align-content-center px-5">
-              <div class="experience-title">
-                Work Experience
-              </div>
-            </div>
-            <!-- EXPERIENCE 1 -->
-            <div class="col-10 px-5 ">
-              <div class="experience-marquee">
-                <div class="d-flex justify-content-between experience-track" id="experienceContainer">
+
+
+          <!-- =========================
+           COL 4 — WORK EXPERIENCE
+           Desktop: FULL WIDTH
+           Mobile: THIRD
+      ========================== -->
+          <div class="col-12 order-3 order-lg-4">
+
+            <div class="experience-bar rounded-4">
+
+              <div class="row align-items-stretch">
+
+                <!-- TITLE -->
+                <div class="col-12 col-lg-2 border-end align-content-center px-5">
+                  <div class="experience-title">
+                    Work Experience
+                  </div>
                 </div>
+
+                <!-- EXPERIENCE -->
+                <div class="col-12 col-lg-10 pe-lg-5 ps-lg-0">
+                  <div class="experience-marquee">
+
+                    <div class="d-flex justify-content-between experience-track" id="experienceContainer">
+                    </div>
+
+                  </div>
+                </div>
+
               </div>
+
+              <!-- SEE PORTFOLIO -->
+              <div class="text-center fs-6 fw-light pt-5">
+
+                <a href="#portfolio" id="seePortfolioBtn"
+                  class="text-decoration-none text-white d-flex justify-content-center align-items-center gap-1">
+                  <p class="mb-0">See portfolio</p>
+
+                  <img src="image/icon/Down Arrow - white.gif" alt="" height="20">
+
+                </a>
+
+              </div>
+
             </div>
+
           </div>
-          <div class="text-center fs-6 fw-light pt-5  ">
-            <a href="#portfolio" id="seePortfolioBtn"
-              class="text-decoration-none text-white d-flex text-center justify-content-center align-items-center gap-1">
-              <p>See portfolio</p>
-              <img src="image/icon/Down Arrow - white.gif" alt="" height="20px">
-            </a>
-          </div>
+
         </div>
 
+      </div>
     </section>
 
     <!-- =========================
@@ -146,8 +199,7 @@
             <div class="testimonial-profile">
 
               <div class="testimonial-image-wrapper">
-                <img id="testimonialTeamImage" src="" alt="Team" class="testimonial-team-image"
-                  style="border-radius: 20px;">
+                <img id="testimonialTeamImage" src="" alt="Team" class="testimonial-team-image rounded-4" style="">
               </div>
 
             </div>
@@ -178,7 +230,7 @@
          CONTACT
     ========================== -->
     <section class="contact-section">
-      <div class="container  contact-inner">
+      <div class="container  contact-inner rounded-4">
 
         <!-- Animated blobs in background -->
         <div class="contact-blob blob-1"></div>
