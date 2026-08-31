@@ -4,393 +4,442 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4Ocean - Impact Dashboard Case Study</title>
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-
-    <style>
-        :root {
-            --primary-color: #0077b6;
-            --dark-blue: #03045e;
-            --accent-green: #2a9d8f;
-            --light-bg: #f8f9fa;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #2b2d42;
-            background-color: #f4f6f8;
-        }
-
-        .hero-section {
-            background: linear-gradient(135deg, #023e8a, var(--primary-color));
-            color: white;
-            padding: 70px 0 50px 0;
-        }
-
-        .badge-platinum {
-            background-color: rgba(255, 255, 255, 0.15);
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        .metric-card {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            padding: 20px;
-            color: white;
-        }
-
-        .card-custom {
-            border: none;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            background: #ffffff;
-            height: 100%;
-        }
-
-        .before-box {
-            background-color: #fdf2f2;
-            border-left: 4px solid #de350b;
-            padding: 12px 16px;
-            border-radius: 0 8px 8px 0;
-            margin-bottom: 8px;
-        }
-
-        .after-box {
-            background-color: #e3fcef;
-            border-left: 4px solid #00875a;
-            padding: 12px 16px;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .role-pill {
-            background-color: #e0f2fe;
-            color: var(--primary-color);
-            font-weight: 700;
-            padding: 4px 12px;
-            border-radius: 16px;
-            font-size: 0.85rem;
-            display: inline-block;
-            margin-bottom: 8px;
-        }
-
-        .tech-badge {
-            background-color: #f1f5f9;
-            color: #334155;
-            font-weight: 600;
-            padding: 8px 14px;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            display: inline-block;
-        }
-    </style>
+    <title>4Ocean</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="css/4Ocean.css" rel="stylesheet">
+    <link href="../app.css" rel="stylesheet">
 </head>
 
 <body>
-
     <div id="breadcrumb"></div>
-
-    <!-- Hero / Top Banner -->
-    <header class="hero-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <span class="badge badge-platinum mb-3"><i class="bi bi-patch-check-fill me-1"></i> Platinum
-                        Partner</span>
-                    <h1 class="display-4 fw-bold mb-2">4ocean - Impact Dashboard</h1>
-
-                    <div class="metric-card mb-4">
-                        <h2 class="display-5 fw-bold text-warning mb-1">Over 90%</h2>
-                        <p class="mb-0 fw-semibold">Reduced impact reporting turnaround time</p>
-                        <small class="opacity-75">Shifting from multi-week cycles to real-time, self-serve
-                            access.</small>
-                    </div>
-                </div>
-                <div class="col-lg-5 text-center">
-                    <img src="https://via.placeholder.com/600x420/0077b6/FFFFFF?text=4Ocean+Dashboard+UI"
-                        alt="4Ocean Impact Dashboard"
-                        class="img-fluid rounded-3 shadow-lg border border-2 border-white">
-                </div>
+    <header class="header">
+        <div class="header__hero">
+            <img src="image/4Ocean/header-mockup.png" alt="4Ocean Impact Dashboard mockup" class="header__hero-image">
+        </div>
+        <div class="header__content">
+            <div class="header__row container">
+                <h1 class="header__column header__column--title text-40">4Ocean - Impact Dashboard</h1>
+                <p class="header__column header__column--text text-20">
+                    Reduced impact reporting turnaround time by over
+                    <span class="header__highlight text-32">90%</span>,
+                </p>
+                <p class="header__column header__column--text text-20">shifting from multi-week cycles to real-time,
+                    self-serve access.</p>
             </div>
         </div>
     </header>
 
-    <!-- Overview & Metadata -->
-    <section class="py-4 bg-white border-bottom">
-        <div class="container">
-            <div class="row g-3 text-center text-md-start">
-                <div class="col-md-3">
-                    <small class="text-muted d-block uppercase fw-bold">Role :</small>
-                    <span class="fs-6 fw-bold text-dark">UI/UX Designer & Web Developer</span>
-                </div>
-                <div class="col-md-3">
-                    <small class="text-muted d-block uppercase fw-bold">Duration</small>
-                    <span class="fs-6 fw-bold text-dark">6 Months</span>
-                </div>
-                <div class="col-md-6">
-                    <small class="text-muted d-block uppercase fw-bold mb-1">Products Used</small>
-                    <div class="d-flex flex-wrap gap-2">
-                        <span class="tech-badge">Next.js</span>
-                        <span class="tech-badge">React.js</span>
-                        <span class="tech-badge">Typescript.js</span>
-                        <span class="tech-badge">Figma</span>
-                        <span class="tech-badge">Tailwind</span>
-                        <span class="tech-badge">Firebase</span>
-                        <span class="tech-badge">Github</span>
+    <main class="main">
+        <section id="projectInfo" class="section container project-info text-16">
+            <span class="badge text-20">Project Scope</span>
+
+            <div class="project-info__row">
+                <div class="project-info__group">
+                    <div class="project-info__item">
+                        <p class="project-info__label">Role:</p>
+                        <p class="project-info__value">UI/UX Designer &amp; Web Developer</p>
                     </div>
+                    <div class="project-info__item">
+                        <p class="project-info__label">Duration :</p>
+                        <p class="project-info__value">6 Months</p>
+                    </div>
+                </div>
+
+                <div class="project-info__group">
+                    <p class="project-info__label">Timeline :</p>
+                    <dl class="project-info__timeline">
+                        <div class="project-info__phase">
+                            <dt class="project-info__phase-label">Phase 1 :</dt>
+                            <dd class="project-info__phase-value">Planning &amp; Discovery</dd>
+                        </div>
+                        <div class="project-info__phase">
+                            <dt class="project-info__phase-label">Phase 2 :</dt>
+                            <dd class="project-info__phase-value">Requirement Analysis</dd>
+                        </div>
+                        <div class="project-info__phase">
+                            <dt class="project-info__phase-label">Phase 3 :</dt>
+                            <dd class="project-info__phase-value">System Design</dd>
+                        </div>
+                        <div class="project-info__phase">
+                            <dt class="project-info__phase-label">Phase 4 :</dt>
+                            <dd class="project-info__phase-value">Development &amp; Testing</dd>
+                        </div>
+                        <div class="project-info__phase">
+                            <dt class="project-info__phase-label">Phase 5 :</dt>
+                            <dd class="project-info__phase-value">Deployment</dd>
+                        </div>
+                    </dl>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Context, Background & Problem -->
-    <section id="context-background" class="py-5">
-        <div class="container">
-            <div class="row g-4">
-                <!-- Context & Background -->
-                <div class="col-lg-6">
-                    <div class="card card-custom p-4">
-                        <h3 class="fw-bold mb-3 text-primary"><i class="bi bi-info-circle me-2"></i>Context & Background
-                        </h3>
-                        <p class="text-secondary">4ocean is a mission-driven organization operating at the intersection
-                            of environmental impact and global commerce. As the organization scaled, its digital
-                            platform struggled to keep up with growing operational and communication needs.</p>
-                        <p class="text-secondary">The existing setup was built incrementally over time, resulting in
-                            fragmented user journeys, limited flexibility, and increasing maintenance overhead. While
-                            the mission remained strong, the digital experience no longer reflected the scale, clarity,
-                            and credibility of the organization</p>
+        <section id="projectContext" class="section container project-context">
+            <span class="badge text-20">Context &amp; Background</span>
+            <div class="project-context__row">
+                <img src="image/4Ocean/4ocean-logo.png" alt="4Ocean Logo" class="project-context__logo">
+                <p class="project-context__text text-16">4ocean is a mission-driven organization operating at the
+                    intersection of environmental impact and global commerce. As the organization scaled, its digital
+                    platform struggled to keep up with growing operational and communication needs.</p>
+                <p class="project-context__text text-16">The existing setup was built incrementally over time, resulting
+                    in fragmented user journeys, limited flexibility, and increasing maintenance overhead. While the
+                    mission remained strong, the digital experience no longer reflected the scale, clarity, and
+                    credibility of the organization.</p>
+            </div>
+        </section>
 
-                    </div>
-                </div>
-
-                <!-- Timeline -->
-                <div class="col-lg-6">
-                    <div class="card card-custom p-4">
-                        <h3 class="fw-bold mb-3 text-primary"><i class="bi bi-clock-history me-2"></i>Timeline</h3>
-                        <div class="row justify-content-start">
-                            <div class="list-group shadow-sm">
-                                <div class="list-group-item p-3 fw-bold"><i
-                                        class="bi bi-1-circle-fill text-primary me-2"></i>
-                                    Phase 1: Planning & Discovery</div>
-                                <div class="list-group-item p-3 fw-bold"><i
-                                        class="bi bi-2-circle-fill text-primary me-2"></i>
-                                    Phase 2: Requirement Analysis</div>
-                                <div class="list-group-item p-3 fw-bold"><i
-                                        class="bi bi-3-circle-fill text-primary me-2"></i>
-                                    Phase 3: System Design</div>
-                                <div class="list-group-item p-3 fw-bold"><i
-                                        class="bi bi-4-circle-fill text-primary me-2"></i>
-                                    Phase 4: Development & Testing</div>
-                                <div class="list-group-item p-3 fw-bold"><i
-                                        class="bi bi-5-circle-fill text-primary me-2"></i>
-                                    Phase 5: Deployment</div>
-                            </div>
+        <section id="processDiscovery" class="section container process-discovery">
+            <span class="badge text-20">General Process Discovery</span>
+            <div class="process-discovery__row">
+                <div class="process-discovery__column">
+                    <div class="process-discovery__column-header">
+                        <img src="image/4Ocean/cleanup-team.png" alt="" class="process-discovery__column-icon">
+                        <div class="process-discovery__column-heading">
+                            <h3 class="process-discovery__column-title text-18">Cleanup Team</h3>
+                            <p class="text-16">Responsibility : Collect and record daily waste collection data in the
+                                field.</p>
                         </div>
                     </div>
-                </div>
-            </div>
-    </section>
-
-
-    <!-- Proposed Solution -->
-    <section id="proposed-solution" class="py-5 bg-white border-top border-bottom">
-        <div class="container">
-            <h3 class="fw-bold text-center mb-4">Proposed Solution</h3>
-            <div class="row g-3">
-                <div class="col-md-3">
-                    <div class="card card-custom p-3 text-center">
-                        <i class="bi bi-phone fs-2 text-primary mb-2"></i>
-                        <p class="fw-semibold small mb-0">A Digital Collection Application (DCA) for field data entry
+                    <div class="process-discovery__column-body">
+                        <p class="text-16">
+                            Cleanup teams conduct waste collection activities across assigned locations, including
+                            collecting waste in the field, transporting it to the facility, sorting and categorizing the
+                            collected materials, and weighing each category of waste.<br><br>
+                            This process allows the team to separate mixed waste and produce clean, measurable data
+                            based on the type and weight of the materials collected.<br><br>
+                            All activity data, including the cleanup location, collection activities, waste categories,
+                            and final weights, is manually recorded in paper logbooks during or after the cleanup
+                            process.<br><br>
+                            The completed logbooks are then submitted to the Team Captain for reporting and further
+                            processing.
                         </p>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card card-custom p-3 text-center">
-                        <i class="bi bi-hdd-network fs-2 text-primary mb-2"></i>
-                        <p class="fw-semibold small mb-0">A centralized database for automated synchronization</p>
+
+                    <div class="process-discovery__connector">
+                        <span class="process-discovery__connector-label text-16">Paper logbook Manual Recap</span>
+                        <img src="image/4Ocean/arrow.png" alt="" class="process-discovery__connector-arrow">
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="card card-custom p-3 text-center">
-                        <i class="bi bi-bar-chart-line fs-2 text-primary mb-2"></i>
-                        <p class="fw-semibold small mb-0">A real-time operational dashboard for monitoring and analytics
+
+                <div class="process-discovery__column">
+                    <div class="process-discovery__column-header">
+                        <img src="image/4Ocean/4ocean-admin.png" alt="" class="process-discovery__column-icon">
+                        <div class="process-discovery__column-heading">
+                            <h3 class="process-discovery__column-title text-18">4Ocean Admin</h3>
+                            <p class="text-16">Responsibility : Get data from Cleanup Team, monitor, validate, and
+                                report operational performance data.</p>
+                        </div>
+                    </div>
+                    <div class="process-discovery__column-body">
+                        <p class="text-16">
+                            After receiving the paper logbooks and reports from the field teams, 4ocean Admin manually
+                            reviews, compiles, and recaps the data from multiple cleanup activities and
+                            locations.<br><br>
+                            The information is then organized and processed for operational monitoring, reporting, and
+                            impact tracking, with the entire workflow still relying on manual, paper-based documentation
+                            rather than a centralized digital system. <br><br>
+                            Then the admin will send the report manually and personally
                         </p>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card card-custom p-3 text-center">
-                        <i class="bi bi-person-check fs-2 text-primary mb-2"></i>
-                        <p class="fw-semibold small mb-0">Rule-based access controls for Team, Admin, and Investors</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Roles & Impact Breakdown -->
-    <section id="workflow" class="py-5">
-        <div class="container">
-            <h3 class="fw-bold text-center mb-5">Workflow & Transformation Matrix</h3>
-
-            <!-- Cleanup Team -->
-            <div class="card card-custom p-4 mb-4">
-                <div class="row align-items-center">
-                    <div class="col-lg-4 border-end-lg">
-                        <span class="role-pill">Role 01</span>
-                        <h4 class="fw-bold">Cleanup Team</h4>
-                        <p class="small text-muted mb-0"><strong>Responsibility:</strong> Collect and record daily waste
-                            collection data in the field.</p>
-                    </div>
-                    <div class="col-lg-8 mt-3 mt-lg-0">
-                        <div class="before-box">
-                            <strong class="text-danger small"><i class="bi bi-x-circle-fill me-1"></i> Before:</strong>
-                            <p class="mb-0 small text-secondary">Operations team manually recorded daily collection
-                                results on paper. Manual recording of each bag leads to inconsistent data and delay in
-                                verification. Time-consuming reporting process after field operations with no real-time
-                                visibility of total team progress.</p>
-                        </div>
-                        <div class="after-box">
-                            <strong class="text-success small"><i class="bi bi-check-circle-fill me-1"></i> After
-                                (Digital Collection Application):</strong>
-                            <p class="mb-0 small text-secondary">Each team member inputs data directly into the Digital
-                                Collection Application (DCA). Data is automatically synced to a centralized system (One
-                                bag, one photo) ensuring transparent weight verification and proper process
-                                documentation. Real-time visibility of team performance.</p>
-                        </div>
+                    <div class="process-discovery__connector">
+                        <span class="process-discovery__connector-label text-16">Manual Report (need 2 weeks)</span>
+                        <img src="image/4Ocean/arrow.png" alt="" class="process-discovery__connector-arrow">
                     </div>
                 </div>
-            </div>
 
-            <!-- 4Ocean Admin -->
-            <div class="card card-custom p-4 mb-4">
-                <div class="row align-items-center">
-                    <div class="col-lg-4 border-end-lg">
-                        <span class="role-pill">Role 02</span>
-                        <h4 class="fw-bold">4ocean Admin</h4>
-                        <p class="small text-muted mb-0"><strong>Responsibility:</strong> Get data from Cleanup Team,
-                            monitor, validate, and report operational performance data.</p>
-                    </div>
-                    <div class="col-lg-8 mt-3 mt-lg-0">
-                        <div class="before-box">
-                            <strong class="text-danger small"><i class="bi bi-x-circle-fill me-1"></i> Before:</strong>
-                            <p class="mb-0 small text-secondary">Data aggregation required up to two weeks before
-                                presenting. Limited ability to monitor daily operational performance.</p>
-                        </div>
-                        <div class="after-box">
-                            <strong class="text-success small"><i class="bi bi-check-circle-fill me-1"></i>
-                                After:</strong>
-                            <p class="mb-0 small text-secondary">Real-time dashboard provides operational metrics 90%
-                                faster. Faster validation and reporting process.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Investors -->
-            <div class="card card-custom p-4">
-                <div class="row align-items-center">
-                    <div class="col-lg-4 border-end-lg">
-                        <span class="role-pill">Role 03</span>
-                        <h4 class="fw-bold">Investors</h4>
-                        <p class="small text-muted mb-0"><strong>Responsibility:</strong> Track environmental impact and
-                            operational transparency.</p>
-                    </div>
-                    <div class="col-lg-8 mt-3 mt-lg-0">
-                        <div class="before-box">
-                            <strong class="text-danger small"><i class="bi bi-x-circle-fill me-1"></i> Before:</strong>
-                            <p class="mb-0 small text-secondary">Impact data was only available after manual summaries.
+                <div class="process-discovery__column">
+                    <div class="process-discovery__column-header">
+                        <img src="image/4Ocean/investors.png" alt="" class="process-discovery__column-icon">
+                        <div class="process-discovery__column-heading">
+                            <h3 class="process-discovery__column-title text-18">Investors</h3>
+                            <p class="text-16">Responsibility : Track environmental impact and operational transparency.
                             </p>
                         </div>
-                        <div class="after-box">
-                            <strong class="text-success small"><i class="bi bi-check-circle-fill me-1"></i>
-                                After:</strong>
-                            <p class="mb-0 small text-secondary">Access to a real-time read-only impact dashboard.</p>
+                    </div>
+                    <div class="process-discovery__column-body">
+                        <p class="text-16">
+                            Investors rely on impact and operational reports provided by 4ocean, typically in PDF
+                            format, to review environmental performance and assess the organization's measurable
+                            impact.<br><br>
+                            They use these reports to understand the results of cleanup operations, track progress over
+                            time, and evaluate whether the organization's reported impact is supported by transparent
+                            and reliable data.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="problems" class="section container problem">
+            <span class="badge text-20">Problem</span>
+            <div class="problem__row">
+                <div class="problem__column">
+                    <h3 class="problem__column-title text-16 fw-bold">Non-Standardized Field Data Collection</h3>
+                    <p class="problem__column-text text-16">Cleanup teams need a <b>standardized and efficient</b> way
+                        to record and submit cleanup data because paper-based logbooks make data collection
+                        inconsistent, difficult to manage, and prone to delays when multiple teams conduct cleanup
+                        activities simultaneously across different locations.</p>
+                </div>
+
+                <div class="problem__column">
+                    <h3 class="problem__column-title text-16 fw-bold">Manual Data Consolidation</h3>
+                    <p class="problem__column-text text-16">4ocean Admins need a more <b>efficient and centralized way
+                            to collect</b>, review, and consolidate cleanup data because manually processing paper
+                        logbooks from multiple teams and locations is time-consuming, difficult to standardize, and can
+                        result in delayed or scattered information.</p>
+                </div>
+
+                <div class="problem__column">
+                    <h3 class="problem__column-title text-16 fw-bold">Limited Real-Time Transparency</h3>
+                    <p class="problem__column-text text-16">Investors need more <b>transparent and accessible visibility
+                            into 4ocean's environmental impact</b> and operational performance because relying on static
+                        PDF reports limits their ability to track measurable impact, understand ongoing activities, and
+                        access up-to-date information about how impact is being created.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="solutions" class="section container solution">
+            <span class="badge text-20">Solution</span>
+            <div class="solution__row">
+                <div class="solution__column">
+                    <p class="solution__column-title text-16">How might we help cleanup teams collect and submit
+                        standardized field data more efficiently across multiple cleanup locations?</p>
+                    <img src="image/4Ocean/arrow-down.png" alt="" class="solution__arrow">
+                    <div class="solution__content">
+                        <img src="image/4Ocean/digital.png" alt="" class="solution__icon">
+                        <p class="solution__column-text text-16 fw-bold">A <span class="solution__highlight">Digital
+                                Collection</span> Application (DCA) for field data entry</p>
+                    </div>
+                </div>
+
+                <div class="solution__column">
+                    <p class="solution__column-title text-16">How might we enable 4ocean Admins to automatically
+                        centralize and synchronize cleanup data from multiple teams and locations?</p>
+                    <img src="image/4Ocean/arrow-down.png" alt="" class="solution__arrow">
+                    <div class="solution__content">
+                        <img src="image/4Ocean/database.png" alt="" class="solution__icon">
+                        <p class="solution__column-text text-16 fw-bold">A centralized <span
+                                class="solution__highlight">database</span> for automated synchronization</p>
+                    </div>
+                </div>
+
+                <div class="solution__column">
+                    <p class="solution__column-title text-16">How might we provide 4ocean stakeholders with real-time
+                        visibility into cleanup operations and environmental impact data?</p>
+                    <img src="image/4Ocean/arrow-down.png" alt="" class="solution__arrow">
+                    <div class="solution__content">
+                        <img src="image/4Ocean/dashboard.png" alt="" class="solution__icon">
+                        <p class="solution__column-text text-16 fw-bold">A real-time operational <span
+                                class="solution__highlight">dashboard</span> for monitoring and analytics</p>
+                    </div>
+                </div>
+
+                <div class="solution__column">
+                    <p class="solution__column-title text-16">How might we give investors secure and transparent access
+                        to real-time environmental impact and operational data while ensuring access is limited to their
+                        own relevant data?</p>
+                    <img src="image/4Ocean/arrow-down.png" alt="" class="solution__arrow">
+                    <div class="solution__content">
+                        <img src="image/4Ocean/access.png" alt="" class="solution__icon">
+                        <p class="solution__column-text text-16 fw-bold"><span class="solution__highlight">Role-based
+                                access control</span> for Team, Admin, and Investors</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="userFlow" class="section container flow">
+            <span class="badge text-20">User Flow & Lo-fi Wireframing</span>
+
+            <p class="text-16">Stakeholder : <br><b class="text-20">Clean up team</b></p>
+            <p class="text-20">
+                <b>Start Clean up Flow:</b><br>
+                Login → View Cleanup List → Create New Cleanup → Select Crew →Double Check → Take Pre-Cleanup Photo →
+                Start Cleanup
+            </p>
+            <img src="image/4Ocean/start-cleanup.png" alt="Cleanup Flow" class="flow__image">
+
+            <p class="text-20">
+                <b>During Clean up Flow:</b><br>
+                Start Cleanup → Cleanup Ongoing → Capture Progress Photos
+            </p>
+            <img src="image/4Ocean/during-cleanup.png" alt="Cleanup Flow Ongoing" class="flow__image">
+
+            <p class="text-20">
+                <b>After Clean up Flow:</b><br>
+                Capture Post-Cleanup Photo → Enter Daily Cleanup Data → Review → Submit Finish Clean up
+            </p>
+            <img src="image/4Ocean/after-cleanup.png" alt="Cleanup Flow Finish" class="flow__image">
+
+            <p class="text-20">
+                <b>Waste Sorting Flow:</b><br>
+                Capture Post-Cleanup Photo → Enter Daily Cleanup Data → Review → Submit Finish Clean up
+            </p>
+            <img src="image/4Ocean/waste-sorting.png" alt="Waste Sorting Flow" class="flow__image">
+
+            <p class="text-20">
+                <b>Dashboard / Report Flow:</b><br>
+                note : this is dummy data<br>
+                Donors / 4Ocean Management Login → Report Ready
+            </p>
+            <img src="image/4Ocean/dashboard-report.png" alt="Dashboard / Report Flow" class="flow__image">
+        </section>
+
+        <section id="wireframing" class="section container wireframing">
+            <span class="badge text-20">Hi-Fi Wireframing</span>
+            <div class="wireframing__row">
+                <div class="wireframing__column">
+                    <h3 class="text-20">Color</h3>
+                    <p class="text-16">Figma Variable Color Collection</p>
+                    <img src="image/4Ocean/wireframing-color.png" alt="Wireframing Color"
+                        class="wireframing__image wireframing__image--full">
+                </div>
+
+                <div class="wireframing__column">
+                    <p class="text-16">Tailwind CSS</p>
+                    <pre class="text-20">
+<b>:root {</b>
+  --secondary: #1700b7;
+  --primary: #0057b7;
+  --white-neutral: #ffffff;
+  --orange-accent: #eb7600;
+  --green-accent: #5fef1c;
+  --text: #171717;
+  --disable: #cac8c8;
+<b>}</b>
+
+<b>@theme {</b>
+  --color-secondary: var(--secondary);
+  --color-primary: var(--primary);
+  --color-white-neutral: var(--white-neutral);
+  --color-orange-accent: var(--orange-accent);
+  --color-green-accent: var(--green-accent);
+  --color-text: var(--text);
+  --color-disable: var(--disable);
+<b>}</b>
+          </pre>
+                </div>
+
+                <div class="wireframing__column">
+                    <h3 class="text-20">Logo</h3>
+                    <img src="image/4Ocean/4ocean-logo.png" alt="4Ocean Logo" class="wireframing__logo">
+                </div>
+            </div>
+
+            <div class="wireframing__row wireframing__row--typography">
+                <div class="wireframing__column">
+                    <h3 class="text-20">Typography</h3>
+                    <p class="text-16">Figma Text Style</p>
+                    <img src="image/4Ocean/wireframing-text.png" alt="Wireframing text" class="wireframing__image">
+                </div>
+
+                <div class="wireframing__column">
+                    <h3 class="text-20">Responsive Dashboard Typography (Tailwind Variable)</h3>
+
+                    <div class="wireframing__type-list">
+                        <div class="wireframing__type-item">
+                            <p class="text-96 fw-bold">Display 96px / Black<br>
+                                <span class="text-16 fw-normal">Hero Text | Responsive ( in Tailwind Class) : small
+                                    screen text-4xl , medium to big screen md:text-8xl</span>
+                            </p>
+                        </div>
+
+                        <div class="wireframing__type-item">
+                            <p class="h1">Heading 1 / Bold<br>
+                                <span class="text-16">H1 tag | Responsive ( in Tailwind Class) : small screen text-2xl ,
+                                    medium to big screen md:text-5xl</span>
+                            </p>
+                        </div>
+
+                        <div class="wireframing__type-item">
+                            <p class="h2">Heading 2 / Bold<br>
+                                <span class="text-16">H2 tag | Responsive ( in Tailwind Class) : small screen text-xl ,
+                                    medium to big screen md:text-3xl</span>
+                            </p>
+                        </div>
+
+                        <div class="wireframing__type-item">
+                            <p class="h3">Heading 3 / Bold<br>
+                                <span class="text-16">H3 tag | Responsive ( in Tailwind Class) : small screen text-lg ,
+                                    medium to big screen md:text-2xl</span>
+                            </p>
+                        </div>
+
+                        <div class="wireframing__type-item">
+                            <p class="text-18">Body<br>
+                                <span class="text-14">Paragraph | Responsive ( in Tailwind Class) : small to big screen
+                                    text-lg</span>
+                            </p>
+                        </div>
+
+                        <div class="wireframing__type-item">
+                            <p class="text-16 fw-bold">Label Regular<br>
+                                <span class="text-14 fw-normal">Button Text | Responsive ( in Tailwind Class) : small to
+                                    big screen text-base</span>
+                            </p>
+                        </div>
+
+                        <div class="wireframing__type-item">
+                            <p class="text-14">Small Text<br>
+                                <span class="text-14">Note / Additional text | Responsive ( in Tailwind Class) : small
+                                    to big screen text-sm</span>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
 
-        </div>
-    </section>
+            <h3 class="text-20 mt-5">Icon</h3>
+            <img src="image/4Ocean/wireframing-icon-1.png" alt="Wireframing Icon" class="wireframing__image">
+            <img src="image/4Ocean/wireframing-icon-2.png" alt="Wireframing Icon" class="wireframing__image">
+            <img src="image/4Ocean/wireframing-icon-3.png" alt="Wireframing Icon" class="wireframing__image">
 
-    <!-- Tools & Why We Used Them -->
-    <section id="tools" class="py-5 bg-white border-top">
-        <div class="container">
-            <h3 class="fw-bold text-center mb-4">Tools & Why We Used Them</h3>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="card card-custom p-3">
-                        <span class="badge bg-primary mb-2 w-50">NEXT.JS</span>
-                        <h6 class="fw-bold">Website Framework & Codebase</h6>
-                        <p class="small text-secondary mb-0">Build fast SEO-friendly React apps with server-side
-                            rendering.</p>
-                    </div>
+            <h3 class="text-20">Component</h3>
+            <img src="image/4Ocean/wireframing-component-1.png" alt="Wireframing Component" class="wireframing__image">
+            <img src="image/4Ocean/wireframing-component-2.png" alt="Wireframing Component" class="wireframing__image">
+
+            <h3 class="text-20">Responsive</h3>
+            <img src="image/4Ocean/wireframing-responsive.png" alt="Wireframing Responsive" class="wireframing__image">
+        </section>
+
+        <section id="iterasi" class="section container iterasi">
+            <span class="badge text-20">Iterasi</span>
+
+            <h3 class="text-20">First Version</h3>
+            <img src="image/4Ocean/iterasi-1.jpg" alt="Iterasi 1" class="iterasi__image">
+
+            <h3 class="text-20">Second Version</h3>
+            <img src="image/4Ocean/iterasi-2.png" alt="Iterasi 2" class="iterasi__image">
+
+            <h3 class="text-20">Final Version</h3>
+            <img src="image/4Ocean/iterasi-3.png" alt="Iterasi 3" class="iterasi__image">
+        </section>
+
+        <section id="learnings" class="section container learnings">
+            <span class="badge text-20">Key Learnings</span>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    Challenge<br>Apa obstacle yang kamu temui.<br>mengatasinya.
                 </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card card-custom p-3">
-                        <span class="badge bg-warning text-dark mb-2 w-50">Firebase</span>
-                        <h6 class="fw-bold">Cloud Database & Hosting</h6>
-                        <p class="small text-secondary mb-0">Backend as a Service, handling authentication, database,
-                            and real-time updates.</p>
-                    </div>
+                <div class="col-md-4 mb-3">
+                    How I Solved It<br>Apa yang kamu lakukan untuk
                 </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card card-custom p-3">
-                        <span class="badge bg-info text-dark mb-2 w-50">tailwindcss</span>
-                        <h6 class="fw-bold">Design System & Styling</h6>
-                        <p class="small text-secondary mb-0">Rapid UI styling with utility-first classes ensuring
-                            consistent design.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card card-custom p-3">
-                        <span class="badge bg-dark mb-2 w-50">GitHub</span>
-                        <h6 class="fw-bold">Version Control & Collaboration</h6>
-                        <p class="small text-secondary mb-0">We work with multiple developers, this platform can keep
-                            code organized and trackable.</p>
-                    </div>
+                <div class="col-md-4 mb-3">
+                    What I Learned<br>Insight atau skill yang kamu dapatkan.
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Timeline -->
-    <section id="timeline" class="py-5">
-        <div class="container">
-            <h3 class="fw-bold text-center mb-4">Timeline</h3>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="list-group shadow-sm">
-                        <div class="list-group-item p-3 fw-bold"><i class="bi bi-1-circle-fill text-primary me-2"></i>
-                            Phase 1: Planning & Discovery</div>
-                        <div class="list-group-item p-3 fw-bold"><i class="bi bi-2-circle-fill text-primary me-2"></i>
-                            Phase 2: Requirement Analysis</div>
-                        <div class="list-group-item p-3 fw-bold"><i class="bi bi-3-circle-fill text-primary me-2"></i>
-                            Phase 3: System Design</div>
-                        <div class="list-group-item p-3 fw-bold"><i class="bi bi-4-circle-fill text-primary me-2"></i>
-                            Phase 4: Development & Testing</div>
-                        <div class="list-group-item p-3 fw-bold"><i class="bi bi-5-circle-fill text-primary me-2"></i>
-                            Phase 5: Deployment</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <footer>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-3 text-center">
-        <small class="text-secondary">4Ocean Impact Dashboard Portfolio Case Study.</small>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
     <script src="../app.js"></script>
 </body>
 
