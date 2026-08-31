@@ -49,6 +49,19 @@ body {
    HERO
 ========================= */
 
+.project-hero-section {
+    width: 100%;
+    padding-top: 0;
+}
+
+
+.capsule {
+    border-radius: 100px;
+    display: block;
+    padding: 8px 16px;
+    width: fit-content;
+}
+
 .hero-section {
 
     min-height: 100vh;
@@ -460,7 +473,7 @@ body {
     flex-wrap: nowrap !important;
     width: max-content;
     gap: 48px;
-    
+
     /* Important overrides mobile battery-saver / reduced-motion settings */
     animation: marquee 25s linear infinite !important;
 }
@@ -474,6 +487,7 @@ body {
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(-50%);
     }

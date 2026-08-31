@@ -7,10 +7,7 @@
 
 
 
-.project-hero-section {
-    width: 100%;
-    padding-top: 0;
-}
+
 
 .hero-bg {
     height: 50vh;
@@ -33,13 +30,9 @@
     background-color: var(--color-baliteak-primary);
 }
 
-.capsule {
-    color: var(--color-baliteak-primary);
-    border-radius: 100px;
+.capsule-border-baliteak {
     border: 2px solid var(--color-baliteak-primary);
-    display: block;
-    padding: 8px 16px;
-    width: fit-content;
+    color: var(--color-baliteak-primary);
 }
 
 .baliteak-bg-color-secondary {
