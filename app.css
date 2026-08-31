@@ -452,27 +452,29 @@ body {
 .experience-marquee {
     width: 100%;
     overflow: hidden;
+    position: relative;
 }
 
 .experience-track {
     display: flex;
+    flex-wrap: nowrap !important;
     width: max-content;
     gap: 48px;
-
-    animation: marquee 25s linear infinite;
+    
+    /* Important overrides mobile battery-saver / reduced-motion settings */
+    animation: marquee 25s linear infinite !important;
 }
 
 .experience-item {
-    flex: 0 0 auto;
+    flex: 0 0 auto !important;
     width: 180px;
 }
 
 @keyframes marquee {
-    from {
+    0% {
         transform: translateX(0);
     }
-
-    to {
+    100% {
         transform: translateX(-50%);
     }
 }
