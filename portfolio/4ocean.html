@@ -254,145 +254,309 @@
         </section>
 
         <section id="userFlow" class="section container flow mt-5 p-5">
-            <h2 class="capsule capsule-border-4Ocean fs-6">User Flow & Lo-fi Wireframing</h2>
-            <!-- START CLEANUP FLOW -->
-            <div class="d-flex p-5 flex-column secondary-bg-color-4Ocean rounded-4 mt-3">
 
-                <div class="d-flex justify-content-between gap-4">
+            <h2 class="capsule capsule-border-4Ocean fs-6">
+                User Flow & Lo-fi Wireframing
+            </h2>
 
-                    <p class="text-16" style="width: stretch;">
-                        Stakeholder : <br>
-                        <b class="fs-6">Cleanup Team</b>
-                    </p>
+            <div class="accordion mt-4" id="userFlowAccordion">
 
-                    <p class="fs-6" style="width: stretch;">
-                        <b>Start Cleanup Flow:</b><br>
-                        Login → View Cleanup List → Create New Cleanup → Select Crew →
-                        Double Check → Take Pre-Cleanup Photo → Start Cleanup
-                    </p>
+                <!-- START CLEANUP FLOW -->
+                <div class="accordion-item border-0 rounded-4 overflow-hidden mb-3">
 
+                    <h3 class="accordion-header">
+                        <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#startCleanupFlow" aria-expanded="true" aria-controls="startCleanupFlow">
+
+                            Start Cleanup Flow
+
+                        </button>
+                    </h3>
+
+                    <div id="startCleanupFlow" class="accordion-collapse collapse show"
+                        data-bs-parent="#userFlowAccordion">
+
+                        <div class="accordion-body secondary-bg-color-4Ocean p-5">
+
+                            <div class="d-flex flex-row flex-wrap justify-content-between ">
+
+                                <p class="text-16" style="width: stretch;">
+                                    Stakeholder : <br>
+                                    <b class="fs-6">Cleanup Team</b>
+                                </p>
+
+                                <p class="fs-6 mb-0" style="width: stretch;">
+                                    Start Cleanup Flow:</p>
+                                <div class="d-flex justify-content-between align-items-center gap-3 flex-wrap mb-3">
+
+                                    <span class="fw-semibold">Login</span>
+
+                                    <span>→</span>
+
+                                    <span class="fw-semibold">View Cleanup List</span>
+
+                                    <span>→</span>
+
+                                    <span class="fw-semibold">Create New Cleanup</span>
+
+                                    <span>→</span>
+
+                                    <span class="fw-semibold">Double Check Location</span>
+
+                                    <span>→</span>
+
+                                    <span class="fw-semibold">Take Pre-Cleanup Photo</span>
+
+                                    <span>→</span>
+
+                                    <span class="fw-semibold">Start Cleanup</span>
+
+                                </div>
+
+
+                            </div>
+
+                            <img src="image/4Ocean/start-cleanup.png" alt="Start Cleanup Flow" class="flow__image">
+
+                        </div>
+                    </div>
                 </div>
 
-                <div>
-                    <img src="image/4Ocean/start-cleanup.png" alt="Start Cleanup Flow" class="flow__image">
+
+                <!-- DURING CLEANUP FLOW -->
+                <div class="accordion-item border-0 rounded-4 overflow-hidden mb-3">
+
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#duringCleanupFlow" aria-expanded="false" aria-controls="duringCleanupFlow">
+
+                            During Cleanup Flow
+
+                        </button>
+                    </h3>
+
+                    <div id="duringCleanupFlow" class="accordion-collapse collapse" data-bs-parent="#userFlowAccordion">
+
+                        <div class="accordion-body secondary-bg-color-4Ocean p-5">
+
+                            <div class="d-flex justify-content-between gap-4">
+
+                                <p class="text-16" style="width: stretch;">
+                                    Stakeholder : <br>
+                                    <b class="fs-6">Cleanup Team</b>
+                                </p>
+
+                                <p class="fs-6" style="width: stretch;">
+                                    <b>During Cleanup Flow:</b><br>
+                                    Cleanup Ongoing →
+                                    Capture Progress Photos → Submit Progress Photos
+                                </p>
+
+                            </div>
+
+                            <img src="image/4Ocean/during-cleanup.png" alt="During Cleanup Flow" class="flow__image">
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- FINISHING CLEANUP FLOW -->
+                <div class="accordion-item border-0 rounded-4 overflow-hidden mb-3">
+
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#finishingCleanupFlow" aria-expanded="false"
+                            aria-controls="finishingCleanupFlow">
+
+                            Finishing Cleanup Flow
+
+                        </button>
+                    </h3>
+
+                    <div id="finishingCleanupFlow" class="accordion-collapse collapse"
+                        data-bs-parent="#userFlowAccordion">
+
+                        <div class="accordion-body secondary-bg-color-4Ocean p-5">
+
+                            <div class="d-flex flex-row flex-wrap justify-content-between">
+
+                                <p class="text-16" style="width: stretch;">
+                                    Stakeholder : <br>
+                                    <b class="fs-6">Cleanup Team</b>
+                                </p>
+
+                                <p class="fs-6" style="width: stretch;">
+                                    Finishing Cleanup Flow:
+                                <div class="d-flex justify-content-between align-items-center gap-3 flex-wrap mb-3">
+
+                                    <span class="fw-bold">Capture Post-Cleanup Photo</span>
+
+                                    <span>→</span>
+
+                                    <span class="fw-bold">Enter Daily Cleanup Data</span>
+
+                                    <span>→</span>
+
+                                    <span class="fw-bold">Review</span>
+
+                                    <span>→</span>
+
+                                    <span class="fw-bold">Submit Finish Cleanup</span>
+                                </div>
+                                </p>
+
+                            </div>
+
+                            <img src="image/4Ocean/after-cleanup.png" alt="After Cleanup Flow" class="flow__image">
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- WASTE SORTING FLOW -->
+                <div class="accordion-item border-0 rounded-4 overflow-hidden mb-3">
+
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#wasteSortingFlow" aria-expanded="false" aria-controls="wasteSortingFlow">
+
+                            Waste Sorting Flow
+
+                        </button>
+                    </h3>
+
+                    <div id="wasteSortingFlow" class="accordion-collapse collapse" data-bs-parent="#userFlowAccordion">
+
+                        <div class="accordion-body secondary-bg-color-4Ocean p-5">
+
+                            <div class="d-flex justify-content-between gap-4">
+
+                                <p class="text-16" style="width: stretch;">
+                                    Stakeholder : <br>
+                                    <b class="fs-6">
+                                        Cleanup Team / Warehouse Team
+                                    </b>
+                                </p>
+
+                                <p class="fs-6" style="width: stretch;">
+                                    <b>Waste Sorting Flow:</b><br>
+                                    Capture Post-Cleanup Photo →
+                                    Enter Daily Cleanup Data →
+                                    Review → Submit Finish Cleanup
+                                </p>
+
+                            </div>
+
+                            <img src="image/4Ocean/waste-sorting.png" alt="Waste Sorting Flow" class="flow__image">
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- DASHBOARD / REPORT FLOW -->
+                <div class="accordion-item border-0 rounded-4 overflow-hidden mb-3">
+
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#dashboardReportFlow" aria-expanded="false"
+                            aria-controls="dashboardReportFlow">
+
+                            Dashboard / Report Flow
+
+                        </button>
+                    </h3>
+
+                    <div id="dashboardReportFlow" class="accordion-collapse collapse"
+                        data-bs-parent="#userFlowAccordion">
+
+                        <div class="accordion-body secondary-bg-color-4Ocean p-5">
+
+                            <div class="d-flex justify-content-between gap-4">
+
+                                <p class="text-16" style="width: stretch;">
+                                    Stakeholder : <br>
+                                    <b class="fs-6">
+                                        Donors / 4Ocean Management
+                                    </b>
+                                </p>
+
+                                <p class="fs-6" style="width: stretch;">
+                                    <b>Dashboard / Report Flow:</b><br>
+                                    <span class="text-muted">
+                                        Note: This is dummy data.
+                                    </span><br>
+                                    Donors / 4Ocean Management Login →
+                                    Report Ready
+                                </p>
+
+                            </div>
+
+                            <img src="image/4Ocean/dashboard-report.png" alt="Dashboard / Report Flow"
+                                class="flow__image">
+
+                        </div>
+                    </div>
                 </div>
 
             </div>
 
-
-            <!-- DURING CLEANUP FLOW -->
-            <div class="d-flex p-5 flex-column secondary-bg-color-4Ocean rounded-4 mt-3">
-
-                <div class="d-flex justify-content-between gap-4">
-
-                    <p class="text-16" style="width: stretch;">
-                        Stakeholder : <br>
-                        <b class="fs-6">Cleanup Team</b>
-                    </p>
-
-                    <p class="fs-6" style="width: stretch;">
-                        <b>During Cleanup Flow:</b><br>
-                        Start Cleanup → Cleanup Ongoing → Capture Progress Photos
-                    </p>
-
-                </div>
-
-                <div>
-                    <img src="image/4Ocean/during-cleanup.png" alt="Cleanup Flow Ongoing" class="flow__image">
-                </div>
-
-            </div>
-
-
-            <!-- AFTER CLEANUP FLOW -->
-            <div class="d-flex p-5 flex-column secondary-bg-color-4Ocean rounded-4 mt-3">
-
-                <div class="d-flex justify-content-between gap-4">
-
-                    <p class="text-16" style="width: stretch;">
-                        Stakeholder : <br>
-                        <b class="fs-6">Cleanup Team</b>
-                    </p>
-
-                    <p class="fs-6" style="width: stretch;">
-                        <b>After Cleanup Flow:</b><br>
-                        Cleanup Capture Post-Cleanup Photo → Enter Daily Cleanup Data →
-                        Review → Submit Finish Cleanup
-                    </p>
-
-                </div>
-
-                <div>
-                    <img src="image/4Ocean/after-cleanup.png" alt="Cleanup Flow Finish" class="flow__image">
-                </div>
-
-            </div>
-
-
-            <!-- WASTE SORTING FLOW -->
-            <div class="d-flex p-5 flex-column secondary-bg-color-4Ocean rounded-4 mt-3">
-
-                <div class="d-flex justify-content-between gap-4">
-
-                    <p class="text-16" style="width: stretch;">
-                        Stakeholder : <br>
-                        <b class="fs-6">Cleanup Team / Warehouse Team</b>
-                    </p>
-
-                    <p class="fs-6" style="width: stretch;">
-                        <b>Waste Sorting Flow:</b><br>
-                        Capture Post-Cleanup Photo → Enter Daily Cleanup Data →
-                        Review → Submit Finish Cleanup
-                    </p>
-
-                </div>
-
-                <div>
-                    <img src="image/4Ocean/waste-sorting.png" alt="Waste Sorting Flow" class="flow__image">
-                </div>
-
-            </div>
-
-
-            <!-- DASHBOARD / REPORT FLOW -->
-            <div class="d-flex p-5 flex-column secondary-bg-color-4Ocean rounded-4 mt-3">
-
-                <div class="d-flex justify-content-between gap-4">
-
-                    <p class="text-16" style="width: stretch;">
-                        Stakeholder : <br>
-                        <b class="fs-6">Donors / 4Ocean Management</b>
-                    </p>
-
-                    <p class="fs-6" style="width: stretch;">
-                        <b>Dashboard / Report Flow:</b><br>
-                        <span class="text-muted">Note: This is dummy data.</span><br>
-                        Donors / 4Ocean Management Login → Report Ready
-                    </p>
-
-                </div>
-
-                <div>
-                    <img src="image/4Ocean/dashboard-report.png" alt="Dashboard / Report Flow" class="flow__image">
-                </div>
-
-            </div>
         </section>
 
         <section id="wireframing" class="section container wireframing mt-5 p-5">
-            <h2 class="capsule capsule-border-4Ocean text-20">Hi-Fi Wireframing</h2>
-            <div class="wireframing__row">
-                <div class="wireframing__column">
-                    <h3 class="text-20">Color</h3>
-                    <p class="text-16">Figma Variable Color Collection</p>
-                    <img src="image/4Ocean/wireframing-color.png" alt="Wireframing Color"
-                        class="wireframing__image wireframing__image--full">
-                </div>
 
-                <div class="wireframing__column">
-                    <p class="text-16">Tailwind CSS</p>
-                    <pre class="text-20">
-<b>:root {</b>
+            <h2 class="capsule capsule-border-4Ocean text-20">
+                Hi-Fi Wireframing
+            </h2>
+
+            <div class="accordion mt-3" id="wireframingAccordion">
+
+
+                <!-- DESIGN SYSTEM -->
+                <div class="accordion-item border-0 rounded-4 overflow-hidden mb-3">
+
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#designSystem" aria-expanded="false" aria-controls="designSystem">
+
+                            Design System
+
+                        </button>
+                    </h3>
+
+                    <div id="designSystem" class="accordion-collapse collapse" data-bs-parent="#wireframingAccordion">
+
+                        <div class="accordion-body secondary-bg-color-4Ocean p-5">
+
+                            <div class="wireframing__row">
+
+                                <!-- COLOR -->
+                                <div class="wireframing__column">
+
+                                    <h3 class="text-20">
+                                        Color
+                                    </h3>
+
+                                    <p class="text-16">
+                                        Figma Variable Color Collection
+                                    </p>
+
+                                    <img src="image/4Ocean/wireframing-color.png" alt="4Ocean Color"
+                                        class="wireframing__image wireframing__image--full">
+
+                                </div>
+
+
+                                <!-- TAILWIND CSS -->
+                                <div class="wireframing__column">
+
+                                    <h3 class="text-20">
+                                        Tailwind CSS
+                                    </h3>
+
+                                    <pre class="text-20"><b>:root {</b>
   --secondary: #1700b7;
   --primary: #0057b7;
   --white-neutral: #ffffff;
@@ -410,103 +574,323 @@
   --color-green-accent: var(--green-accent);
   --color-text: var(--text);
   --color-disable: var(--disable);
-<b>}</b>
-          </pre>
-                </div>
+<b>}</b></pre>
 
-                <div class="wireframing__column">
-                    <h3 class="text-20">Logo</h3>
-                    <img src="image/4Ocean/4ocean-logo.png" alt="4Ocean Logo" class="wireframing__logo">
-                </div>
-            </div>
+                                </div>
 
-            <div class="wireframing__row wireframing__row--typography">
-                <div class="wireframing__column">
-                    <h3 class="text-20">Typography</h3>
-                    <p class="text-16">Figma Text Style</p>
-                    <img src="image/4Ocean/wireframing-text.png" alt="Wireframing text" class="wireframing__image">
-                </div>
 
-                <div class="wireframing__column">
-                    <h3 class="text-20">Responsive Dashboard Typography (Tailwind Variable)</h3>
+                                <!-- LOGO -->
+                                <div class="wireframing__column">
 
-                    <div class="wireframing__type-list">
-                        <div class="wireframing__type-item">
-                            <p class="text-96 fw-bold">Display 96px / Black<br>
-                                <span class="text-16 fw-normal">Hero Text | Responsive ( in Tailwind Class) : small
-                                    screen text-4xl , medium to big screen md:text-8xl</span>
-                            </p>
-                        </div>
+                                    <h3 class="text-20">
+                                        Logo
+                                    </h3>
 
-                        <div class="wireframing__type-item">
-                            <p class="h1">Heading 1 / Bold<br>
-                                <span class="text-16">H1 tag | Responsive ( in Tailwind Class) : small screen text-2xl ,
-                                    medium to big screen md:text-5xl</span>
-                            </p>
-                        </div>
+                                    <img src="image/4Ocean/4ocean-logo.png" alt="4Ocean Logo" class="wireframing__logo">
 
-                        <div class="wireframing__type-item">
-                            <p class="h2">Heading 2 / Bold<br>
-                                <span class="text-16">H2 tag | Responsive ( in Tailwind Class) : small screen text-xl ,
-                                    medium to big screen md:text-3xl</span>
-                            </p>
-                        </div>
+                                </div>
 
-                        <div class="wireframing__type-item">
-                            <p class="h3">Heading 3 / Bold<br>
-                                <span class="text-16">H3 tag | Responsive ( in Tailwind Class) : small screen text-lg ,
-                                    medium to big screen md:text-2xl</span>
-                            </p>
-                        </div>
+                            </div>
 
-                        <div class="wireframing__type-item">
-                            <p class="text-18">Body<br>
-                                <span class="text-14">Paragraph | Responsive ( in Tailwind Class) : small to big screen
-                                    text-lg</span>
-                            </p>
-                        </div>
-
-                        <div class="wireframing__type-item">
-                            <p class="text-16 fw-bold">Label Regular<br>
-                                <span class="text-14 fw-normal">Button Text | Responsive ( in Tailwind Class) : small to
-                                    big screen text-base</span>
-                            </p>
-                        </div>
-
-                        <div class="wireframing__type-item">
-                            <p class="text-14">Small Text<br>
-                                <span class="text-14">Note / Additional text | Responsive ( in Tailwind Class) : small
-                                    to big screen text-sm</span>
-                            </p>
                         </div>
                     </div>
                 </div>
+
+
+                <!-- TYPOGRAPHY -->
+                <div class="accordion-item border-0 rounded-4 overflow-hidden mb-3">
+
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#typography" aria-expanded="false" aria-controls="typography">
+
+                            Typography
+
+                        </button>
+                    </h3>
+
+                    <div id="typography" class="accordion-collapse collapse" data-bs-parent="#wireframingAccordion">
+
+                        <div class="accordion-body secondary-bg-color-4Ocean p-5">
+
+                            <!-- FIGMA TEXT STYLE -->
+                            <div class="wireframing__column">
+
+                                <h3 class="text-20">
+                                    Figma Text Style
+                                </h3>
+
+                                <img src="image/4Ocean/wireframing-text.png" alt="4Ocean Typography"
+                                    class="wireframing__image">
+
+                            </div>
+
+
+                            <!-- RESPONSIVE TYPOGRAPHY -->
+                            <div class="wireframing__column mt-5">
+
+                                <h3 class="text-20">
+                                    Responsive Dashboard Typography
+                                </h3>
+
+                                <p class="text-16">
+                                    Tailwind Variable
+                                </p>
+
+                                <div class="wireframing__type-list">
+
+                                    <div class="wireframing__type-item">
+                                        <p class="text-96 fw-bold">
+                                            Display 96px / Black<br>
+                                            <span class="text-16 fw-normal">
+                                                Hero Text | Responsive:
+                                                small screen text-4xl,
+                                                medium to big screen md:text-8xl
+                                            </span>
+                                        </p>
+                                    </div>
+
+                                    <div class="wireframing__type-item">
+                                        <p class="h1">
+                                            Heading 1 / Bold<br>
+                                            <span class="text-16">
+                                                H1 tag | Responsive:
+                                                small screen text-2xl,
+                                                medium to big screen md:text-5xl
+                                            </span>
+                                        </p>
+                                    </div>
+
+                                    <div class="wireframing__type-item">
+                                        <p class="h2">
+                                            Heading 2 / Bold<br>
+                                            <span class="text-16">
+                                                H2 tag | Responsive:
+                                                small screen text-xl,
+                                                medium to big screen md:text-3xl
+                                            </span>
+                                        </p>
+                                    </div>
+
+                                    <div class="wireframing__type-item">
+                                        <p class="h3">
+                                            Heading 3 / Bold<br>
+                                            <span class="text-16">
+                                                H3 tag | Responsive:
+                                                small screen text-lg,
+                                                medium to big screen md:text-2xl
+                                            </span>
+                                        </p>
+                                    </div>
+
+                                    <div class="wireframing__type-item">
+                                        <p class="text-18">
+                                            Body<br>
+                                            <span class="text-14">
+                                                Paragraph | Responsive:
+                                                small to big screen text-lg
+                                            </span>
+                                        </p>
+                                    </div>
+
+                                    <div class="wireframing__type-item">
+                                        <p class="text-16 fw-bold">
+                                            Label Regular<br>
+                                            <span class="text-14 fw-normal">
+                                                Button Text | Responsive:
+                                                small to big screen text-base
+                                            </span>
+                                        </p>
+                                    </div>
+
+                                    <div class="wireframing__type-item">
+                                        <p class="text-14">
+                                            Small Text<br>
+                                            <span class="text-14">
+                                                Note / Additional text |
+                                                Responsive:
+                                                small to big screen text-sm
+                                            </span>
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- ICON -->
+                <div class="accordion-item border-0 rounded-4 overflow-hidden mb-3">
+
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#icons" aria-expanded="false" aria-controls="icons">
+
+                            Icon
+
+                        </button>
+                    </h3>
+
+                    <div id="icons" class="accordion-collapse collapse" data-bs-parent="#wireframingAccordion">
+
+                        <div class="accordion-body secondary-bg-color-4Ocean p-5">
+
+                            <img src="image/4Ocean/wireframing-icon-1.png" alt="4Ocean Icon 1"
+                                class="wireframing__image">
+
+                            <img src="image/4Ocean/wireframing-icon-2.png" alt="4Ocean Icon 2"
+                                class="wireframing__image mt-4">
+
+                            <img src="image/4Ocean/wireframing-icon-3.png" alt="4Ocean Icon 3"
+                                class="wireframing__image mt-4">
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- COMPONENT -->
+                <div class="accordion-item border-0 rounded-4 overflow-hidden mb-3">
+
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#components" aria-expanded="false" aria-controls="components">
+
+                            Component
+
+                        </button>
+                    </h3>
+
+                    <div id="components" class="accordion-collapse collapse" data-bs-parent="#wireframingAccordion">
+
+                        <div class="accordion-body secondary-bg-color-4Ocean p-5">
+
+                            <img src="image/4Ocean/wireframing-component-1.png" alt="4Ocean Component 1"
+                                class="wireframing__image">
+
+                            <img src="image/4Ocean/wireframing-component-2.png" alt="4Ocean Component 2"
+                                class="wireframing__image mt-4">
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- RESPONSIVE -->
+                <div class="accordion-item border-0 rounded-4 overflow-hidden mb-3">
+
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#responsive" aria-expanded="false" aria-controls="responsive">
+
+                            Responsive
+
+                        </button>
+                    </h3>
+
+                    <div id="responsive" class="accordion-collapse collapse" data-bs-parent="#wireframingAccordion">
+
+                        <div class="accordion-body secondary-bg-color-4Ocean p-5">
+
+                            <img src="image/4Ocean/wireframing-responsive.png" alt="4Ocean Responsive Design"
+                                class="wireframing__image">
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-            <h3 class="text-20 mt-5">Icon</h3>
-            <img src="image/4Ocean/wireframing-icon-1.png" alt="Wireframing Icon" class="wireframing__image">
-            <img src="image/4Ocean/wireframing-icon-2.png" alt="Wireframing Icon" class="wireframing__image">
-            <img src="image/4Ocean/wireframing-icon-3.png" alt="Wireframing Icon" class="wireframing__image">
-
-            <h3 class="text-20">Component</h3>
-            <img src="image/4Ocean/wireframing-component-1.png" alt="Wireframing Component" class="wireframing__image">
-            <img src="image/4Ocean/wireframing-component-2.png" alt="Wireframing Component" class="wireframing__image">
-
-            <h3 class="text-20">Responsive</h3>
-            <img src="image/4Ocean/wireframing-responsive.png" alt="Wireframing Responsive" class="wireframing__image">
         </section>
 
         <section id="iterasi" class="section container iterasi mt-5 p-5">
-            <h2 class="capsule capsule-border-4Ocean text-20">Iterasi</h2>
 
-            <h3 class="text-20">First Version</h3>
-            <img src="image/4Ocean/iterasi-1.jpg" alt="Iterasi 1" class="iterasi__image">
+            <h2 class="capsule capsule-border-4Ocean text-20">
+                Iterasi
+            </h2>
 
-            <h3 class="text-20">Second Version</h3>
-            <img src="image/4Ocean/iterasi-2.png" alt="Iterasi 2" class="iterasi__image">
+            <div class="accordion mt-3" id="iterasiAccordion">
 
-            <h3 class="text-20">Final Version</h3>
-            <img src="image/4Ocean/iterasi-3.png" alt="Iterasi 3" class="iterasi__image">
+
+                <!-- FIRST VERSION -->
+                <div class="accordion-item border-0 rounded-4 overflow-hidden mb-3">
+
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#firstVersion" aria-expanded="false" aria-controls="firstVersion">
+
+                            First Version
+
+                        </button>
+                    </h3>
+
+                    <div id="firstVersion" class="accordion-collapse collapse" data-bs-parent="#iterasiAccordion">
+
+                        <div class="accordion-body secondary-bg-color-4Ocean p-5">
+
+                            <img src="image/4Ocean/iterasi-1.jpg" alt="First Version Iteration" class="iterasi__image">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SECOND VERSION -->
+                <div class="accordion-item border-0 rounded-4 overflow-hidden mb-3">
+
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#secondVersion" aria-expanded="false" aria-controls="secondVersion">
+
+                            Second Version
+
+                        </button>
+                    </h3>
+
+                    <div id="secondVersion" class="accordion-collapse collapse" data-bs-parent="#iterasiAccordion">
+
+                        <div class="accordion-body secondary-bg-color-4Ocean p-5">
+
+                            <img src="image/4Ocean/iterasi-2.png" alt="Second Version Iteration" class="iterasi__image">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FINAL VERSION -->
+                <div class="accordion-item border-0 rounded-4 overflow-hidden mb-3">
+
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#finalVersion" aria-expanded="false" aria-controls="finalVersion">
+
+                            Final Version
+
+                        </button>
+                    </h3>
+
+                    <div id="finalVersion" class="accordion-collapse collapse" data-bs-parent="#iterasiAccordion">
+
+                        <div class="accordion-body secondary-bg-color-4Ocean p-5">
+
+                            <img src="image/4Ocean/iterasi-3.png" alt="Final Version Iteration" class="iterasi__image">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </section>
 
         <section id="learnings" class="section container learnings mt-5 p-5">
