@@ -236,7 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (seePortfolioBtn) {
     seePortfolioBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      const target = document.getElementById("portfolio");
+      const target = document.getElementById("portfolios");
       if (!target) return;
 
       const targetY = target.getBoundingClientRect().top + window.scrollY;
