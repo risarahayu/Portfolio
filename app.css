@@ -1169,3 +1169,101 @@ body.is-loading {
 .zoomable-image:active {
     cursor: grabbing;
 }
+
+.hire-me-btn {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 17rem;
+    height: 4.5rem;
+
+    color: var(--red);
+    background: linear-gradient(135deg,
+            var(--white),
+            #ffe6e6);
+
+    border: none;
+    overflow: hidden;
+
+    font-size: 1.1rem;
+    letter-spacing: 0.02em;
+
+    box-shadow:
+        0 8px 24px rgba(135, 15, 100, 0.25);
+
+    animation: hireMePulse 2.4s ease-in-out infinite;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================
+   PULSE
+========================= */
+
+@keyframes hireMePulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+
+}
+
+
+/* =========================
+   SHINE
+========================= */
+
+.hire-me-btn::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background: linear-gradient(110deg,
+            transparent 20%,
+            rgba(255, 255, 255, 0.15) 45%,
+            rgba(255, 255, 255, 0.8) 50%,
+            rgba(255, 255, 255, 0.15) 55%,
+            transparent 80%);
+
+    transform: skewX(-20deg);
+
+    transition: left 0.7s ease;
+}
+
+
+/* =========================
+   HIRE ME BTN:HOVER
+========================= */
+
+.hire-me-btn:hover {
+    color: var(--red);
+
+
+    animation-play-state: paused;
+
+    transform: scale(1.06);
+
+    box-shadow:
+        0 12px 35px rgba(135, 15, 100, 0.4),
+        0 0 25px rgba(123, 85, 141, 0.35);
+    background: #dddddd;
+}
+
+.hire-me-btn:hover::before {
+    left: 130%;
+}
