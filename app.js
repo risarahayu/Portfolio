@@ -158,31 +158,30 @@ const testimonialTrack = document.getElementById("testimonialTrack");
 
 if (testimonialTrack) {
 
-  testimonials.forEach((testimonial) => {
+  // Render testimonials 2x untuk seamless looping
+  const testimonialItems = [...testimonials, ...testimonials];
 
-    testimonialTrack.innerHTML += `
-      <article class="testimonial-card rounded-4">
+  testimonialTrack.innerHTML = testimonialItems.map((testimonial) => `
+    <article class="testimonial-card rounded-4">
 
-        <div class="testimonial-person">
+      <div class="testimonial-person">
 
-          <h3 class="fs-5 fw-semibold mb-1">
-            ${testimonial.name}
-          </h3>
+        <h3 class="fs-5 fw-semibold mb-1">
+          ${testimonial.name}
+        </h3>
 
-          <p class="small text-secondary mb-0">
-            ${testimonial.role} · ${testimonial.company}
-          </p>
+        <p class="small text-secondary mb-0">
+          ${testimonial.role} · ${testimonial.company}
+        </p>
 
-        </div>
+      </div>
 
-        <blockquote class="testimonial-quote">
-          “${testimonial.quote}”
-        </blockquote>
+      <blockquote class="testimonial-quote">
+        “${testimonial.quote}”
+      </blockquote>
 
-      </article>
-    `;
-
-  });
+    </article>
+  `).join("");
 
   // Pause / play when clicked
   testimonialTrack.addEventListener("click", () => {
