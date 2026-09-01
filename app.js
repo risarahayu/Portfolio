@@ -158,7 +158,7 @@ const testimonialTrack = document.getElementById("testimonialTrack");
 
 if (testimonialTrack) {
 
-  testimonials.forEach((testimonial, index) => {
+  testimonials.forEach((testimonial) => {
 
     testimonialTrack.innerHTML += `
       <article class="testimonial-card rounded-4">
@@ -184,8 +184,12 @@ if (testimonialTrack) {
 
   });
 
-}
+  // Pause / play when clicked
+  testimonialTrack.addEventListener("click", () => {
+    testimonialTrack.classList.toggle("is-paused");
+  });
 
+}
 const testimonialTeamImage =
   document.getElementById("testimonialTeamImage");
 let currentTeamPhoto = 0;
