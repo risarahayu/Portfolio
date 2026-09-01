@@ -1102,6 +1102,23 @@ body.is-loading {
 
 }
 
+/* Pause ketika area card di-hover */
+.testimonial-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes testimonial-scroll {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-50%);
+    }
+
+}
+
 .project-card {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     will-change: transform;
