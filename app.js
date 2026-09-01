@@ -844,3 +844,31 @@ if (pageLoader) {
   ]).then(hidePageLoader);
 
 }
+
+
+const sitemapImage = document.getElementById("sitemapImage");
+const sitemapLoader = document.getElementById("sitemapLoader");
+
+if (sitemapImage && sitemapLoader) {
+  function hideSitemapLoader() {
+    sitemapImage.classList.add("loaded");
+    sitemapLoader.classList.add("hidden");
+  }
+
+  sitemapImage.addEventListener("load", hideSitemapLoader);
+
+  sitemapImage.addEventListener("error", () => {
+    sitemapLoader.innerHTML = `
+    < p class="small text-danger m-0" >
+      Failed to load sitemap image.
+        </p >
+    `;
+  });
+
+  // Handle cached images
+  if (sitemapImage.complete && sitemapImage.naturalWidth > 0) {
+    hideSitemapLoader();
+  }
+
+}
+
