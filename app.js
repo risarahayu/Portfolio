@@ -695,29 +695,80 @@ function renderBreadcrumb() {
     }
   }, 100);
 }
-document.querySelectorAll(".image-viewer").forEach((viewer) => {
+// ==========================================================
+// Reusable image zoom modal
+//
+// To make any image open fullscreen with zoom/pan controls,
+// just add the `zoom-image` class to its <img> tag — nothing
+// else needed. One shared modal is injected into the page (if
+// not already present) and reused for every trigger, instead
+// of hand-writing a modal block per image.
+//
+// Optional: set data-zoom-title="..." on the trigger to override
+// the modal's title (defaults to the image's alt text).
+// ==========================================================
+(function setupZoomImageModal() {
 
-  const image = viewer.querySelector(".zoomable-image");
-  const modal = viewer.closest(".modal");
+  const triggers = document.querySelectorAll("img.zoom-image");
 
-  if (!image || !modal) return;
+  if (triggers.length === 0) return;
 
+  let modal = document.getElementById("zoomImageModal");
+
+  if (!modal) {
+    document.body.insertAdjacentHTML("beforeend", `
+      <div class="modal fade" id="zoomImageModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+
+            <div class="modal-header gap-3">
+              <h5 class="modal-title"></h5>
+              <div class="d-flex gap-2 align-items-center">
+                <button type="button" class="btn btn-outline-secondary zoom-out-btn">−</button>
+                <button type="button" class="btn btn-outline-secondary zoom-reset-btn">100%</button>
+                <button type="button" class="btn btn-outline-secondary zoom-in-btn">+</button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+            </div>
+
+            <div class="modal-body image-viewer">
+              <img class="zoomable-image" alt="">
+            </div>
+
+          </div>
+        </div>
+      </div>
+    `);
+    modal = document.getElementById("zoomImageModal");
+  }
+
+  const modalTitle = modal.querySelector(".modal-title");
+  const modalImage = modal.querySelector(".zoomable-image");
+  const viewer = modal.querySelector(".image-viewer");
   const zoomIn = modal.querySelector(".zoom-in-btn");
   const zoomOut = modal.querySelector(".zoom-out-btn");
   const zoomReset = modal.querySelector(".zoom-reset-btn");
-
-  if (!zoomIn || !zoomOut || !zoomReset) return;
+  const bsModal = new bootstrap.Modal(modal);
 
   let scale = 1;
   const baseWidth = 1000;
 
   function updateZoom() {
-    const newWidth = baseWidth * scale;
-
-    image.style.width = `${newWidth}px`;
-
+    modalImage.style.width = `${baseWidth * scale}px`;
     zoomReset.textContent = `${Math.round(scale * 100)}%`;
   }
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      scale = 1;
+      modalImage.src = trigger.currentSrc || trigger.src;
+      modalImage.alt = trigger.alt || "";
+      modalTitle.textContent = trigger.dataset.zoomTitle || trigger.alt || "";
+      updateZoom();
+      viewer.scrollTo(0, 0);
+      bsModal.show();
+    });
+  });
 
   zoomIn.addEventListener("click", () => {
     scale += 0.25;
@@ -798,7 +849,7 @@ document.querySelectorAll(".image-viewer").forEach((viewer) => {
 
   });
 
-});
+})();
 renderBreadcrumb();
 
 // Page loader — waits for every image on the page to finish loading
