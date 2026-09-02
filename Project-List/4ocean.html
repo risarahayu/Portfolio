@@ -12,6 +12,18 @@
 </head>
 
 <body>
+    <!-- =========================
+         PAGE LOADER
+    ========================== -->
+    <div id="pageLoader" class="page-loader" role="status" aria-live="polite" aria-label="Loading page">
+        <div class="page-loader__avatar">
+            <span class="page-loader__ring"></span>
+            <img src="../image/face.png" alt="" class="page-loader__face">
+        </div>
+        <p class="page-loader__brand">Risa Rahayu</p>
+        <p class="page-loader__hint">Loading experience…</p>
+    </div>
+
     <div id="breadcrumb"></div>
 
     <header class="project-hero-section">
@@ -298,31 +310,7 @@
                             </p>
 
                             <img src="image/4Ocean/start-cleanup.png" alt="Start Cleanup Flow"
-                                class="flow__image zoom-image" data-bs-toggle="modal"
-                                data-bs-target="#startCleanupImageModal">
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal fade" id="startCleanupImageModal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog modal-fullscreen">
-                        <div class="modal-content">
-
-                            <div class="modal-header gap-3">
-                                <h5 class="modal-title">Start Cleanup Flow</h5>
-                                <div class="d-flex gap-2 align-items-center">
-                                    <button type="button" class="btn btn-outline-secondary zoom-out-btn">−</button>
-                                    <button type="button" class="btn btn-outline-secondary zoom-reset-btn">100%</button>
-                                    <button type="button" class="btn btn-outline-secondary zoom-in-btn">+</button>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                </div>
-                            </div>
-
-                            <div class="modal-body image-viewer">
-                                <img src="image/4Ocean/start-cleanup.png" class="zoomable-image"
-                                    alt="Start Cleanup Flow">
-                            </div>
+                                class="flow__image zoom-image">
 
                         </div>
                     </div>
@@ -356,7 +344,8 @@
                                 Capture Progress Photos → Submit Progress Photos
                             </p>
 
-                            <img src="image/4Ocean/during-cleanup.png" alt="During Cleanup Flow" class="flow__image">
+                            <img src="image/4Ocean/during-cleanup.png" alt="During Cleanup Flow"
+                                class="flow__image zoom-image">
 
                         </div>
                     </div>
@@ -394,31 +383,7 @@
                             </p>
 
                             <img src="image/4Ocean/after-cleanup.png" alt="After Cleanup Flow"
-                                class="flow__image zoom-image" data-bs-toggle="modal"
-                                data-bs-target="#finishingCleanupImageModal">
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal fade" id="finishingCleanupImageModal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog modal-fullscreen">
-                        <div class="modal-content">
-
-                            <div class="modal-header gap-3">
-                                <h5 class="modal-title">Finishing Cleanup Flow</h5>
-                                <div class="d-flex gap-2 align-items-center">
-                                    <button type="button" class="btn btn-outline-secondary zoom-out-btn">−</button>
-                                    <button type="button" class="btn btn-outline-secondary zoom-reset-btn">100%</button>
-                                    <button type="button" class="btn btn-outline-secondary zoom-in-btn">+</button>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                </div>
-                            </div>
-
-                            <div class="modal-body image-viewer">
-                                <img src="image/4Ocean/after-cleanup.png" class="zoomable-image"
-                                    alt="Finishing Cleanup Flow">
-                            </div>
+                                class="flow__image zoom-image">
 
                         </div>
                     </div>
@@ -458,31 +423,7 @@
                             </p>
 
                             <img src="image/4Ocean/waste-sorting.png" alt="Waste Sorting Flow"
-                                class="flow__image zoom-image" data-bs-toggle="modal"
-                                data-bs-target="#wasteSortingImageModal">
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal fade" id="wasteSortingImageModal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog modal-fullscreen">
-                        <div class="modal-content">
-
-                            <div class="modal-header gap-3">
-                                <h5 class="modal-title">Waste Sorting Flow</h5>
-                                <div class="d-flex gap-2 align-items-center">
-                                    <button type="button" class="btn btn-outline-secondary zoom-out-btn">−</button>
-                                    <button type="button" class="btn btn-outline-secondary zoom-reset-btn">100%</button>
-                                    <button type="button" class="btn btn-outline-secondary zoom-in-btn">+</button>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                </div>
-                            </div>
-
-                            <div class="modal-body image-viewer">
-                                <img src="image/4Ocean/waste-sorting.png" class="zoomable-image"
-                                    alt="Waste Sorting Flow">
-                            </div>
+                                class="flow__image zoom-image">
 
                         </div>
                     </div>
@@ -525,11 +466,13 @@
                             </p>
 
                             <img src="image/4Ocean/dashboard-report.png" alt="Dashboard / Report Flow"
-                                class="flow__image">
+                                class="flow__image zoom-image">
 
                         </div>
                     </div>
                 </div>
+
+
             </div>
         </section>
 
@@ -663,7 +606,7 @@
                                     </p>
 
                                     <img src="image/4Ocean/wireframing-color.png" alt="4Ocean Color"
-                                        class="wireframing__image wireframing__image--full">
+                                        class="wireframing__image wireframing__image--full zoom-image">
 
                                 </div>
 
@@ -740,7 +683,7 @@
                                 </h3>
 
                                 <img src="image/4Ocean/wireframing-text.png" alt="4Ocean Typography"
-                                    class="wireframing__image">
+                                    class="wireframing__image zoom-image">
 
                             </div>
 
@@ -858,7 +801,7 @@
                         <div class="accordion-body secondary-bg-color-4Ocean p-3">
 
                             <img src="image/4Ocean/wireframing-icon-1.png" alt="4Ocean Icon 1"
-                                class="wireframing__image">
+                                class="wireframing__image zoom-image">
 
                         </div>
                     </div>
@@ -900,17 +843,17 @@
                                         </ul>
                                     </div>
                                     <img src="image/4Ocean/wireframing-icon-3.png" alt="4Ocean Icon 3"
-                                        class="wireframing__image">
+                                        class="wireframing__image zoom-image">
                                 </div>
                                 <img src="image/4Ocean/wireframing-icon-2.png" alt="4Ocean Icon 2"
-                                    class="wireframing__image mt-4">
+                                    class="wireframing__image mt-4 zoom-image">
                             </div>
 
                             <img src="image/4Ocean/wireframing-component-1.png" alt="4Ocean Component 1"
-                                class="wireframing__image mt-4 mx-auto">
+                                class="wireframing__image mt-4 mx-auto zoom-image">
 
                             <img src="image/4Ocean/wireframing-component-2.png" alt="4Ocean Component 2"
-                                class="wireframing__image mt-4 mx-auto">
+                                class="wireframing__image mt-4 mx-auto zoom-image">
 
                         </div>
                     </div>
@@ -934,11 +877,12 @@
                         <div class="accordion-body secondary-bg-color-4Ocean p-3">
 
                             <img src="image/4Ocean/wireframing-responsive.png" alt="4Ocean Responsive Design"
-                                class="wireframing__image">
+                                class="wireframing__image zoom-image">
 
                         </div>
                     </div>
                 </div>
+
 
             </div>
 
@@ -977,7 +921,8 @@
                                 information clearly and effectively.
                             </p>
 
-                            <img src="image/4Ocean/iterasi-1.jpg" alt="First Version Iteration" class="iterasi__image">
+                            <img src="image/4Ocean/iterasi-1.jpg" alt="First Version Iteration"
+                                class="iterasi__image zoom-image">
 
                         </div>
 
@@ -1012,7 +957,8 @@
                                 users.
                             </p>
 
-                            <img src="image/4Ocean/iterasi-2.png" alt="Second Version Iteration" class="iterasi__image">
+                            <img src="image/4Ocean/iterasi-2.png" alt="Second Version Iteration"
+                                class="iterasi__image zoom-image">
 
                         </div>
 
@@ -1046,13 +992,15 @@
                                 the user's need to quickly understand cleanup activities, environmental impact, and key
                                 results.
                             </p>
-                            <img src="image/4Ocean/iterasi-3.png" alt="Final Version Iteration" class="iterasi__image">
+                            <img src="image/4Ocean/iterasi-3.png" alt="Final Version Iteration"
+                                class="iterasi__image zoom-image">
 
                         </div>
 
                     </div>
 
                 </div>
+
 
             </div>
 
