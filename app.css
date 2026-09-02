@@ -1185,6 +1185,8 @@ body.is-loading {
 
 .testimonial-team-image {
     width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
     opacity: 1;
     /* display: block; */
     transition: opacity 0.5s ease;
@@ -1218,6 +1220,53 @@ body.is-loading {
 
 .zoomable-image:active {
     cursor: grabbing;
+}
+
+/* Images carrying both width/height attributes (added so the browser can
+   reserve the right aspect-ratio before the file loads, avoiding layout
+   shift) must not use those attributes as literal pixel sizes — without
+   this, a responsive `width: 100%` combined with no explicit CSS height
+   makes the browser fall back to the raw `height` attribute value instead
+   of scaling it, which can blow the box up to the image's full intrinsic
+   height. */
+img[width][height] {
+    height: auto;
+}
+
+/* Lazy-loaded images: a shimmering placeholder shows while the image is
+   loading (or hasn't scrolled into view yet), then fades into the real
+   image once it's ready. */
+
+img.lazy-img {
+    background-color: rgba(0, 0, 0, 0.06);
+    background-image: linear-gradient(100deg,
+            rgba(0, 0, 0, 0) 30%,
+            rgba(0, 0, 0, 0.06) 50%,
+            rgba(0, 0, 0, 0) 70%);
+    background-size: 200% 100%;
+    animation: lazy-img-shimmer 1.4s ease-in-out infinite;
+}
+
+img.lazy-img.is-loaded {
+    animation: none;
+    background-image: none;
+    background-color: transparent;
+}
+
+@keyframes lazy-img-shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    img.lazy-img {
+        animation: none;
+    }
 }
 
 .hire-me-btn {

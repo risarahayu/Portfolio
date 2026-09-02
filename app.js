@@ -144,9 +144,9 @@ const testimonials = [
 ];
 
 const teamPhotos = [
-  "image/team photo/photo 1.png",
-  "image/team photo/photo 2.png",
-  "image/team photo/photo 3.jpg"
+  "../image/team photo/photo 1.png",
+  "../image/team photo/photo 2.png",
+  "../image/team photo/photo 3.jpg"
 ];
 // Preload images
 teamPhotos.forEach((photo) => {
@@ -430,7 +430,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const logo = toolLogoMap[tool];
           if (logo) {
             return `<span class="tool-icon-wrap" title="${tool}">
-              <img src="${logo}" alt="${tool}" class="tool-icon-img">
+              <img src="${logo}" alt="${tool}" class="tool-icon-img lazy-img" loading="lazy">
             </span>`;
           }
           return `<span class="badge bg-dark me-1">${tool}</span>`;
@@ -447,11 +447,12 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="card h-100 shadow-sm border-0 project-card rounded-4" style="">
             <!-- Thumbnail utama diambil dari gambar pertama -->
             <div class="p-3">
-                <img 
-                    src="${project.images[0]}" 
-                    class="card-img-top rounded-4" 
-                    alt="${project.projectTitle}" 
+                <img
+                    src="${project.images[0]}"
+                    class="card-img-top rounded-4 lazy-img"
+                    alt="${project.projectTitle}"
                     style="height: 220px; object-fit: cover;"
+                    loading="lazy"
                 >
             </div>
             <div class="card-body d-flex flex-column">
@@ -509,10 +510,11 @@ document.addEventListener("DOMContentLoaded", () => {
                       <span class="text-secondary small fw-bold">Company:</span>
 
                       <a href="${project.companyURL}" target="_blank">
-                        <img 
-                          src="${companyLogoMap[project.company]}" 
+                        <img
+                          src="${companyLogoMap[project.company]}"
                           alt="${project.company}"
-                          class="company-logo"
+                          class="company-logo lazy-img"
+                          loading="lazy"
                         >
                       </a>
                     </div>
@@ -545,7 +547,7 @@ function renderPortfolioFooter() {
         <div class="contact-blob blob-2"></div>
 
         <div class="contact-content">
-        <img src="../image/face.png" alt="" style="width:5rem; height:5rem; object-fit:contain;">
+        <img src="../image/face.png" alt="" class="lazy-img" loading="lazy" style="width:5rem; height:5rem; object-fit:contain;">
           <p class="contact-eyebrow">Thank you for reading this far</p>
           
           <h2 class="contact-headline">Ready to Turn Ideas<br>Into Reality Together.</h2>
@@ -696,6 +698,39 @@ function renderBreadcrumb() {
     }
   }, 100);
 }
+
+// ==========================================================
+// Lazy image loading — shimmer placeholder → fade in
+//
+// Every <img class="lazy-img"> shows a shimmering placeholder
+// (see .lazy-img in app.css) until it actually finishes loading
+// — including images that use loading="lazy" and haven't been
+// fetched yet because they're still off-screen. Once the image
+// loads (or errors out), it fades in and the shimmer stops.
+//
+// Registered here (after the skill cards / experience / projects
+// renderer above) so it also picks up images those add to the
+// page once DOMContentLoaded actually fires.
+// ==========================================================
+document.addEventListener("DOMContentLoaded", () => {
+
+  document.querySelectorAll("img.lazy-img").forEach((img) => {
+
+    function markLoaded() {
+      img.classList.add("is-loaded");
+    }
+
+    if (img.complete && img.naturalWidth > 0) {
+      markLoaded();
+    } else {
+      img.addEventListener("load", markLoaded, { once: true });
+      img.addEventListener("error", markLoaded, { once: true });
+    }
+
+  });
+
+});
+
 // ==========================================================
 // Reusable image zoom modal
 //
@@ -868,7 +903,11 @@ if (pageLoader) {
   }
 
   function waitForImages() {
-    const images = Array.from(document.images);
+    // Lazy-loaded images are deferred on purpose (they may not even start
+    // fetching until scrolled into view) — only the critical, eagerly-loaded
+    // images should hold up the initial reveal. Lazy ones show their own
+    // shimmer placeholder as they arrive.
+    const images = Array.from(document.images).filter((img) => img.loading !== "lazy");
 
     return Promise.all(
       images.map((img) => {
