@@ -1,307 +1,153 @@
-/* =========================================================
-   1ZERO - AI CONTENT GENERATION
-========================================================= */
+/* ==========================================================================
+   1zero — page-specific tokens + widgets with no analog on the other
+   project pages (Selected Content's media/accordion cards, the AI
+   Workflow step grid, the Outcome takeaway card). Everything else this
+   page uses lives in css/project.css, shared with 4ocean.html and
+   BaliTeak.html.
+   ========================================================================== */
 
 :root {
-    --onezero-green: #1d5745;
-    --onezero-green-light: #85dfc3;
-    --onezero-black: #272727;
-    --onezero-bg: #f3f5e9;
-    --onezero-white: #fafafa;
-    --onezero-border: rgba(39, 39, 39, 0.12);
+  --project-primary: #1d5745;
+  --project-surface-muted: #f3f5e9;
+  --project-text: #272727;
+  --project-text-muted: #272727;
+  --project-hero-image: url('../image/1zero/Hero.png');
+
+  --onezero-border: rgba(39, 39, 39, 0.12);
 }
 
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.project-hero-section {
-    padding-bottom: 0;
-}
-
-.project-hero-image {
-    background: var(--onezero-bg);
-    min-height: 320px;
-}
-
-.project-hero-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-}
-
-
-.project-hero-content {
-    background: var(--onezero-green);
-    color: #fff;
-}
-
-
-.project-label {
-    display: inline-flex;
-    width: fit-content;
-    padding: 0.45rem 0.8rem;
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    border-radius: 999px;
-    font-size: 0.8rem;
-    line-height: 1;
-}
-
-
-.project-hero-description {
-    max-width: 700px;
-    color: rgba(255, 255, 255, 0.82);
-}
-
-
-.project-details {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    height: 100%;
-    justify-content: flex-end;
-}
-
-
-.project-detail-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-}
-
-.project-detail-item .small {
-    color: rgba(255, 255, 255, 0.65);
-}
-
-
-/* =========================================================
-   GENERAL
-========================================================= */
-
-.content-section-card,
-.workflow-section {
-    background: var(--onezero-bg);
-}
-
-
-.capsule-border-1zero {
-    border: 2px solid var(--onezero-green);
-    color: var(--onezero-green);
-
-}
-
+/* Page-specific accent-color utility (used on the Key Learnings card
+   icons/captions — not part of the shared card-grid component since the
+   other pages' equivalent cards have no accent-color treatment of their
+   own besides BaliTeak, which has its own .color-baliteak). */
 .color-1zero {
-    color: var(--onezero-green);
+  color: var(--project-primary);
 }
 
-/* =========================================================
-   CONTENT AREAS
-========================================================= */
+/* ==========================================================================
+   Content Areas card — a slightly richer card than the shared
+   .card-grid__card default (border + hover lift). Combined with
+   .card-grid__card in the markup for shared grid/gap/column behavior.
+   ========================================================================== */
 
 .ai-category-card {
-    padding: 1.5rem;
-    border: 1px solid var(--onezero-border);
-    border-radius: 1rem;
-    background: rgba(255, 255, 255, 0.45);
-    transition: transform 0.25s ease,
-        border-color 0.25s ease;
+  padding: 1.5rem;
+  border: 1px solid var(--onezero-border);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.45);
+  transition: transform 0.25s ease, border-color 0.25s ease;
 }
-
 
 .ai-category-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(29, 87, 69, 0.35);
+  transform: translateY(-4px);
+  border-color: rgba(29, 87, 69, 0.35);
 }
 
-
-.ai-category-number {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 0.8rem;
-    color: var(--onezero-green);
-}
-
-
-/* =========================================================
-   SELECTED CONTENT
-========================================================= */
+/* ==========================================================================
+   Selected Content — 1zero-only: no other page has a media+accordion
+   "creation process" showcase.
+   ========================================================================== */
 
 .ai-content-card {
-    overflow: hidden;
-    border-radius: 1rem;
-    background: #fff;
-    border: 1px solid var(--onezero-border);
+  overflow: hidden;
+  border-radius: 1rem;
+  background: #fff;
+  border: 1px solid var(--onezero-border);
 }
-
 
 .ai-content-image {
-    overflow: hidden;
-    background: var(--onezero-bg);
+  overflow: hidden;
+  background: var(--project-surface-muted);
 }
-
 
 .ai-content-image img {
-    display: block;
-    width: 100%;
-    height: auto;
-    transition: transform 0.5s ease;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
 }
 
+/* The video embed's width/height HTML attributes (640x360, a 16:9 ratio)
+   are just an intrinsic-size hint — this is what actually keeps it fluid
+   instead of staying a fixed 640px wide and overflowing on mobile. */
+.ai-content-image iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+}
 
 .ai-content-card:hover .ai-content-image img {
-    transform: scale(1.02);
+  transform: scale(1.02);
 }
 
-
-.ai-content-tag {
-    display: inline-flex;
-    align-items: center;
-    width: fit-content;
-    padding: 0.4rem 0.7rem;
-    border-radius: 999px;
-    background: var(--onezero-bg);
-    color: var(--onezero-green);
-    font-size: 0.75rem;
-    font-weight: 600;
+.ai-prompt {
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  background: var(--project-surface-muted);
 }
 
-
-.ai-content-number {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 0.75rem;
-    color: #888;
+.ai-prompt p {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
 }
 
+.ai-prompt p:last-child {
+  margin-bottom: 0;
+}
 
-/* =========================================================
-   WORKFLOW
-========================================================= */
+/* ==========================================================================
+   AI Workflow — 1zero-only: no other page has a numbered step grid.
+   ========================================================================== */
 
 .ai-workflow {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
 }
-
 
 .ai-workflow-step {
-    display: flex;
-    flex-direction: column;
-    gap: 0.45rem;
-    padding: 1.25rem;
-    background: #fff;
-    border-radius: 1rem;
-    border: 1px solid var(--onezero-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 1.25rem;
+  background: #fff;
+  border-radius: 1rem;
+  border: 1px solid var(--onezero-border);
 }
-
 
 .ai-workflow-step span {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 0.75rem;
-    color: var(--onezero-green);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--project-primary);
 }
-
 
 .ai-workflow-step strong {
-    font-size: 1rem;
+  font-size: 1rem;
 }
-
 
 .ai-workflow-step p {
-    margin: 0;
-    font-size: 0.875rem;
-    color: #6c757d;
+  margin: 0;
+  font-size: 0.875rem;
+  color: #6c757d;
 }
 
-
-/* =========================================================
-   CONTRIBUTION
-========================================================= */
-
-.ai-role-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    min-height: 70px;
-    padding: 1rem 1.25rem;
-    border: 1px solid var(--onezero-border);
-    border-radius: 1rem;
-    background: #fff;
-    font-weight: 600;
-}
-
-
-.ai-role-item span {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 0.75rem;
-    color: var(--onezero-green);
-}
-
-
-/* =========================================================
-   TOOLS
-========================================================= */
-
-.tool-card {
-    padding: 1.5rem;
-    border: 1px solid var(--onezero-border);
-    border-radius: 1rem;
-    background: #fff;
-}
-
-
-.tool-number {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 0.75rem;
-    color: var(--onezero-green);
-}
-
-
-/* =========================================================
-   OUTCOME
-========================================================= */
+/* ==========================================================================
+   Outcome takeaway card — 1zero-only.
+   ========================================================================== */
 
 .outcome-card {
-    background: var(--onezero-green);
-    color: #fff;
+  background: var(--project-primary);
+  color: #fff;
 }
-
 
 .outcome-card .small {
-    color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.65);
 }
-
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media (max-width: 991.98px) {
-
-    .project-hero-image {
-        min-height: 240px;
-    }
-
-    .project-details {
-        justify-content: flex-start;
-    }
-
-}
-
 
 @media (max-width: 767.98px) {
-
-    .project-hero-image {
-        min-height: 180px;
-    }
-
-    .ai-workflow {
-        grid-template-columns: 1fr;
-    }
-
-    .project-hero-content {
-        padding: 1.5rem !important;
-    }
-
+  .ai-workflow {
+    grid-template-columns: 1fr;
+  }
 }

@@ -108,8 +108,24 @@ const projectsData = [
       "image/portfolio img/UIUX/BalI Teak Company Website 2.png"
     ]
   },
+  {
+    id: 3,
+    projectTitle: "1zero - AI-Assisted Content Generation",
+    company: "1zero",
+    companyURL: "https://1zero.biz",
+    projectURL: "Project-List/1zero-ai-content-generation.html",
+    description: "Exploring how AI can support content and marketing production at 1zero — used as a creative assistant for ideation, visuals, and copy rather than a source of raw, unreviewed output.",
+    impact: ["Faster Content Production", "Expanded Visual Asset Creation", "Faster Creative Exploration"],
+    role: ["UI/UX", "Digital Marketing"],
+    projectType: ["Content Creation"],
+    tools: ["Figma", "ChatGPT"],
+    images: [
+      "Project-List/image/1zero/Hero.png",
+      "Project-List/image/1zero/social-media-copy.png"
+    ]
+  },
   // {
-  //   id: 3,
+  //   id: 4,
   //   projectTitle: "Stray Dog Adoption Website",
   //   company: "Mission Pawsible Bali",
   //   companyURL: "https://missionpawsible.org",
@@ -385,7 +401,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const companyLogoMap = {
       "4Ocean": "image/logo/company/4Ocean.png",
       "Bali Teak": "image/logo/company/Bali Teak.png",
-      "Mission Pawsible Bali": "image/logo/company/Mission Pawsible.webp"
+      "Mission Pawsible Bali": "image/logo/company/Mission Pawsible.webp",
+      "1zero": "image/logo/experience/1zero.svg"
     }
 
     // Tool → logo image path mapping
@@ -606,7 +623,8 @@ function renderBreadcrumb() {
   const pageNames = {
     "BaliTeak": "Bali Teak - Redesign Website",
     "4ocean": "4ocean - Website Redesign",
-    "mission-pawsible": "Mission Pawsible"
+    "mission-pawsible": "Mission Pawsible",
+    "1zero-ai-content-generation": "1zero - AI-Assisted Content Generation"
   };
 
   const currentPageName = pageNames[currentPage] || currentPage;

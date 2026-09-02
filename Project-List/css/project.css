@@ -22,7 +22,12 @@
   --text-40: clamp(1.75rem, 1.2rem + 2.2vw, 2.5rem);
   --text-96: clamp(2rem, 1rem + 6vw, 6rem);
 
-  --section-padding-inline: clamp(1.25rem, 4vw, 4rem);
+  /* Minimum kept >= 1.5rem: a Bootstrap .row with the largest gutter used
+     on these pages (.g-5) pulls back 1.5rem via negative margin, and a
+     .row sitting directly in .project-section (no extra padded wrapper)
+     needs at least that much section padding to not bleed past the edge
+     at narrow widths. */
+  --section-padding-inline: clamp(1.5rem, 4vw, 4rem);
   --section-padding-block-start: clamp(2rem, 5vw, 4rem);
   --section-max-width: 1317px;
 }
@@ -78,6 +83,13 @@
   color: var(--project-primary);
 }
 
+/* Generic accent-color utility (e.g. for an SVG icon using currentColor) —
+   the page-agnostic equivalent of BaliTeak's .color-baliteak / 1zero's
+   .color-1zero, for anything that doesn't need its own page-specific name. */
+.color-project {
+  color: var(--project-primary);
+}
+
 .project-surface-muted {
   background-color: var(--project-surface-muted);
 }
@@ -112,6 +124,10 @@
 
 .project-hero__panel {
   display: flex;
+  /* Below this, intro/meta stack (tablet-portrait and mobile); above it
+     they stay side by side. A deliberate breakpoint instead of letting
+     each page wrap at a different width depending on how much copy it
+     happens to have. */
   flex-wrap: wrap;
   justify-content: space-between;
   gap: clamp(1.5rem, 4vw, 2.5rem);
@@ -119,6 +135,12 @@
   color: var(--white);
   border-radius: 1rem;
   padding: clamp(1.25rem, 4vw, 3rem);
+}
+
+@media (min-width: 992px) {
+  .project-hero__panel {
+    flex-wrap: nowrap;
+  }
 }
 
 .project-hero__intro {
@@ -281,6 +303,10 @@
   gap: 1rem;
 }
 
+.card-grid--cols-2 {
+  --card-grid-columns: 2;
+}
+
 .card-grid--cols-3 {
   --card-grid-columns: 3;
 }
@@ -297,6 +323,7 @@
 
 @media (max-width: 767.98px) {
 
+  .card-grid--cols-2,
   .card-grid--cols-3,
   .card-grid--cols-4 {
     --card-grid-columns: 1;

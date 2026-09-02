@@ -10,11 +10,14 @@
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Global Styles -->
-    <link href="../app.css" rel="stylesheet">
+    <!-- Shared Project Styles -->
+    <link href="css/project.css" rel="stylesheet">
 
     <!-- Project Styles -->
     <link href="css/1zero.css" rel="stylesheet">
+
+    <!-- Global Styles -->
+    <link href="../app.css" rel="stylesheet">
 </head>
 
 <body>
@@ -49,127 +52,68 @@
     <!-- =========================
          PROJECT HERO
     ========================== -->
-    <header class="project-hero-section">
-
-        <div class="container d-flex flex-column gap-4 pt-5">
-
-            <!-- Hero Image -->
-            <div class="project-hero-image rounded-4 overflow-hidden">
-
-                <img src="image/1zero/Hero.png" alt="AI-assisted content generated for 1zero" class="w-100"
-                    loading="eager">
-
+    <header class="project-hero">
+        <div class="project-hero__inner">
+            <div class="project-hero__banner">
             </div>
-
-
-            <!-- Project Information -->
-            <div class="project-hero-content rounded-4 p-4 p-md-5">
-
-                <div class="row g-4">
-
-                    <!-- Project Title -->
-                    <div class="col-12 col-lg-8">
-
-                        <div class="d-flex flex-column gap-3">
-
-                            <!-- <span class="project-label">
-                                1zero — Content & Creative
-                            </span> -->
-
-                            <h1 class="display-4 fw-medium mb-0">
-                                1zero - AI-Assisted Content Generation
-                            </h1>
-
-                            <div class="d-flex flex-column gap-2">
-
-                                <div class="d-flex gap-2 gap-md-3">
-                                    <img alt="" src="image/1zero/fluent--content-view-gallery-lightning-20-regular.svg"
-                                        width="24" />
-
-                                    <p class="fs-6 m-0">
-                                        Faster Content Production
-                                    </p>
-                                </div>
-
-                                <div class="d-flex gap-2 gap-md-3">
-                                    <img alt="" src="image/1zero/iconoir--media-image-folder.svg" width="24" />
-
-                                    <p class="fs-6 m-0">
-                                        Expanded Visual Asset Creation
-                                    </p>
-                                </div>
-
-                                <div class="d-flex gap-2 gap-md-3">
-                                    <img alt="" src="image/1zero/fluent--image-search-20-regular.svg" width="24" />
-
-                                    <p class="fs-6 m-0">
-                                        Faster Creative Exploration
-                                    </p>
-                                </div>
-
-                            </div>
-
+            <div class="project-hero__panel">
+                <div class="project-hero__intro">
+                    <h1 class="project-hero__title">
+                        1zero - AI-Assisted Content Generation
+                    </h1>
+                    <div class="project-hero__highlights">
+                        <div class="project-hero__highlight">
+                            <img alt="" src="image/1zero/fluent--content-view-gallery-lightning-20-regular.svg"
+                                width="24" />
+                            <p>
+                                Faster Content Production
+                            </p>
                         </div>
-
-                    </div>
-
-
-                    <!-- Project Details -->
-                    <div class="col-12 col-lg-4">
-
-                        <div class="project-details">
-
-                            <div class="project-detail-item">
-
-                                <p class="small mb-1">
-                                    Role
-                                </p>
-
-                                <p class="fs-6 fw-bold mb-0">
-                                    UI/UX Designer &amp; Developer
-                                </p>
-
-                            </div>
-
-
-                            <div class="project-detail-item">
-
-                                <p class="small mb-1">
-                                    Scope
-                                </p>
-
-                                <p class="fs-6 fw-bold mb-0">
-                                    AI-Assisted Content Creation
-                                </p>
-
-                            </div>
-
-
-                            <div class="project-detail-item">
-
-                                <p class="small mb-1">
-                                    Tools
-                                </p>
-
-                                <p class="fs-6 fw-bold mb-0">
-                                    AI Tools
-                                </p>
-                                <p class="fs-6 fw-bold mb-0">
-                                    (Banana, Google Vidio, Google Flow, Chat GPT)
-                                </p>
-
-                            </div>
-
+                        <div class="project-hero__highlight">
+                            <img alt="" src="image/1zero/iconoir--media-image-folder.svg" width="24" />
+                            <p>
+                                Expanded Visual Asset Creation
+                            </p>
                         </div>
-
+                        <div class="project-hero__highlight">
+                            <img alt="" src="image/1zero/fluent--image-search-20-regular.svg" width="24" />
+                            <p>
+                                Faster Creative Exploration
+                            </p>
+                        </div>
                     </div>
-
                 </div>
-
+                <div class="project-hero__meta">
+                    <div class="project-hero__meta-item">
+                        <p class="project-hero__meta-label">
+                            Role
+                        </p>
+                        <p class="project-hero__meta-value">
+                            UI/UX Designer &amp; Developer
+                        </p>
+                    </div>
+                    <div class="project-hero__meta-item">
+                        <p class="project-hero__meta-label">
+                            Scope
+                        </p>
+                        <p class="project-hero__meta-value">
+                            AI-Assisted Content Creation
+                        </p>
+                    </div>
+                    <div class="project-hero__meta-item">
+                        <p class="project-hero__meta-label">
+                            Tools
+                        </p>
+                        <p class="project-hero__meta-value">
+                            AI Tools
+                        </p>
+                        <p class="project-hero__meta-value">
+                            (Banana, Google Vidio, Google Flow, Chat GPT)
+                        </p>
+                    </div>
+                </div>
             </div>
-
         </div>
-
     </header>
 
 
@@ -179,93 +123,62 @@
         <!-- =========================
              PROJECT SCOPE
         ========================== -->
-        <section class="pt-5" id="project-scope">
+        <section class="project-section info-block" id="project-scope">
 
-            <div class="container">
+            <h2 class="capsule capsule-border-project project-section__title m-0">
+                Project Scope
+            </h2>
 
-                <div class="d-flex flex-column gap-3">
+            <div class="info-block__row mt-3">
 
-                    <h2 class="capsule capsule-border-1zero fs-6 m-0">
-                        Project Scope
-                    </h2>
+                <!-- Description -->
+                <div class="info-block__prose">
+                    <p>
+                        As part of 1zero's content and marketing
+                        activities, I explored how AI could support
+                        different stages of the creative production
+                        process.
+                    </p>
+                    <p>
+                        Instead of relying on raw AI-generated
+                        outputs, I used AI as a creative assistant
+                        for ideation, content generation, visual
+                        exploration, and copy development.
+                    </p>
+                    <p>
+                        Each output was then reviewed, selected,
+                        refined, and aligned with 1zero's visual
+                        identity and communication goals before
+                        being used as final content.
+                    </p>
+                </div>
 
-
-                    <div class="row g-5">
-
-                        <!-- Description -->
-                        <div class="col-12 col-lg-8">
-
-                            <div class="d-flex flex-column gap-3">
-
-                                <p class="fs-6 mb-0">
-                                    As part of 1zero's content and marketing
-                                    activities, I explored how AI could support
-                                    different stages of the creative production
-                                    process.
-                                </p>
-
-                                <p class="fs-6 mb-0">
-                                    Instead of relying on raw AI-generated
-                                    outputs, I used AI as a creative assistant
-                                    for ideation, content generation, visual
-                                    exploration, and copy development.
-                                </p>
-
-                                <p class="fs-6 mb-0">
-                                    Each output was then reviewed, selected,
-                                    refined, and aligned with 1zero's visual
-                                    identity and communication goals before
-                                    being used as final content.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-                        <!-- Project Metadata -->
-                        <div class="col-12 col-lg-4">
-
-                            <div class="d-flex flex-column gap-3">
-
-                                <div>
-                                    <p class="small mb-1">
-                                        Project
-                                    </p>
-
-                                    <p class="fs-6 fw-bold mb-0">
-                                        1zero
-                                    </p>
-                                </div>
-
-
-                                <div>
-                                    <p class="small mb-1">
-                                        Content Types
-                                    </p>
-
-                                    <p class="fs-6 fw-bold mb-0">
-                                        Visual, Written &amp; Marketing Content
-                                    </p>
-                                </div>
-
-
-                                <div>
-                                    <p class="small mb-1">
-                                        Approach
-                                    </p>
-
-                                    <p class="fs-6 fw-bold mb-0">
-                                        AI-Assisted Creative Workflow
-                                    </p>
-                                </div>
-
-                            </div>
-
-                        </div>
-
+                <!-- Project Metadata -->
+                <div class="info-block__summary">
+                    <div class="info-block__group">
+                        <p class="info-block__label">
+                            Project
+                        </p>
+                        <p class="info-block__value">
+                            1zero
+                        </p>
                     </div>
-
+                    <div class="info-block__group">
+                        <p class="info-block__label">
+                            Content Types
+                        </p>
+                        <p class="info-block__value">
+                            Visual, Written &amp; Marketing Content
+                        </p>
+                    </div>
+                    <div class="info-block__group">
+                        <p class="info-block__label">
+                            Approach
+                        </p>
+                        <p class="info-block__value">
+                            AI-Assisted Creative Workflow
+                        </p>
+                    </div>
                 </div>
 
             </div>
@@ -277,58 +190,41 @@
         <!-- =========================
              CONTENT AREAS
         ========================== -->
-        <section class="pt-5" id="content-areas">
+        <section class="project-section" id="content-areas">
 
-            <div class="container">
+            <div class="project-surface-muted rounded-4 p-4 p-md-5">
 
-                <div class="content-section-card rounded-4 p-4 p-md-5">
+                <h2 class="capsule capsule-border-project project-section__title m-0 mb-3">
+                    Content Areas
+                </h2>
 
-                    <h2 class="capsule capsule-border-1zero fs-6 m-0 mb-3">
-                        Content Areas
-                    </h2>
+                <div class="card-grid card-grid--cols-2 mt-3">
 
+                    <!-- Visual -->
+                    <article class="card-grid__card ai-category-card">
 
-                    <div class="row g-4">
+                        <h3 class="h4 mt-4 mb-3">
+                            Visual Content
+                        </h3>
 
+                        <p class="text-secondary mb-0">
+                            AI-assisted creation of images, videos,
+                            for marketing content.
+                        </p>
 
-                        <!-- Visual -->
-                        <div class="col-12 col-md-6">
+                    </article>
 
-                            <article class="ai-category-card h-100">
+                    <!-- Written -->
+                    <article class="card-grid__card ai-category-card">
+                        <h3 class="h4 mt-4 mb-3">
+                            Written Content
+                        </h3>
 
+                        <p class="text-secondary mb-0">
+                            Social media copy.
+                        </p>
 
-
-                                <h3 class="h4 mt-4 mb-3">
-                                    Visual Content
-                                </h3>
-
-                                <p class="text-secondary mb-0">
-                                    AI-assisted creation of images, videos,
-                                    for marketing content.
-                                </p>
-
-                            </article>
-
-                        </div>
-
-
-                        <!-- Written -->
-                        <div class="col-12 col-md-6">
-
-                            <article class="ai-category-card h-100">
-                                <h3 class="h4 mt-4 mb-3">
-                                    Written Content
-                                </h3>
-
-                                <p class="text-secondary mb-0">
-                                    Social media copy.
-                                </p>
-
-                            </article>
-
-                        </div>
-
-                    </div>
+                    </article>
 
                 </div>
 
@@ -341,194 +237,196 @@
         <!-- =========================
              SELECTED WORK
         ========================== -->
-        <section class="pt-5" id="selected-work">
-            <div class="container">
-                <div class="d-flex flex-column gap-3">
-                    <h2 class="capsule capsule-border-1zero fs-6 m-0"> Selected Content </h2>
-                    <p class="fs-6 mb-2"> A selection of content created through AI-assisted workflows for 1zero's
-                        marketing and communication activities. </p>
-                    <div class="row g-4">
-                        <!-- ========================= CONTENT 01 — VIDEO ========================== -->
-                        <div class="col-12 col-md-6">
-                            <article class="ai-content-card h-100">
-                                <div class="ai-content-image"> <iframe
-                                        src="https://drive.google.com/file/d/1atRMztX70qsAbdh_26KjTin6E9HnnJv8/preview"
-                                        width="640" height="360" allow="autoplay" allowfullscreen> </iframe> </div>
-                                <div class="p-4">
+        <section class="project-section" id="selected-work">
+            <h2 class="capsule capsule-border-project project-section__title m-0"> Selected Content </h2>
+            <p class="fs-6 mb-2 mt-3"> A selection of content created through AI-assisted workflows for 1zero's
+                marketing and communication activities. </p>
+            <div class="row g-4">
+                <!-- ========================= CONTENT 01 — VIDEO ========================== -->
+                <div class="col-12 col-md-6">
+                    <article class="ai-content-card h-100">
+                        <div class="ai-content-image"> <iframe
+                                src="https://drive.google.com/file/d/1atRMztX70qsAbdh_26KjTin6E9HnnJv8/preview"
+                                width="640" height="360" allow="autoplay" allowfullscreen> </iframe> </div>
+                        <div class="p-4">
 
-                                    <h3 class="h4 mb-2"> Video Content </h3>
-                                    <p class="text-secondary mb-4"> AI-generated videos developed to explore different
-                                        creative directions for 1zero's marketing communication. </p>
-                                    <!-- Bootstrap Accordion -->
-                                    <div class="accordion ai-process-accordion" id="videoProcess">
-                                        <div class="accordion-item">
-                                            <h4 class="accordion-header"> <button class="accordion-button collapsed"
-                                                    type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#videoProcessContent" aria-expanded="false"
-                                                    aria-controls="videoProcessContent"> View Creation Process </button>
-                                            </h4>
-                                            <div id="videoProcessContent" class="accordion-collapse collapse"
-                                                data-bs-parent="#videoProcess">
-                                                <div class="accordion-body">
-                                                    <p class="mb-2 fs-6 fw-bold"> Brief </p>
-                                                    <img src="image/1zero/Video-brief.png" class="img-fluid mb-3"
-                                                        alt="">
-                                                    <p class="mb-2 mt-4 fs-6 fw-bold"> Break the scene </p>
-                                                    <img src="image/1zero/Video-creation-step-1.png" class="img-fluid"
-                                                        alt="">
+                            <h3 class="h4 mb-2"> Video Content </h3>
+                            <p class="text-secondary mb-4"> AI-generated videos developed to explore different
+                                creative directions for 1zero's marketing communication. </p>
+                            <!-- Bootstrap Accordion -->
+                            <div class="accordion ai-process-accordion" id="videoProcess">
+                                <div class="accordion-item">
+                                    <h4 class="accordion-header"> <button class="accordion-button collapsed"
+                                            type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#videoProcessContent" aria-expanded="false"
+                                            aria-controls="videoProcessContent"> View Creation Process </button>
+                                    </h4>
+                                    <div id="videoProcessContent" class="accordion-collapse collapse"
+                                        data-bs-parent="#videoProcess">
+                                        <div class="accordion-body">
+                                            <p class="mb-2 fs-6 fw-bold"> Brief </p>
+                                            <img src="image/1zero/Video-brief.png" loading="lazy" width="566"
+                                                height="108" class="img-fluid mb-3 zoom-image lazy-img"
+                                                alt="">
+                                            <p class="mb-2 mt-4 fs-6 fw-bold"> Break the scene </p>
+                                            <img src="image/1zero/Video-creation-step-1.png" loading="lazy"
+                                                width="774" height="712" class="img-fluid zoom-image lazy-img"
+                                                alt="">
 
-                                                    <p class="mb-2 mt-4 fs-6 fw-bold"> Production </p>
-                                                    <img src="image/1zero/Video-creation-step-2.png" class="img-fluid"
-                                                        alt="">
-                                                </div>
-                                            </div>
+                                            <p class="mb-2 mt-4 fs-6 fw-bold"> Production </p>
+                                            <img src="image/1zero/Video-creation-step-2.png" loading="lazy"
+                                                width="1239" height="895" class="img-fluid zoom-image lazy-img"
+                                                alt="">
                                         </div>
                                     </div>
                                 </div>
-                            </article>
-                        </div> <!-- ========================= CONTENT 02 — SOCIAL MEDIA ========================== -->
-                        <div class="col-12 col-md-6">
-                            <article class="ai-content-card h-100">
-                                <div class="ai-content-image"> <img src="image/1zero/social-media-copy.png"
-                                        alt="AI-assisted social media content for 1zero" class="w-100" loading="lazy">
-                                </div>
-                                <div class="p-4">
-
-                                    <h3 class="h4 mb-2"> Social Media Content </h3>
-                                    <p class="text-secondary mb-4"> AI-assisted copy developed to support social media
-                                        communication and content storytelling. </p> <!-- Bootstrap Accordion -->
-                                    <div class="accordion ai-process-accordion" id="socialProcess">
-                                        <div class="accordion-item">
-                                            <h4 class="accordion-header"> <button class="accordion-button collapsed"
-                                                    type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#socialProcessContent" aria-expanded="false"
-                                                    aria-controls="socialProcessContent"> View Creation Process
-                                                </button> </h4>
-                                            <div id="socialProcessContent" class="accordion-collapse collapse"
-                                                data-bs-parent="#socialProcess">
-                                                <div class="accordion-body">
-                                                    <img src="image/1zero/Copy-creation-step-1.png" class="img-fluid"
-                                                        alt="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                        </div> <!-- ========================= CONTENT 03 — IMAGE ========================== -->
-                        <div class="col-12">
-                            <article class="ai-content-card">
-                                <div class="row g-0 align-items-stretch">
-                                    <div class="col-12 col-lg-7">
-                                        <div class="ai-content-image h-100"> <img
-                                                src="image/1zero/Futuristic_CTO_overseeing_produc…_2K_202609021619.jpeg"
-                                                alt="AI-generated creative concept for 1zero" class="img-fluid"
-                                                loading="lazy"> </div>
-                                    </div>
-                                    <div class="col-12 col-lg-5">
-                                        <div class="p-4 p-md-5 h-100 d-flex flex-column justify-content-center">
-
-                                            <h3 class="h4 mb-3"> Image Content </h3>
-                                            <p class="text-secondary mb-4"> Experimental image created with AI to
-                                                explore visual directions before committing to final production. </p>
-                                            <!-- Bootstrap Accordion -->
-                                            <div class="accordion ai-process-accordion" id="imageProcess">
-                                                <div class="accordion-item">
-                                                    <h4 class="accordion-header"> <button
-                                                            class="accordion-button collapsed" type="button"
-                                                            data-bs-toggle="collapse"
-                                                            data-bs-target="#imageProcessContent" aria-expanded="false"
-                                                            aria-controls="imageProcessContent"> View Creation Process
-                                                        </button> </h4>
-                                                    <div id="imageProcessContent" class="accordion-collapse collapse"
-                                                        data-bs-parent="#imageProcess">
-                                                        <div class="accordion-body">
-                                                            <div class="accordion-body">
-
-                                                                <!-- Prompt Template -->
-                                                                <p class="mb-2 fs-6 fw-bold">Prompt Template</p>
-
-                                                                <div class="ai-prompt mb-4">
-                                                                    <p>A [concept] inside [environment], showing
-                                                                        [subject +
-                                                                        role]
-                                                                        [performing action].</p>
-
-                                                                    <p>The scene features [visual elements].</p>
-
-                                                                    <p>Visual metaphors of [key concepts] are
-                                                                        represented
-                                                                        through
-                                                                        [visual representations].</p>
-
-                                                                    <p>Style: [style / aesthetic],
-                                                                        with [color palette / UI language].</p>
-
-                                                                    <p>[lighting], [mood], [level of detail],
-                                                                        minimal clutter, polished, futuristic [industry]
-                                                                        visualization.</p>
-                                                                </div>
-
-                                                                <p class="mb-2 fs-6 fw-bold">Pic Prompt
-                                                                </p>
-                                                                <p>
-                                                                    A futuristic fractional CTO (fCTO) concept
-                                                                    illustration inside a
-                                                                    next-generation SaaS platform, showing a senior
-                                                                    technical architect
-                                                                    overseeing multiple distributed product teams from a
-                                                                    holographic
-                                                                    command center. The scene features layered system
-                                                                    architecture
-                                                                    diagrams floating in 3D space, cloud infrastructure
-                                                                    maps, CI/CD
-                                                                    pipelines, and scalable system graphs. The CTO is
-                                                                    represented as a
-                                                                    focused professional interacting with transparent UI
-                                                                    panels, making
-                                                                    strategic decisions across multiple startup
-                                                                    environments. Visual
-                                                                    metaphors of orchestration, scalability, and
-                                                                    technical leadership are
-                                                                    present, including interconnected nodes, system
-                                                                    health indicators,
-                                                                    and roadmap timelines. Style is ultra-modern,
-                                                                    isometric SaaS dashboard
-                                                                    aesthetic, dark mode UI with neon cyan, blue, and
-                                                                    subtle purple
-                                                                    accents. High-tech, minimal clutter, cinematic
-                                                                    lighting, soft glow
-                                                                    effects, highly detailed, futuristic enterprise
-                                                                    platform visualization.
-                                                                </p>
-
-
-                                                                <!-- First Generate -->
-                                                                <p class="mb-2 fs-6 fw-bold">First Generate</p>
-
-
-                                                                <img src="image/1zero/Image-creation-step-1.png"
-                                                                    class="img-fluid rounded-3"
-                                                                    alt="First AI-generated image">
-
-                                                                <!-- Second Generate -->
-                                                                <p class="mb-2 mt-4 fs-6 fw-bold">Second Generate</p>
-
-                                                                <img src="image/1zero/Image-creation-step-2.png"
-                                                                    class="img-fluid rounded-3"
-                                                                    alt="Second AI-generated image">
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
+                            </div>
                         </div>
-                    </div>
+                    </article>
+                </div> <!-- ========================= CONTENT 02 — SOCIAL MEDIA ========================== -->
+                <div class="col-12 col-md-6">
+                    <article class="ai-content-card h-100">
+                        <div class="ai-content-image"> <img src="image/1zero/social-media-copy.png"
+                                alt="AI-assisted social media content for 1zero" width="719" height="655"
+                                class="w-100 zoom-image lazy-img" loading="lazy">
+                        </div>
+                        <div class="p-4">
+
+                            <h3 class="h4 mb-2"> Social Media Content </h3>
+                            <p class="text-secondary mb-4"> AI-assisted copy developed to support social media
+                                communication and content storytelling. </p> <!-- Bootstrap Accordion -->
+                            <div class="accordion ai-process-accordion" id="socialProcess">
+                                <div class="accordion-item">
+                                    <h4 class="accordion-header"> <button class="accordion-button collapsed"
+                                            type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#socialProcessContent" aria-expanded="false"
+                                            aria-controls="socialProcessContent"> View Creation Process
+                                        </button> </h4>
+                                    <div id="socialProcessContent" class="accordion-collapse collapse"
+                                        data-bs-parent="#socialProcess">
+                                        <div class="accordion-body">
+                                            <img src="image/1zero/Copy-creation-step-1.png" loading="lazy"
+                                                width="682" height="714" class="img-fluid zoom-image lazy-img"
+                                                alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div> <!-- ========================= CONTENT 03 — IMAGE ========================== -->
+                <div class="col-12">
+                    <article class="ai-content-card">
+                        <div class="row g-0 align-items-stretch">
+                            <div class="col-12 col-lg-7">
+                                <div class="ai-content-image h-100"> <img
+                                        src="image/1zero/Futuristic_CTO_overseeing_produc…_2K_202609021619.jpeg"
+                                        alt="AI-generated creative concept for 1zero" width="2752" height="1536"
+                                        class="img-fluid zoom-image lazy-img"
+                                        loading="lazy"> </div>
+                            </div>
+                            <div class="col-12 col-lg-5">
+                                <div class="p-4 p-md-5 h-100 d-flex flex-column justify-content-center">
+
+                                    <h3 class="h4 mb-3"> Image Content </h3>
+                                    <p class="text-secondary mb-4"> Experimental image created with AI to
+                                        explore visual directions before committing to final production. </p>
+                                    <!-- Bootstrap Accordion -->
+                                    <div class="accordion ai-process-accordion" id="imageProcess">
+                                        <div class="accordion-item">
+                                            <h4 class="accordion-header"> <button
+                                                    class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#imageProcessContent" aria-expanded="false"
+                                                    aria-controls="imageProcessContent"> View Creation Process
+                                                </button> </h4>
+                                            <div id="imageProcessContent" class="accordion-collapse collapse"
+                                                data-bs-parent="#imageProcess">
+                                                <div class="accordion-body">
+
+                                                    <!-- Prompt Template -->
+                                                    <p class="mb-2 fs-6 fw-bold">Prompt Template</p>
+
+                                                    <div class="ai-prompt mb-4">
+                                                        <p>A [concept] inside [environment], showing
+                                                            [subject +
+                                                            role]
+                                                            [performing action].</p>
+
+                                                        <p>The scene features [visual elements].</p>
+
+                                                        <p>Visual metaphors of [key concepts] are
+                                                            represented
+                                                            through
+                                                            [visual representations].</p>
+
+                                                        <p>Style: [style / aesthetic],
+                                                            with [color palette / UI language].</p>
+
+                                                        <p>[lighting], [mood], [level of detail],
+                                                            minimal clutter, polished, futuristic [industry]
+                                                            visualization.</p>
+                                                    </div>
+
+                                                    <p class="mb-2 fs-6 fw-bold">Pic Prompt
+                                                    </p>
+                                                    <p>
+                                                        A futuristic fractional CTO (fCTO) concept
+                                                        illustration inside a
+                                                        next-generation SaaS platform, showing a senior
+                                                        technical architect
+                                                        overseeing multiple distributed product teams from a
+                                                        holographic
+                                                        command center. The scene features layered system
+                                                        architecture
+                                                        diagrams floating in 3D space, cloud infrastructure
+                                                        maps, CI/CD
+                                                        pipelines, and scalable system graphs. The CTO is
+                                                        represented as a
+                                                        focused professional interacting with transparent UI
+                                                        panels, making
+                                                        strategic decisions across multiple startup
+                                                        environments. Visual
+                                                        metaphors of orchestration, scalability, and
+                                                        technical leadership are
+                                                        present, including interconnected nodes, system
+                                                        health indicators,
+                                                        and roadmap timelines. Style is ultra-modern,
+                                                        isometric SaaS dashboard
+                                                        aesthetic, dark mode UI with neon cyan, blue, and
+                                                        subtle purple
+                                                        accents. High-tech, minimal clutter, cinematic
+                                                        lighting, soft glow
+                                                        effects, highly detailed, futuristic enterprise
+                                                        platform visualization.
+                                                    </p>
+
+
+                                                    <!-- First Generate -->
+                                                    <p class="mb-2 fs-6 fw-bold">First Generate</p>
+
+
+                                                    <img src="image/1zero/Image-creation-step-1.png" loading="lazy"
+                                                        width="312" height="427"
+                                                        class="img-fluid rounded-3 zoom-image lazy-img"
+                                                        alt="First AI-generated image">
+
+                                                    <!-- Second Generate -->
+                                                    <p class="mb-2 mt-4 fs-6 fw-bold">Second Generate</p>
+
+                                                    <img src="image/1zero/Image-creation-step-2.png" loading="lazy"
+                                                        width="279" height="312"
+                                                        class="img-fluid rounded-3 zoom-image lazy-img"
+                                                        alt="Second AI-generated image">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -538,79 +436,75 @@
         <!-- =========================
              AI WORKFLOW
         ========================== -->
-        <section class="pt-5" id="ai-workflow">
+        <section class="project-section" id="ai-workflow">
 
-            <div class="container">
+            <div class="project-surface-muted rounded-4 p-4 p-md-5">
 
-                <div class="workflow-section rounded-4 p-4 p-md-5">
+                <div class="row g-5">
 
-                    <div class="row g-5">
+                    <div class="col-12 col-lg-4">
 
-                        <div class="col-12 col-lg-4">
+                        <h2 class="capsule capsule-border-project project-section__title m-0 mb-3">
+                            AI Workflow
+                        </h2>
 
-                            <h2 class="capsule capsule-border-1zero fs-6 m-0 mb-3">
-                                AI Workflow
-                            </h2>
+                        <h3 class="h2 fw-medium mb-3">
+                            From Prompt to Production
+                        </h3>
 
-                            <h3 class="h2 fw-medium mb-3">
-                                From Prompt to Production
-                            </h3>
+                        <p class="text-secondary mb-0">
+                            AI was integrated into the creative workflow
+                            as a production assistant rather than a
+                            replacement for design judgement.
+                        </p>
 
-                            <p class="text-secondary mb-0">
-                                AI was integrated into the creative workflow
-                                as a production assistant rather than a
-                                replacement for design judgement.
-                            </p>
-
-                        </div>
+                    </div>
 
 
-                        <div class="col-12 col-lg-8">
+                    <div class="col-12 col-lg-8">
 
-                            <div class="ai-workflow">
-
-
-                                <div class="ai-workflow-step">
-                                    <span>01</span>
-                                    <strong>Brief</strong>
-                                    <p>Understand the content objective.</p>
-                                </div>
+                        <div class="ai-workflow">
 
 
-                                <div class="ai-workflow-step">
-                                    <span>02</span>
-                                    <strong>Prompt</strong>
-                                    <p>Translate the idea into AI instructions.</p>
-                                </div>
+                            <div class="ai-workflow-step">
+                                <span>01</span>
+                                <strong>Brief</strong>
+                                <p>Understand the content objective.</p>
+                            </div>
 
 
-                                <div class="ai-workflow-step">
-                                    <span>03</span>
-                                    <strong>Generate</strong>
-                                    <p>Create multiple directions.</p>
-                                </div>
+                            <div class="ai-workflow-step">
+                                <span>02</span>
+                                <strong>Prompt</strong>
+                                <p>Translate the idea into AI instructions.</p>
+                            </div>
 
 
-                                <div class="ai-workflow-step">
-                                    <span>04</span>
-                                    <strong>Select</strong>
-                                    <p>Evaluate outputs against the brief.</p>
-                                </div>
+                            <div class="ai-workflow-step">
+                                <span>03</span>
+                                <strong>Generate</strong>
+                                <p>Create multiple directions.</p>
+                            </div>
 
 
-                                <div class="ai-workflow-step">
-                                    <span>05</span>
-                                    <strong>Refine</strong>
-                                    <p>Adjust visuals, copy, and composition.</p>
-                                </div>
+                            <div class="ai-workflow-step">
+                                <span>04</span>
+                                <strong>Select</strong>
+                                <p>Evaluate outputs against the brief.</p>
+                            </div>
 
 
-                                <div class="ai-workflow-step">
-                                    <span>06</span>
-                                    <strong>Final</strong>
-                                    <p>Prepare the content for production.</p>
-                                </div>
+                            <div class="ai-workflow-step">
+                                <span>05</span>
+                                <strong>Refine</strong>
+                                <p>Adjust visuals, copy, and composition.</p>
+                            </div>
 
+
+                            <div class="ai-workflow-step">
+                                <span>06</span>
+                                <strong>Final</strong>
+                                <p>Prepare the content for production.</p>
                             </div>
 
                         </div>
@@ -626,45 +520,41 @@
         <!-- =========================
              OUTCOME
         ========================== -->
-        <section class="pt-5" id="outcome">
+        <section class="project-section" id="outcome">
 
-            <div class="container">
+            <div class="row g-5 align-items-center">
 
-                <div class="row g-5 align-items-center">
+                <div class="col-12 col-lg-7">
 
-                    <div class="col-12 col-lg-7">
+                    <h2 class="capsule capsule-border-project project-section__title m-0 mb-3">
+                        Outcome
+                    </h2>
 
-                        <h2 class="capsule capsule-border-1zero fs-6 m-0 mb-3">
-                            Outcome
-                        </h2>
+                    <h3 class="display-6 fw-medium mb-3">
+                        Turning AI into a practical creative workflow.
+                    </h3>
 
-                        <h3 class="display-6 fw-medium mb-3">
-                            Turning AI into a practical creative workflow.
-                        </h3>
+                    <p class="fs-6 mb-0">
+                        The process helped accelerate content exploration
+                        while maintaining creative control and consistency
+                        with 1zero's brand direction.
+                    </p>
 
-                        <p class="fs-6 mb-0">
-                            The process helped accelerate content exploration
-                            while maintaining creative control and consistency
-                            with 1zero's brand direction.
+                </div>
+
+
+                <div class="col-12 col-lg-5">
+
+                    <div class="outcome-card rounded-4 p-4 p-md-5">
+
+                        <p class="small mb-2">
+                            Key Takeaway
                         </p>
 
-                    </div>
-
-
-                    <div class="col-12 col-lg-5">
-
-                        <div class="outcome-card rounded-4 p-4 p-md-5">
-
-                            <p class="small mb-2">
-                                Key Takeaway
-                            </p>
-
-                            <p class="h4 fw-medium mb-0">
-                                AI works best as a creative partner —
-                                not as a replacement for creative judgement.
-                            </p>
-
-                        </div>
+                        <p class="h4 fw-medium mb-0">
+                            AI works best as a creative partner —
+                            not as a replacement for creative judgement.
+                        </p>
 
                     </div>
 
@@ -673,95 +563,83 @@
             </div>
 
         </section>
-        <section class="pt-5" id="key-learnings">
-            <div class="container">
+        <section class="project-section" id="key-learnings">
 
+            <h2 class="capsule capsule-border-project project-section__title">
+                Key Learnings
+            </h2>
 
-                <!-- Section Heading -->
-                <h2 class="capsule capsule-border-1zero fs-6">
-                    Key Learnings
-                </h2>
+            <div class="card-grid card-grid--cols-3 mt-3">
 
-                <!-- Learnings Grid -->
-                <div class="row g-2 mt-3">
+                <!-- Learning 01 -->
+                <div class="card-grid__card">
 
-                    <!-- Learning 01 -->
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="h-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        class="challenge-icon color-1zero mb-2">
+                        <path fill="currentColor"
+                            d="M12 2a7 7 0 0 0-4 12.74V18a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-3.26A7 7 0 0 0 12 2m2 14h-4v-1.13a5 5 0 1 1 4 0zM10 22h4v-1h-4z" />
+                    </svg>
 
-                            <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"
-                                class="color-1zero mb-2">
-                                <path fill="currentColor"
-                                    d="M12 2a7 7 0 0 0-4 12.74V18a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-3.26A7 7 0 0 0 12 2m2 14h-4v-1.13a5 5 0 1 1 4 0zM10 22h4v-1h-4z" />
-                            </svg>
+                    <h3 class="card-grid__title color-1zero">
+                        Same Prompt, Different Results
+                    </h3>
 
-                            <p class="fs-6 mb-2 color-1zero">
-                                <strong>Same Prompt, Different Results</strong>
-                            </p>
-
-                            <p class="fs-6 mb-0">
-                                The same prompt can produce different outputs each time.
-                                This taught me that AI generation requires
-                                <strong>exploration, evaluation, and selection</strong>
-                                rather than expecting one predictable result.
-                            </p>
-
-                        </div>
-                    </div>
-
-
-                    <!-- Learning 02 -->
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="h-100">
-
-                            <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"
-                                class="color-1zero mb-2">
-                                <path fill="currentColor"
-                                    d="M20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0L15.13 5.17l3.75 3.75zM3 17.25V21h3.75L17.81 9.94l-3.75-3.75z" />
-                            </svg>
-
-                            <p class="fs-6 mb-2 color-1zero">
-                                <strong>Be Specific When Refining</strong>
-                            </p>
-
-                            <p class="fs-6 mb-0">
-                                When refining an output, instructions need to be
-                                <strong>specific about what should change and where</strong>.
-                                I also learned to clearly tell AI what should remain
-                                untouched to avoid unwanted changes.
-                            </p>
-
-                        </div>
-                    </div>
-
-
-                    <!-- Learning 03 -->
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="h-100">
-
-                            <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"
-                                class="color-1zero mb-2">
-                                <path fill="currentColor"
-                                    d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2m1 15h-2v-2h2zm2.07-7.25l-.9.92A3.49 3.49 0 0 0 13 13h-2a5 5 0 0 1 1.47-3.54l1.24-1.25A1.49 1.49 0 0 0 14 7.17a2 2 0 1 0-4 0H8a4 4 0 1 1 7.07 2.58" />
-                            </svg>
-
-                            <p class="fs-6 mb-2 color-1zero">
-                                <strong>AI Needs Clear Direction</strong>
-                            </p>
-
-                            <p class="fs-6 mb-0">
-                                The more precise the direction, the more controlled the
-                                output. I learned to be <strong>strict and intentional</strong>
-                                with prompts, treating AI as a creative tool that still
-                                requires human judgement and direction.
-                            </p>
-
-                        </div>
-                    </div>
+                    <p class="card-grid__text">
+                        The same prompt can produce different outputs each time.
+                        This taught me that AI generation requires
+                        <strong>exploration, evaluation, and selection</strong>
+                        rather than expecting one predictable result.
+                    </p>
 
                 </div>
-            </div>
 
+
+                <!-- Learning 02 -->
+                <div class="card-grid__card">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        class="challenge-icon color-1zero mb-2">
+                        <path fill="currentColor"
+                            d="M20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0L15.13 5.17l3.75 3.75zM3 17.25V21h3.75L17.81 9.94l-3.75-3.75z" />
+                    </svg>
+
+                    <h3 class="card-grid__title color-1zero">
+                        Be Specific When Refining
+                    </h3>
+
+                    <p class="card-grid__text">
+                        When refining an output, instructions need to be
+                        <strong>specific about what should change and where</strong>.
+                        I also learned to clearly tell AI what should remain
+                        untouched to avoid unwanted changes.
+                    </p>
+
+                </div>
+
+
+                <!-- Learning 03 -->
+                <div class="card-grid__card">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        class="challenge-icon color-1zero mb-2">
+                        <path fill="currentColor"
+                            d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2m1 15h-2v-2h2zm2.07-7.25l-.9.92A3.49 3.49 0 0 0 13 13h-2a5 5 0 0 1 1.47-3.54l1.24-1.25A1.49 1.49 0 0 0 14 7.17a2 2 0 1 0-4 0H8a4 4 0 1 1 7.07 2.58" />
+                    </svg>
+
+                    <h3 class="card-grid__title color-1zero">
+                        AI Needs Clear Direction
+                    </h3>
+
+                    <p class="card-grid__text">
+                        The more precise the direction, the more controlled the
+                        output. I learned to be <strong>strict and intentional</strong>
+                        with prompts, treating AI as a creative tool that still
+                        requires human judgement and direction.
+                    </p>
+
+                </div>
+
+            </div>
 
         </section>
 
