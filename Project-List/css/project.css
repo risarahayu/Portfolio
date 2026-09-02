@@ -1,0 +1,405 @@
+/* ==========================================================================
+   SHARED — structural components for every "project case study" page
+   (4ocean.html, BaliTeak.html). Colors are never hardcoded here: every
+   color-bearing rule reads a --project-* custom property, which each page
+   defines with its own existing palette in its own small CSS file
+   (4Ocean.css / BaliTeak.css). Changing a value here changes both pages;
+   changing a --project-* token in a page's own file re-skins only that
+   page.
+   ========================================================================== */
+
+/* ==========================================================================
+   Fluid type scale — one responsive scale shared by both pages, so a
+   heading/body size never has to be redeclared per page.
+   ========================================================================== */
+
+:root {
+  --text-14: clamp(0.8rem, 0.75rem + 0.2vw, 0.875rem);
+  --text-16: clamp(0.9rem, 0.85rem + 0.2vw, 1rem);
+  --text-18: clamp(0.95rem, 0.9rem + 0.2vw, 1.125rem);
+  --text-20: clamp(1.05rem, 0.95rem + 0.3vw, 1.25rem);
+  --text-32: clamp(1.4rem, 1rem + 1.6vw, 2rem);
+  --text-40: clamp(1.75rem, 1.2rem + 2.2vw, 2.5rem);
+  --text-96: clamp(2rem, 1rem + 6vw, 6rem);
+
+  --section-padding-inline: clamp(1.25rem, 4vw, 4rem);
+  --section-padding-block-start: clamp(2rem, 5vw, 4rem);
+  --section-max-width: 1317px;
+}
+
+.text-14 {
+  font-size: var(--text-14);
+}
+
+.text-16 {
+  font-size: var(--text-16);
+}
+
+.text-18 {
+  font-size: var(--text-18);
+}
+
+.text-20 {
+  font-size: var(--text-20);
+}
+
+.text-32 {
+  font-size: var(--text-32);
+}
+
+.text-40 {
+  font-size: var(--text-40);
+}
+
+.text-96 {
+  font-size: var(--text-96);
+}
+
+/* ==========================================================================
+   Section — the container + spacing wrapper every section on both pages
+   uses. Fluid inline padding replaces Bootstrap's fixed `.p-5` so mobile
+   isn't forced into the same padding as a wide desktop.
+   ========================================================================== */
+
+.project-section {
+  width: 100%;
+  max-width: var(--section-max-width);
+  margin-inline: auto;
+  padding-inline: var(--section-padding-inline);
+  padding-block-start: var(--section-padding-block-start);
+}
+
+.project-section__title {
+  font-size: var(--text-20);
+}
+
+.capsule-border-project {
+  border: 2px solid var(--project-primary);
+  color: var(--project-primary);
+}
+
+.project-surface-muted {
+  background-color: var(--project-surface-muted);
+}
+
+/* ==========================================================================
+   Hero — banner image + colored intro panel (title, highlight bullets,
+   role/tools meta), identical shape on both pages.
+   ========================================================================== */
+
+.project-hero {
+  width: 100%;
+}
+
+.project-hero__inner {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  max-width: var(--section-max-width);
+  margin-inline: auto;
+  padding-inline: var(--section-padding-inline);
+  padding-block-start: clamp(1.5rem, 4vw, 3rem);
+}
+
+.project-hero__banner {
+  height: 50vh;
+  background-image: var(--project-hero-image);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  border-radius: 1rem;
+}
+
+.project-hero__panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  background-color: var(--project-primary);
+  color: var(--white);
+  border-radius: 1rem;
+  padding: clamp(1.25rem, 4vw, 3rem);
+}
+
+.project-hero__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.project-hero__title {
+  margin: 0;
+  font-size: var(--text-40);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.project-hero__highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.project-hero__highlight {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.project-hero__highlight img {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+}
+
+.project-hero__highlight p {
+  margin: 0;
+  font-size: var(--text-16);
+}
+
+.project-hero__meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.project-hero__meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.project-hero__meta-label {
+  margin: 0;
+  font-size: var(--text-14);
+  opacity: 0.85;
+}
+
+.project-hero__meta-value {
+  margin: 0;
+  font-size: var(--text-16);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Info block — "Project Scope" style layout: prose on one side, a
+   duration/timeline summary on the other.
+   ========================================================================== */
+
+.info-block {
+  --info-block-row-gap: clamp(1.5rem, 4vw, 2.5rem);
+  --info-block-group-gap: clamp(1rem, 3vw, 1.75rem);
+}
+
+.info-block__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--info-block-row-gap);
+}
+
+.info-block__prose {
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.info-block__prose p {
+  margin: 0;
+  font-size: var(--text-16);
+}
+
+.info-block__summary {
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--info-block-group-gap);
+  min-width: 0;
+}
+
+.info-block__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.info-block__label {
+  margin: 0;
+  font-size: var(--text-14);
+  color: var(--project-text-muted);
+}
+
+.info-block__value {
+  margin: 0;
+  font-size: var(--text-16);
+  font-weight: 700;
+}
+
+.info-block__timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.2rem;
+}
+
+/* Inline flow (not flex) so a long phase description wraps word-by-word
+   like normal text, with the label staying attached to its first line,
+   instead of the whole description jumping to its own line as one block. */
+.info-block__phase {
+  margin: 0;
+  font-size: var(--text-16);
+}
+
+.info-block__phase-label,
+.info-block__phase>p {
+  display: inline;
+}
+
+.info-block__phase-label {
+  font-weight: 700;
+}
+
+.info-block__phase-label::after {
+  content: " ";
+}
+
+/* ==========================================================================
+   Card grid — N-column card layout shared by Problem / Solution /
+   Key Learnings (4ocean) and Implementation Challenges (BaliTeak).
+   Column count set per-instance via --card-grid-columns.
+   ========================================================================== */
+
+.card-grid {
+  --card-grid-columns: 3;
+  display: grid;
+  grid-template-columns: repeat(var(--card-grid-columns), 1fr);
+  gap: 1rem;
+}
+
+.card-grid--cols-3 {
+  --card-grid-columns: 3;
+}
+
+.card-grid--cols-4 {
+  --card-grid-columns: 4;
+}
+
+@media (max-width: 991.98px) {
+  .card-grid--cols-4 {
+    --card-grid-columns: 2;
+  }
+}
+
+@media (max-width: 767.98px) {
+
+  .card-grid--cols-3,
+  .card-grid--cols-4 {
+    --card-grid-columns: 1;
+  }
+}
+
+.card-grid__card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem;
+}
+
+.card-grid__card--bordered {
+  background-color: var(--project-surface-muted);
+  border: 1px solid var(--project-text);
+  border-radius: 12px;
+}
+
+.card-grid__title {
+  margin: 0;
+  font-size: var(--text-16);
+  font-weight: 700;
+  /* No color here on purpose: it inherits by default (matching every page's
+     body text color), but a page can still layer its own accent-color
+     utility class on top (e.g. BaliTeak's .color-baliteak) without a
+     specificity fight. */
+}
+
+.card-grid__text {
+  margin: 0;
+  font-size: var(--text-16);
+  line-height: 1.6;
+  color: var(--project-text-muted);
+}
+
+/* ==========================================================================
+   Compare table — "before / after" comparison rows (Workflow
+   Transformation on 4ocean, Quick UX Audit on BaliTeak). Both pages
+   already share the cross-container / check-container / cross / check
+   class names verbatim; this is the one place giving them a single,
+   consistent icon size instead of two diverging ones.
+   ========================================================================== */
+
+.compare-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: 2px solid;
+  border-radius: 0.5rem;
+}
+
+/* For a compare-row that needs a title row (icon + bold text) followed by
+   a separate description paragraph, instead of a single icon + paragraph. */
+.compare-row--stacked {
+  flex-direction: column;
+}
+
+.cross-container {
+  border-color: var(--color-red) !important;
+}
+
+.check-container {
+  border-color: var(--color-green) !important;
+}
+
+.compare-row p {
+  margin: 0;
+}
+
+.cross,
+.check {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  margin-top: 0.15rem;
+}
+
+/* ==========================================================================
+   Media block — a caption followed by a zoomable image, used for every
+   flow-diagram / wireframe / iteration screenshot on both pages. The
+   image itself is handled by the shared zoom-modal + lazy-img system in
+   app.css (`.zoom-image`, `.lazy-img`); this only sizes the box.
+   ========================================================================== */
+
+.media-block__image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Some source images are small (icons, reference screenshots) and
+   shouldn't be upscaled past their native size just because the
+   container is wide. */
+.media-block__image--capped {
+  max-width: max-content;
+}
+
+/* ==========================================================================
+   Check list — reused bullet-as-checkmark list (already shared via
+   app.css's .check-list / .check-list__icon; nothing page-specific here).
+   ========================================================================== */

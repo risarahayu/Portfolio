@@ -10,6 +10,7 @@
     </title>
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/project.css" rel="stylesheet" />
     <link href="css/BaliTeak.css" rel="stylesheet" />
     <link href="../app.css" rel="stylesheet" />
 </head>
@@ -31,51 +32,50 @@
     <!-- breadcrumb -->
     <div id="breadcrumb">
     </div>
-    <header class="project-hero-section">
-        <div class="container d-flex flex-column gap-5 pt-5">
-            <div class="hero-bg rounded-4">
+    <header class="project-hero">
+        <div class="project-hero__inner">
+            <div class="project-hero__banner">
             </div>
-            <div
-                class="d-flex flex-wrap justify-content-between baliteak-bg-color-primary rounded-4 text-white p-4 p-md-5">
-                <div class="d-flex flex-column gap-3">
-                    <h1 class="Display-3">
+            <div class="project-hero__panel">
+                <div class="project-hero__intro">
+                    <h1 class="project-hero__title">
                         Bali Teak - Redesign Website
                     </h1>
-                    <div class="d-flex flex-column gap-2">
-                        <div class="d-flex gap-2 gap-md-3">
+                    <div class="project-hero__highlights">
+                        <div class="project-hero__highlight">
                             <img alt="" src="image/BaliTeak/streamline-color--graph-arrow-increase 1.svg" width="24" />
-                            <p class="fs-6 m-0">
+                            <p>
                                 Increased User Engagement
                             </p>
                         </div>
-                        <div class="d-flex gap-2 gap-md-3">
+                        <div class="project-hero__highlight">
                             <img alt="" src="image/BaliTeak/glyphs--mobile 1.svg" width="24" />
-                            <p class="fs-6 m-0">
+                            <p>
                                 Better Mobile Experience
                             </p>
                         </div>
-                        <div class="d-flex gap-2 gap-md-3">
+                        <div class="project-hero__highlight">
                             <img alt="" src="image/BaliTeak/guidance--shop.svg" width="24" />
-                            <p class="fs-6 m-0">
+                            <p>
                                 Built E-commerce foundation
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="d-flex flex-column justify-content-between gap-1 mt-3 text-white">
-                    <div class="d-flex flex-column gap-1">
-                        <p class="small m-0">
+                <div class="project-hero__meta">
+                    <div class="project-hero__meta-item">
+                        <p class="project-hero__meta-label">
                             Role:
                         </p>
-                        <p class="fs-6 fw-bold m-0">
+                        <p class="project-hero__meta-value">
                             UI/UX Designer &amp; Web Developer
                         </p>
                     </div>
-                    <div class="d-flex flex-column gap-1">
-                        <p class="small m-0">
+                    <div class="project-hero__meta-item">
+                        <p class="project-hero__meta-label">
                             Tools:
                         </p>
-                        <p class="fs-6 fw-bold m-0">
+                        <p class="project-hero__meta-value">
                             Figma, WordPress, Elementor
                         </p>
                     </div>
@@ -84,110 +84,107 @@
         </div>
     </header>
     <main>
-        <section class="pt-5" id="project-scope">
-            <div class="container">
-                <div class="d-flex flex-column gap-3">
-                    <h2 class="capsule capsule-border-baliteak fs-6 m-0">
-                        Project Scope
-                    </h2>
-                    <div class="d-flex flex-wrap flex-md-nowrap justify-content-between gap-5">
-                        <div class="d-flex flex-column gap-2 stretch" style="width: stretch;">
-                            <p class="fs-6">
-                                Sometimes customers don&rsquo;t walk away because the product isn&rsquo;t good. They
-                                leave
-                                because
-                                the
-                                digital
-                                experience is slow, confusing, or uninspiring.
-                            </p>
-                            <p class="fs-6">
-                                When a website feels heavy or difficult to navigate, even the most beautifully crafted
-                                products
-                                can
-                                lose
-                                their appeal. Attention fades. Interest drops. And the purchase never happens.
-                            </p>
-                            <p class="fs-6">
-                                We redesigned the experience to be faster, cleaner, and more intuitive&mdash;ensuring
-                                that nothing
-                                stands
-                                between great craftsmanship and the customer&rsquo;s decision to buy.
-                            </p>
-                        </div>
-                        <div class="d-flex flex-column gap-0 gap-md-3" style="width: stretch;">
-                            <div class="d-flex flex-column gap-1">
-                                <p class="small m-0">
-                                    Duration
+        <section class="project-section info-block" id="project-scope">
+            <h2 class="capsule capsule-border-project project-section__title m-0">
+                Project Scope
+            </h2>
+            <div class="info-block__row mt-3">
+                <div class="info-block__prose">
+                    <p>
+                        Sometimes customers don&rsquo;t walk away because the product isn&rsquo;t good. They
+                        leave
+                        because
+                        the
+                        digital
+                        experience is slow, confusing, or uninspiring.
+                    </p>
+                    <p>
+                        When a website feels heavy or difficult to navigate, even the most beautifully crafted
+                        products
+                        can
+                        lose
+                        their appeal. Attention fades. Interest drops. And the purchase never happens.
+                    </p>
+                    <p>
+                        We redesigned the experience to be faster, cleaner, and more intuitive&mdash;ensuring
+                        that nothing
+                        stands
+                        between great craftsmanship and the customer&rsquo;s decision to buy.
+                    </p>
+                </div>
+                <div class="info-block__summary">
+                    <div class="info-block__group">
+                        <p class="info-block__label">
+                            Duration
+                        </p>
+                        <p class="info-block__value">
+                            2 Months
+                        </p>
+                    </div>
+                    <div class="info-block__group">
+                        <p class="info-block__label">
+                            Timeline:
+                        </p>
+                        <div class="info-block__timeline">
+                            <div class="info-block__phase">
+                                <p class="info-block__phase-label m-0">
+                                    <strong>
+                                        Phase 1:
+                                    </strong>
                                 </p>
-                                <p class="fs-6 fw-bold">
-                                    2 Months
+                                <p class="m-0">
+                                    Discovery &amp; Audit
                                 </p>
                             </div>
-                            <div class="d-flex flex-column gap-1">
-                                <p class="small m-0">
-                                    Timeline:
+                            <div class="info-block__phase">
+                                <p class="info-block__phase-label m-0">
+                                    <strong>
+                                        Phase 2:
+                                    </strong>
                                 </p>
-                                <div class="row gap-1">
-                                    <p class="fs-6 m-0 col-auto">
-                                        <strong>
-                                            Phase 1:
-                                        </strong>
-                                    </p>
-                                    <p class="fs-6 m-0 col">
-                                        Discovery &amp; Audit
-                                    </p>
-                                </div>
-                                <div class="row gap-1">
-                                    <p class="fs-6 m-0 col-auto">
-                                        <strong>
-                                            Phase 2:
-                                        </strong>
-                                    </p>
-                                    <p class="fs-6 m-0 col">
-                                        Strategy &amp; UX Planning
-                                    </p>
-                                </div>
-                                <div class="row gap-1">
-                                    <p class="fs-6 m-0 col-auto">
-                                        <strong>
-                                            Phase 3:
-                                        </strong>
-                                    </p>
-                                    <p class="fs-6 m-0 col">
-                                        UI Design
-                                    </p>
-                                </div>
-                                <div class="row gap-1">
-                                    <p class="fs-6 m-0 col-auto">
-                                        <strong>
-                                            Phase 4:
-                                        </strong>
-                                    </p>
-                                    <p class="fs-6 m-0 col">
-                                        Development (WordPress Implementation)
-                                    </p>
-                                </div>
-                                <div class="row gap-1">
-                                    <p class="fs-6 m-0 col-auto">
-                                        <strong>
-                                            Phase 5:
-                                        </strong>
-                                    </p>
-                                    <p class="fs-6 m-0 col">
-                                        Testing &amp; Launch
-                                    </p>
-                                </div>
+                                <p class="m-0">
+                                    Strategy &amp; UX Planning
+                                </p>
+                            </div>
+                            <div class="info-block__phase">
+                                <p class="info-block__phase-label m-0">
+                                    <strong>
+                                        Phase 3:
+                                    </strong>
+                                </p>
+                                <p class="m-0">
+                                    UI Design
+                                </p>
+                            </div>
+                            <div class="info-block__phase">
+                                <p class="info-block__phase-label m-0">
+                                    <strong>
+                                        Phase 4:
+                                    </strong>
+                                </p>
+                                <p class="m-0">
+                                    Development (WordPress Implementation)
+                                </p>
+                            </div>
+                            <div class="info-block__phase">
+                                <p class="info-block__phase-label m-0">
+                                    <strong>
+                                        Phase 5:
+                                    </strong>
+                                </p>
+                                <p class="m-0">
+                                    Testing &amp; Launch
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="pt-5" id="design-comparison">
-            <div class="container">
-                <div class="baliteak-bg-color-secondary rounded-4 p-4 p-md-5">
-                    <!-- Section Heading -->
-                    <h2 class="capsule capsule-border-baliteak fs-6 mb-3">
+        <section class="project-section" id="design-comparison">
+            <div class="project-surface-muted rounded-4 p-4 p-md-5">
+                <!-- Section Heading -->
+                <h2 class="capsule capsule-border-project project-section__title mb-3">
                         Design Comparison
                     </h2>
                     <!-- Comparison -->
@@ -210,17 +207,15 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
-        <section class="pt-5" id="context-background">
-            <div class="container">
-                <div class="d-flex flex-column gap-3">
-                    <h2 class="capsule capsule-border-baliteak fs-6">
+        <section class="project-section" id="context-background">
+            <div class="d-flex flex-column gap-3">
+                <h2 class="capsule capsule-border-project project-section__title">
                         Context &amp; Background
                     </h2>
                     <div class="row">
                         <div class="col-12 col-md-4 d-flex flex-column">
-                            <div class="baliteak-bg-color-secondary rounded-4 p-3">
+                            <div class="project-surface-muted rounded-4 p-3">
                                 <img loading="lazy" width="193" height="81" alt="Bali Teak Logo" class="w-25 lazy-img" src="image/BaliTeak/Bali Teak Logo.png"
                                     style="object-fit: contain;" />
                                 <p class="fs-6">
@@ -274,14 +269,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
-        <section class="pt-5" id="what-changed">
-            <div class="container">
-                <div class="baliteak-bg-color-secondary rounded-4 p-4 p-md-5">
-                    <h2 class="capsule capsule-border-baliteak fs-6">
-                        What Changed &amp; Why
-                    </h2>
+        <section class="project-section" id="what-changed">
+            <div class="project-surface-muted rounded-4 p-4 p-md-5">
+                <h2 class="capsule capsule-border-project project-section__title">
+                    What Changed &amp; Why
+                </h2>
                     <div class="row mt-3">
                         <div class="col-12 col-md-6">
                             <img loading="lazy" width="648" height="914" alt="What we change image 1" class="w-100 mt-3 zoom-image lazy-img"
@@ -295,25 +288,21 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
-        <section class="pt-5" id="mobile-responsive">
-            <div class="container">
-                <h2 class="capsule capsule-border-baliteak fs-6">
-                    Mobile Responsive
-                </h2>
+        <section class="project-section" id="mobile-responsive">
+            <h2 class="capsule capsule-border-project project-section__title">
+                Mobile Responsive
+            </h2>
                 <div class="rounded-4">
                     <img loading="lazy" width="1440" height="880" alt="Bali Teak Responsive" class="w-100 mt-3 zoom-image lazy-img rounded-4" 
                         src="image/BaliTeak/Bali Teak Responsive.png"
                         style="object-fit: contain; object-position: top;" />
                 </div>
-            </div>
         </section>
-        <section class="pt-5" id="another-pages">
-            <div class="container">
-                <h2 class="capsule capsule-border-baliteak fs-6">
-                    Another Pages
-                </h2>
+        <section class="project-section" id="another-pages">
+            <h2 class="capsule capsule-border-project project-section__title">
+                Another Pages
+            </h2>
                 <div class="rounded-4 mt-3">
                     <p class="fs-6 fw-bold mb-2">About Page</p>
                     <img alt="Bali Teak About Page" class="w-100 rounded-4" src="image/BaliTeak/About Page.png"
@@ -322,14 +311,12 @@
                     <img alt="Bali Teak Home Owner Page" class="w-100 rounded-4"
                         src="image/BaliTeak/Home Owener Page.png" style="object-fit: contain; object-position: top;" />
                 </div>
-            </div>
         </section>
-        <section class="pt-5" id="ux-audit">
-            <div class="container">
-                <div class="baliteak-bg-color-secondary rounded-4 p-4 p-md-5">
-                    <h2 class="capsule capsule-border-baliteak fs-6">
-                        Quick UX Audit
-                    </h2>
+        <section class="project-section" id="ux-audit">
+            <div class="project-surface-muted rounded-4 p-4 p-md-5">
+                <h2 class="capsule capsule-border-project project-section__title">
+                    Quick UX Audit
+                </h2>
                     <p class="fs-6 mt-3">
                         Why a Redesign Was Needed?
                     </p>
@@ -355,7 +342,7 @@
                                     </th>
                                     <td>
                                         <div
-                                            class="d-flex flex-row gap-2 align-items-start border border-2 p-3 rounded-3 cross-container">
+                                            class="compare-row cross-container">
                                             <img loading="lazy" width="20" height="20" alt="" class="cross mt-1 lazy-img" src="image/cross red.svg" />
                                             <p class="m-0">
                                                 <strong>
@@ -368,7 +355,7 @@
                                     </td>
                                     <td>
                                         <div
-                                            class="d-flex flex-column gap-2 align-items-start border border-2 p-3 rounded-3 check-container">
+                                            class="compare-row compare-row--stacked check-container">
                                             <div class="d-flex flex-row gap-2 align-items-center">
                                                 <img loading="lazy" width="20" height="20" alt="" class="check lazy-img" src="image/tick green.svg" />
                                                 <p class="m-0">
@@ -391,7 +378,7 @@
                                     </th>
                                     <td>
                                         <div
-                                            class="d-flex flex-row gap-2 align-items-start border border-2 p-3 rounded-3 cross-container">
+                                            class="compare-row cross-container">
                                             <img loading="lazy" width="20" height="20" alt="" class="cross mt-1 lazy-img" src="image/cross red.svg" />
                                             <p class="m-0">
                                                 <strong>
@@ -405,7 +392,7 @@
                                     </td>
                                     <td>
                                         <div
-                                            class="d-flex flex-column gap-2 align-items-start border border-2 p-3 rounded-3 check-container">
+                                            class="compare-row compare-row--stacked check-container">
                                             <div class="d-flex flex-row gap-2 align-items-center">
                                                 <img loading="lazy" width="20" height="20" alt="" class="check lazy-img" src="image/tick green.svg" />
                                                 <p class="m-0">
@@ -427,7 +414,7 @@
                                     </th>
                                     <td>
                                         <div
-                                            class="d-flex flex-row gap-2 align-items-start border border-2 p-3 rounded-3 cross-container">
+                                            class="compare-row cross-container">
                                             <img loading="lazy" width="20" height="20" alt="" class="cross mt-1 lazy-img" src="image/cross red.svg" />
                                             <p class="m-0">
                                                 <strong>
@@ -441,7 +428,7 @@
                                     </td>
                                     <td>
                                         <div
-                                            class="d-flex flex-column gap-2 align-items-start border border-2 p-3 rounded-3 check-container">
+                                            class="compare-row compare-row--stacked check-container">
                                             <div class="d-flex flex-row gap-2 align-items-center">
                                                 <img loading="lazy" width="20" height="20" alt="" class="check lazy-img" src="image/tick green.svg" />
                                                 <p class="m-0">
@@ -464,7 +451,7 @@
                                     </th>
                                     <td>
                                         <div
-                                            class="d-flex flex-row gap-2 align-items-start border border-2 p-3 rounded-3 cross-container">
+                                            class="compare-row cross-container">
                                             <img loading="lazy" width="20" height="20" alt="" class="cross mt-1 lazy-img" src="image/cross red.svg" />
                                             <p class="m-0">
                                                 Layout was
@@ -476,7 +463,7 @@
                                     </td>
                                     <td>
                                         <div
-                                            class="d-flex flex-column gap-2 align-items-start border border-2 p-3 rounded-3 check-container">
+                                            class="compare-row compare-row--stacked check-container">
                                             <div class="d-flex flex-row gap-2 align-items-center">
                                                 <img loading="lazy" width="20" height="20" alt="" class="check lazy-img" src="image/tick green.svg" />
                                                 <p class="m-0">
@@ -496,13 +483,11 @@
                         </table>
                     </div>
                 </div>
-            </div>
         </section>
-        <section class="pt-5" id="key-screen">
-            <div class="container">
-                <h2 class="capsule capsule-border-baliteak fs-6">
-                    Key Screen &amp; Information Architecture
-                </h2>
+        <section class="project-section" id="key-screen">
+            <h2 class="capsule capsule-border-project project-section__title">
+                Key Screen &amp; Information Architecture
+            </h2>
                 <p class="fs-6 fw-semibold mt-3 mb-2">
                     Sitemap Iteration Process:
                 </p>
@@ -529,14 +514,12 @@
                         class="w-100 zoom-image sitemap-image lazy-img">
 
                 </div>
-            </div>
         </section>
-        <section class="pt-5" id="design-system">
-            <div class="container">
-                <div class="baliteak-bg-color-secondary rounded-4 p-4 p-md-5">
-                    <h2 class="capsule capsule-border-baliteak fs-6">
-                        Simple Design System &amp; Variant Prototyping
-                    </h2>
+        <section class="project-section" id="design-system">
+            <div class="project-surface-muted rounded-4 p-4 p-md-5">
+                <h2 class="capsule capsule-border-project project-section__title">
+                    Simple Design System &amp; Variant Prototyping
+                </h2>
                     <div class="row g-4 mt-3">
                         <div class="col-12 col-md-6 col-lg-4 mt-0 align-content-center">
                             <p class="mb-0 fw-semibold">
@@ -591,11 +574,11 @@
                                 <div class="row g-2 ">
                                     <div class="col-12 col-md-6 mt-3">
                                         <img alt="" class="w-100 rounded-4 zoom-image"
-                                            src="image/BaliTeak/Desktop-Typography.png" style="object-fit: contain;" />
+                                            src="image/BaliTeak/Desktop-typography.png" style="object-fit: contain;" />
                                     </div>
                                     <div class="col-12 col-md-6 mt-3">
                                         <img alt="" class="w-100 rounded-4 zoom-image"
-                                            src="image/BaliTeak/Mobile-Typography.png" style="object-fit: contain;" />
+                                            src="image/BaliTeak/Mobile-typography.png" style="object-fit: contain;" />
                                     </div>
                                 </div>
                             </div>
@@ -622,20 +605,18 @@
                 </div>
             </div>
         </section>
-        <section class="pt-5" id="implementation-challenges">
-            <div class="container">
+        <section class="project-section" id="implementation-challenges">
 
-                <!-- Section Heading -->
-                <h2 class="capsule capsule-border-baliteak fs-6">
-                    Implementation Challenges
-                </h2>
+            <!-- Section Heading -->
+            <h2 class="capsule capsule-border-project project-section__title">
+                Implementation Challenges
+            </h2>
 
-                <!-- Challenges Grid -->
-                <div class="row g-4 mt-3">
+            <!-- Challenges Grid -->
+            <div class="card-grid card-grid--cols-3 mt-3">
 
                     <!-- Challenge 01 -->
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="h-100">
+                    <div class="card-grid__card">
 
                             <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 20 20"
                                 class="color-baliteak mb-2">
@@ -659,13 +640,11 @@
                                 more flexible responsive behaviour.
                             </p>
 
-                        </div>
                     </div>
 
 
                     <!-- Challenge 02 -->
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="h-100">
+                    <div class="card-grid__card">
 
                             <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"
                                 class="color-baliteak mb-2">
@@ -688,13 +667,11 @@
                                 development.
                             </p>
 
-                        </div>
                     </div>
 
 
                     <!-- Challenge 03 -->
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="h-100">
+                    <div class="card-grid__card">
 
                             <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 32 32"
                                 class="color-baliteak mb-2">
@@ -716,13 +693,11 @@
                                 applied across the website.
                             </p>
 
-                        </div>
                     </div>
 
 
                     <!-- Challenge 04 -->
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="h-100">
+                    <div class="card-grid__card">
 
                             <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 2048 2048"
                                 class="color-baliteak mb-2">
@@ -747,13 +722,11 @@
                                 enough structure for consistent use across the website.
                             </p>
 
-                        </div>
                     </div>
 
 
                     <!-- Challenge 05 -->
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="h-100">
+                    <div class="card-grid__card">
 
                             <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 64 64"
                                 class="color-baliteak mb-2">
@@ -763,7 +736,7 @@
                             </svg>
 
 
-                            <p class="fs-6 mb-2" class="color-baliteak">
+                            <p class="fs-6 mb-2 color-baliteak">
                                 <strong>Prioritising Quality Within the Timeline</strong>
                             </p>
 
@@ -778,13 +751,11 @@
                                 address everything at once.
                             </p>
 
-                        </div>
                     </div>
 
 
                     <!-- Challenge 06 -->
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="h-100">
+                    <div class="card-grid__card">
 
                             <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 48 48"
                                 class="color-baliteak">
@@ -794,7 +765,7 @@
                             </svg>
 
 
-                            <p class="fs-6 mb-2" class="color-baliteak">
+                            <p class="fs-6 mb-2 color-baliteak">
                                 <strong>Balancing Quality, Feasibility &amp; Speed</strong>
                             </p>
 
@@ -806,23 +777,19 @@
                                 future improvements.
                             </p>
 
-                        </div>
                     </div>
 
-                </div>
             </div>
         </section>
 
 
-        <section class="pt-5 my-0" id="seo-technical-optimisation">
-            <div class="container">
+        <section class="project-section" id="seo-technical-optimisation">
+            <div class="project-surface-muted rounded-4 p-4 p-md-5">
 
-                <div class="baliteak-bg-color-secondary rounded-4 p-4 p-md-5">
-
-                    <!-- Section Heading -->
-                    <h2 class="capsule capsule-border-baliteak fs-6 mb-3">
-                        SEO &amp; Technical Optimisation
-                    </h2>
+                <!-- Section Heading -->
+                <h2 class="capsule capsule-border-project project-section__title mb-3">
+                    SEO &amp; Technical Optimisation
+                </h2>
 
                     <!-- Introduction -->
                     <p class="fs-6 mb-4">
@@ -1021,7 +988,8 @@
                                         </strong>
 
                                         <span class="small">
-                                            <img src="image/BaliTeak/XML Sitemap.png" alt="" class="rounded-4 p-4">
+                                            <img loading="lazy" width="1053" height="641" src="image/BaliTeak/XML Sitemap.png" alt=""
+                                                class="media-block__image rounded-4 p-4 zoom-image lazy-img">
                                         </span>
 
                                     </div>
@@ -1072,7 +1040,8 @@
                                         </strong>
 
                                         <span class="small">
-                                            <img src="image/BaliTeak/Robots.png" alt="" class="rounded-4 p-4"> </span>
+                                            <img loading="lazy" width="358" height="178" src="image/BaliTeak/Robots.png" alt=""
+                                                class="media-block__image rounded-4 p-4 zoom-image lazy-img"> </span>
 
                                     </div>
 
@@ -1154,7 +1123,6 @@
 
                     </div>
 
-                </div>
             </div>
         </section>
 

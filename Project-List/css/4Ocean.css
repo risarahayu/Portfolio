@@ -1,298 +1,24 @@
 /* ==========================================================================
-   Design tokens — shared across components
+   4ocean — page-specific tokens + the one widget with no BaliTeak analog
+   (process-discovery's connector-arrow flow). Everything else this page
+   uses lives in css/project.css, shared with BaliTeak.html.
    ========================================================================== */
 
 :root {
-  --color-4Ocean-primary: #0a56c2;
-  --color-4Ocean-primary-subtle: #cfe2ff;
-  --color-4Ocean-text: #1a1a1a;
-  --color-4Ocean-text-muted: #4a4a4a;
-  --color-4Ocean-white: #ffffff;
-  --color-4Ocean-surface-muted: #D7EAFF;
-  --color-surface-dark: #1c1c1c;
+  --project-primary: #0a56c2;
+  --project-surface-muted: #D7EAFF;
+  --project-surface-dark: #1c1c1c;
+  --project-text: #272727;
+  --project-text-muted: #272727;
+  --project-hero-image: url('../image/4Ocean/Hero.png');
+
   --color-red: #FF5A79;
   --color-green: #1D5745;
-
-  --section-padding-inline: clamp(1.25rem, 4vw, 4rem);
-  --section-padding-block-start: clamp(2rem, 5vw, 4rem);
-  --section-padding-block-end: 0;
-  --section-max-width: 1317px;
-  --section-gutter: 1rem;
-
-  --text-14: clamp(0.8rem, 0.75rem + 0.2vw, 0.875rem);
-  /* up to 14px */
-  --text-16: clamp(0.9rem, 0.85rem + 0.2vw, 1rem);
-  /* up to 16px */
-  --text-18: clamp(0.95rem, 0.9rem + 0.2vw, 1.125rem);
-  /* up to 18px */
-  --text-20: clamp(1.05rem, 0.95rem + 0.3vw, 1.25rem);
-  /* up to 20px */
-  --text-32: clamp(1.4rem, 1rem + 1.6vw, 2rem);
-  /* up to 32px */
-  --text-40: clamp(1.75rem, 1.2rem + 2.2vw, 2.5rem);
-  /* up to 40px */
-  --text-96: clamp(2rem, 1rem + 6vw, 6rem);
-  /* up to 96px */
 }
 
 /* ==========================================================================
-   Utilities — reusable text-size scale, mixed into any element/component
-   so a size is declared once here and never redeclared per section
-   ========================================================================== */
-
-.text-14 {
-  font-size: var(--text-14);
-}
-
-.text-16 {
-  font-size: var(--text-16);
-}
-
-.text-18 {
-  font-size: var(--text-18);
-}
-
-.text-20 {
-  font-size: var(--text-20);
-}
-
-.text-32 {
-  font-size: var(--text-32);
-}
-
-.text-40 {
-  font-size: var(--text-40);
-}
-
-.text-96 {
-  font-size: var(--text-96);
-}
-
-/* ==========================================================================
-   Section — reusable layout base, shared by every page section so padding
-   doesn't get re-declared per component
-   ========================================================================== */
-
-.section {
-  padding-block: var(--section-padding-block-start) var(--section-padding-block-end);
-}
-
-/* ==========================================================================
-   Container — content capped at the shared max-width with a small constant
-   gutter baked into the same width calculation (min()), instead of a
-   separate section padding competing with the max-width. That means the
-   gutter never disappears on narrow screens and never fights the max-width
-   on wide ones — there's exactly one place controlling content width.
-   ========================================================================== */
-
-/*  */
-
-/* ==========================================================================
-   Badge — reusable pill label, mixed into any section that needs one
-   ========================================================================== */
-.hero-bg {
-  height: 50vh;
-
-  background-image: url('../image/4Ocean/Hero.png');
-  background-size: cover;
-  background-position: top;
-  background-repeat: no-repeat;
-
-  display: flex;
-  align-items: center;
-
-}
-
-.color-4Ocean-primary {
-  background-color: var(--color-4Ocean-primary);
-}
-
-.capsule-border-4Ocean {
-  border: 2px solid var(--color-4Ocean-primary);
-  color: var(--color-4Ocean-primary);
-}
-
-/* ==========================================================================
-   Header — hero mockup + intro copy
-   ========================================================================== */
-
-.header {
-  display: flex;
-  flex-direction: column;
-}
-
-.header__hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-4Ocean-primary);
-  padding: clamp(2rem, 6vw, 5rem) var(--section-padding-inline);
-}
-
-.header__hero-image {
-  display: block;
-  width: 100%;
-  max-width: 900px;
-  height: auto;
-}
-
-.header__content {
-  --header-row-gap: clamp(1.5rem, 4vw, 3rem);
-
-  background-color: var(--color-4Ocean-white);
-  padding-block: var(--section-padding-block-start) var(--section-padding-block-end);
-}
-
-.header__row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--header-row-gap);
-}
-
-.header__column {
-  margin: 0;
-  color: var(--color-text);
-  line-height: 1.4;
-}
-
-.header__column--title {
-  font-weight: 700;
-}
-
-.header__column--text {
-  font-weight: 400;
-  color: var(--color-4Ocean-text-muted);
-}
-
-.header__highlight {
-  font-weight: 700;
-  color: var(--color-4Ocean-primary);
-}
-
-.secondary-bg-color-4Ocean {
-  background-color: var(--color-4Ocean-surface-muted);
-}
-
-
-
-@media (max-width: 768px) {
-  .header__row {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ==========================================================================
-   Project info — "Project Scope" card
-   ========================================================================== */
-
-.project-info {
-  --project-info-row-gap: clamp(1.5rem, 4vw, 2.5rem);
-  --project-info-group-gap: clamp(1rem, 3vw, 1.75rem);
-  --project-info-label-gap: 0.4em;
-}
-
-.project-info__row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: var(--project-info-row-gap);
-}
-
-.project-info__group {
-  display: flex;
-  flex: 0 1 auto;
-  flex-direction: column;
-  gap: var(--project-info-group-gap);
-  margin: 0;
-}
-
-.project-info__item {
-  display: flex;
-  flex-direction: column;
-  gap: var(--project-info-label-gap);
-}
-
-.project-info__label {
-  margin: 0;
-  color: var(--color-text);
-  font-weight: 400;
-}
-
-.project-info__value {
-  margin: 0;
-  color: var(--color-4Ocean-primary);
-  font-weight: 600;
-}
-
-.project-info__timeline {
-  display: flex;
-  flex-direction: column;
-  gap: var(--project-info-group-gap);
-  margin: var(--project-info-label-gap) 0 0;
-}
-
-.project-info__phase {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4em;
-  margin: 0;
-}
-
-.project-info__phase-label {
-  flex: 0 0 auto;
-  color: var(--color-4Ocean-primary);
-  font-weight: 600;
-}
-
-.project-info__phase-value {
-  margin: 0;
-  color: var(--color-text);
-}
-
-@media (max-width: 640px) {
-  .project-info__row {
-    flex-direction: column;
-    align-items: stretch;
-  }
-}
-
-/* ==========================================================================
-   Project context — "Context & Background" card
-   ========================================================================== */
-
-.project-context__row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: clamp(1.5rem, 4vw, 3rem);
-  background-color: var(--color-4Ocean-primary-subtle);
-  border-radius: 16px;
-  padding: clamp(1.5rem, 4vw, 2.5rem);
-}
-
-.project-context__logo {
-  flex: 0 0 auto;
-  width: clamp(120px, 20vw, 180px);
-  height: auto;
-  aspect-ratio: 193 / 81;
-}
-
-.project-context__text {
-  flex: 1 1 auto;
-  margin: 0;
-  color: var(--color-text);
-  line-height: 1.5;
-}
-
-@media (max-width: 640px) {
-  .project-context__row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-/* ==========================================================================
-   Process discovery — 3-step flow with connector callouts between steps
+   Process discovery — 3-step flow with connector callouts between steps.
+   4ocean-only: BaliTeak has no equivalent multi-step flow diagram.
 
    Each connector is absolutely positioned relative to its own column using
    left:100% + translateX(-50%): this always centers it on that column's
@@ -329,7 +55,7 @@
   align-items: flex-start;
   gap: 0.75rem;
   margin: 0;
-  background-color: var(--color-4Ocean-surface-muted);
+  background-color: var(--project-surface-muted);
   padding: clamp(1.25rem, 3vw, 1.75rem);
 }
 
@@ -348,20 +74,20 @@
 
 .process-discovery__column-title {
   margin: 0;
-  color: var(--color-text);
+  color: var(--project-text);
   font-weight: 700;
 }
 
 .process-discovery__column-header p {
   margin: 0;
-  color: var(--color-text-muted);
+  color: var(--project-text-muted);
 }
 
 .process-discovery__column-body {
   flex: 1;
   margin: 0;
-  background-color: var(--color-surface-dark);
-  color: var(--color-4Ocean-white);
+  background-color: var(--project-surface-dark);
+  color: #ffffff;
   padding: clamp(1.25rem, 3vw, 1.75rem);
   line-height: 1.6;
 }
@@ -382,13 +108,11 @@
   align-items: center;
   gap: 0.4rem;
   margin-bottom: clamp(0.75rem, 2vw, 1.25rem);
-  color: var(--color-4Ocean-primary);
+  color: var(--project-primary);
   font-weight: 500;
   text-align: center;
   white-space: nowrap;
 }
-
-
 
 .process-discovery__connector-arrow {
   width: clamp(56px, 6vw, 80px);
@@ -420,44 +144,8 @@
 }
 
 /* ==========================================================================
-   Problem — 3-card grid of pain points
-   ========================================================================== */
-
-.problem__row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-
-.problem__column {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  background-color: var(--color-4Ocean-surface-muted);
-  border: 1px solid var(--color-text);
-  border-radius: 12px;
-  /* padding: clamp(1.25rem, 3vw, 1.75rem); */
-}
-
-.problem__column-title {
-  margin: 0;
-  color: var(--color-text);
-}
-
-.problem__column-text {
-  margin: 0;
-  color: var(--color-text-muted);
-  line-height: 1.6;
-}
-
-@media (max-width: 1024px) {
-  .problem__row {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ==========================================================================
-   Solution — "How might we" questions paired with proposed answers
+   Solution — "How might we" questions paired with proposed answers.
+   4ocean-only: BaliTeak has no equivalent Q&A pattern.
    ========================================================================== */
 
 .solution__row {
@@ -479,7 +167,7 @@
 
 .solution__column-title {
   margin: 0;
-  color: var(--color-text);
+  color: var(--project-text);
   font-weight: 400;
 }
 
@@ -496,7 +184,7 @@
   align-items: flex-start;
   gap: 0.75rem;
   width: 100%;
-  background-color: var(--color-4Ocean-primary);
+  background-color: var(--project-primary);
   border-radius: 6px;
   padding: clamp(1.25rem, 3vw, 1.75rem);
 }
@@ -508,7 +196,7 @@
 
 .solution__column-text {
   margin: 0;
-  color: var(--color-4Ocean-white);
+  color: #ffffff;
   line-height: 1.5;
 }
 
@@ -529,20 +217,10 @@
 }
 
 /* ==========================================================================
-   Flow — user flow diagram with lo-fi wireframes
-   ========================================================================== */
-
-.flow__image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-
-
-/* ==========================================================================
    Wireframing — design tokens reference (color table, Tailwind CSS
-   variables, logo)
+   variables, logo) and the responsive-typography specimen list.
+   4ocean-only: BaliTeak's design-system section uses a plain image grid
+   instead of this token/typography reference layout.
    ========================================================================== */
 
 .wireframing__row {
@@ -560,26 +238,13 @@
 
 .wireframing__column h3 {
   margin: 0;
-  color: var(--color-text);
+  color: var(--project-text);
   font-weight: 700;
 }
 
 .wireframing__column>p {
   margin: 0;
-  color: var(--color-text-muted);
-}
-
-.wireframing__image {
-  display: block;
-  width: 100%;
-  max-width: max-content;
-  height: auto;
-}
-
-
-
-.wireframing__image.wireframing__image--full {
-  max-width: 100%;
+  color: var(--project-text-muted);
 }
 
 .wireframing__logo {
@@ -593,13 +258,9 @@
   margin: 0;
   max-width: 100%;
   overflow-x: auto;
-  color: var(--color-text);
+  color: var(--project-text);
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   line-height: 1.6;
-}
-
-.wireframing__row--typography {
-  grid-template-columns: 1fr;
 }
 
 .wireframing__type-list {
@@ -610,35 +271,17 @@
 
 .wireframing__type-item p {
   margin: 0;
-  color: var(--color-text);
+  color: var(--project-text);
 }
 
 .wireframing__type-item span {
   display: block;
   margin-top: 0.15rem;
-  color: var(--color-text-muted);
+  color: var(--project-text-muted);
 }
 
 @media (max-width: 900px) {
   .wireframing__row {
     grid-template-columns: 1fr;
   }
-}
-
-/* ==========================================================================
-   Iterasi
-   ========================================================================== */
-.iterasi__image {
-  display: block;
-  width: 100%;
-  max-width: max-content;
-  height: auto;
-}
-
-.cross-container {
-  border: 1px solid var(--color-red) !important;
-}
-
-.check-container {
-  border: 1px solid var(--color-green) !important;
 }
