@@ -1,3 +1,4 @@
+
 const skillCardsData = [
   {
     title: "Web Developer",
@@ -926,3 +927,4 @@ if (sitemapImage && sitemapLoader) {
 
 }
 
+lucide.createIcons();

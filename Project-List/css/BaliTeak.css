@@ -87,3 +87,7 @@
 #sitemapLoader.hidden {
     display: none !important;
 }
+
+.color-baliteak {
+    color: var(--color-baliteak-primary);
+}
