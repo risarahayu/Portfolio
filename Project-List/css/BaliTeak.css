@@ -1,69 +1,33 @@
+/* ==========================================================================
+   BaliTeak — page-specific tokens + the one widget with no 4ocean analog
+   (the sitemap image's loading-spinner overlay). Everything else this page
+   uses lives in css/project.css, shared with 4ocean.html.
+   ========================================================================== */
+
 :root {
-    --color-baliteak-primary: #7F4B33;
-    --color-baliteak-secondary: #F4EEE1;
+    --project-primary: #7F4B33;
+    --project-surface-muted: #F4EEE1;
+    --project-text: #272727;
+    --project-text-muted: #272727;
+    --project-hero-image: url('../image/BaliTeak/Hero.png');
+
     --color-red: #FF5A79;
     --color-green: #1D5745;
 }
 
-
-
-
-
-.hero-bg {
-    height: 50vh;
-
-    background-image: url('../image/BaliTeak/Hero.png');
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
-
-    display: flex;
-    align-items: center;
+/* Page-specific accent-color utility (used on the Implementation
+   Challenges card icons/captions — not part of the shared card-grid
+   component since 4ocean's cards have no equivalent accent treatment). */
+.color-baliteak {
+    color: var(--project-primary);
 }
 
-.hero-content {
-    max-width: 800px;
-    color: white;
-}
-
-.baliteak-bg-color-primary {
-    background-color: var(--color-baliteak-primary);
-}
-
-.capsule-border-baliteak {
-    border: 2px solid var(--color-baliteak-primary);
-    color: var(--color-baliteak-primary);
-}
-
-.baliteak-bg-color-secondary {
-    background-color: var(--color-baliteak-secondary);
-}
-
-.cross {
-    color: var(--color-red);
-    width: 16px;
-    height: 16px;
-    object-fit: contain;
-}
-
-.cross-container {
-
-    border: 1px solid var(--color-red) !important;
-}
-
-.check {
-    color: var(--color-green);
-    width: 16px;
-    height: 16px;
-    object-fit: contain;
-}
-
-.check-container {
-    border: 1px solid var(--color-green) !important;
-}
+/* ==========================================================================
+   Sitemap loading spinner — BaliTeak-only: 4ocean has no equivalent
+   "wait for a huge image to decode" widget.
+   ========================================================================== */
 
 .sitemap-image-container {
-    /* min-height: 300px; */
     overflow: hidden;
 }
 
@@ -86,8 +50,4 @@
 
 #sitemapLoader.hidden {
     display: none !important;
-}
-
-.color-baliteak {
-    color: var(--color-baliteak-primary);
 }
