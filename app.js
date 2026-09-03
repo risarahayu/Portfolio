@@ -116,7 +116,7 @@ const projectsData = [
     projectURL: "Project-List/1zero-ai-content-generation.html",
     description: "Exploring how AI can support content and marketing production at 1zero — used as a creative assistant for ideation, visuals, and copy rather than a source of raw, unreviewed output.",
     impact: ["Faster Content Production", "Expanded Visual Asset Creation", "Faster Creative Exploration"],
-    role: ["UI/UX", "Digital Marketing"],
+    role: ["Digital Marketing"],
     projectType: ["Content Creation"],
     tools: ["Figma", "ChatGPT"],
     images: [
@@ -418,7 +418,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "Google Analytic": "image/logo/tools/GoogleAnalytic.png",
       "Mailchimp": "image/logo/tools/Mailchimp.png",
       "Canva": "image/logo/tools/Canva.png",
-      "React JS": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      "React JS": "image/logo/tools/react-color.svg",
       "Next.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
       "Bootstrap": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
       "Laravel": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg",
