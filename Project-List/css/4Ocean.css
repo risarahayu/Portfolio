@@ -6,9 +6,10 @@
 
 :root {
   --project-primary: #0a56c2;
+  --project-primary-soft: #91bdf0;
   --project-surface-muted: #D7EAFF;
-  --project-surface-dark: #1c1c1c;
-  --project-text: #272727;
+  --project-surface-dark: #2d2d2d;
+  --project-text: #252121;
   --project-text-muted: #272727;
   --project-hero-image: url('../image/4Ocean/Hero.png');
 
@@ -28,6 +29,13 @@
    normal static flow — its position in the markup (right after the column
    it follows) already reads top-to-bottom in the right order.
    ========================================================================== */
+.text-primary-soft {
+  color: var(--project-primary-soft);
+}
+
+.text-primary-4Ocean {
+  color: var(--project-primary);
+}
 
 .process-discovery__row {
   display: flex;

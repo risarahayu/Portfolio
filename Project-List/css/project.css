@@ -337,9 +337,9 @@
   padding: 1rem;
 }
 
-.card-grid__card--bordered {
+.card-grid__card--background {
   background-color: var(--project-surface-muted);
-  border: 1px solid var(--project-text);
+  /* border: 1px solid var(--project-text); */
   border-radius: 12px;
 }
 
