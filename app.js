@@ -76,7 +76,7 @@ const experienceData = [
 const projectsData = [
   {
     id: 1,
-    projectTitle: "Impact Portal Dashboard",
+    projectTitle: "4Ocean - Impact Portal Dashboard",
     company: "4Ocean",
     companyURL: "https://www.4ocean.com/",
     projectURL: "Project-List/4ocean.html",
@@ -92,7 +92,7 @@ const projectsData = [
   },
   {
     id: 2,
-    projectTitle: "Bali Teak Company Website",
+    projectTitle: "Bali Teak - Redesign Website",
     company: "Bali Teak",
     companyURL: "https://baliteak.ca",
     projectURL: "Project-List/BaliTeak.html",
@@ -102,7 +102,7 @@ const projectsData = [
       "Built E-commerce foundation."],
     role: ["UI/UX", "Web Development"],
     projectType: ["Redesign", "Platform Building"],
-    tools: ["Figma", "WordPress", "Elementor", "Google Ads"],
+    tools: ["Figma", "WordPress", "Elementor"],
     images: [
       "image/portfolio img/UIUX/BalI Teak Company Website-mockup.jpg",
       "image/portfolio img/UIUX/BalI Teak Company Website 2.png"
@@ -110,7 +110,7 @@ const projectsData = [
   },
   {
     id: 3,
-    projectTitle: "1zero - AI-Assisted Content Generation",
+    projectTitle: "1zero - AI Assisted Content Generation",
     company: "1zero",
     companyURL: "https://1zero.biz",
     projectURL: "Project-List/1zero-ai-content-generation.html",
@@ -408,6 +408,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Tool → logo image path mapping
     const toolLogoMap = {
       "Figma": "image/logo/tools/figma-color.svg",
+      "ChatGPT": "image/logo/tools/ChatGPT.svg",
       "Adobe XD": "image/logo/tools/adobe xd.png",
       "GitHub": "image/logo/tools/gitHub.png",
       "WordPress": "image/logo/tools/wordpress-color.svg",
