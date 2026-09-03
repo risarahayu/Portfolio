@@ -174,6 +174,14 @@ body.is-loading {
 
 }
 
+/* The hero row's title/skills/profile/experience side-by-side desktop split
+   now only kicks in at xl (1200px+, see the col-xl-* / order-xl-* classes
+   in index.html). Below that — including the 992-1199px tablet-landscape
+   range (iPad Pro) — everything stacks full-width like mobile, so the 3
+   always-3-across skill cards get the row's full width instead of being
+   squeezed into col-lg-8's 66% share of Bootstrap's fixed 960px lg
+   container, which used to make them wrap more and balloon in height. */
+
 
 
 
@@ -673,7 +681,7 @@ body.is-loading {
    TABLET
 ========================= */
 
-@media (max-width: 991.98px) {
+@media (max-width: 1199.98px) {
 
     .profile-column {
 
