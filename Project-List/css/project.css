@@ -427,6 +427,80 @@
 }
 
 /* ==========================================================================
+   Media marquee — an auto-scrolling horizontal strip of mixed-width
+   screenshots/mockups (e.g. a "Selected UI" showcase). Each image keeps
+   its own intrinsic aspect ratio at a fixed height, so a portrait phone
+   mockup and a landscape desktop mockup sit side by side naturally. The
+   track's markup must repeat its images twice (identical order) for the
+   translateX(-50%) loop to read as seamless; this only styles the strip,
+   it doesn't duplicate anything itself. Click-to-preview is handled by the
+   shared no-zoom lightbox in app.css/app.js (`.preview-image`).
+   ========================================================================== */
+
+.media-marquee {
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+}
+
+.media-marquee__track {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  gap: 1.5rem;
+  animation: media-marquee-scroll 32s linear infinite;
+}
+
+.media-marquee:hover .media-marquee__track {
+  animation-play-state: paused;
+}
+
+/* Specificity note: these images carry width/height HTML attributes (for
+   aspect-ratio reservation before load), which app.css's global
+   `img[width][height] { height: auto }` rule (element + 2 attribute
+   selectors) would otherwise beat a plain `.media-marquee__image` class
+   selector on — matching those same two attributes here keeps this rule
+   winning regardless of stylesheet load order. */
+.media-marquee__image[width][height] {
+  display: block;
+  flex: 0 0 auto;
+  height: 40vh;
+  width: auto;
+  max-width: none;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.media-marquee__image:hover {
+  transform: translateY(-4px);
+}
+
+@media (max-width: 991.98px) {
+  .media-marquee__image[width][height] {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .media-marquee__image[width][height] {
+    height: 70vh;
+  }
+}
+
+@keyframes media-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ==========================================================================
    Check list — reused bullet-as-checkmark list (already shared via
    app.css's .check-list / .check-list__icon; nothing page-specific here).
    ========================================================================== */

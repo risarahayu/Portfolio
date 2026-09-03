@@ -905,6 +905,58 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 })();
+
+// ==========================================================
+// Reusable image preview modal (no zoom/pan)
+//
+// To make any image open fullscreen with just a close button —
+// no zoom or drag controls — add the `preview-image` class to
+// its <img> tag. One shared modal is injected into the page (if
+// not already present) and reused for every trigger. This is
+// intentionally separate from the `zoom-image` system above:
+// some galleries (e.g. a UI mockup marquee) just need a clean
+// fullscreen look, not pan/zoom.
+// ==========================================================
+(function setupImagePreviewModal() {
+
+  const triggers = document.querySelectorAll("img.preview-image");
+
+  if (triggers.length === 0) return;
+
+  let modal = document.getElementById("imagePreviewModal");
+
+  if (!modal) {
+    document.body.insertAdjacentHTML("beforeend", `
+      <div class="modal fade" id="imagePreviewModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+
+            <button type="button" class="btn-close image-preview-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+            <div class="modal-body image-preview-body">
+              <img class="image-preview-img" alt="">
+            </div>
+
+          </div>
+        </div>
+      </div>
+    `);
+    modal = document.getElementById("imagePreviewModal");
+  }
+
+  const modalImage = modal.querySelector(".image-preview-img");
+  const bsModal = new bootstrap.Modal(modal);
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      modalImage.src = trigger.currentSrc || trigger.src;
+      modalImage.alt = trigger.alt || "";
+      bsModal.show();
+    });
+  });
+
+})();
+
 renderBreadcrumb();
 
 // Page loader — waits for every image on the page to finish loading

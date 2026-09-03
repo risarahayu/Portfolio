@@ -1230,6 +1230,45 @@ body.is-loading {
     cursor: grabbing;
 }
 
+/* Fullscreen image preview modal (no zoom/pan — see setupImagePreviewModal) */
+
+.preview-image {
+    cursor: pointer;
+}
+
+#imagePreviewModal .modal-content {
+    background: #0a0a0a;
+    border: none;
+}
+
+.image-preview-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    z-index: 10;
+    filter: invert(1) grayscale(1) brightness(2);
+    opacity: 0.85;
+}
+
+.image-preview-close:hover {
+    opacity: 1;
+}
+
+.image-preview-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem;
+}
+
+.image-preview-img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 0.5rem;
+}
+
 /* Images carrying both width/height attributes (added so the browser can
    reserve the right aspect-ratio before the file loads, avoiding layout
    shift) must not use those attributes as literal pixel sizes — without
