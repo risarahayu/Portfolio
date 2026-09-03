@@ -120,7 +120,7 @@ const projectsData = [
     projectType: ["Content Creation"],
     tools: ["Figma", "ChatGPT"],
     images: [
-      "Project-List/image/1zero/Hero.png",
+      "image/portfolio img/Content Generate/AI Video Generate 1zero.jpg",
       "Project-List/image/1zero/social-media-copy.png"
     ]
   },
@@ -288,7 +288,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const hardSkillsHTML = card.hardSkills.map(skill => `<li>${skill}</li>`).join("");
       const softwaresHTML = card.softwares.map(sw => `
                       <span>
-                        <img src="${sw.src}" alt="${sw.alt}" height="20px">
+                        <img src="${sw.src}" alt="${sw.alt}" height="30px">
                       </span>`).join("");
 
       skillsHTML += `
