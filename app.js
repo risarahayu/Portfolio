@@ -160,9 +160,9 @@ const testimonials = [
 ];
 
 const teamPhotos = [
-  "../image/team photo/photo 1.png",
-  "../image/team photo/photo 2.png",
-  "../image/team photo/photo 3.jpg"
+  "image/team photo/photo 1.png",
+  "image/team photo/photo 2.png",
+  "image/team photo/photo 3.jpg"
 ];
 // Preload images
 teamPhotos.forEach((photo) => {
