@@ -907,15 +907,20 @@ document.addEventListener("DOMContentLoaded", () => {
 })();
 
 // ==========================================================
-// Reusable image preview modal (no zoom/pan)
+// Reusable media preview modal (no zoom/pan)
 //
-// To make any image open fullscreen with just a close button —
-// no zoom or drag controls — add the `preview-image` class to
-// its <img> tag. One shared modal is injected into the page (if
+// To make any image or video open fullscreen with just a close
+// button — no zoom or drag controls — add the `preview-image`
+// class to it. One shared modal is injected into the page (if
 // not already present) and reused for every trigger. This is
 // intentionally separate from the `zoom-image` system above:
 // some galleries (e.g. a UI mockup marquee) just need a clean
 // fullscreen look, not pan/zoom.
+//
+// All triggers on the page are treated as one browsable gallery
+// (deduplicated by src, so a marquee's looped duplicate items
+// collapse into a single entry) — arrow buttons, swipe, and the
+// left/right arrow keys step through it.
 // ==========================================================
 (function setupMediaPreviewModal() {
 
@@ -925,6 +930,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (triggers.length === 0) return;
 
+  // Dedupe by resolved src so a marquee's looped duplicates count as
+  // one gallery item instead of stepping through the same media twice.
+  const items = [];
+  const seenSrc = new Set();
+
+  triggers.forEach((trigger) => {
+    const src = trigger.currentSrc || trigger.src;
+
+    if (seenSrc.has(src)) return;
+    seenSrc.add(src);
+
+    items.push({
+      type: trigger.tagName === "VIDEO" ? "video" : "image",
+      src,
+      alt: trigger.alt || "",
+    });
+  });
+
   let modal = document.getElementById("imagePreviewModal");
 
   if (!modal) {
@@ -933,27 +956,20 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="modal-dialog modal-fullscreen">
           <div class="modal-content">
 
-            <button 
-              type="button" 
-              class="btn-close image-preview-close" 
-              data-bs-dismiss="modal" 
-              aria-label="Close">
+            <button type="button" class="btn-close image-preview-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+            <p class="image-preview-counter"></p>
+
+            <button type="button" class="image-preview-nav image-preview-prev" aria-label="Previous">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button type="button" class="image-preview-nav image-preview-next" aria-label="Next">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </button>
 
             <div class="modal-body image-preview-body">
-
-              <img 
-                class="image-preview-img" 
-                alt=""
-              >
-
-              <video 
-                class="image-preview-video"
-                controls
-  autoplay
-  playsinline
-              </video>
-
+              <img class="image-preview-img" alt="">
+              <video class="image-preview-video" controls playsinline></video>
             </div>
 
           </div>
@@ -966,53 +982,95 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const modalImage = modal.querySelector(".image-preview-img");
   const modalVideo = modal.querySelector(".image-preview-video");
+  const counter = modal.querySelector(".image-preview-counter");
+  const prevBtn = modal.querySelector(".image-preview-prev");
+  const nextBtn = modal.querySelector(".image-preview-next");
+  const body = modal.querySelector(".image-preview-body");
 
   const bsModal = new bootstrap.Modal(modal);
+  const showNav = items.length > 1;
 
-  triggers.forEach((trigger) => {
+  prevBtn.hidden = !showNav;
+  nextBtn.hidden = !showNav;
 
-    trigger.addEventListener("click", () => {
+  let currentIndex = 0;
 
-      // IMAGE
-      if (trigger.tagName === "IMG") {
-
-        modalVideo.pause();
-        modalVideo.removeAttribute("src");
-        modalVideo.style.display = "none";
-
-        modalImage.src = trigger.currentSrc || trigger.src;
-        modalImage.alt = trigger.alt || "";
-        modalImage.style.display = "block";
-
-      }
-
-      // VIDEO
-      if (trigger.tagName === "VIDEO") {
-
-        modalImage.removeAttribute("src");
-        modalImage.style.display = "none";
-
-        modalVideo.src = trigger.currentSrc || trigger.src;
-        modalVideo.style.display = "block";
-
-        modalVideo.currentTime = 0;
-
-      }
-
-      bsModal.show();
-
-    });
-
-  });
-
-  // Stop video when modal is closed
-  modal.addEventListener("hidden.bs.modal", () => {
+  function showItem(index) {
+    currentIndex = (index + items.length) % items.length;
+    const item = items[currentIndex];
 
     modalVideo.pause();
+
+    if (item.type === "video") {
+      modalImage.style.display = "none";
+      modalVideo.style.display = "block";
+      modalVideo.src = item.src;
+      modalVideo.currentTime = 0;
+      modalVideo.play().catch(() => { });
+    } else {
+      modalVideo.removeAttribute("src");
+      modalVideo.style.display = "none";
+      modalImage.style.display = "block";
+      modalImage.src = item.src;
+      modalImage.alt = item.alt;
+    }
+
+    counter.textContent = showNav ? `${currentIndex + 1} / ${items.length}` : "";
+  }
+
+  function showPrev() {
+    showItem(currentIndex - 1);
+  }
+
+  function showNext() {
+    showItem(currentIndex + 1);
+  }
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const src = trigger.currentSrc || trigger.src;
+      const index = items.findIndex((item) => item.src === src);
+
+      showItem(index === -1 ? 0 : index);
+      bsModal.show();
+    });
+  });
+
+  prevBtn.addEventListener("click", showPrev);
+  nextBtn.addEventListener("click", showNext);
+
+  modal.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") showPrev();
+    if (event.key === "ArrowRight") showNext();
+  });
+
+  // Swipe left/right to browse (touch devices)
+  let touchStartX = null;
+
+  body.addEventListener("touchstart", (event) => {
+    touchStartX = event.changedTouches[0].clientX;
+  }, { passive: true });
+
+  body.addEventListener("touchend", (event) => {
+    if (touchStartX === null) return;
+
+    const deltaX = event.changedTouches[0].clientX - touchStartX;
+    touchStartX = null;
+
+    if (Math.abs(deltaX) < 50) return;
+
+    if (deltaX < 0) {
+      showNext();
+    } else {
+      showPrev();
+    }
+  }, { passive: true });
+
+  // Stop playback and clear sources when the modal is closed
+  modal.addEventListener("hidden.bs.modal", () => {
+    modalVideo.pause();
     modalVideo.removeAttribute("src");
-
     modalImage.removeAttribute("src");
-
   });
 
 })();
@@ -1097,5 +1155,5 @@ if (sitemapImage && sitemapLoader) {
 
 }
 
-lucide.createIcons();
+if (typeof lucide !== "undefined") lucide.createIcons();
 
