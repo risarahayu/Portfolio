@@ -124,22 +124,22 @@ const projectsData = [
       "Project-List/image/1zero/social-media-copy.png"
     ]
   },
-  {
-    id: 4,
-    projectTitle: "1zero - Redesign Website",
-    company: "1zero",
-    companyURL: "https://1zero.biz",
-    projectURL: "Project-List/1zero-landing-page-redesign.html",
-    description: "A business consulting landing page redesign that aims to improve clarity, user experience, and the presentation of business credibility and services.",
-    impact: ["Clearer Service Presentation", "Stronger Business Credibility", "Improved User Journey"],
-    role: ["UI/UX", "Web Development"],
-    projectType: ["Redesign", "Platform Building"],
-    tools: ["Figma", "React JS", "HTML", "Tailwind"],
-    images: [
-      "image/portfolio img/UIUX/1zero landing page.jpg",
-      "image/portfolio img/UIUX/1zero landing page 2.jpg"
-    ]
-  },
+  // {
+  //   id: 4,
+  //   projectTitle: "1zero - Redesign Website",
+  //   company: "1zero",
+  //   companyURL: "https://1zero.biz",
+  //   projectURL: "Project-List/1zero-landing-page-redesign.html",
+  //   description: "A business consulting landing page redesign that aims to improve clarity, user experience, and the presentation of business credibility and services.",
+  //   impact: ["Clearer Service Presentation", "Stronger Business Credibility", "Improved User Journey"],
+  //   role: ["UI/UX", "Web Development"],
+  //   projectType: ["Redesign", "Platform Building"],
+  //   tools: ["Figma", "React JS", "HTML", "Tailwind"],
+  //   images: [
+  //     "image/portfolio img/UIUX/1zero landing page.jpg",
+  //     "image/portfolio img/UIUX/1zero landing page 2.jpg"
+  //   ]
+  // },
   // {
   //   id: 4,
   //   projectTitle: "Stray Dog Adoption Website",
@@ -1173,3 +1173,52 @@ if (sitemapImage && sitemapLoader) {
 
 if (typeof lucide !== "undefined") lucide.createIcons();
 
+
+
+// ----------------------------------------
+// PROJECT PAGE — AUTO-EXPAND BUTTONS
+// ----------------------------------------
+
+function initDesignToggles() {
+  const buttons = document.querySelectorAll(".design-toggle");
+
+  buttons.forEach((btn) => {
+    const targetId = btn.getAttribute("data-target");
+    const overlayId = btn.getAttribute("data-overlay");
+
+    const preview = document.getElementById(targetId);
+    const overlay = document.getElementById(overlayId);
+
+    if (!preview || !overlay) return;
+
+    btn.addEventListener("click", () => {
+      const isExpanded = preview.classList.contains("is-expanded");
+
+      // toggle state
+      preview.classList.toggle("is-expanded");
+      preview.classList.toggle("is-collapsed");
+      btn.setAttribute("aria-expanded", String(!isExpanded));
+
+      // change button text + icon
+      const text = btn.querySelector(".toggle-text");
+      const icon = btn.querySelector("i");
+
+      if (!isExpanded) {
+        // Expanded mode
+        text.textContent = "Show Less";
+        icon.classList.remove("bi-arrow-down");
+        icon.classList.add("bi-arrow-up");
+        overlay.style.opacity = "0"; // fade out overlay
+      } else {
+        // Collapsed mode
+        text.textContent = "See Full Design";
+        icon.classList.remove("bi-arrow-up");
+        icon.classList.add("bi-arrow-down");
+        overlay.style.opacity = "1"; // fade in overlay
+      }
+    });
+  });
+}
+
+// Run when DOM is ready
+document.addEventListener("DOMContentLoaded", initDesignToggles);
