@@ -813,7 +813,7 @@ body.is-loading {
     display: inline-block;
     padding: 3px 12px;
     border-radius: 999px;
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 600;
     letter-spacing: 0.02em;
 }
@@ -855,8 +855,8 @@ body.is-loading {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     border-radius: 8px;
     background-color: #f5f5f5;
     border: 1px solid var(--border-color);

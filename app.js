@@ -285,7 +285,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (skillCardsContainer) {
     let skillsHTML = "";
     skillCardsData.forEach(card => {
-      const hardSkillsHTML = card.hardSkills.map(skill => `<li>${skill}</li>`).join("");
+      const hardSkillsHTML = card.hardSkills.map(skill => `<li class="fs-6">${skill}</li>`).join("");
       const softwaresHTML = card.softwares.map(sw => `
                       <span>
                         <img src="${sw.src}" alt="${sw.alt}" height="30px">
@@ -301,7 +301,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <h2>
                       ${card.title}
                     </h2>
-                    <div class="skill-heading fw-medium">
+                    <div class="skill-heading fw-medium fs-6">
                       Hard Skill
                     </div>
                     <ul>
@@ -474,16 +474,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 >
             </div>
             <div class="card-body d-flex flex-column">
-                <h5 class="card-title fw-semibold">${project.projectTitle}</h5>
+                <h5 class="card-title fw-semibold fs-6">${project.projectTitle}</h5>
               
-              <p class="card-text text-muted small mb-3">${project.description}</p>
+              <p class="card-text text-muted fs-6 mb-3">${project.description}</p>
               
 
               <div class="mt-3">
                 <div class="mb-2">
-                  <span class="text-secondary small fw-bold">Impact:</span><br>
+                  <span class="text-secondary fs-6 fw-bold">Impact:</span><br>
                   <div class="my-3">
-                    <ul class="list-unstyled d-flex flex-column gap-2 mb-0 small">
+                    <ul class="list-unstyled d-flex flex-column gap-2 mb-0 fs-6">
                       ${project.impact.map(i => `
                         <li class="d-flex align-items-start gap-2">
                           
@@ -518,14 +518,14 @@ document.addEventListener("DOMContentLoaded", () => {
                   <div class="d-flex justify-content-between gap-4">
                     <!-- TOOLS -->
                     <div class="d-flex flex-column gap-2">
-                      <span class="text-secondary small fw-bold">Core Tools:</span>
+                      <span class="text-secondary fs-6 fw-bold">Core Tools:</span>
                       <div class="d-flex flex-wrap gap-2">
                         ${toolsHTML}
                       </div>
                     </div>
                     <!-- COMPANY -->
                     <div class="d-flex flex-column gap-2">
-                      <span class="text-secondary small fw-bold">Company:</span>
+                      <span class="text-secondary fs-6 fw-bold">Company:</span>
 
                       <a href="${project.companyURL}" target="_blank">
                         <img
