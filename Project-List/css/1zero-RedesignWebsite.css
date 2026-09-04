@@ -104,60 +104,159 @@
    SITEMAP
 ================================================== */
 
+/* ==================================================
+   SITEMAP
+================================================== */
+
 .sitemap {
-    padding: 2rem 1rem;
+    width: 100%;
+    padding: 2rem 0;
     text-align: center;
 }
 
+
+/* HOME */
 .sitemap-node {
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
     min-height: 48px;
-    padding: 0.75rem 1.25rem;
+    padding: 0.75rem 1.5rem;
 
     border: 1px solid currentColor;
     border-radius: 0.75rem;
 
     font-size: 0.9rem;
     font-weight: 600;
+
+    background: inherit;
 }
 
 .sitemap-node--main {
-    margin-bottom: 2rem;
+    position: relative;
+    margin-bottom: 4rem;
 }
 
-.sitemap-node--highlight {
-    font-weight: 700;
+
+/* Connector from Home */
+.sitemap-node--main::after {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    bottom: -4rem;
+
+    height: 4rem;
+
+    border-left: 1px solid currentColor;
 }
+
+
+/* ==================================================
+   HORIZONTAL SCROLL AREA
+================================================== */
+
+.sitemap-scroll {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: thin;
+}
+
+
+/* ==================================================
+   CHILDREN
+================================================== */
 
 .sitemap-children {
+    position: relative;
+
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    position: relative;
+    align-items: flex-start;
+
+    gap: 1.25rem;
+
+    min-width: max-content;
+
+    /* Space for the vertical connectors */
+    padding: 30px 1.5rem 0;
 }
 
+
+/* Horizontal connecting line */
 .sitemap-children::before {
     content: "";
+
     position: absolute;
-    top: -1rem;
-    left: 10%;
-    right: 10%;
+
+    top: 30px;
+    left: 0;
+    right: 0;
+
     border-top: 1px solid currentColor;
 }
 
+
+/* Child nodes */
 .sitemap-children .sitemap-node {
     position: relative;
+
+    flex: 0 0 auto;
+
+    min-width: 150px;
+
+    margin-top: 0;
 }
 
+
+/* Vertical connector to each child */
 .sitemap-children .sitemap-node::before {
     content: "";
+
     position: absolute;
-    top: -1rem;
+
     left: 50%;
-    height: 1rem;
+    top: -30px;
+
+    height: 30px;
+
     border-left: 1px solid currentColor;
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 767.98px) {
+
+    .sitemap {
+        text-align: center;
+    }
+
+    .sitemap-scroll {
+        margin-left: -1rem;
+        margin-right: -1rem;
+
+        width: calc(100% + 2rem);
+    }
+
+    .sitemap-children {
+        justify-content: flex-start;
+
+        gap: 1rem;
+
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .sitemap-children .sitemap-node {
+        min-width: 130px;
+    }
+
 }
