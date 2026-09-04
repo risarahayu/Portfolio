@@ -982,28 +982,1097 @@
                     <!-- MOODBOARD IMAGES -->
                     <div class="row g-3">
 
-                        <div class="col-12 col-md-4">
+                        <div class="col-12">
 
-                            <img loading="lazy" src="image/1zero/Redesign Website/moodboard-01.png"
+                            <img loading="lazy" src="image/1zero/Redesign Website/Mood Board.svg"
                                 alt="1zero Moodboard 01" class="w-100 rounded-4 zoom-image lazy-img" />
 
                         </div>
 
+                    </div>
 
-                        <div class="col-12 col-md-4">
+                </div>
 
-                            <img loading="lazy" src="image/1zero/Redesign Website/moodboard-02.png"
-                                alt="1zero Moodboard 02" class="w-100 rounded-4 zoom-image lazy-img" />
+            </div>
+
+        </section>
+        <!-- ==================================================
+             09. DESIGN SYSTEM
+        =================================================== -->
+        <section class="project-section" id="design-system">
+
+            <div class="project-surface-muted rounded-4 p-4 p-md-5">
+
+                <h2 class="capsule fw-semibold capsule-border-project project-section__title">
+                    Simple Design System &amp; Variant Prototyping
+                </h2>
+
+
+                <!-- =========================================================
+     1ZERO — DESIGN SYSTEM
+========================================================= -->
+
+                <!-- Google Font — Open Sans -->
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+                <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
+                    rel="stylesheet">
+
+
+                <style>
+                    /* =========================================================
+       DESIGN SYSTEM TOKENS
+    ========================================================= */
+
+                    :root {
+
+                        --brunswick-green: #1d5745;
+                        --raisin-black: #272727;
+
+                        --sea-salt: #fafafa;
+                        --ivory: #f3f5e9;
+                        --dun: #d6caad;
+
+                    }
+
+
+                    /* =========================================================
+       DESIGN SYSTEM BASE
+    ========================================================= */
+
+                    .design-system {
+                        font-family: "Open Sans", sans-serif;
+                        color: var(--raisin-black);
+                    }
+
+
+                    .design-system code {
+                        font-family: monospace;
+                        font-size: 0.8rem;
+                        color: var(--brunswick-green);
+                        background: rgba(29, 87, 69, 0.06);
+                        padding: 0.25rem 0.5rem;
+                        border-radius: 0.4rem;
+                    }
+
+
+                    /* =========================================================
+       SYSTEM CARD
+    ========================================================= */
+
+                    .ds-card {
+                        background: var(--ivory);
+                        border: 1px solid rgba(39, 39, 39, 0.06);
+                        border-radius: 1.5rem;
+                        padding: 1.5rem;
+                    }
+
+
+                    .ds-item {
+                        background: var(--sea-salt);
+                        border-radius: 1rem;
+                        padding: 1rem;
+                        height: 100%;
+                    }
+
+
+                    .ds-label {
+                        font-size: 0.875rem;
+                        font-weight: 700;
+                        color: var(--raisin-black);
+                    }
+
+
+                    .ds-description {
+                        font-size: 0.8rem;
+                        line-height: 1.6;
+                        color: rgba(39, 39, 39, 0.65);
+                    }
+
+
+                    /* =========================================================
+       DESIGN SYSTEM BADGE
+    ========================================================= */
+
+                    .ds-badge {
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        padding: 0.45rem 0.8rem;
+
+                        border-radius: 999px;
+
+                        background: rgba(29, 87, 69, 0.08);
+
+                        color: var(--brunswick-green);
+
+                        font-size: 0.7rem;
+                        font-weight: 700;
+
+                        text-transform: uppercase;
+                        letter-spacing: 0.08em;
+                    }
+
+
+                    /* =========================================================
+       COLOR SWATCH
+    ========================================================= */
+
+                    .ds-color {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                    }
+
+
+                    .ds-color__swatch {
+                        width: 3rem;
+                        height: 3rem;
+
+                        flex-shrink: 0;
+
+                        border-radius: 0.75rem;
+
+                        border: 1px solid rgba(39, 39, 39, 0.08);
+                    }
+
+
+                    .ds-color__name {
+                        font-size: 0.875rem;
+                        font-weight: 700;
+                    }
+
+
+                    .ds-color__hex {
+                        font-family: monospace;
+                        font-size: 0.75rem;
+                        color: rgba(39, 39, 39, 0.55);
+                    }
+
+
+                    /* =========================================================
+       SPACING VISUAL
+    ========================================================= */
+
+                    .ds-spacing {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        gap: 1rem;
+
+                        padding: 1rem;
+
+                        background: var(--sea-salt);
+
+                        border-radius: 1rem;
+                    }
+
+
+                    .ds-spacing__visual {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+
+
+                    .ds-spacing__bar {
+                        height: 0.5rem;
+
+                        background: var(--brunswick-green);
+
+                        border-radius: 999px;
+                    }
+
+
+                    /* =========================================================
+       RADIUS VISUAL
+    ========================================================= */
+
+                    .ds-radius {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+
+                        padding: 1rem;
+
+                        background: var(--sea-salt);
+
+                        border-radius: 1rem;
+                    }
+
+
+                    .ds-radius__visual {
+                        width: 3.5rem;
+                        height: 3.5rem;
+
+                        flex-shrink: 0;
+
+                        background: var(--brunswick-green);
+                    }
+
+
+                    /* =========================================================
+       STROKE VISUAL
+    ========================================================= */
+
+                    .ds-stroke {
+                        padding: 1rem;
+
+                        background: var(--sea-salt);
+
+                        border-radius: 1rem;
+                    }
+
+
+                    .ds-stroke__sample {
+                        height: 4rem;
+
+                        border-radius: 0.75rem;
+
+                        margin-bottom: 0.75rem;
+                    }
+
+
+                    /* =========================================================
+       CHECK LIST
+    ========================================================= */
+
+                    .ds-check-list {
+                        list-style: none;
+
+                        margin: 0;
+                        padding: 0;
+                    }
+
+
+                    .ds-check-list li {
+                        display: flex;
+                        align-items: center;
+
+                        gap: 0.75rem;
+
+                        padding: 0.75rem 0;
+
+                        border-bottom: 1px solid rgba(39, 39, 39, 0.08);
+
+                        font-size: 0.875rem;
+                    }
+
+
+                    .ds-check-list li:last-child {
+                        border-bottom: 0;
+                    }
+
+
+                    .ds-check-list__icon {
+                        width: 1.25rem;
+                        height: 1.25rem;
+
+                        flex-shrink: 0;
+                    }
+                </style>
+
+
+                <div class="design-system">
+
+                    <div class="row g-4 mt-3">
+
+
+                        <!-- =====================================================
+             TYPOGRAPHY
+        ====================================================== -->
+
+                        <div class="col-12 col-md-6 mt-5">
+
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+
+                                <p class="mb-0 fw-semibold">
+                                    Typography
+                                </p>
+
+                                <span class="ds-badge">
+                                    Type Scale
+                                </span>
+
+                            </div>
+
+                            <!-- Typography Specification -->
+
+                            <div class="ds-card mt-3">
+
+                                <div class="d-flex flex-column gap-3">
+                                    <div class="ds-item">
+                                        <div class="d-flex justify-content-between align-items-start gap-3">
+                                            <div>
+                                                <div class="ds-label">
+                                                    Font Family
+                                                </div>
+
+                                            </div>
+                                            <code class="text-end">
+                                                    Open Sans
+                                                </code>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- H1 -->
+
+                                    <div class="ds-item">
+                                        <div class="d-flex justify-content-between align-items-start gap-3">
+                                            <div>
+                                                <div class="ds-label">
+                                                    H1
+                                                </div>
+                                                <small class="ds-description">
+                                                    Primary page and hero headings.
+                                                </small>
+                                            </div>
+                                            <code class="text-end">
+                                                    text-5xl sm:text-6xl md:text-7xl
+                                                    <br>
+                                                    font-extrabold leading-[1.1]
+                                                </code>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- H2 -->
+
+                                    <div class="ds-item">
+
+                                        <div class="d-flex justify-content-between align-items-start gap-3">
+
+                                            <div>
+
+                                                <div class="ds-label">
+                                                    H2
+                                                </div>
+
+                                                <small class="ds-description">
+                                                    Main section headings.
+                                                </small>
+
+                                            </div>
+
+                                            <code class="text-end">
+                                text-3xl sm:text-5xl
+                                <br>
+                                font-bold leading-tight
+                            </code>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- H3 -->
+
+                                    <div class="ds-item">
+
+                                        <div class="d-flex justify-content-between align-items-start gap-3">
+
+                                            <div>
+
+                                                <div class="ds-label">
+                                                    H3
+                                                </div>
+
+                                                <small class="ds-description">
+                                                    Subsection and content headings.
+                                                </small>
+
+                                            </div>
+
+                                            <code class="text-end">
+                                text-2xl sm:text-3xl
+                                <br>
+                                font-bold
+                            </code>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- H4 -->
+
+                                    <div class="ds-item">
+
+                                        <div class="d-flex justify-content-between align-items-start gap-3">
+
+                                            <div>
+
+                                                <div class="ds-label">
+                                                    H4
+                                                </div>
+
+                                                <small class="ds-description">
+                                                    Smaller content headings.
+                                                </small>
+
+                                            </div>
+
+                                            <code class="text-end">
+                                text-xl sm:text-2xl
+                                <br>
+                                font-bold
+                            </code>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- Badge -->
+
+                                    <div class="ds-item">
+
+                                        <div class="d-flex justify-content-between align-items-start gap-3">
+
+                                            <div>
+
+                                                <div class="ds-label">
+                                                    Badge
+                                                </div>
+
+                                                <small class="ds-description">
+                                                    Labels and section identifiers.
+                                                </small>
+
+                                            </div>
+
+                                            <code class="text-end">
+                                text-lg font-sans
+                                <br>
+                                uppercase tracking-widest
+                            </code>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="ds-item">
+
+                                        <div class="d-flex justify-content-between align-items-start gap-3">
+
+                                            <div>
+
+                                                <div class="ds-label">
+                                                    Paragraph
+                                                </div>
+
+                                                <small class="ds-description">
+                                                    The body copy for the website.
+                                                </small>
+
+                                            </div>
+
+                                            <code class="text-end">
+                                text-base sm:text-lg
+                                
+                            </code>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
 
                         </div>
 
 
-                        <div class="col-12 col-md-4">
 
-                            <img loading="lazy" src="image/1zero/Redesign Website/moodboard-03.png"
-                                alt="1zero Moodboard 03" class="w-100 rounded-4 zoom-image lazy-img" />
+                        <!-- =====================================================
+             COLOR
+        ====================================================== -->
+
+                        <div class="col-12 col-md-6 mt-5">
+
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+
+                                <p class="mb-0 fw-semibold">
+                                    Color Palette
+                                </p>
+
+                                <span class="ds-badge">
+                                    Brand Colors
+                                </span>
+
+                            </div>
+
+
+
+
+
+                            <div class="ds-card mt-3">
+                                <div class="row g-3">
+                                    <!-- Brunswick -->
+                                    <div class="col-12">
+                                        <div class="ds-item">
+                                            <div class="ds-color">
+                                                <div class="ds-color__swatch" style="background:#1d5745;"></div>
+                                                <div>
+                                                    <div class="ds-color__name">
+                                                        Brunswick Green
+                                                    </div>
+                                                    <div class="ds-color__hex">
+                                                        #1d5745
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Raisin -->
+                                    <div class="col-12">
+                                        <div class="ds-item">
+                                            <div class="ds-color">
+                                                <div class="ds-color__swatch" style="background:#272727;"></div>
+                                                <div>
+                                                    <div class="ds-color__name">
+                                                        Raisin Black
+                                                    </div>
+                                                    <div class="ds-color__hex">
+                                                        #272727
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Sea Salt -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="ds-item">
+                                            <div class="ds-color">
+                                                <div class="ds-color__swatch" style="background:#fafafa;"></div>
+                                                <div>
+                                                    <div class="ds-color__name">
+                                                        Sea Salt
+                                                    </div>
+                                                    <div class="ds-color__hex">
+                                                        #fafafa
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Ivory -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="ds-item">
+                                            <div class="ds-color">
+                                                <div class="ds-color__swatch" style="background:#f3f5e9;"></div>
+                                                <div>
+                                                    <div class="ds-color__name">
+                                                        Ivory
+                                                    </div>
+                                                    <div class="ds-color__hex">
+                                                        #f3f5e9
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Dun -->
+                                    <div class="col-12">
+                                        <div class="ds-item">
+                                            <div class="ds-color">
+                                                <div class="ds-color__swatch" style="background:#d6caad;"></div>
+                                                <div>
+                                                    <div class="ds-color__name">
+                                                        Dun
+                                                    </div>
+                                                    <div class="ds-color__hex">
+                                                        #d6caad
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- =====================================================
+                            BUTTONS
+                        ====================================================== -->
+                        <div class="col-12 col-md-6 mt-5">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <p class="mb-0 fw-semibold">
+                                    Button Components
+                                </p>
+                                <span class="ds-badge">
+                                    Interaction
+                                </span>
+                            </div>
+                            <img loading="lazy" alt="1zero Button Components"
+                                class="w-100 mt-2 rounded-4 zoom-image lazy-img" src="image/1zero/Button.png"
+                                style="object-fit:contain;">
+                        </div>
+
+                        <!-- =====================================================
+                            COMPONENTS
+                        ====================================================== -->
+                        <div class="col-12 col-md-6 mt-5">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <p class="mb-0 fw-semibold">
+                                    Components
+                                </p>
+                                <span class="ds-badge">
+                                    UI Library
+                                </span>
+                            </div>
+                            <img loading="lazy" alt="1zero Components" class="w-100 mt-2 rounded-4 zoom-image lazy-img"
+                                src="image/1zero/Components.png" style="object-fit:contain;">
+                        </div>
+
+                        <!-- =====================================================
+                            RESPONSIVE
+                        ====================================================== -->
+                        <div class="col-12 mt-5">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <p class="mb-0 fw-semibold">
+                                    Responsive UI
+                                </p>
+                                <span class="ds-badge">
+                                    Responsive
+                                </span>
+                            </div>
+                            <img loading="lazy" alt="1zero Responsive UI"
+                                class="w-100 mt-2 rounded-4 zoom-image lazy-img" src="image/1zero/Responsive UI.png"
+                                style="object-fit:contain;">
+                        </div>
+                        <!-- =====================================================
+                            SPACING & LAYOUT
+                        ====================================================== -->
+                        <div class="col-12 mt-5">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <p class="mb-0 fw-semibold">
+                                    Spacing & Layout
+                                </p>
+                                <span class="ds-badge">
+                                    Layout System
+                                </span>
+                            </div>
+                            <div class="ds-card">
+                                <div class="row g-4">
+                                    <!-- Grid Gap -->
+                                    <div class="col-12 col-lg-6">
+                                        <div class="mb-3">
+                                            <span class="ds-label">
+                                                Grid Gap
+                                            </span>
+                                            <small class="ds-description d-block mt-1">
+                                                Structured spacing between major layout
+                                                and grid elements.
+                                            </small>
+                                        </div>
+                                        <div class="d-flex flex-column gap-2">
+                                            <!-- gap 16 -->
+                                            <div class="ds-spacing">
+                                                <div>
+                                                    <div class="ds-label">
+                                                        Portfolio
+                                                    </div>
+                                                    <small class="ds-description">
+                                                        Main left and right panels
+                                                    </small>
+                                                </div>
+                                                <code>
+                                                    gap-16 · 64px
+                                                </code>
+                                            </div>
+                                            <!-- gap 12 -->
+                                            <div class="ds-spacing">
+                                                <div>
+                                                    <div class="ds-label">
+                                                        WhyUs
+                                                    </div>
+                                                    <small class="ds-description">
+                                                        Video panel and content points
+                                                    </small>
+                                                </div>
+                                                <code>
+                                                    gap-12 · 48px
+                                                </code>
+                                            </div>
+                                            <!-- gap 6 -->
+                                            <div class="ds-spacing">
+                                                <div>
+                                                    <div class="ds-label">
+                                                        Products
+                                                    </div>
+                                                    <small class="ds-description">
+                                                        Bento Grid and compact layouts
+                                                    </small>
+                                                </div>
+                                                <code>
+                                                    gap-6 · 24px
+                                                </code>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <!-- Vertical Rhythm -->
+                                    <div class="col-12 col-lg-6">
+                                        <div class="mb-3">
+                                            <span class="ds-label">
+                                                Vertical Rhythm
+                                            </span>
+                                            <small class="ds-description d-block mt-1">
+                                                Consistent vertical relationships between
+                                                stacked content.
+                                            </small>
+                                        </div>
+                                        <div class="d-flex flex-column gap-2">
+                                            <!-- Large -->
+                                            <div class="ds-spacing">
+                                                <div>
+                                                    <div class="ds-label">
+                                                        Large
+                                                    </div>
+                                                    <small class="ds-description">
+                                                        Section-level separation
+                                                    </small>
+                                                </div>
+                                                <code>
+                                                    space-y-16 / 10
+                                                </code>
+                                            </div>
+                                            <!-- Medium -->
+                                            <div class="ds-spacing">
+                                                <div>
+                                                    <div class="ds-label">
+                                                        Medium
+                                                    </div>
+                                                    <small class="ds-description">
+                                                        Heading and description
+                                                    </small>
+                                                </div>
+                                                <code>
+                                                    space-y-6
+                                                </code>
+                                            </div>
+                                            <!-- Small -->
+                                            <div class="ds-spacing">
+                                                <div>
+                                                    <div class="ds-label">
+                                                        Small
+                                                    </div>
+                                                    <small class="ds-description">
+                                                        Related content elements
+                                                    </small>
+                                                </div>
+                                                <code>
+                                                    space-y-4 / 2
+                                                </code>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- =====================================================
+                            BORDER RADIUS & STROKE
+                        ====================================================== -->
+                        <div class="col-12 mt-5">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <p class="mb-0 fw-semibold">
+                                    Border Radius & Stroke
+                                </p>
+                                <span class="ds-badge">
+                                    Visual System
+                                </span>
+                            </div>
+                            <div class="ds-card">
+                                <div class="row g-4">
+                                    <!-- Border Radius -->
+                                    <div class="col-12 col-lg-6">
+                                        <div class="mb-3">
+                                            <span class="ds-label">
+                                                Border Radius
+                                            </span>
+                                            <small class="ds-description d-block mt-1">
+                                                A hierarchical radius system keeps
+                                                containers and interactive elements
+                                                visually consistent.
+                                            </small>
+                                        </div>
+                                        <div class="d-flex flex-column gap-2">
+                                            <!-- Extra Large -->
+                                            <div class="ds-radius">
+                                                <div class="ds-radius__visual" style="border-radius:2.5rem;"></div>
+                                                <div class="flex-grow-1">
+                                                    <div class="ds-label">
+                                                        Extra Large
+                                                    </div>
+                                                    <small class="ds-description">
+                                                        Main containers and large cards
+                                                    </small>
+                                                </div>
+                                                <code>
+                                                    2.5rem / 3xl
+                                                </code>
+                                            </div>
+                                            <!-- Large -->
+                                            <div class="ds-radius">
+                                                <div class="ds-radius__visual" style="border-radius:1.5rem;"></div>
+                                                <div class="flex-grow-1">
+                                                    <div class="ds-label">
+                                                        Large
+                                                    </div>
+                                                    <small class="ds-description">
+                                                        Medium cards and modals
+                                                    </small>
+                                                </div>
+                                                <code>
+                                                    2xl
+                                                </code>
+                                            </div>
+                                            <!-- Medium -->
+                                            <div class="ds-radius">
+                                                <div class="ds-radius__visual" style="border-radius:0.75rem;"></div>
+                                                <div class="flex-grow-1">
+                                                    <div class="ds-label">
+                                                        Medium
+                                                    </div>
+                                                    <small class="ds-description">
+                                                        Inner elements and form controls
+                                                    </small>
+                                                </div>
+                                                <code>
+                                                    xl
+                                                </code>
+                                            </div>
+                                            <!-- Small -->
+                                            <div class="ds-radius">
+                                                <div class="ds-radius__visual" style="border-radius:0.5rem;"></div>
+                                                <div class="flex-grow-1">
+                                                    <div class="ds-label">
+                                                        Small
+                                                    </div>
+                                                    <small class="ds-description">
+                                                        Compact interactive elements
+                                                    </small>
+                                                </div>
+                                                <code>
+                                                    lg / md
+                                                </code>
+                                            </div>
+                                            <!-- Full -->
+                                            <div class="ds-radius">
+                                                <div class="ds-radius__visual" style="border-radius:999px;"></div>
+                                                <div class="flex-grow-1">
+                                                    <div class="ds-label">
+                                                        Full / Pill
+                                                    </div>
+                                                    <small class="ds-description">
+                                                        Badges, slider controls and CTAs
+                                                    </small>
+                                                </div>
+                                                <code>
+                                                    full
+                                                </code>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Stroke -->
+                                    <div class="col-12 col-lg-6">
+                                        <div class="mb-3">
+                                            <span class="ds-label">
+                                                Stroke / Border
+                                            </span>
+                                            <small class="ds-description d-block mt-1">
+                                                Subtle borders use transparency and
+                                                accent states to support the visual language.
+                                            </small>
+                                        </div>
+                                        <div class="d-flex flex-column gap-2">
+                                            <!-- Neutral -->
+                                            <div class="ds-stroke">
+
+                                                <div class="ds-stroke__sample" style="
+                                        border:1px solid rgba(250,250,250,.20);
+                                        background:#272727;
+                                    "></div>
+                                                <div class="d-flex justify-content-between">
+                                                    <span class="ds-label">
+                                                        Neutral Stroke
+                                                    </span>
+                                                    <code>
+                                                        sea-salt/20
+                                                    </code>
+                                                </div>
+                                            </div>
+                                            <!-- Strong -->
+                                            <div class="ds-stroke">
+                                                <div class="ds-stroke__sample" style="
+                                        border:1px solid rgba(250,250,250,.80);
+                                        background:#272727;
+                                    "></div>
+                                                <div class="d-flex justify-content-between">
+                                                    <span class="ds-label">
+                                                        Strong Neutral
+                                                    </span>
+                                                    <code>
+                                                        sea-salt/80
+                                                    </code>
+                                                </div>
+                                            </div>
+                                            <!-- Accent -->
+                                            <div class="ds-stroke">
+                                                <div class="ds-stroke__sample" style="
+                                        border:1px solid #1d5745;
+                                        background:#272727;
+                                    "></div>
+                                                <div class="d-flex justify-content-between">
+                                                    <span class="ds-label">
+                                                        Accent Stroke
+                                                    </span>
+
+                                                    <code>
+                                        brunswick-500
+                                    </code>
+
+                                                </div>
+
+                                            </div>
+
+
+                                            <!-- Hover -->
+
+                                            <div class="ds-stroke">
+
+                                                <div class="ds-stroke__sample" style="
+                                        border:1px solid #1d5745;
+                                        background:#272727;
+                                    "></div>
+
+                                                <div class="d-flex justify-content-between">
+
+                                                    <span class="ds-label">
+                                                        Hover State
+                                                    </span>
+
+                                                    <code>
+                                        hover:brunswick-900
+                                    </code>
+
+                                                </div>
+
+                                            </div>
+
+
+                                            <!-- Focus -->
+
+                                            <div class="ds-stroke">
+
+                                                <div class="ds-stroke__sample" style="
+                                        border:1px solid rgba(29,87,69,.8);
+                                        background:#272727;
+                                    "></div>
+
+                                                <div class="d-flex justify-content-between">
+
+                                                    <span class="ds-label">
+                                                        Focus State
+                                                    </span>
+
+                                                    <code>
+                                        focus:brunswick-500/80
+                                    </code>
+
+                                                </div>
+
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
 
                         </div>
+
+
+
+                        <!-- =====================================================
+             FIGMA TECHNIQUES
+        ====================================================== -->
+
+                        <div class="col-12 col-md-6 mt-5">
+
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+
+                                <p class="mb-0 fw-semibold">
+                                    Figma Techniques
+                                </p>
+
+                                <span class="ds-badge">
+                                    Workflow
+                                </span>
+
+                            </div>
+
+
+                            <div class="ds-card">
+
+                                <ul class="ds-check-list">
+
+
+                                    <li>
+
+                                        <img src="image/tick green.svg" alt="" class="ds-check-list__icon">
+
+                                        Component Property
+
+                                    </li>
+
+
+                                    <li>
+
+                                        <img src="image/tick green.svg" alt="" class="ds-check-list__icon">
+
+                                        Auto Layout
+
+                                    </li>
+
+
+                                    <li>
+
+                                        <img src="image/tick green.svg" alt="" class="ds-check-list__icon">
+
+                                        Component Variation
+
+                                    </li>
+
+
+                                    <li>
+
+                                        <img src="image/tick green.svg" alt="" class="ds-check-list__icon">
+
+                                        Nested Component
+
+                                    </li>
+
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+
 
                     </div>
 
@@ -1400,180 +2469,9 @@
         </section>
 
 
-        <!-- ==================================================
-             08. KEY SCREEN & INFORMATION ARCHITECTURE
-        =================================================== -->
-        <section class="project-section" id="key-screen">
 
-            <h2 class="capsule fw-semibold capsule-border-project project-section__title">
-                Key Screen &amp; Information Architecture
-            </h2>
 
 
-            <p class="fs-6 fw-semibold mt-3 mb-2">
-                Sitemap Iteration Process:
-            </p>
-
-            <p class="m-0">
-                The website contained several important pages and
-                information areas. The sitemap was structured to
-                prioritise the content that visitors need most when
-                evaluating the company's services and capabilities.
-            </p>
-
-
-            <div class="rounded-4 mt-3 sitemap-image-container position-relative" id="sitemapContainer">
-
-
-                <!-- Loading -->
-                <div id="sitemapLoader" class="d-flex flex-column align-items-center justify-content-center gap-2">
-
-                    <div class="spinner-border text-secondary" role="status">
-
-                        <span class="visually-hidden">
-                            Loading...
-                        </span>
-
-                    </div>
-
-                    <p class="small m-0 text-muted">
-                        Loading sitemap...
-                    </p>
-
-                </div>
-
-
-                <!-- Image -->
-                <img loading="lazy" id="sitemapImage" src="image/1zero/Sitemap.png" alt="1zero Sitemap"
-                    class="w-100 zoom-image sitemap-image lazy-img">
-
-            </div>
-
-        </section>
-
-
-        <!-- ==================================================
-             09. DESIGN SYSTEM
-        =================================================== -->
-        <section class="project-section" id="design-system">
-
-            <div class="project-surface-muted rounded-4 p-4 p-md-5">
-
-                <h2 class="capsule fw-semibold capsule-border-project project-section__title">
-                    Simple Design System &amp; Variant Prototyping
-                </h2>
-
-
-                <div class="row g-4 mt-3">
-
-                    <!-- Typography -->
-                    <div class="col-12 col-md-6 mt-5">
-
-                        <p class="mb-0 fw-semibold">
-                            Typography
-                        </p>
-
-                        <img loading="lazy" alt="1zero Typography" class="w-100 mt-2 rounded-4 zoom-image lazy-img"
-                            src="image/1zero/Typography.png" style="object-fit:contain;" />
-
-                    </div>
-
-
-                    <!-- Color -->
-                    <div class="col-12 col-md-6 mt-5">
-
-                        <p class="mb-0 fw-semibold">
-                            Color Palette
-                        </p>
-
-                        <img loading="lazy" alt="1zero Color Palette" class="w-100 mt-2 rounded-4 zoom-image lazy-img"
-                            src="image/1zero/Color.png" style="object-fit:contain;" />
-
-                    </div>
-
-
-                    <!-- Button -->
-                    <div class="col-12 col-md-6 mt-5">
-
-                        <p class="mb-0 fw-semibold">
-                            Button Components
-                        </p>
-
-                        <img loading="lazy" alt="1zero Button Components"
-                            class="w-100 mt-2 rounded-4 zoom-image lazy-img" src="image/1zero/Button.png"
-                            style="object-fit:contain;" />
-
-                    </div>
-
-
-                    <!-- Components -->
-                    <div class="col-12 col-md-6 mt-5">
-
-                        <p class="mb-0 fw-semibold">
-                            Components
-                        </p>
-
-                        <img loading="lazy" alt="1zero Components" class="w-100 mt-2 rounded-4 zoom-image lazy-img"
-                            src="image/1zero/Components.png" style="object-fit:contain;" />
-
-                    </div>
-
-
-                    <!-- Responsive -->
-                    <div class="col-12">
-
-                        <p class="mb-0 fw-semibold">
-                            Responsive UI
-                        </p>
-
-                        <img loading="lazy" alt="1zero Responsive UI" class="w-100 mt-2 rounded-4 zoom-image lazy-img"
-                            src="image/1zero/Responsive UI.png" style="object-fit:contain;" />
-
-                    </div>
-
-
-                    <!-- Figma Techniques -->
-                    <div class="col-12 col-md-6 mt-5">
-
-                        <p class="mt-3 text-16 fw-bold">
-                            Figma Techniques
-                        </p>
-
-                        <ul class="check-list">
-
-                            <li>
-                                <img src="image/tick green.svg" alt="" class="check-list__icon">
-
-                                Component Property
-                            </li>
-
-                            <li>
-                                <img src="image/tick green.svg" alt="" class="check-list__icon">
-
-                                Auto Layout
-                            </li>
-
-                            <li>
-                                <img src="image/tick green.svg" alt="" class="check-list__icon">
-
-                                Component Variation
-                            </li>
-
-                            <li>
-                                <img src="image/tick green.svg" alt="" class="check-list__icon">
-
-                                Nested Component
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
 
 
         <!-- ==================================================
