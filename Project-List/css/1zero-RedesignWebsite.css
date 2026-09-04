@@ -173,6 +173,9 @@
 ================================================== */
 
 .sitemap-children {
+    --sitemap-node-width: 150px;
+    --sitemap-children-padding: 1.5rem;
+
     position: relative;
 
     display: flex;
@@ -181,10 +184,12 @@
 
     gap: 1.25rem;
 
+    width: max-content;
     min-width: max-content;
+    margin-inline: auto;
 
     /* Space for the vertical connectors */
-    padding: 30px 1.5rem 0;
+    padding: 30px var(--sitemap-children-padding) 0;
 }
 
 
@@ -194,9 +199,9 @@
 
     position: absolute;
 
-    top: 30px;
-    left: 0;
-    right: 0;
+    top: 0;
+    left: calc(var(--sitemap-children-padding) + (var(--sitemap-node-width) / 2));
+    right: calc(var(--sitemap-children-padding) + (var(--sitemap-node-width) / 2));
 
     border-top: 1px solid currentColor;
 }
@@ -208,7 +213,7 @@
 
     flex: 0 0 auto;
 
-    min-width: 150px;
+    min-width: var(--sitemap-node-width);
 
     margin-top: 0;
 }
@@ -247,16 +252,16 @@
     }
 
     .sitemap-children {
+        --sitemap-node-width: 130px;
+
         justify-content: flex-start;
 
         gap: 1rem;
 
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
     }
 
     .sitemap-children .sitemap-node {
-        min-width: 130px;
+        min-width: var(--sitemap-node-width);
     }
 
 }
