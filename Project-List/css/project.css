@@ -486,7 +486,7 @@
 
 @media (max-width: 767.98px) {
   .media-marquee__image[width][height] {
-    height: 70vh;
+    height: 25vh;
   }
 }
 

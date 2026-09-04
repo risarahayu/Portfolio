@@ -917,9 +917,11 @@ document.addEventListener("DOMContentLoaded", () => {
 // some galleries (e.g. a UI mockup marquee) just need a clean
 // fullscreen look, not pan/zoom.
 // ==========================================================
-(function setupImagePreviewModal() {
+(function setupMediaPreviewModal() {
 
-  const triggers = document.querySelectorAll("img.preview-image");
+  const triggers = document.querySelectorAll(
+    "img.preview-image, video.preview-image"
+  );
 
   if (triggers.length === 0) return;
 
@@ -931,28 +933,86 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="modal-dialog modal-fullscreen">
           <div class="modal-content">
 
-            <button type="button" class="btn-close image-preview-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button 
+              type="button" 
+              class="btn-close image-preview-close" 
+              data-bs-dismiss="modal" 
+              aria-label="Close">
+            </button>
 
             <div class="modal-body image-preview-body">
-              <img class="image-preview-img" alt="">
+
+              <img 
+                class="image-preview-img" 
+                alt=""
+              >
+
+              <video 
+                class="image-preview-video"
+                controls
+  autoplay
+  playsinline
+              </video>
+
             </div>
 
           </div>
         </div>
       </div>
     `);
+
     modal = document.getElementById("imagePreviewModal");
   }
 
   const modalImage = modal.querySelector(".image-preview-img");
+  const modalVideo = modal.querySelector(".image-preview-video");
+
   const bsModal = new bootstrap.Modal(modal);
 
   triggers.forEach((trigger) => {
+
     trigger.addEventListener("click", () => {
-      modalImage.src = trigger.currentSrc || trigger.src;
-      modalImage.alt = trigger.alt || "";
+
+      // IMAGE
+      if (trigger.tagName === "IMG") {
+
+        modalVideo.pause();
+        modalVideo.removeAttribute("src");
+        modalVideo.style.display = "none";
+
+        modalImage.src = trigger.currentSrc || trigger.src;
+        modalImage.alt = trigger.alt || "";
+        modalImage.style.display = "block";
+
+      }
+
+      // VIDEO
+      if (trigger.tagName === "VIDEO") {
+
+        modalImage.removeAttribute("src");
+        modalImage.style.display = "none";
+
+        modalVideo.src = trigger.currentSrc || trigger.src;
+        modalVideo.style.display = "block";
+
+        modalVideo.currentTime = 0;
+
+      }
+
       bsModal.show();
+
     });
+
+  });
+
+  // Stop video when modal is closed
+  modal.addEventListener("hidden.bs.modal", () => {
+
+    modalVideo.pause();
+    modalVideo.removeAttribute("src");
+
+    modalImage.removeAttribute("src");
+
   });
 
 })();
@@ -1038,3 +1098,4 @@ if (sitemapImage && sitemapLoader) {
 }
 
 lucide.createIcons();
+
