@@ -124,6 +124,22 @@ const projectsData = [
       "Project-List/image/1zero/social-media-copy.png"
     ]
   },
+  {
+    id: 4,
+    projectTitle: "1zero - Redesign Website",
+    company: "1zero",
+    companyURL: "https://1zero.biz",
+    projectURL: "Project-List/1zero-landing-page-redesign.html",
+    description: "A business consulting landing page redesign that aims to improve clarity, user experience, and the presentation of business credibility and services.",
+    impact: ["Clearer Service Presentation", "Stronger Business Credibility", "Improved User Journey"],
+    role: ["UI/UX", "Web Development"],
+    projectType: ["Redesign", "Platform Building"],
+    tools: ["Figma", "React JS", "HTML", "Tailwind"],
+    images: [
+      "image/portfolio img/UIUX/1zero landing page.jpg",
+      "image/portfolio img/UIUX/1zero landing page 2.jpg"
+    ]
+  },
   // {
   //   id: 4,
   //   projectTitle: "Stray Dog Adoption Website",
