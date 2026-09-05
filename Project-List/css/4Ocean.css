@@ -21,13 +21,14 @@
    Process discovery — 3-step flow with connector callouts between steps.
    4ocean-only: BaliTeak has no equivalent multi-step flow diagram.
 
-   Each connector is absolutely positioned relative to its own column using
-   left:100% + translateX(-50%): this always centers it on that column's
-   right edge, however wide the column happens to be, so it stays correct
-   at any desktop width with no hardcoded coordinates. Below the row's
-   breakpoint the columns stack, so the connector is switched back to
-   normal static flow — its position in the markup (right after the column
-   it follows) already reads top-to-bottom in the right order.
+   Each connector lives inside the column it points into (as the first
+   child, before that column's header) and is absolutely positioned with
+   left:50% + translateX(-50%): this always centers it above that column,
+   however wide the column happens to be, so it stays correct at any
+   desktop width with no hardcoded coordinates. Below the row's breakpoint
+   the columns stack, so the connector is switched back to normal static
+   flow — sitting right before the column-header it precedes in the
+   markup, it already reads top-to-bottom in the right order.
    ========================================================================== */
 .text-primary-soft {
   color: var(--project-primary-soft);
@@ -108,8 +109,8 @@
 
 .process-discovery__connector {
   position: absolute;
-  left: 119%;
-  bottom: 93%;
+  left: 50%;
+  bottom: 100%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
@@ -142,7 +143,7 @@
   .process-discovery__connector {
     position: static;
     transform: none;
-    margin: clamp(1.5rem, 6vw, 2rem) 0 0;
+    margin: 0 0 clamp(1.5rem, 6vw, 2rem);
     white-space: normal;
   }
 
