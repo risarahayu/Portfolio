@@ -260,3 +260,96 @@
     }
 
 }
+
+/* =========================================================
+   FIGMA VARIABLES
+========================================================= */
+
+.ds-variables-accordion {
+    margin-top: 0.75rem;
+}
+
+.ds-variables-accordion .accordion-item {
+    background: var(--sea-salt);
+    border: 0;
+}
+
+.ds-variables-accordion .accordion-button {
+    background: var(--sea-salt);
+    color: var(--raisin-black);
+    padding: 1rem 1.25rem;
+    box-shadow: none;
+    border-radius: 1rem !important;
+}
+
+.ds-variables-accordion .accordion-button:not(.collapsed) {
+    background: var(--ivory);
+    color: var(--brunswick-green);
+    box-shadow: none;
+}
+
+.ds-variables-accordion .accordion-button:focus {
+    box-shadow: 0 0 0 0.2rem rgba(29, 87, 69, 0.12);
+}
+
+.ds-variables-accordion .accordion-body {
+    background: var(--ivory);
+}
+
+
+/* =========================================================
+   FIGMA SCREENSHOT PLACEHOLDER
+========================================================= */
+
+.ds-figma-placeholder {
+    width: 100%;
+    min-height: 360px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2rem;
+
+    background:
+        linear-gradient(135deg,
+            rgba(29, 87, 69, 0.04),
+            rgba(214, 202, 173, 0.18));
+
+    border: 1px dashed rgba(29, 87, 69, 0.25);
+
+    border-radius: 1rem;
+
+    text-align: center;
+}
+
+.ds-figma-placeholder__content {
+    max-width: 420px;
+}
+
+.ds-figma-placeholder__label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.45rem 0.8rem;
+
+    margin-bottom: 0.75rem;
+
+    border-radius: 999px;
+
+    background: rgba(29, 87, 69, 0.08);
+
+    color: var(--brunswick-green);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+}
+
+.ds-figma-placeholder p {
+    color: rgba(39, 39, 39, 0.55);
+    font-size: 0.8rem;
+    line-height: 1.6;
+}
