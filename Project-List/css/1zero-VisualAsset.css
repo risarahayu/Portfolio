@@ -1,0 +1,122 @@
+/* ==========================================================================
+   1zero Visual Asset — page-specific widgets with no analog on the other
+   project pages (brand color swatches, the "no asset yet" placeholder).
+   Everything else this page uses lives in css/project.css and css/1zero.css,
+   shared with 1zero-landing-page-redesign.html and 1zero-ai-content-generation.html.
+   ========================================================================== */
+
+/* No dedicated Hero.png exists for this project yet, so the hero banner
+   reuses the new LinkedIn company cover as a stand-in — swap this for a
+   purpose-built banner whenever one is ready. */
+:root {
+  --project-hero-image: url('../image/1zero/Visual Asset/Linekdin Cover - company account.svg');
+}
+
+.project-hero__banner {
+  background-color: #0a0a0a;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* ==========================================================================
+   Brand color swatches — Brand Colors subsection.
+   ========================================================================== */
+
+.brand-color-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.brand-color-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-color-item__swatch {
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(39, 39, 39, 0.12);
+}
+
+.brand-color-item__name {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.brand-color-item__hex {
+  margin: 0;
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: rgba(39, 39, 39, 0.55);
+}
+
+/* ==========================================================================
+   "No asset yet" placeholder — PPT Slide Master (still the old deck, no
+   redesigned version to show yet).
+   ========================================================================== */
+
+.visual-asset-placeholder {
+  width: 100%;
+  min-height: 220px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2rem;
+
+  background: linear-gradient(135deg,
+      rgba(29, 87, 69, 0.04),
+      rgba(214, 202, 173, 0.18));
+
+  border: 1px dashed rgba(29, 87, 69, 0.25);
+
+  border-radius: 1rem;
+
+  text-align: center;
+}
+
+.visual-asset-placeholder__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.45rem 0.8rem;
+
+  border-radius: 999px;
+
+  background: rgba(29, 87, 69, 0.08);
+
+  color: var(--project-primary);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.visual-asset-placeholder p {
+  color: rgba(39, 39, 39, 0.55);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Tall/narrow board images (Email Signature, LinkedIn Personal Cover) —
+   these are Figma exploration boards with a portrait aspect ratio, so a
+   full-bleed w-100 would stretch them awkwardly wide on desktop.
+   ========================================================================== */
+
+.visual-asset-image--capped {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  margin-inline: auto;
+}
