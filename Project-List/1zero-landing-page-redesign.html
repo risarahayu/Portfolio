@@ -1115,6 +1115,11 @@
                         letter-spacing: 0.08em;
                     }
 
+                    .ds-badge.active {
+                        color: #fff !important;
+                        background-color: var(--brunswick-green) !important;
+                    }
+
 
                     /* =========================================================
        COLOR SWATCH
@@ -2206,6 +2211,8 @@
                                 src="image/1zero/Redesign Website/Card.svg" style="object-fit:contain;">
                             <img loading="lazy" alt="1zero Components" class="w-100 mt-2 rounded-4 zoom-image lazy-img"
                                 src="image/1zero/Redesign Website/Icon.svg" style="object-fit:contain;">
+                            <img loading="lazy" alt="1zero Components" class="w-100 mt-2 rounded-4 zoom-image lazy-img"
+                                src="image/1zero/Redesign Website/Nav (1).svg" style="object-fit:contain;">
                         </div>
 
                         <!-- =========================================================
@@ -3082,7 +3089,7 @@
                 <ul class="nav nav-pills gap-2 mb-3" id="anotherPagesTabs" role="tablist">
 
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active rounded-pill px-3" id="services-tab" data-bs-toggle="pill"
+                        <button class="nav-link active rounded-pill px-3 ds-badge" id="services-tab" data-bs-toggle="pill"
                             data-bs-target="#services-page" type="button" role="tab" aria-controls="services-page"
                             aria-selected="true">
                             Services
@@ -3090,7 +3097,7 @@
                     </li>
 
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link rounded-pill px-3" id="about-tab" data-bs-toggle="pill"
+                        <button class="nav-link rounded-pill px-3 ds-badge" id="about-tab" data-bs-toggle="pill"
                             data-bs-target="#about-page" type="button" role="tab" aria-controls="about-page"
                             aria-selected="false">
                             About
@@ -3098,10 +3105,18 @@
                     </li>
 
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link rounded-pill px-3" id="contact-tab" data-bs-toggle="pill"
+                        <button class="nav-link rounded-pill px-3 ds-badge" id="contact-tab" data-bs-toggle="pill"
                             data-bs-target="#contact-page" type="button" role="tab" aria-controls="contact-page"
                             aria-selected="false">
                             Contact
+                        </button>
+                    </li>
+
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link rounded-pill px-3 ds-badge" id="portfolio-tab" data-bs-toggle="pill"
+                            data-bs-target="#portfolio-page" type="button" role="tab" aria-controls="portfolio-page"
+                            aria-selected="false">
+                            Portfolio
                         </button>
                     </li>
 
@@ -3119,9 +3134,7 @@
 
                             <div class="ds-figma-placeholder__content">
 
-                                <span class="ds-badge">
-                                    Services Page
-                                </span>
+                                <img src="image/1zero/Redesign Website/service-page.png" class="img-fluid" alt="1zero Services Page">
 
                                 <p class="mb-0 mt-3">
                                     Detailed view of the 1zero Services page
@@ -3142,9 +3155,7 @@
 
                             <div class="ds-figma-placeholder__content">
 
-                                <span class="ds-badge">
-                                    About Page
-                                </span>
+                                <img src="image/1zero/Redesign Website/about-page.png" class="img-fluid" alt="1zero About Page">
 
                                 <p class="mb-0 mt-3">
                                     Detailed view of the 1zero About page
@@ -3169,12 +3180,28 @@
 
                             <div class="ds-figma-placeholder__content">
 
-                                <span class="ds-badge">
-                                    Contact Page
-                                </span>
+                                <img src="image/1zero/Redesign Website/contact-page.png" class="img-fluid" alt="1zero Contact Page">
 
                                 <p class="mb-0 mt-3">
                                     Detailed view of the 1zero Contact page
+                                    and its responsive layout.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio -->
+                    <div class="tab-pane fade" id="portfolio-page" role="tabpanel" aria-labelledby="portfolio-tab"
+                        tabindex="0">
+
+                        <div class="ds-figma-placeholder">
+
+                            <div class="ds-figma-placeholder__content">
+
+                                <img src="image/1zero/Redesign Website/portfolio-page.png" class="img-fluid" alt="1zero Portfolio Page">
+
+                                <p class="mb-0 mt-3">
+                                    Detailed view of the 1zero Portfolio page
                                     and its responsive layout.
                                 </p>
                             </div>
@@ -3952,9 +3979,7 @@
 
                             <div class="ds-figma-placeholder__content">
 
-                                <span class="ds-badge">
-                                    GIF / Video
-                                </span>
+                                <img src="image/1zero/Redesign Website/animation-button.gif" class="img-fluid" alt="Button Hover Interaction">
 
                                 <p class="mb-0 mt-2">
                                     Button hover & interaction
@@ -4070,12 +4095,10 @@
 
                             <div class="ds-figma-placeholder__content">
 
-                                <span class="ds-badge">
-                                    GIF / Video
-                                </span>
+                                <img src="image/1zero/Redesign Website/animation-card.gif" class="img-fluid" alt="Portfolio Card Hover Interaction">
 
                                 <p class="mb-0 mt-2">
-                                    Card hover interaction
+                                    Portfolio card hover interaction
                                 </p>
 
                             </div>
@@ -4093,6 +4116,177 @@
                                 Hover states create a subtle sense of depth and
                                 provide visual feedback to indicate that the card
                                 is interactive.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ==========================================
+             SERVICE CARD INTERACTION
+        =========================================== -->
+                <div class="col-12 col-md-4">
+
+                    <div class="interaction-card h-100">
+
+                        <div class="d-flex align-items-center gap-2 mb-3">
+
+                            <span class="ds-badge">
+                                Service Card
+                            </span>
+
+                            <span class="small text-muted">
+                                Hover State
+                            </span>
+
+                        </div>
+
+
+                        <!-- GIF / Video Placeholder -->
+
+                        <div class="ds-figma-placeholder">
+
+                            <div class="ds-figma-placeholder__content">
+
+                                <img src="image/1zero/Redesign Website/animation-card-1.gif" class="img-fluid" alt="Service Card Hover Interaction">
+
+                                <p class="mb-0 mt-2">
+                                    Service card hover interaction
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="mt-3">
+
+                            <span class="small text-muted">
+                                Interaction
+                            </span>
+
+                            <p class="mt-2 mb-0">
+                                Service cards highlight their border on hover,
+                                helping users quickly identify which service
+                                they are about to explore.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ==========================================
+             NAVIGATION INTERACTION
+        =========================================== -->
+                <div class="col-12 col-md-4">
+
+                    <div class="interaction-card h-100">
+
+                        <div class="d-flex align-items-center gap-2 mb-3">
+
+                            <span class="ds-badge">
+                                Navigation
+                            </span>
+
+                            <span class="small text-muted">
+                                Scroll Behaviour
+                            </span>
+
+                        </div>
+
+
+                        <!-- GIF / Video Placeholder -->
+
+                        <div class="ds-figma-placeholder">
+
+                            <div class="ds-figma-placeholder__content">
+
+                                <img src="image/1zero/Redesign Website/animation-nav.gif" class="img-fluid" alt="Sticky Navigation on Scroll">
+
+                                <p class="mb-0 mt-2">
+                                    Sticky navigation on scroll
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="mt-3">
+
+                            <span class="small text-muted">
+                                Interaction
+                            </span>
+
+                            <p class="mt-2 mb-0">
+                                The navigation bar stays accessible while
+                                scrolling, keeping primary links and the
+                                call-to-action within reach at all times.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ==========================================
+             BLOG CARD INTERACTION
+        =========================================== -->
+                <div class="col-12 col-md-4">
+
+                    <div class="interaction-card h-100">
+
+                        <div class="d-flex align-items-center gap-2 mb-3">
+
+                            <span class="ds-badge">
+                                Blog Card
+                            </span>
+
+                            <span class="small text-muted">
+                                Hover State
+                            </span>
+
+                        </div>
+
+
+                        <!-- GIF / Video Placeholder -->
+
+                        <div class="ds-figma-placeholder">
+
+                            <div class="ds-figma-placeholder__content">
+
+                                <img src="image/1zero/Redesign Website/animation-card-2.gif" class="img-fluid" alt="Blog Card Hover Interaction">
+
+                                <p class="mb-0 mt-2">
+                                    Blog card hover interaction
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="mt-3">
+
+                            <span class="small text-muted">
+                                Interaction
+                            </span>
+
+                            <p class="mt-2 mb-0">
+                                Blog cards reveal quick actions like download
+                                and share on hover, keeping the interface clean
+                                until they're needed.
                             </p>
 
                         </div>

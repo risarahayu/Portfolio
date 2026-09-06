@@ -641,7 +641,8 @@ function renderBreadcrumb() {
     "BaliTeak": "Bali Teak - Redesign Website",
     "4ocean": "4ocean - Website Redesign",
     "mission-pawsible": "Mission Pawsible",
-    "1zero-ai-content-generation": "1zero - AI-Assisted Content Generation"
+    "1zero-ai-content-generation": "1zero - AI-Assisted Content Generation",
+    "1zero-visual-asset": "1zero - Visual Asset & Brand Collateral"
   };
 
   const currentPageName = pageNames[currentPage] || currentPage;
