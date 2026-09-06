@@ -1115,6 +1115,11 @@
                         letter-spacing: 0.08em;
                     }
 
+                    .ds-badge.active {
+                        color: #fff !important;
+                        background-color: var(--brunswick-green) !important;
+                    }
+
 
                     /* =========================================================
        COLOR SWATCH
@@ -3082,7 +3087,7 @@
                 <ul class="nav nav-pills gap-2 mb-3" id="anotherPagesTabs" role="tablist">
 
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active rounded-pill px-3" id="services-tab" data-bs-toggle="pill"
+                        <button class="nav-link active rounded-pill px-3 ds-badge" id="services-tab" data-bs-toggle="pill"
                             data-bs-target="#services-page" type="button" role="tab" aria-controls="services-page"
                             aria-selected="true">
                             Services
@@ -3090,7 +3095,7 @@
                     </li>
 
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link rounded-pill px-3" id="about-tab" data-bs-toggle="pill"
+                        <button class="nav-link rounded-pill px-3 ds-badge" id="about-tab" data-bs-toggle="pill"
                             data-bs-target="#about-page" type="button" role="tab" aria-controls="about-page"
                             aria-selected="false">
                             About
@@ -3098,10 +3103,18 @@
                     </li>
 
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link rounded-pill px-3" id="contact-tab" data-bs-toggle="pill"
+                        <button class="nav-link rounded-pill px-3 ds-badge" id="contact-tab" data-bs-toggle="pill"
                             data-bs-target="#contact-page" type="button" role="tab" aria-controls="contact-page"
                             aria-selected="false">
                             Contact
+                        </button>
+                    </li>
+
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link rounded-pill px-3 ds-badge" id="portfolio-tab" data-bs-toggle="pill"
+                            data-bs-target="#portfolio-page" type="button" role="tab" aria-controls="portfolio-page"
+                            aria-selected="false">
+                            Portfolio
                         </button>
                     </li>
 
@@ -3119,9 +3132,7 @@
 
                             <div class="ds-figma-placeholder__content">
 
-                                <span class="ds-badge">
-                                    Services Page
-                                </span>
+                                <img src="image/1zero/Redesign Website/service-page.png" class="img-fluid" alt="1zero Services Page">
 
                                 <p class="mb-0 mt-3">
                                     Detailed view of the 1zero Services page
@@ -3142,9 +3153,7 @@
 
                             <div class="ds-figma-placeholder__content">
 
-                                <span class="ds-badge">
-                                    About Page
-                                </span>
+                                <img src="image/1zero/Redesign Website/about-page.png" class="img-fluid" alt="1zero About Page">
 
                                 <p class="mb-0 mt-3">
                                     Detailed view of the 1zero About page
@@ -3169,12 +3178,28 @@
 
                             <div class="ds-figma-placeholder__content">
 
-                                <span class="ds-badge">
-                                    Contact Page
-                                </span>
+                                <img src="image/1zero/Redesign Website/contact-page.png" class="img-fluid" alt="1zero Contact Page">
 
                                 <p class="mb-0 mt-3">
                                     Detailed view of the 1zero Contact page
+                                    and its responsive layout.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio -->
+                    <div class="tab-pane fade" id="portfolio-page" role="tabpanel" aria-labelledby="portfolio-tab"
+                        tabindex="0">
+
+                        <div class="ds-figma-placeholder">
+
+                            <div class="ds-figma-placeholder__content">
+
+                                <img src="image/1zero/Redesign Website/portfolio-page.png" class="img-fluid" alt="1zero Portfolio Page">
+
+                                <p class="mb-0 mt-3">
+                                    Detailed view of the 1zero Portfolio page
                                     and its responsive layout.
                                 </p>
                             </div>
