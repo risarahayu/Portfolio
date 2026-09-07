@@ -1278,6 +1278,24 @@
 
                         flex-shrink: 0;
                     }
+
+
+                    /* =========================================================
+       NOTE CALLOUT
+    ========================================================= */
+
+                    .ds-note {
+                        padding: 0.85rem 1.1rem;
+
+                        border-left: 3px solid rgba(29, 87, 69, 0.35);
+                        border-radius: 0 0.6rem 0.6rem 0;
+
+                        background: rgba(29, 87, 69, 0.05);
+
+                        font-size: 0.85rem;
+                        line-height: 1.6;
+                        color: rgba(39, 39, 39, 0.75);
+                    }
                 </style>
 
 
@@ -2174,31 +2192,10 @@
 
                         </div>
 
-
-
-
-
-                        <!-- =====================================================
-                            BUTTONS
-                        ====================================================== -->
-                        <div class="col-12 col-md-6 mt-5">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <p class="mb-0 fw-semibold">
-                                    Button Components
-                                </p>
-                                <span class="ds-badge">
-                                    Interaction
-                                </span>
-                            </div>
-                            <img loading="lazy" alt="1zero Button Components"
-                                class="w-100 mt-2 rounded-4 zoom-image lazy-img"
-                                src="image/1zero/Redesign Website/Button.svg" style="object-fit:contain;">
-                        </div>
-
                         <!-- =====================================================
                             COMPONENTS
                         ====================================================== -->
-                        <div class="col-12 col-md-6 mt-5">
+                        <div class="col-12 mt-5">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <p class="mb-0 fw-semibold">
                                     Components
@@ -2207,800 +2204,67 @@
                                     UI Library
                                 </span>
                             </div>
-                            <img loading="lazy" alt="1zero Components" class="w-100 mt-2 rounded-4 zoom-image lazy-img"
-                                src="image/1zero/Redesign Website/Card.svg" style="object-fit:contain;">
-                            <img loading="lazy" alt="1zero Components" class="w-100 mt-2 rounded-4 zoom-image lazy-img"
-                                src="image/1zero/Redesign Website/Icon.svg" style="object-fit:contain;">
-                            <img loading="lazy" alt="1zero Components" class="w-100 mt-2 rounded-4 zoom-image lazy-img"
-                                src="image/1zero/Redesign Website/Nav (1).svg" style="object-fit:contain;">
-                        </div>
 
-                        <!-- =========================================================
-     RESPONSIVE UI
-========================================================= -->
-
-                        <div class="col-12 mt-5">
-
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-
-                                <p class="mb-0 fw-semibold">
-                                    Responsive UI
-                                </p>
-
-                                <span class="ds-badge">
-                                    Responsive Design
-                                </span>
-
+                            <p class="mb-0 fw-semibold mt-3 mb-2">Button</p>
+                            <div class="row">
+                                <div class="col-12 col-md-4">
+                                    <img loading="lazy" alt="1zero Components" class="w-100 mt-2 rounded-4 zoom-image lazy-img"
+                                        src="image/1zero/Redesign Website/component-button.png" style="object-fit:contain;">
+                                </div>
+                                <div class="col-12 col-md-8">
+                                    <img loading="lazy" alt="1zero Components" class="w-100 mt-2 rounded-4 zoom-image lazy-img"
+                                        src="image/1zero/Redesign Website/component-button.svg" style="object-fit:contain;">
+                                </div>
                             </div>
 
-                            <p class="ds-description mb-3">
-                                Each section was adapted across desktop, tablet, and mobile
-                                breakpoints to maintain visual hierarchy, usability, and
-                                consistency across screen sizes.
-                            </p>
-
-
-                            <!-- =====================================================
-         RESPONSIVE ACCORDION
-    ====================================================== -->
-
-                            <div class="accordion ds-variables-accordion" id="responsiveUIAccordion">
-
-
-                                <!-- =================================================
-             01. HERO
-        ================================================== -->
-
-                                <div class="accordion-item border-0 rounded-4 overflow-hidden">
-
-                                    <h3 class="accordion-header">
-
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#responsiveHero"
-                                            aria-expanded="false" aria-controls="responsiveHero">
-
-                                            <div class="d-flex flex-column text-start gap-1">
-
-                                                <span class="ds-label">
-                                                    Hero Section
-                                                </span>
-
-                                                <small class="ds-description">
-                                                    Main introduction area with primary messaging
-                                                    and booking CTA.
-                                                </small>
-
-                                            </div>
-
-                                        </button>
-
-                                    </h3>
-
-
-                                    <div id="responsiveHero" class="accordion-collapse collapse"
-                                        data-bs-parent="#responsiveUIAccordion">
-
-                                        <div class="accordion-body p-3 p-md-4">
-
-                                            <div class="row g-3">
-
-                                                <!-- Desktop -->
-                                                <div class="col-12 col-md-4">
-
-                                                    <div class="ds-responsive-preview">
-
-                                                        <span class="ds-figma-placeholder__label">
-                                                            DESKTOP
-                                                        </span>
-
-                                                        <div class="ds-figma-placeholder">
-                                                            <div class="ds-figma-placeholder__content">
-                                                                <p class="mb-0">
-                                                                    Hero — Desktop
-                                                                </p>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-
-
-                                                <!-- Tablet -->
-                                                <div class="col-12 col-md-4">
-
-                                                    <div class="ds-responsive-preview">
-
-                                                        <span class="ds-figma-placeholder__label">
-                                                            TABLET
-                                                        </span>
-
-                                                        <div class="ds-figma-placeholder">
-                                                            <div class="ds-figma-placeholder__content">
-                                                                <p class="mb-0">
-                                                                    Hero — Tablet
-                                                                </p>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-
-
-                                                <!-- Mobile -->
-                                                <div class="col-12 col-md-4">
-
-                                                    <div class="ds-responsive-preview">
-
-                                                        <span class="ds-figma-placeholder__label">
-                                                            MOBILE
-                                                        </span>
-
-                                                        <div class="ds-figma-placeholder">
-                                                            <div class="ds-figma-placeholder__content">
-                                                                <p class="mb-0">
-                                                                    Hero — Mobile
-                                                                </p>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
+                            <p class="mb-0 fw-semibold mt-3 mb-2">Card Member</p>
+                            <div class="row">
+                                <div class="col-12 col-md-4">
+                                    <img loading="lazy" alt="1zero Components" class="w-100 mt-2 rounded-4 zoom-image lazy-img"
+                                        src="image/1zero/Redesign Website/component-card-member.png" style="object-fit:contain;">
                                 </div>
-
-
-                                <!-- =================================================
-             02. PRODUCTS
-        ================================================== -->
-
-                                <div class="accordion-item border-0 rounded-4 overflow-hidden mt-2">
-
-                                    <h3 class="accordion-header">
-
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#responsiveProducts"
-                                            aria-expanded="false" aria-controls="responsiveProducts">
-
-                                            <div class="d-flex flex-column text-start gap-1">
-
-                                                <span class="ds-label">
-                                                    Products / What We Do
-                                                </span>
-
-                                                <small class="ds-description">
-                                                    Bento grid presenting the agency's core
-                                                    products and capabilities.
-                                                </small>
-
-                                            </div>
-
-                                        </button>
-
-                                    </h3>
-
-
-                                    <div id="responsiveProducts" class="accordion-collapse collapse"
-                                        data-bs-parent="#responsiveUIAccordion">
-
-                                        <div class="accordion-body p-3 p-md-4">
-
-                                            <div class="row g-3">
-
-                                                <div class="col-12 col-md-4">
-
-                                                    <span class="ds-figma-placeholder__label">
-                                                        DESKTOP
-                                                    </span>
-
-                                                    <div class="ds-figma-placeholder mt-2">
-                                                        <div class="ds-figma-placeholder__content">
-                                                            <p class="mb-0">
-                                                                Products — Desktop
-                                                            </p>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-
-
-                                                <div class="col-12 col-md-4">
-
-                                                    <span class="ds-figma-placeholder__label">
-                                                        TABLET
-                                                    </span>
-
-                                                    <div class="ds-figma-placeholder mt-2">
-                                                        <div class="ds-figma-placeholder__content">
-                                                            <p class="mb-0">
-                                                                Products — Tablet
-                                                            </p>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-
-
-                                                <div class="col-12 col-md-4">
-
-                                                    <span class="ds-figma-placeholder__label">
-                                                        MOBILE
-                                                    </span>
-
-                                                    <div class="ds-figma-placeholder mt-2">
-                                                        <div class="ds-figma-placeholder__content">
-                                                            <p class="mb-0">
-                                                                Products — Mobile
-                                                            </p>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
+                                <div class="col-12 col-md-8">
+                                    <img loading="lazy" alt="1zero Components" class="w-100 mt-2 rounded-4 zoom-image lazy-img"
+                                        src="image/1zero/Redesign Website/component-card-member.svg" style="object-fit:contain;">
                                 </div>
-
-
-                                <!-- =================================================
-             03. PORTFOLIO
-        ================================================== -->
-
-                                <div class="accordion-item border-0 rounded-4 overflow-hidden mt-2">
-
-                                    <h3 class="accordion-header">
-
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#responsivePortfolio"
-                                            aria-expanded="false" aria-controls="responsivePortfolio">
-
-                                            <div class="d-flex flex-column text-start gap-1">
-
-                                                <span class="ds-label">
-                                                    Portfolio
-                                                </span>
-
-                                                <small class="ds-description">
-                                                    Featured projects presented through a responsive
-                                                    carousel layout.
-                                                </small>
-
-                                            </div>
-
-                                        </button>
-
-                                    </h3>
-
-
-                                    <div id="responsivePortfolio" class="accordion-collapse collapse"
-                                        data-bs-parent="#responsiveUIAccordion">
-
-                                        <div class="accordion-body p-3 p-md-4">
-
-                                            <div class="row g-3">
-
-                                                <div class="col-12 col-md-4">
-                                                    <span class="ds-figma-placeholder__label">
-                                                        DESKTOP
-                                                    </span>
-
-                                                    <div class="ds-figma-placeholder mt-2">
-                                                        <div class="ds-figma-placeholder__content">
-                                                            <p class="mb-0">
-                                                                Portfolio — Desktop
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="col-12 col-md-4">
-                                                    <span class="ds-figma-placeholder__label">
-                                                        TABLET
-                                                    </span>
-
-                                                    <div class="ds-figma-placeholder mt-2">
-                                                        <div class="ds-figma-placeholder__content">
-                                                            <p class="mb-0">
-                                                                Portfolio — Tablet
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="col-12 col-md-4">
-                                                    <span class="ds-figma-placeholder__label">
-                                                        MOBILE
-                                                    </span>
-
-                                                    <div class="ds-figma-placeholder mt-2">
-                                                        <div class="ds-figma-placeholder__content">
-                                                            <p class="mb-0">
-                                                                Portfolio — Mobile
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-
-                                <!-- =================================================
-             04. WHY US
-        ================================================== -->
-
-                                <div class="accordion-item border-0 rounded-4 overflow-hidden mt-2">
-
-                                    <h3 class="accordion-header">
-
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#responsiveWhyUs"
-                                            aria-expanded="false" aria-controls="responsiveWhyUs">
-
-                                            <div class="d-flex flex-column text-start gap-1">
-
-                                                <span class="ds-label">
-                                                    Why Us
-                                                </span>
-
-                                                <small class="ds-description">
-                                                    Value proposition section with animated
-                                                    team-member marquee cards.
-                                                </small>
-
-                                            </div>
-
-                                        </button>
-
-                                    </h3>
-
-
-                                    <div id="responsiveWhyUs" class="accordion-collapse collapse"
-                                        data-bs-parent="#responsiveUIAccordion">
-
-                                        <div class="accordion-body p-3 p-md-4">
-
-                                            <div class="row g-3">
-
-                                                <div class="col-12 col-md-4">
-                                                    <span class="ds-figma-placeholder__label">
-                                                        DESKTOP
-                                                    </span>
-
-                                                    <div class="ds-figma-placeholder mt-2">
-                                                        <div class="ds-figma-placeholder__content">
-                                                            <p class="mb-0">
-                                                                Why Us — Desktop
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="col-12 col-md-4">
-                                                    <span class="ds-figma-placeholder__label">
-                                                        TABLET
-                                                    </span>
-
-                                                    <div class="ds-figma-placeholder mt-2">
-                                                        <div class="ds-figma-placeholder__content">
-                                                            <p class="mb-0">
-                                                                Why Us — Tablet
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="col-12 col-md-4">
-                                                    <span class="ds-figma-placeholder__label">
-                                                        MOBILE
-                                                    </span>
-
-                                                    <div class="ds-figma-placeholder mt-2">
-                                                        <div class="ds-figma-placeholder__content">
-                                                            <p class="mb-0">
-                                                                Why Us — Mobile
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-
-                                <!-- =================================================
-             05. WORKFLOW
-        ================================================== -->
-
-                                <div class="accordion-item border-0 rounded-4 overflow-hidden mt-2">
-
-                                    <h3 class="accordion-header">
-
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#responsiveWorkflow"
-                                            aria-expanded="false" aria-controls="responsiveWorkflow">
-
-                                            <div class="d-flex flex-column text-start gap-1">
-
-                                                <span class="ds-label">
-                                                    Workflow
-                                                </span>
-
-                                                <small class="ds-description">
-                                                    Horizontal process showing the agency workflow
-                                                    from discovery through execution.
-                                                </small>
-
-                                            </div>
-
-                                        </button>
-
-                                    </h3>
-
-
-                                    <div id="responsiveWorkflow" class="accordion-collapse collapse"
-                                        data-bs-parent="#responsiveUIAccordion">
-
-                                        <div class="accordion-body p-3 p-md-4">
-
-                                            <div class="row g-3">
-
-                                                <div class="col-12 col-md-4">
-                                                    <span class="ds-figma-placeholder__label">
-                                                        DESKTOP
-                                                    </span>
-
-                                                    <div class="ds-figma-placeholder mt-2">
-                                                        <div class="ds-figma-placeholder__content">
-                                                            <p class="mb-0">
-                                                                Workflow — Desktop
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="col-12 col-md-4">
-                                                    <span class="ds-figma-placeholder__label">
-                                                        TABLET
-                                                    </span>
-
-                                                    <div class="ds-figma-placeholder mt-2">
-                                                        <div class="ds-figma-placeholder__content">
-                                                            <p class="mb-0">
-                                                                Workflow — Tablet
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="col-12 col-md-4">
-                                                    <span class="ds-figma-placeholder__label">
-                                                        MOBILE
-                                                    </span>
-
-                                                    <div class="ds-figma-placeholder mt-2">
-                                                        <div class="ds-figma-placeholder__content">
-                                                            <p class="mb-0">
-                                                                Workflow — Mobile
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-
-                                <!-- =================================================
-             06. TESTIMONIALS
-        ================================================== -->
-
-                                <div class="accordion-item border-0 rounded-4 overflow-hidden mt-2">
-
-                                    <h3 class="accordion-header">
-
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#responsiveTestimonials"
-                                            aria-expanded="false" aria-controls="responsiveTestimonials">
-
-                                            <div class="d-flex flex-column text-start gap-1">
-
-                                                <span class="ds-label">
-                                                    Testimonials
-                                                </span>
-
-                                                <small class="ds-description">
-                                                    Client testimonials presented through a
-                                                    responsive card carousel.
-                                                </small>
-
-                                            </div>
-
-                                        </button>
-
-                                    </h3>
-
-
-                                    <div id="responsiveTestimonials" class="accordion-collapse collapse"
-                                        data-bs-parent="#responsiveUIAccordion">
-
-                                        <div class="accordion-body p-3 p-md-4">
-
-                                            <div class="row g-3">
-
-                                                <div class="col-12 col-md-4">
-                                                    <span class="ds-figma-placeholder__label">
-                                                        DESKTOP
-                                                    </span>
-
-                                                    <div class="ds-figma-placeholder mt-2">
-                                                        <div class="ds-figma-placeholder__content">
-                                                            <p class="mb-0">
-                                                                Testimonials — Desktop
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="col-12 col-md-4">
-                                                    <span class="ds-figma-placeholder__label">
-                                                        TABLET
-                                                    </span>
-
-                                                    <div class="ds-figma-placeholder mt-2">
-                                                        <div class="ds-figma-placeholder__content">
-                                                            <p class="mb-0">
-                                                                Testimonials — Tablet
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="col-12 col-md-4">
-                                                    <span class="ds-figma-placeholder__label">
-                                                        MOBILE
-                                                    </span>
-
-                                                    <div class="ds-figma-placeholder mt-2">
-                                                        <div class="ds-figma-placeholder__content">
-                                                            <p class="mb-0">
-                                                                Testimonials — Mobile
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-
-                                <!-- =================================================
-             07. CASES / ACTIVITY
-        ================================================== -->
-
-                                <div class="accordion-item border-0 rounded-4 overflow-hidden mt-2">
-
-                                    <h3 class="accordion-header">
-
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#responsiveCases"
-                                            aria-expanded="false" aria-controls="responsiveCases">
-
-                                            <div class="d-flex flex-column text-start gap-1">
-
-                                                <span class="ds-label">
-                                                    Cases / Activity
-                                                </span>
-
-                                                <small class="ds-description">
-                                                    Project and activity gallery with responsive
-                                                    modal-based viewing.
-                                                </small>
-
-                                            </div>
-
-                                        </button>
-
-                                    </h3>
-
-
-                                    <div id="responsiveCases" class="accordion-collapse collapse"
-                                        data-bs-parent="#responsiveUIAccordion">
-
-                                        <div class="accordion-body p-3 p-md-4">
-
-                                            <div class="row g-3">
-
-                                                <div class="col-12 col-md-4">
-                                                    <span class="ds-figma-placeholder__label">
-                                                        DESKTOP
-                                                    </span>
-
-                                                    <div class="ds-figma-placeholder mt-2">
-                                                        <div class="ds-figma-placeholder__content">
-                                                            <p class="mb-0">
-                                                                Cases — Desktop
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="col-12 col-md-4">
-                                                    <span class="ds-figma-placeholder__label">
-                                                        TABLET
-                                                    </span>
-
-                                                    <div class="ds-figma-placeholder mt-2">
-                                                        <div class="ds-figma-placeholder__content">
-                                                            <p class="mb-0">
-                                                                Cases — Tablet
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="col-12 col-md-4">
-                                                    <span class="ds-figma-placeholder__label">
-                                                        MOBILE
-                                                    </span>
-
-                                                    <div class="ds-figma-placeholder mt-2">
-                                                        <div class="ds-figma-placeholder__content">
-                                                            <p class="mb-0">
-                                                                Cases — Mobile
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-
-                                <!-- =================================================
-             08. CTA
-        ================================================== -->
-
-                                <div class="accordion-item border-0 rounded-4 overflow-hidden mt-2">
-
-                                    <h3 class="accordion-header">
-
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#responsiveCTA"
-                                            aria-expanded="false" aria-controls="responsiveCTA">
-
-                                            <div class="d-flex flex-column text-start gap-1">
-
-                                                <span class="ds-label">
-                                                    CTA — Book a Call
-                                                </span>
-
-                                                <small class="ds-description">
-                                                    Final conversion section encouraging users
-                                                    to schedule a strategy call.
-                                                </small>
-
-                                            </div>
-
-                                        </button>
-
-                                    </h3>
-
-
-                                    <div id="responsiveCTA" class="accordion-collapse collapse"
-                                        data-bs-parent="#responsiveUIAccordion">
-
-                                        <div class="accordion-body p-3 p-md-4">
-
-                                            <div class="row g-3">
-
-                                                <div class="col-12 col-md-4">
-                                                    <span class="ds-figma-placeholder__label">
-                                                        DESKTOP
-                                                    </span>
-
-                                                    <div class="ds-figma-placeholder mt-2">
-                                                        <div class="ds-figma-placeholder__content">
-                                                            <p class="mb-0">
-                                                                CTA — Desktop
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="col-12 col-md-4">
-                                                    <span class="ds-figma-placeholder__label">
-                                                        TABLET
-                                                    </span>
-
-                                                    <div class="ds-figma-placeholder mt-2">
-                                                        <div class="ds-figma-placeholder__content">
-                                                            <p class="mb-0">
-                                                                CTA — Tablet
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="col-12 col-md-4">
-                                                    <span class="ds-figma-placeholder__label">
-                                                        MOBILE
-                                                    </span>
-
-                                                    <div class="ds-figma-placeholder mt-2">
-                                                        <div class="ds-figma-placeholder__content">
-                                                            <p class="mb-0">
-                                                                CTA — Mobile
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-
                             </div>
 
+                            <p class="mb-0 fw-semibold mt-3 mb-2">Card Why</p>
+                            <div class="row">
+                                <div class="col-12 col-md-4">
+                                    <img loading="lazy" alt="1zero Components" class="w-100 mt-2 rounded-4 zoom-image lazy-img"
+                                        src="image/1zero/Redesign Website/component-card-why.png" style="object-fit:contain;">
+                                </div>
+                                <div class="col-12 col-md-8">
+                                    <img loading="lazy" alt="1zero Components" class="w-100 mt-2 rounded-4 zoom-image lazy-img"
+                                        src="image/1zero/Redesign Website/component-card-why.svg" style="object-fit:contain;">
+                                </div>
+                            </div>
+
+                            <p class="mb-0 fw-semibold mt-3 mb-2">Card Portfolio</p>
+                            <div class="row">
+                                <div class="col-12 col-md-4">
+                                    <img loading="lazy" alt="1zero Components" class="w-100 mt-2 rounded-4 zoom-image lazy-img"
+                                        src="image/1zero/Redesign Website/component-card-portfolio.png" style="object-fit:contain;">
+                                </div>
+                                <div class="col-12 col-md-8">
+                                    <img loading="lazy" alt="1zero Components" class="w-100 mt-2 rounded-4 zoom-image lazy-img"
+                                        src="image/1zero/Redesign Website/component-card-portfolio.svg" style="object-fit:contain;">
+                                </div>
+                            </div>
+
+                            <p class="mb-0 fw-semibold mt-3 mb-2">Slider</p>
+                            <div class="row">
+                                <div class="col-12 col-md-4">
+                                    <img loading="lazy" alt="1zero Components" class="w-100 mt-2 rounded-4 zoom-image lazy-img"
+                                        src="image/1zero/Redesign Website/component-slider.png" style="object-fit:contain;">
+                                </div>
+                                <div class="col-12 col-md-8">
+                                    <img loading="lazy" alt="1zero Components" class="w-100 mt-2 rounded-4 zoom-image lazy-img"
+                                        src="image/1zero/Redesign Website/component-slider.svg" style="object-fit:contain;">
+                                </div>
+                            </div>
                         </div>
-
-
-
-
 
                         <!-- =====================================================
      FIGMA TECHNIQUES
@@ -3061,6 +2325,729 @@
 
                         </div>
 
+                        <!-- =========================================================
+     RESPONSIVE LAYOUT PATTERNS
+========================================================= -->
+
+                        <div class="col-12 mt-5">
+
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+
+                                <p class="mb-0 fw-semibold">
+                                    Responsive Layout Patterns
+                                </p>
+
+                                <span class="ds-badge">
+                                    Responsive Design
+                                </span>
+
+                            </div>
+
+                            <p class="ds-description mb-3">
+                                Each section was adapted across desktop, tablet, and mobile
+                                breakpoints to maintain visual hierarchy, usability, and
+                                consistency across screen sizes.
+                            </p>
+
+                            <p class="ds-note mb-4">
+                                Instead of showing every section individually, I grouped the
+                                responsive designs based on their layout behaviour.
+                            </p>
+
+
+                            <!-- =====================================================
+         SUMMARY TABLE
+    ====================================================== -->
+
+                            <div class="table-responsive rounded-4 mb-4">
+
+                                <table class="table">
+
+                                    <thead>
+
+                                        <tr>
+                                            <th scope="col">Layout Pattern</th>
+                                            <th scope="col">Example</th>
+                                            <th scope="col">Desktop</th>
+                                            <th scope="col">Tablet</th>
+                                            <th scope="col">Mobile</th>
+                                        </tr>
+
+                                    </thead>
+
+                                    <tbody>
+
+                                        <tr>
+                                            <th scope="row">1 Column</th>
+                                            <td>Hero Section</td>
+                                            <td>1 column</td>
+                                            <td>1 column</td>
+                                            <td>1 column</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">1 Column + Slider</th>
+                                            <td>Workflow, Testimonial</td>
+                                            <td>3 cards</td>
+                                            <td>2 cards</td>
+                                            <td>1 card + slider</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">2×2 Grid</th>
+                                            <td>Our Services</td>
+                                            <td>2×2</td>
+                                            <td>2×2</td>
+                                            <td>1 column</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">2 Columns + Slider</th>
+                                            <td>Portfolio</td>
+                                            <td>2 columns</td>
+                                            <td>2 columns</td>
+                                            <td>1 + slider</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">3 Columns</th>
+                                            <td>Activity</td>
+                                            <td>3 columns</td>
+                                            <td>2 columns</td>
+                                            <td>1 column</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">4 Columns + Row</th>
+                                            <td>Our Team</td>
+                                            <td>4 columns</td>
+                                            <td>2 columns</td>
+                                            <td>1 column / row</td>
+                                        </tr>
+
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+
+
+                            <!-- =====================================================
+         RESPONSIVE ACCORDION
+    ====================================================== -->
+
+                            <div class="accordion ds-variables-accordion" id="responsiveUIAccordion">
+
+
+                                <!-- =================================================
+             01. 1 COLUMN — HERO
+        ================================================== -->
+
+                                <div class="accordion-item border-0 rounded-4 overflow-hidden">
+
+                                    <h3 class="accordion-header">
+
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#responsive1Col"
+                                            aria-expanded="false" aria-controls="responsive1Col">
+
+                                            <div class="d-flex flex-column text-start gap-1">
+
+                                                <span class="ds-label">
+                                                    1 Column — Hero Section
+                                                </span>
+
+                                                <small class="ds-description">
+                                                    Main introduction area with primary messaging
+                                                    and booking CTA.
+                                                </small>
+
+                                            </div>
+
+                                        </button>
+
+                                    </h3>
+
+
+                                    <div id="responsive1Col" class="accordion-collapse collapse"
+                                        data-bs-parent="#responsiveUIAccordion">
+
+                                        <div class="accordion-body p-3 p-md-4">
+
+                                            <div class="row g-3">
+
+                                                <!-- Desktop -->
+                                                <div class="col-12 col-md-4">
+
+                                                    <span class="ds-figma-placeholder__label">
+                                                        DESKTOP
+                                                    </span>
+
+                                                    <div class="ds-figma-placeholder mt-2">
+                                                        <div class="ds-figma-placeholder__content">
+                                                            <img src="image/1zero/Redesign Website/responsiveui-hero-destop.png" alt="Hero — Desktop"
+                                                                class="img-fluid zoom-image">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+
+                                                <!-- Tablet -->
+                                                <div class="col-12 col-md-4">
+
+                                                    <span class="ds-figma-placeholder__label">
+                                                        TABLET
+                                                    </span>
+
+                                                    <div class="ds-figma-placeholder mt-2">
+                                                        <div class="ds-figma-placeholder__content">
+                                                            <img src="image/1zero/Redesign Website/responsiveui-hero-tablet.png" alt="Hero — Tablet"
+                                                                class="img-fluid zoom-image">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+
+                                                <!-- Mobile -->
+                                                <div class="col-12 col-md-4">
+
+                                                    <span class="ds-figma-placeholder__label">
+                                                        MOBILE
+                                                    </span>
+
+                                                    <div class="ds-figma-placeholder mt-2">
+                                                        <div class="ds-figma-placeholder__content">
+                                                            <img src="image/1zero/Redesign Website/responsiveui-hero-mobile.png" alt="Hero — Mobile"
+                                                                class="img-fluid zoom-image">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- =================================================
+             02. 1 COLUMN + SLIDER — WORKFLOW, TESTIMONIAL
+        ================================================== -->
+
+                                <div class="accordion-item border-0 rounded-4 overflow-hidden mt-2">
+
+                                    <h3 class="accordion-header">
+
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#responsive1ColSlider"
+                                            aria-expanded="false" aria-controls="responsive1ColSlider">
+
+                                            <div class="d-flex flex-column text-start gap-1">
+
+                                                <span class="ds-label">
+                                                    1 Column + Slider — Workflow, Testimonial
+                                                </span>
+
+                                                <small class="ds-description">
+                                                    The agency workflow and client testimonials
+                                                    both collapse from a 3-card row into a
+                                                    single-card slider.
+                                                </small>
+
+                                            </div>
+
+                                        </button>
+
+                                    </h3>
+
+
+                                    <div id="responsive1ColSlider" class="accordion-collapse collapse"
+                                        data-bs-parent="#responsiveUIAccordion">
+
+                                        <div class="accordion-body p-3 p-md-4">
+
+                                            <p class="ds-label mb-2">
+                                                Workflow
+                                            </p>
+
+                                            <div class="row g-3">
+
+                                                <div class="col-12 col-md-4">
+                                                    <span class="ds-figma-placeholder__label">
+                                                        DESKTOP
+                                                    </span>
+
+                                                    <div class="ds-figma-placeholder mt-2">
+                                                        <div class="ds-figma-placeholder__content">
+                                                            <p class="mb-0">
+                                                                Workflow — Desktop
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-12 col-md-4">
+                                                    <span class="ds-figma-placeholder__label">
+                                                        TABLET
+                                                    </span>
+
+                                                    <div class="ds-figma-placeholder mt-2">
+                                                        <div class="ds-figma-placeholder__content">
+                                                            <p class="mb-0">
+                                                                Workflow — Tablet
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-12 col-md-4">
+                                                    <span class="ds-figma-placeholder__label">
+                                                        MOBILE
+                                                    </span>
+
+                                                    <div class="ds-figma-placeholder mt-2">
+                                                        <div class="ds-figma-placeholder__content">
+                                                            <p class="mb-0">
+                                                                Workflow — Mobile
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <p class="ds-label mb-2 mt-4">
+                                                Testimonial
+                                            </p>
+
+                                            <div class="row g-3">
+
+                                                <div class="col-12 col-md-4">
+                                                    <span class="ds-figma-placeholder__label">
+                                                        DESKTOP
+                                                    </span>
+
+                                                    <div class="ds-figma-placeholder mt-2">
+                                                        <div class="ds-figma-placeholder__content">
+                                                            <p class="mb-0">
+                                                                Testimonials — Desktop
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-12 col-md-4">
+                                                    <span class="ds-figma-placeholder__label">
+                                                        TABLET
+                                                    </span>
+
+                                                    <div class="ds-figma-placeholder mt-2">
+                                                        <div class="ds-figma-placeholder__content">
+                                                            <p class="mb-0">
+                                                                Testimonials — Tablet
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-12 col-md-4">
+                                                    <span class="ds-figma-placeholder__label">
+                                                        MOBILE
+                                                    </span>
+
+                                                    <div class="ds-figma-placeholder mt-2">
+                                                        <div class="ds-figma-placeholder__content">
+                                                            <p class="mb-0">
+                                                                Testimonials — Mobile
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- =================================================
+             03. 2×2 GRID — OUR SERVICES
+        ================================================== -->
+
+                                <div class="accordion-item border-0 rounded-4 overflow-hidden mt-2">
+
+                                    <h3 class="accordion-header">
+
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#responsive2x2Grid"
+                                            aria-expanded="false" aria-controls="responsive2x2Grid">
+
+                                            <div class="d-flex flex-column text-start gap-1">
+
+                                                <span class="ds-label">
+                                                    2×2 Grid — Our Services
+                                                </span>
+
+                                                <small class="ds-description">
+                                                    Bento grid presenting the agency's core
+                                                    products and capabilities.
+                                                </small>
+
+                                            </div>
+
+                                        </button>
+
+                                    </h3>
+
+
+                                    <div id="responsive2x2Grid" class="accordion-collapse collapse"
+                                        data-bs-parent="#responsiveUIAccordion">
+
+                                        <div class="accordion-body p-3 p-md-4">
+
+                                            <div class="row g-3">
+
+                                                <div class="col-12 col-md-4">
+
+                                                    <span class="ds-figma-placeholder__label">
+                                                        DESKTOP
+                                                    </span>
+
+                                                    <div class="ds-figma-placeholder mt-2">
+                                                        <div class="ds-figma-placeholder__content">
+                                                            <img src="image/1zero/Redesign Website/responsiveui-service-desktop.png" alt="Our Services — Desktop"
+                                                                class="img-fluid zoom-image">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+
+                                                <div class="col-12 col-md-4">
+
+                                                    <span class="ds-figma-placeholder__label">
+                                                        TABLET
+                                                    </span>
+
+                                                    <div class="ds-figma-placeholder mt-2">
+                                                        <div class="ds-figma-placeholder__content">
+                                                            <img src="image/1zero/Redesign Website/responsiveui-service-tablet.png" alt="Our Services — Tablet"
+                                                                class="img-fluid zoom-image">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+
+                                                <div class="col-12 col-md-4">
+
+                                                    <span class="ds-figma-placeholder__label">
+                                                        MOBILE
+                                                    </span>
+
+                                                    <div class="ds-figma-placeholder mt-2">
+                                                        <div class="ds-figma-placeholder__content">
+                                                            <img src="image/1zero/Redesign Website/responsiveui-service-mobile.png" alt="Our Services — Mobile"
+                                                                class="img-fluid zoom-image">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- =================================================
+             04. 2 COLUMNS + SLIDER — PORTFOLIO
+        ================================================== -->
+
+                                <div class="accordion-item border-0 rounded-4 overflow-hidden mt-2">
+
+                                    <h3 class="accordion-header">
+
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#responsive2ColSlider"
+                                            aria-expanded="false" aria-controls="responsive2ColSlider">
+
+                                            <div class="d-flex flex-column text-start gap-1">
+
+                                                <span class="ds-label">
+                                                    2 Columns + Slider — Portfolio
+                                                </span>
+
+                                                <small class="ds-description">
+                                                    Featured projects presented through a responsive
+                                                    carousel layout.
+                                                </small>
+
+                                            </div>
+
+                                        </button>
+
+                                    </h3>
+
+
+                                    <div id="responsive2ColSlider" class="accordion-collapse collapse"
+                                        data-bs-parent="#responsiveUIAccordion">
+
+                                        <div class="accordion-body p-3 p-md-4">
+
+                                            <div class="row g-3">
+
+                                                <div class="col-12 col-md-4">
+                                                    <span class="ds-figma-placeholder__label">
+                                                        DESKTOP
+                                                    </span>
+
+                                                    <div class="ds-figma-placeholder mt-2">
+                                                        <div class="ds-figma-placeholder__content">
+                                                            <p class="mb-0">
+                                                                Portfolio — Desktop
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-12 col-md-4">
+                                                    <span class="ds-figma-placeholder__label">
+                                                        TABLET
+                                                    </span>
+
+                                                    <div class="ds-figma-placeholder mt-2">
+                                                        <div class="ds-figma-placeholder__content">
+                                                            <p class="mb-0">
+                                                                Portfolio — Tablet
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-12 col-md-4">
+                                                    <span class="ds-figma-placeholder__label">
+                                                        MOBILE
+                                                    </span>
+
+                                                    <div class="ds-figma-placeholder mt-2">
+                                                        <div class="ds-figma-placeholder__content">
+                                                            <p class="mb-0">
+                                                                Portfolio — Mobile
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- =================================================
+             05. 3 COLUMNS — ACTIVITY
+        ================================================== -->
+
+                                <div class="accordion-item border-0 rounded-4 overflow-hidden mt-2">
+
+                                    <h3 class="accordion-header">
+
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#responsive3Col"
+                                            aria-expanded="false" aria-controls="responsive3Col">
+
+                                            <div class="d-flex flex-column text-start gap-1">
+
+                                                <span class="ds-label">
+                                                    3 Columns — Activity
+                                                </span>
+
+                                                <small class="ds-description">
+                                                    Project and activity gallery with responsive
+                                                    modal-based viewing.
+                                                </small>
+
+                                            </div>
+
+                                        </button>
+
+                                    </h3>
+
+
+                                    <div id="responsive3Col" class="accordion-collapse collapse"
+                                        data-bs-parent="#responsiveUIAccordion">
+
+                                        <div class="accordion-body p-3 p-md-4">
+
+                                            <div class="row g-3">
+
+                                                <div class="col-12 col-md-4">
+                                                    <span class="ds-figma-placeholder__label">
+                                                        DESKTOP
+                                                    </span>
+
+                                                    <div class="ds-figma-placeholder mt-2">
+                                                        <div class="ds-figma-placeholder__content">
+                                                            <p class="mb-0">
+                                                                Activity — Desktop
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-12 col-md-4">
+                                                    <span class="ds-figma-placeholder__label">
+                                                        TABLET
+                                                    </span>
+
+                                                    <div class="ds-figma-placeholder mt-2">
+                                                        <div class="ds-figma-placeholder__content">
+                                                            <p class="mb-0">
+                                                                Activity — Tablet
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-12 col-md-4">
+                                                    <span class="ds-figma-placeholder__label">
+                                                        MOBILE
+                                                    </span>
+
+                                                    <div class="ds-figma-placeholder mt-2">
+                                                        <div class="ds-figma-placeholder__content">
+                                                            <p class="mb-0">
+                                                                Activity — Mobile
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- =================================================
+             06. 4 COLUMNS + ROW — OUR TEAM
+        ================================================== -->
+
+                                <div class="accordion-item border-0 rounded-4 overflow-hidden mt-2">
+
+                                    <h3 class="accordion-header">
+
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#responsive4ColRow"
+                                            aria-expanded="false" aria-controls="responsive4ColRow">
+
+                                            <div class="d-flex flex-column text-start gap-1">
+
+                                                <span class="ds-label">
+                                                    4 Columns + Row — Our Team
+                                                </span>
+
+                                                <small class="ds-description">
+                                                    Value proposition section with animated
+                                                    team-member marquee cards.
+                                                </small>
+
+                                            </div>
+
+                                        </button>
+
+                                    </h3>
+
+
+                                    <div id="responsive4ColRow" class="accordion-collapse collapse"
+                                        data-bs-parent="#responsiveUIAccordion">
+
+                                        <div class="accordion-body p-3 p-md-4">
+
+                                            <div class="row g-3">
+
+                                                <div class="col-12 col-md-4">
+                                                    <span class="ds-figma-placeholder__label">
+                                                        DESKTOP
+                                                    </span>
+
+                                                    <div class="ds-figma-placeholder mt-2">
+                                                        <div class="ds-figma-placeholder__content">
+                                                            <p class="mb-0">
+                                                                Our Team — Desktop
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-12 col-md-4">
+                                                    <span class="ds-figma-placeholder__label">
+                                                        TABLET
+                                                    </span>
+
+                                                    <div class="ds-figma-placeholder mt-2">
+                                                        <div class="ds-figma-placeholder__content">
+                                                            <p class="mb-0">
+                                                                Our Team — Tablet
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-12 col-md-4">
+                                                    <span class="ds-figma-placeholder__label">
+                                                        MOBILE
+                                                    </span>
+
+                                                    <div class="ds-figma-placeholder mt-2">
+                                                        <div class="ds-figma-placeholder__content">
+                                                            <p class="mb-0">
+                                                                Our Team — Mobile
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
 
                     </div>
 
@@ -4036,9 +4023,7 @@
 
                             <div class="ds-figma-placeholder__content">
 
-                                <span class="ds-badge">
-                                    GIF / Video
-                                </span>
+                                <img src="image/1zero/Redesign Website/animation-slider.gif" class="img-fluid" alt="Slide Transition Interaction">
 
                                 <p class="mb-0 mt-2">
                                     Slide transition
