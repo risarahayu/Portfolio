@@ -168,7 +168,7 @@
                 Project Scope
             </h2>
 
-            <div class="info-block__row mt-4">
+            <div class="info-block__row mt-3">
 
                 <div class="info-block__prose">
 
@@ -310,7 +310,7 @@
             </div>
 
             <!-- Analytics Metrics -->
-            <div class="before-after__metrics mt-4">
+            <div class="before-after__metrics mt-3">
                 <div class="before-after__metric">
                     <span class="before-after__metric-value">5m 45s</span>
                     <span class="before-after__metric-label">Average session duration</span>
@@ -358,16 +358,13 @@
             <!-- =========================================================
    SECTION 1: HOW MIGHT WE (PRIMARY ACCENT)
 ========================================================= -->
-            <div class="hmw-block my-4"
-                style="background: var(--brunswick-green); color: #ffffff; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 14px rgba(29, 87, 69, 0.15);">
+            <div class="hmw-block my-4">
 
-                <span class="before-after__label"
-                    style="color: var(--ivory, #fdfbf7); opacity: 0.9; font-size: 0.75rem; letter-spacing: 0.12em;">
+                <span class="before-after__label">
                     💡 HOW MIGHT WE?
                 </span>
 
-                <h3 class="before-after__title mt-2 mb-0"
-                    style="color: #ffffff; font-size: 1.35rem; line-height: 1.5; font-weight: 600;">
+                <h3 class="before-after__title mt-2 mb-0">
                     How might we help users navigate and discover relevant information more easily, so they can better
                     understand 1zero's value and take the next step?
                 </h3>
@@ -380,11 +377,11 @@
 ========================================================= -->
             <div class="design-response-block my-4 py-5">
 
-                <div class="text-center " style="">
+                <div class="text-center">
                     <span class="before-after__label">
                         ✨ DESIGN RESPONSE
                     </span>
-                    <div class="d-flex gap-3 mx-auto" style="max-width: 768px;">
+                    <div class="design-response-block__content">
                         <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 36 36">
                             <path d="M0 0h36v36H0z" fill="none" />
                             <path fill="currentColor" d="M9.8 18.8h16.4v3.08h1.6V17.2h-9V14h-1.6v3.2h-9v4.68h1.6z"
@@ -401,7 +398,7 @@
                             <path fill="none" d="M0 0h36v36H0z" />
                         </svg>
 
-                        <p class="m-0 mt-2" style="font-size: 1rem; line-height: 1.65; color: var(--raisin-black);">
+                        <p>
                             We restructured the information architecture and introduced clearer content hierarchy,
                             navigation, and pathways between services and supporting content.
                         </p>
@@ -442,7 +439,7 @@
                 <!-- ==================================================
              01. RAW IDEAS
         =================================================== -->
-                <div class="mt-5">
+                <div class="mt-3">
 
                     <div class="d-flex align-items-center gap-2 mb-2">
 
@@ -602,7 +599,7 @@
                 <!-- ==================================================
              02. AFFINITY DIAGRAM
         =================================================== -->
-                <div class="mt-5 pt-4">
+                <div class="mt-3 pt-4">
 
                     <div class="d-flex align-items-center gap-2 mb-2">
 
@@ -832,7 +829,7 @@
                 <!-- ==================================================
              03. INFORMATION ARCHITECTURE
         =================================================== -->
-                <div class="mt-5 pt-4">
+                <div class="mt-3 pt-4">
 
                     <div class="d-flex align-items-center gap-2 mb-2">
 
@@ -890,7 +887,7 @@
                 <!-- ==================================================
              04. MOODBOARD
         =================================================== -->
-                <div class="mt-5 pt-4">
+                <div class="mt-3 pt-4">
 
                     <div class="d-flex align-items-center gap-2 mb-2">
 
@@ -948,396 +945,16 @@
                 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
                     rel="stylesheet">
 
+                <div class="design-system mt-3">
 
-                <style>
-                    /* =========================================================
-       DESIGN SYSTEM TOKENS
-    ========================================================= */
-
-                    :root {
-
-                        --brunswick-green: #1d5745;
-                        --raisin-black: #272727;
-
-                        --sea-salt: #fafafa;
-                        --ivory: #f3f5e9;
-                        --dun: #d6caad;
-
-                    }
-
-
-                    /* =========================================================
-       DESIGN SYSTEM BASE
-    ========================================================= */
-
-                    .design-system {
-                        font-family: "Open Sans", sans-serif;
-                        color: var(--raisin-black);
-                    }
-
-
-                    .design-system code {
-                        font-family: monospace;
-                        font-size: 0.8rem;
-                        color: var(--brunswick-green);
-                        background: rgba(29, 87, 69, 0.06);
-                        padding: 0.25rem 0.5rem;
-                        border-radius: 0.4rem;
-                    }
-
-
-                    /* =========================================================
-       SYSTEM CARD
-    ========================================================= */
-
-                    .ds-card {
-                        background: var(--ivory);
-                        border: 1px solid rgba(39, 39, 39, 0.06);
-                        border-radius: 1.5rem;
-                        padding: 1.5rem;
-                    }
-
-
-                    .ds-item {
-                        background: var(--sea-salt);
-                        border-radius: 1rem;
-                        padding: 1rem;
-                        height: 100%;
-                    }
-
-
-                    .ds-label {
-                        font-size: 0.875rem;
-                        font-weight: 700;
-                        color: var(--raisin-black);
-                    }
-
-
-                    .ds-description {
-                        font-size: 0.8rem;
-                        line-height: 1.6;
-                        color: rgba(39, 39, 39, 0.65);
-                    }
-
-
-                    /* =========================================================
-       DESIGN SYSTEM BADGE
-    ========================================================= */
-
-                    .ds-badge {
-                        display: inline-flex;
-                        align-items: center;
-                        justify-content: center;
-
-                        padding: 0.45rem 0.8rem;
-
-                        border-radius: 999px;
-
-                        background: rgba(29, 87, 69, 0.08);
-
-                        color: var(--brunswick-green);
-
-                        font-size: 0.7rem;
-                        font-weight: 700;
-
-                        text-transform: uppercase;
-                        letter-spacing: 0.08em;
-                    }
-
-                    .ds-badge.active {
-                        color: #fff !important;
-                        background-color: var(--brunswick-green) !important;
-                    }
-
-
-                    /* =========================================================
-       COLOR SWATCH
-    ========================================================= */
-
-                    .ds-color {
-                        display: flex;
-                        align-items: center;
-                        gap: 1rem;
-                    }
-
-
-                    .ds-color__swatch {
-                        width: 3rem;
-                        height: 3rem;
-
-                        flex-shrink: 0;
-
-                        border-radius: 0.75rem;
-
-                        border: 1px solid rgba(39, 39, 39, 0.08);
-                    }
-
-
-                    .ds-color__name {
-                        font-size: 0.875rem;
-                        font-weight: 700;
-                    }
-
-
-                    .ds-color__hex {
-                        font-family: monospace;
-                        font-size: 0.75rem;
-                        color: rgba(39, 39, 39, 0.55);
-                    }
-
-
-                    /* =========================================================
-       SPACING VISUAL
-    ========================================================= */
-
-                    .ds-spacing {
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-
-                        gap: 1rem;
-
-                        padding: 1rem;
-
-                        background: var(--sea-salt);
-
-                        border-radius: 1rem;
-                    }
-
-
-                    .ds-spacing__visual {
-                        display: flex;
-                        align-items: center;
-                        gap: 0.5rem;
-                    }
-
-
-                    .ds-spacing__bar {
-                        height: 0.5rem;
-
-                        background: var(--brunswick-green);
-
-                        border-radius: 999px;
-                    }
-
-
-                    /* =========================================================
-       RADIUS VISUAL
-    ========================================================= */
-
-                    .ds-radius {
-                        display: flex;
-                        align-items: center;
-                        gap: 1rem;
-
-                        padding: 1rem;
-
-                        background: var(--sea-salt);
-
-                        border-radius: 1rem;
-                    }
-
-
-                    .ds-radius__visual {
-                        width: 3.5rem;
-                        height: 3.5rem;
-
-                        flex-shrink: 0;
-
-                        background: var(--brunswick-green);
-                    }
-
-
-                    /* =========================================================
-       STROKE VISUAL
-    ========================================================= */
-
-                    .ds-stroke {
-                        padding: 1rem;
-
-                        background: var(--sea-salt);
-
-                        border-radius: 1rem;
-                    }
-
-
-                    .ds-stroke__sample {
-                        height: 4rem;
-
-                        border-radius: 0.75rem;
-
-                        margin-bottom: 0.75rem;
-                    }
-
-
-                    /* =========================================================
-       CHECK LIST
-    ========================================================= */
-
-                    .ds-check-list {
-                        list-style: none;
-
-                        margin: 0;
-                        padding: 0;
-                    }
-
-
-                    .ds-check-list li {
-                        display: flex;
-                        align-items: center;
-
-                        gap: 0.75rem;
-
-                        padding: 0.75rem 0;
-
-                        border-bottom: 1px solid rgba(39, 39, 39, 0.08);
-
-                        font-size: 0.875rem;
-                    }
-
-
-                    .ds-check-list li:last-child {
-                        border-bottom: 0;
-                    }
-
-
-                    .ds-check-list__icon {
-                        width: 1.25rem;
-                        height: 1.25rem;
-
-                        flex-shrink: 0;
-                    }
-
-
-                    /* =========================================================
-       NOTE CALLOUT
-    ========================================================= */
-
-                    .ds-note {
-                        padding: 0.85rem 1.1rem;
-
-                        border-left: 3px solid rgba(29, 87, 69, 0.35);
-                        border-radius: 0 0.6rem 0.6rem 0;
-
-                        background: rgba(29, 87, 69, 0.05);
-
-                        font-size: 0.85rem;
-                        line-height: 1.6;
-                        color: rgba(39, 39, 39, 0.75);
-                    }
-
-
-                    /* =========================================================
-       SEO CHECKLIST TABLE
-    ========================================================= */
-
-                    .seo-checklist-item img.check-list__icon {
-                        vertical-align: middle;
-                    }
-
-                    .seo-checklist-result {
-                        color: rgba(39, 39, 39, 0.45);
-                        font-style: italic;
-                    }
-
-
-                    /* =========================================================
-       DESIGN COMPARE CALLOUT — stat/summary strip sitting above
-       the old/new design screenshots (not overlapping the image).
-    ========================================================= */
-
-                    .design-compare-callout {
-                        background: var(--sea-salt);
-
-                        border-radius: 1rem;
-
-                        padding: 1.1rem 1.25rem;
-
-                        margin-bottom: 1rem;
-                    }
-
-                    .design-compare-callout__title {
-                        font-size: 0.85rem;
-                        font-weight: 700;
-                        margin-bottom: 0.75rem;
-                    }
-
-                    .design-compare-stats {
-                        display: flex;
-                        flex-wrap: wrap;
-                        gap: 0.6rem;
-                    }
-
-                    .design-compare-stat {
-                        display: flex;
-                        align-items: baseline;
-                        gap: 0.4rem;
-
-                        padding: 0.4rem 0.85rem;
-
-                        background: rgba(29, 87, 69, 0.06);
-                        border-radius: 999px;
-
-                        font-size: 0.8rem;
-                    }
-
-                    .design-compare-stat strong {
-                        color: var(--brunswick-green);
-                        font-size: 0.95rem;
-                    }
-
-                    /* New Design checklist reads as inline, wrapping chips
-                       instead of the shared .check-list's stacked column. */
-                    .design-compare-callout .check-list {
-                        flex-direction: row;
-                        flex-wrap: wrap;
-                        gap: 0.6rem 1.25rem;
-                    }
-
-
-                    /* =========================================================
-       UX AUDIT LIST — replaces the old bordered compare-row table
-       with a card list matching the ds-item / ds-label language
-       used throughout the rest of the design system.
-    ========================================================= */
-
-                    .ux-audit-list {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 1rem;
-                    }
-
-                    .ux-audit-item {
-                        padding: 1.25rem 1.5rem;
-                    }
-
-                    .ux-audit-item__before,
-                    .ux-audit-item__after {
-                        display: flex;
-                        align-items: flex-start;
-                        gap: 0.6rem;
-                    }
-
-                    .ux-audit-item__before .ds-description {
-                        color: rgba(39, 39, 39, 0.55);
-                    }
-
-                    .ux-audit-item__after p:first-child {
-                        color: var(--brunswick-green);
-                    }
-                </style>
-
-
-                <div class="design-system">
-
-                    <div class="row g-4 mt-3">
+                    <div class="row g-4">
 
 
                         <!-- =====================================================
              TYPOGRAPHY
         ====================================================== -->
 
-                        <div class="col-12 col-md-6 mt-5">
+                        <div class="col-12 col-md-6">
 
                             <div class="d-flex justify-content-between align-items-center mb-2">
 
@@ -1542,7 +1159,7 @@
                             COLOR
                         ====================================================== -->
 
-                        <div class="col-12 col-md-6 mt-5">
+                        <div class="col-12 col-md-6">
 
                             <div class="d-flex justify-content-between align-items-center mb-2">
 
@@ -1645,7 +1262,7 @@
 
                         <!-- Variabel -->
 
-                        <div class="col-12 mt-5">
+                        <div class="col-12">
 
                             <div class="d-flex justify-content-between align-items-center mb-2">
 
@@ -2224,7 +1841,7 @@
                         <!-- =====================================================
                             COMPONENTS
                         ====================================================== -->
-                        <div class="col-12 mt-5">
+                        <div class="col-12">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <p class="mb-0 fw-semibold">
                                     Components
@@ -2332,7 +1949,7 @@
      FIGMA TECHNIQUES
 ====================================================== -->
 
-                        <div class="col-12 col-md-6 mt-5">
+                        <div class="col-12 col-md-6">
 
                             <div class="d-flex justify-content-between align-items-center mb-2">
 
@@ -2391,7 +2008,7 @@
      RESPONSIVE LAYOUT PATTERNS
 ========================================================= -->
 
-                        <div class="col-12 mt-5">
+                        <div class="col-12">
 
                             <div class="d-flex justify-content-between align-items-center mb-2">
 
@@ -4919,7 +4536,6 @@
 
         <section class="before-after project-section" id="after-redesign">
 
-            ```
             <!-- ==================================================
      INTRO
 =================================================== -->
@@ -5063,8 +4679,8 @@
                             A 37.15 percentage-point decrease from the original
                             91% suggests stronger progression after the redesign.
                         </p>
-                        <p>This is Help users discover relevant information.</p>
-                        <p>The lower bounce rate indicates that fewer sessions ended at the initial entry point,
+                        <p class="before-after__caption mb-0">This is Help users discover relevant information.</p>
+                        <p class="before-after__caption mb-0">The lower bounce rate indicates that fewer sessions ended at the initial entry point,
                             suggesting stronger opportunities for users to continue exploring.</p>
 
                     </div>
@@ -5150,14 +4766,16 @@
                         </p>
 
                     </div>
-                    <div class="">
-                        Help users understand 1zero's value
-                        <br>
+                    <div class="before-after__metric">
+                        <span class="before-after__metric-label">
+                            Help users understand 1zero's value
+                        </span>
+
                         <strong class="before-after__metric-value">
                             Portfolio · About · Services
                         </strong>
 
-                        <p class="mb-0 mt-2">
+                        <p class="before-after__caption mb-0">
                             Users reached supporting pages beyond the homepage,
                             creating more opportunities to understand 1zero's
                             work, capabilities, and positioning.
@@ -5267,10 +4885,11 @@
                                 the redesigned information architecture.
                             </p>
 
+                            <p class="before-after__caption mt-2 mb-0">Create clearer pathways toward action</p>
+                            <p class="before-after__caption mb-0">Users reached the Contact page, with a 4.3% exit rate. This provides an early signal that the
+                                redesigned journey could lead users toward a more action-oriented destination.</p>
+
                         </div>
-                        <p>Create clearer pathways toward action</p>
-                        <p>Users reached the Contact page, with a 4.3% exit rate. This provides an early signal that the
-                            redesigned journey could lead users toward a more action-oriented destination.</p>
                     </div>
 
                 </div>
@@ -5361,7 +4980,6 @@
                 </p>
 
             </div>
-            ```
 
         </section>
 
@@ -5375,7 +4993,7 @@
                 What I Learned
             </h2>
 
-            <p class="fs-6 mt-4 mb-0">
+            <p class="fs-6 mt-3 mb-0">
                 The redesign showed that improving a website is not only
                 about visual refinement. Structuring content, creating
                 clearer user journeys, and measuring interactions are

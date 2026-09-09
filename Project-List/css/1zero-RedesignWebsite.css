@@ -1,5 +1,10 @@
 :root {
     --project-hero-image: url('../image/1zero/Redesign Website/Hero.png');
+    --brunswick-green: #1d5745;
+    --raisin-black: #272727;
+    --sea-salt: #fafafa;
+    --ivory: #f3f5e9;
+    --dun: #d6caad;
 }
 
 .design-preview-wrapper {
@@ -281,7 +286,7 @@
 
 .ds-variables-accordion .accordion-button {
     background: var(--sea-salt);
-    color: var(--raisin-black);
+    color: var(--project-text);
     padding: 1rem 1.25rem;
     box-shadow: none;
     border-radius: 1rem !important;
@@ -289,7 +294,7 @@
 
 .ds-variables-accordion .accordion-button:not(.collapsed) {
     background: var(--ivory);
-    color: var(--brunswick-green);
+    color: var(--project-primary);
     box-shadow: none;
 }
 
@@ -345,7 +350,7 @@
 
     background: rgba(29, 87, 69, 0.08);
 
-    color: var(--brunswick-green);
+    color: var(--project-primary);
 
     font-size: 0.7rem;
     font-weight: 700;
@@ -368,7 +373,7 @@
 .design-iteration__feedback {
     max-width: 720px;
     padding: 1.25rem 1.5rem;
-    border-left: 2px solid var(--brunswick-green);
+    border-left: 2px solid var(--project-primary);
     background: rgba(29, 87, 69, 0.04);
     border-radius: 0 0.75rem 0.75rem 0;
 }
@@ -392,7 +397,7 @@
 
 .before-after__intro {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.5rem;
 }
 
@@ -413,26 +418,144 @@
     line-height: 1.75;
 }
 
+/* HMW callout — dark accent card that answers the "How Might We"
+   question. Reuses .before-after__label / .before-after__title for
+   the eyebrow + heading, overridden here for the dark background. */
+.hmw-block {
+    padding: 2rem;
+    background: var(--brunswick-green);
+    color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 14px rgba(29, 87, 69, 0.15);
+}
 
-/* =========================================================
-   COMPARISON
-========================================================= */
+.hmw-block .before-after__label {
+    color: var(--ivory, #fdfbf7);
+    opacity: 0.9;
+    letter-spacing: 0.12em;
+}
 
-.before-after__comparison {
+.hmw-block .before-after__title {
+    color: #ffffff;
+    font-size: 1.35rem;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+@media (max-width: 767.98px) {
+    .hmw-block {
+        padding: 1.5rem;
+    }
+
+    .hmw-block .before-after__title {
+        font-size: 1.15rem;
+    }
+}
+
+/* Design response callout — icon + short statement below the HMW
+   block, centered and constrained to a readable line length. */
+.design-response-block__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 768px;
+    margin: 1rem auto 0;
+}
+
+.design-response-block__content svg {
+    flex-shrink: 0;
+}
+
+.design-response-block__content p {
+    margin: 0;
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--raisin-black);
+}
+
+@media (max-width: 575.98px) {
+    .design-response-block__content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .design-response-block__content p {
+        text-align: center;
+    }
+}
+
+/* Takeaway callout — left-accented pull-quote highlighting a single
+   key result, matching the .design-iteration__feedback idiom. */
+.before-after__takeaway {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 200px 1fr;
     gap: 1.5rem;
+    padding: 1.5rem 1.75rem;
+    background: var(--sea-salt);
+    border-left: 3px solid var(--brunswick-green);
+    border-radius: 0 1rem 1rem 0;
+}
+
+.before-after__takeaway-label {
+    display: inline-flex;
+    align-items: center;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    color: var(--brunswick-green);
+}
+
+@media (max-width: 767.98px) {
+    .before-after__takeaway {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        padding: 1.25rem 1.5rem;
+    }
 }
 
 
 /* =========================================================
-   ITEM
+   SEO CHECKLIST TABLE — Technical SEO & Optimisation section.
 ========================================================= */
 
-.before-after__item {
-    min-width: 0;
+.seo-checklist-item img.check-list__icon {
+    vertical-align: middle;
 }
 
+.seo-checklist-result {
+    color: rgba(39, 39, 39, 0.45);
+    font-style: italic;
+}
+
+
+/* =========================================================
+   DESIGN COMPARE CALLOUT — stat/summary strip sitting above
+   the old/new design screenshots (not overlapping the image).
+========================================================= */
+
+.design-compare-callout {
+    background: var(--sea-salt);
+    border-radius: 1rem;
+    padding: 1.1rem 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.design-compare-callout__title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.design-compare-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
 
 /* =========================================================
    HEADER
@@ -472,132 +595,89 @@
 
 .before-after__metrics {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-
-    border-top: 1px solid rgba(39, 39, 39, 0.12);
-    border-left: 1px solid rgba(39, 39, 39, 0.12);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
 }
 
 .before-after__metric {
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
-
     min-height: 90px;
-
     padding: 1rem;
-
-    border-right: 1px solid rgba(39, 39, 39, 0.12);
-    border-bottom: 1px solid rgba(39, 39, 39, 0.12);
-}
-
-.before-after__metric-label {
-    color: rgba(39, 39, 39, 0.55);
-
-    font-size: 0.7rem;
-    line-height: 1.4;
+    border: 1px solid rgba(39, 39, 39, 0.12);
+    border-radius: 0.75rem;
 }
 
 .before-after__metric-value {
     color: var(--raisin-black);
-
     font-size: 1.05rem;
     line-height: 1.3;
 }
 
-
-/* =========================================================
-   WEBSITE PREVIEW
-========================================================= */
-
-.before-after__preview {
-    position: relative;
-
-    margin-top: 1.5rem;
-
-    width: 100%;
-
-    overflow: hidden;
-
-    border: 1px solid rgba(39, 39, 39, 0.1);
-    border-radius: 1rem;
-
-    background: var(--sea-salt);
+.before-after__metric-label {
+    color: rgba(39, 39, 39, 0.55);
+    font-size: 0.7rem;
+    line-height: 1.4;
 }
-
-.before-after__preview img {
-    display: block;
-
-    width: 100%;
-    height: auto;
-}
-
-
-/* =========================================================
-   CAPTION
-========================================================= */
 
 .before-after__caption {
     margin: 0.75rem 0 0;
-
     color: rgba(39, 39, 39, 0.55);
-
     font-size: 0.75rem;
     line-height: 1.5;
 }
 
-
-/* =========================================================
-   TAKEAWAY
-========================================================= */
-
-.before-after__takeaway {
-    display: grid;
-    grid-template-columns: 160px 1fr;
-    gap: 1.5rem;
-
-    margin-top: 3rem;
-    padding: 1.5rem;
-
-    border-left: 2px solid var(--brunswick-green);
-
-    background: rgba(29, 87, 69, 0.04);
-
-    border-radius: 0 1rem 1rem 0;
+.design-compare-stat {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    padding: 0.4rem 0.85rem;
+    background: rgba(29, 87, 69, 0.06);
+    border-radius: 999px;
+    font-size: 0.8rem;
 }
 
-.before-after__takeaway-label {
-    font-size: 0.7rem;
-    font-weight: 700;
-
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-
-    color: var(--brunswick-green);
+.design-compare-stat strong {
+    color: var(--project-primary);
+    font-size: 0.95rem;
 }
 
-.before-after__takeaway p {
-    color: rgba(39, 39, 39, 0.68);
-
-    font-size: 0.9rem;
-    line-height: 1.7;
+/* New Design checklist reads as inline, wrapping chips instead of
+   the shared .check-list's stacked column. */
+.design-compare-callout .check-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.25rem;
 }
 
 
 /* =========================================================
-   MOBILE
+   UX AUDIT LIST — replaces a bordered compare-row table with a
+   card list matching the ds-item / ds-label design system language.
 ========================================================= */
 
-@media (max-width: 767.98px) {
+.ux-audit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
 
-    .before-after__comparison {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
+.ux-audit-item {
+    padding: 1.25rem 1.5rem;
+}
 
-    .before-after__takeaway {
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
-    }
+.ux-audit-item__before,
+.ux-audit-item__after {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+}
 
+.ux-audit-item__before .ds-description {
+    color: rgba(39, 39, 39, 0.55);
+}
+
+.ux-audit-item__after p:first-child {
+    color: var(--project-primary);
 }
