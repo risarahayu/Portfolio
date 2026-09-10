@@ -330,6 +330,64 @@
                 </div>
             </div>
 
+            <div class="row g-4">
+                <!-- OLD -->
+                <div class="col-12 col-md-6 mt-5">
+                    <h3 class="fs-6 fw-bold mb-3">
+                        Old Design
+                    </h3>
+
+                    <div class="design-compare-callout">
+                        <p class="design-compare-callout__title fw-normal mb-0">
+                            <span class="me-2">⚠️</span> A Single Page Limited the User Experience
+                        </p>
+                    </div>
+
+                    <div class="design-preview-wrapper">
+                        <div class="design-preview is-collapsed" id="oldDesignPreview">
+                            <img loading="lazy" alt="1zero Old Design" class="w-100 zoom-image lazy-img"
+                                src="image/1zero/Redesign Website/old-design.png" />
+                        </div>
+                        <div class="design-preview-overlay" id="oldDesignOverlay"></div>
+                    </div>
+
+                    <button class="btn btn-outline-dark rounded-4 mt-3 design-toggle" type="button"
+                        data-target="oldDesignPreview" data-overlay="oldDesignOverlay">
+                        <span class="toggle-text">See Full Design</span>
+                        <i class="bi bi-arrow-down ms-2"></i>
+                    </button>
+                </div>
+
+                <!-- NEW -->
+                <div class="col-12 col-md-6 mt-5">
+                    <h3 class="fs-6 fw-bold mb-3">
+                        New Design
+                    </h3>
+
+                    <div class="design-compare-callout">
+                        <ul class="design-compare-callout__title fw-normal check-list mb-0">
+                            <li><img src="image/tick green.svg" alt="" class="check-list__icon">Structured multi-page experience</li>
+                            <li><img src="image/tick green.svg" alt="" class="check-list__icon">Clearer content hierarchy</li>
+                            <li><img src="image/tick green.svg" alt="" class="check-list__icon">Measurable interactions</li>
+                        </ul>
+                    </div>
+
+                    <div class="design-preview-wrapper">
+                        <div class="design-preview is-collapsed" id="newDesignPreview">
+                            <img loading="lazy" alt="1zero New Design" class="w-100 zoom-image lazy-img"
+                                src="image/1zero/Redesign Website/home-page.png" />
+                        </div>
+                        <div class="design-preview-overlay" id="newDesignOverlay"></div>
+                    </div>
+
+                    <button class="btn btn-outline-dark rounded-4 mt-3 design-toggle" type="button"
+                        data-target="newDesignPreview" data-overlay="newDesignOverlay">
+                        <span class="toggle-text">See Full Design</span>
+                        <i class="bi bi-arrow-down ms-2"></i>
+                    </button>
+                </div>
+            </div>
+
             <!-- UX Process Flow: From Analytics to UX Problem -->
             <div class="before-after__intro mt-5">
                 <h3 class="before-after__title mb-3">From Analytics to UX Problem</h3>
@@ -2753,7 +2811,7 @@
                     </li>
 
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active rounded-pill px-3 ds-badge" id="services-tab"
+                        <button class="nav-link rounded-pill px-3 ds-badge" id="services-tab"
                             data-bs-toggle="pill" data-bs-target="#services-page" type="button" role="tab"
                             aria-controls="services-page" aria-selected="true">
                             Services
