@@ -1177,49 +1177,39 @@ if (typeof lucide !== "undefined") lucide.createIcons();
 
 
 // ----------------------------------------
-// PROJECT PAGE — AUTO-EXPAND BUTTONS
+// PROJECT PAGE — SCROLLABLE PREVIEW FRAMES
+//
+// A `.scroll-frame` holds a `.scroll-frame__body` (the scrollable
+// box) and a `.scroll-frame__hint` ("scroll for more" cue). The
+// hint fades out once the user has scrolled close to the bottom,
+// and is skipped entirely for images short enough to fit without
+// scrolling.
 // ----------------------------------------
 
-function initDesignToggles() {
-  const buttons = document.querySelectorAll(".design-toggle");
+function initScrollFrames() {
+  const bodies = document.querySelectorAll(".scroll-frame__body");
 
-  buttons.forEach((btn) => {
-    const targetId = btn.getAttribute("data-target");
-    const overlayId = btn.getAttribute("data-overlay");
+  bodies.forEach((body) => {
+    const hint = body.parentElement.querySelector(".scroll-frame__hint");
+    if (!hint) return;
 
-    const preview = document.getElementById(targetId);
-    const overlay = document.getElementById(overlayId);
+    function update() {
+      const canScroll = body.scrollHeight - body.clientHeight > 4;
+      const atBottom = body.scrollTop + body.clientHeight >= body.scrollHeight - 4;
+      hint.classList.toggle("is-hidden", !canScroll || atBottom);
+    }
 
-    if (!preview || !overlay) return;
+    body.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
 
-    btn.addEventListener("click", () => {
-      const isExpanded = preview.classList.contains("is-expanded");
+    const img = body.querySelector("img");
+    if (img && !img.complete) {
+      img.addEventListener("load", update, { once: true });
+    }
 
-      // toggle state
-      preview.classList.toggle("is-expanded");
-      preview.classList.toggle("is-collapsed");
-      btn.setAttribute("aria-expanded", String(!isExpanded));
-
-      // change button text + icon
-      const text = btn.querySelector(".toggle-text");
-      const icon = btn.querySelector("i");
-
-      if (!isExpanded) {
-        // Expanded mode
-        text.textContent = "Show Less";
-        icon.classList.remove("bi-arrow-down");
-        icon.classList.add("bi-arrow-up");
-        overlay.style.opacity = "0"; // fade out overlay
-      } else {
-        // Collapsed mode
-        text.textContent = "See Full Design";
-        icon.classList.remove("bi-arrow-up");
-        icon.classList.add("bi-arrow-down");
-        overlay.style.opacity = "1"; // fade in overlay
-      }
-    });
+    update();
   });
 }
 
 // Run when DOM is ready
-document.addEventListener("DOMContentLoaded", initDesignToggles);
+document.addEventListener("DOMContentLoaded", initScrollFrames);

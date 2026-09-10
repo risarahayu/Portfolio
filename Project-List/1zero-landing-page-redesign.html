@@ -343,19 +343,15 @@
                         </p>
                     </div>
 
-                    <div class="design-preview-wrapper">
-                        <div class="design-preview is-collapsed" id="oldDesignPreview">
-                            <img loading="lazy" alt="1zero Old Design" class="w-100 zoom-image lazy-img"
+                    <div class="scroll-frame">
+                        <div class="scroll-frame__body">
+                            <img loading="lazy" alt="1zero Old Design" class="zoom-image lazy-img"
                                 src="image/1zero/Redesign Website/old-design.png" />
                         </div>
-                        <div class="design-preview-overlay" id="oldDesignOverlay"></div>
+                        <div class="scroll-frame__hint">
+                            <span><i class="bi bi-arrow-down"></i> Scroll to see full design</span>
+                        </div>
                     </div>
-
-                    <button class="btn btn-outline-dark rounded-4 mt-3 design-toggle" type="button"
-                        data-target="oldDesignPreview" data-overlay="oldDesignOverlay">
-                        <span class="toggle-text">See Full Design</span>
-                        <i class="bi bi-arrow-down ms-2"></i>
-                    </button>
                 </div>
 
                 <!-- NEW -->
@@ -372,19 +368,15 @@
                         </ul>
                     </div>
 
-                    <div class="design-preview-wrapper">
-                        <div class="design-preview is-collapsed" id="newDesignPreview">
-                            <img loading="lazy" alt="1zero New Design" class="w-100 zoom-image lazy-img"
+                    <div class="scroll-frame">
+                        <div class="scroll-frame__body">
+                            <img loading="lazy" alt="1zero New Design" class="zoom-image lazy-img"
                                 src="image/1zero/Redesign Website/home-page.png" />
                         </div>
-                        <div class="design-preview-overlay" id="newDesignOverlay"></div>
+                        <div class="scroll-frame__hint">
+                            <span><i class="bi bi-arrow-down"></i> Scroll to see full design</span>
+                        </div>
                     </div>
-
-                    <button class="btn btn-outline-dark rounded-4 mt-3 design-toggle" type="button"
-                        data-target="newDesignPreview" data-overlay="newDesignOverlay">
-                        <span class="toggle-text">See Full Design</span>
-                        <i class="bi bi-arrow-down ms-2"></i>
-                    </button>
                 </div>
             </div>
 
@@ -469,19 +461,6 @@
 
         </section>
 
-        <!-- Script kecil untuk mengontrol toggle kelas `.is-expanded` CSS kamu -->
-        <script>
-            function toggleDesignPreview(btn) {
-                const preview = document.getElementById('design-comparison-preview');
-                preview.classList.toggle('is-expanded');
-
-                if (preview.classList.contains('is-expanded')) {
-                    btn.innerText = '↑ Hide Full Design';
-                } else {
-                    btn.innerText = '↓ View Full Old & New Design';
-                }
-            }
-        </script>
         <!-- ==================================================
      04. PLANNING & INFORMATION ARCHITECTURE
 =================================================== -->
@@ -2851,21 +2830,20 @@
                     <div class="tab-pane fade show active" id="home-page" role="tabpanel" aria-labelledby="home-tab"
                         tabindex="0">
 
-                        <div class="ds-figma-placeholder">
-
-                            <div class="ds-figma-placeholder__content">
-
-                                <img src="image/1zero/Redesign Website/home-page.png" class="img-fluid"
-                                    alt="1zero Home Page">
-
-                                <p class="mb-0 mt-3">
-                                    Detailed view of the 1zero Services page
-                                    and its responsive layout.
-                                </p>
-
+                        <div class="scroll-frame scroll-frame--tall">
+                            <div class="scroll-frame__body">
+                                <img loading="lazy" class="zoom-image lazy-img"
+                                    src="image/1zero/Redesign Website/home-page.png" alt="1zero Home Page">
                             </div>
-
+                            <div class="scroll-frame__hint">
+                                <span><i class="bi bi-arrow-down"></i> Scroll to see full page</span>
+                            </div>
                         </div>
+
+                        <p class="mb-0 mt-3">
+                            Detailed view of the 1zero Home page
+                            and its responsive layout.
+                        </p>
 
                     </div>
 
@@ -2873,21 +2851,20 @@
                     <div class="tab-pane fade" id="services-page" role="tabpanel" aria-labelledby="services-tab"
                         tabindex="0">
 
-                        <div class="ds-figma-placeholder">
-
-                            <div class="ds-figma-placeholder__content">
-
-                                <img src="image/1zero/Redesign Website/service-page.png" class="img-fluid"
-                                    alt="1zero Services Page">
-
-                                <p class="mb-0 mt-3">
-                                    Detailed view of the 1zero Services page
-                                    and its responsive layout.
-                                </p>
-
+                        <div class="scroll-frame scroll-frame--tall">
+                            <div class="scroll-frame__body">
+                                <img loading="lazy" class="zoom-image lazy-img"
+                                    src="image/1zero/Redesign Website/service-page.png" alt="1zero Services Page">
                             </div>
-
+                            <div class="scroll-frame__hint">
+                                <span><i class="bi bi-arrow-down"></i> Scroll to see full page</span>
+                            </div>
                         </div>
+
+                        <p class="mb-0 mt-3">
+                            Detailed view of the 1zero Services page
+                            and its responsive layout.
+                        </p>
 
                     </div>
 
@@ -2895,24 +2872,30 @@
                     <!-- About -->
                     <div class="tab-pane fade" id="about-page" role="tabpanel" aria-labelledby="about-tab" tabindex="0">
 
-                        <div class="ds-figma-placeholder">
-
-                            <div class="ds-figma-placeholder__content">
-
-                                <img src="image/1zero/Redesign Website/about-page.png" class="img-fluid"
-                                    alt="1zero About Page">
-
-                                <p class="mb-0 mt-3">
-                                    Detailed view of the 1zero About page
-                                    and its responsive layout.
-                                </p>
-
+                        <div class="scroll-frame scroll-frame--tall">
+                            <div class="scroll-frame__body">
+                                <img loading="lazy" class="zoom-image lazy-img"
+                                    src="image/1zero/Redesign Website/about-page.png" alt="1zero About Page">
                             </div>
-
+                            <div class="scroll-frame__hint">
+                                <span><i class="bi bi-arrow-down"></i> Scroll to see full page</span>
+                            </div>
                         </div>
 
-                        <img loading="lazy" alt="1zero About Page" class="w-100 rounded-4 zoom-image mt-3"
-                            src="image/1zero/About.png" style="object-fit: contain; object-position: top;" />
+                        <p class="mb-0 mt-3">
+                            Detailed view of the 1zero About page
+                            and its responsive layout.
+                        </p>
+
+                        <div class="scroll-frame scroll-frame--tall mt-3">
+                            <div class="scroll-frame__body">
+                                <img loading="lazy" alt="1zero About Page" class="zoom-image"
+                                    src="image/1zero/About.png" style="object-fit: contain; object-position: top;" />
+                            </div>
+                            <div class="scroll-frame__hint">
+                                <span><i class="bi bi-arrow-down"></i> Scroll to see full page</span>
+                            </div>
+                        </div>
 
                     </div>
 
@@ -2921,38 +2904,40 @@
                     <div class="tab-pane fade" id="contact-page" role="tabpanel" aria-labelledby="contact-tab"
                         tabindex="0">
 
-                        <div class="ds-figma-placeholder">
-
-                            <div class="ds-figma-placeholder__content">
-
-                                <img src="image/1zero/Redesign Website/contact-page.png" class="img-fluid"
-                                    alt="1zero Contact Page">
-
-                                <p class="mb-0 mt-3">
-                                    Detailed view of the 1zero Contact page
-                                    and its responsive layout.
-                                </p>
+                        <div class="scroll-frame scroll-frame--tall">
+                            <div class="scroll-frame__body">
+                                <img loading="lazy" class="zoom-image lazy-img"
+                                    src="image/1zero/Redesign Website/contact-page.png" alt="1zero Contact Page">
+                            </div>
+                            <div class="scroll-frame__hint">
+                                <span><i class="bi bi-arrow-down"></i> Scroll to see full page</span>
                             </div>
                         </div>
+
+                        <p class="mb-0 mt-3">
+                            Detailed view of the 1zero Contact page
+                            and its responsive layout.
+                        </p>
                     </div>
 
                     <!-- Portfolio -->
                     <div class="tab-pane fade" id="portfolio-page" role="tabpanel" aria-labelledby="portfolio-tab"
                         tabindex="0">
 
-                        <div class="ds-figma-placeholder">
-
-                            <div class="ds-figma-placeholder__content">
-
-                                <img src="image/1zero/Redesign Website/portfolio-page.png" class="img-fluid"
-                                    alt="1zero Portfolio Page">
-
-                                <p class="mb-0 mt-3">
-                                    Detailed view of the 1zero Portfolio page
-                                    and its responsive layout.
-                                </p>
+                        <div class="scroll-frame scroll-frame--tall">
+                            <div class="scroll-frame__body">
+                                <img loading="lazy" class="zoom-image lazy-img"
+                                    src="image/1zero/Redesign Website/portfolio-page.png" alt="1zero Portfolio Page">
+                            </div>
+                            <div class="scroll-frame__hint">
+                                <span><i class="bi bi-arrow-down"></i> Scroll to see full page</span>
                             </div>
                         </div>
+
+                        <p class="mb-0 mt-3">
+                            Detailed view of the 1zero Portfolio page
+                            and its responsive layout.
+                        </p>
                     </div>
                 </div>
             </div>
