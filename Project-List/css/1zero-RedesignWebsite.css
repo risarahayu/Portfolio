@@ -5,6 +5,7 @@
     --sea-salt: #fafafa;
     --ivory: #f3f5e9;
     --dun: #d6caad;
+    --seo-warning: #c0392b;
 }
 
 .design-preview-wrapper {
@@ -520,16 +521,130 @@
 
 
 /* =========================================================
-   SEO CHECKLIST TABLE — Technical SEO & Optimisation section.
+   SEO AUDIT CHECKLIST — Technical SEO & Optimisation section.
+   Card-list replacement for the old plain <table>, matching the
+   ds-item / before-after card language used elsewhere on the page.
 ========================================================= */
 
-.seo-checklist-item img.check-list__icon {
-    vertical-align: middle;
+.seo-audit-group {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(39, 39, 39, 0.08);
 }
 
-.seo-checklist-result {
-    color: rgba(39, 39, 39, 0.45);
-    font-style: italic;
+.seo-audit-group:first-child {
+    margin-top: 1rem;
+    padding-top: 0;
+    border-top: 0;
+}
+
+.seo-audit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.seo-audit-item {
+    display: grid;
+    grid-template-columns: minmax(180px, 240px) 1fr;
+    gap: 0.5rem 1.5rem;
+    padding: 1rem 1.25rem;
+    background: #ffffff;
+    border: 1px solid rgba(39, 39, 39, 0.08);
+    border-radius: 0.85rem;
+}
+
+.seo-audit-item__header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+}
+
+.seo-audit-item__header img {
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.seo-audit-item__label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--raisin-black);
+}
+
+.seo-audit-item__result {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: rgba(39, 39, 39, 0.65);
+}
+
+.seo-audit-item__result p {
+    margin: 0;
+}
+
+.seo-audit-item__result ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.seo-audit-item__result code {
+    display: inline-block;
+    font-family: monospace;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: var(--brunswick-green);
+    background: rgba(29, 87, 69, 0.06);
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.4rem;
+    word-break: break-word;
+}
+
+.seo-breakpoint-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.65rem;
+    margin: 0 0.4rem 0.4rem 0;
+    border-radius: 999px;
+    background: var(--sea-salt);
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: var(--raisin-black);
+}
+
+/* Rows that did not fully pass the audit — same card shape, warm
+   accent instead of the default neutral one. */
+.seo-audit-item--warning {
+    border-color: rgba(192, 57, 43, 0.25);
+    background: rgba(192, 57, 43, 0.04);
+}
+
+.seo-audit-item--warning .seo-audit-item__label {
+    color: var(--seo-warning);
+}
+
+.seo-audit-item__flag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.6rem;
+    margin-bottom: 0.5rem;
+    border-radius: 999px;
+    background: rgba(192, 57, 43, 0.12);
+    color: var(--seo-warning);
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+@media (max-width: 767.98px) {
+    .seo-audit-item {
+        grid-template-columns: 1fr;
+        gap: 0.4rem;
+        padding: 1rem;
+    }
 }
 
 
