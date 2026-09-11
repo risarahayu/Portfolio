@@ -231,6 +231,13 @@
   min-width: 0;
 }
 
+/* When a section has no .info-block__summary sidebar to balance against,
+   the prose would otherwise stretch edge-to-edge on wide viewports —
+   cap it to a comfortable reading width instead. */
+.info-block__prose:only-child {
+  max-width: 720px;
+}
+
 .info-block__prose p {
   margin: 0;
   font-size: var(--text-16);
