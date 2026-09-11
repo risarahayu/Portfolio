@@ -511,3 +511,171 @@
    Check list — reused bullet-as-checkmark list (already shared via
    app.css's .check-list / .check-list__icon; nothing page-specific here).
    ========================================================================== */
+
+/* ==========================================================================
+   Pill tag — small uppercase pill, used standalone as a label/tag and as
+   the active/inactive state for pill-style tab navigation (nav-link +
+   ds-badge). Colored from each page's own --project-primary, so it reads
+   correctly regardless of brand color.
+   ========================================================================== */
+
+.ds-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--project-primary) 8%, transparent);
+  color: var(--project-primary);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.ds-badge.active {
+  color: #fff !important;
+  background-color: var(--project-primary) !important;
+}
+
+/* ==========================================================================
+   Scroll frame — a bordered, rounded box that scrolls its own content
+   vertically instead of dumping a tall screenshot into the page flow.
+   Used for full-page mockup previews and before/after design comparisons.
+   Add .scroll-frame--tall for a full-height variant.
+   ========================================================================== */
+
+.scroll-frame {
+  position: relative;
+  border: 1px solid rgba(39, 39, 39, 0.1);
+  border-radius: 1rem;
+  overflow: hidden;
+  background: var(--project-surface-muted);
+  --scroll-frame-max-h: 520px;
+}
+
+.scroll-frame--tall {
+  --scroll-frame-max-h: 100vh;
+}
+
+.scroll-frame__body {
+  max-height: var(--scroll-frame-max-h);
+  height: 80vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--project-primary) 40%, transparent) transparent;
+}
+
+.scroll-frame__body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-frame__body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-frame__body::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--project-primary) 35%, transparent);
+  border-radius: 999px;
+}
+
+.scroll-frame__body::-webkit-scrollbar-thumb:hover {
+  background: var(--project-primary);
+}
+
+.scroll-frame__body img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Persistent "there's more below" cue — fades out once the user has
+   scrolled the frame close to its bottom edge (see initScrollFrames in
+   app.js). */
+.scroll-frame__hint {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 76px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 0.85rem;
+
+  background: linear-gradient(to bottom,
+      color-mix(in srgb, var(--project-surface-muted) 0%, transparent),
+      color-mix(in srgb, var(--project-surface-muted) 90%, transparent) 55%,
+      var(--project-surface-muted) 100%);
+
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-frame__hint.is-hidden {
+  opacity: 0;
+}
+
+.scroll-frame__hint span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+
+  background: var(--project-primary);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 767.98px) {
+  .scroll-frame__body {
+    max-height: min(var(--scroll-frame-max-h), 70vh);
+  }
+}
+
+/* ==========================================================================
+   Themed accordion — borderless, rounded panels (closed: neutral off-white;
+   open: a light tint of the page's own --project-primary) instead of
+   Bootstrap's default bordered/square accordion. Each .accordion-item also
+   needs `border-0 rounded-4 overflow-hidden` (plus `mt-2` after the first)
+   in the markup for the rounded-panel shape.
+   ========================================================================== */
+
+.ds-variables-accordion {
+  margin-top: 0.75rem;
+}
+
+.ds-variables-accordion .accordion-item {
+  background: #fafafa;
+  border: 0;
+}
+
+.ds-variables-accordion .accordion-button {
+  background: #fafafa;
+  color: var(--project-text);
+  padding: 1rem 1.25rem;
+  box-shadow: none;
+  border-radius: 1rem !important;
+}
+
+.ds-variables-accordion .accordion-button:not(.collapsed) {
+  background: color-mix(in srgb, var(--project-primary) 6%, white);
+  color: var(--project-primary);
+  box-shadow: none;
+}
+
+.ds-variables-accordion .accordion-button:focus {
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--project-primary) 12%, transparent);
+}
+
+.ds-variables-accordion .accordion-body {
+  background: color-mix(in srgb, var(--project-primary) 6%, white);
+}

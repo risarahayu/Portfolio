@@ -10,6 +10,7 @@
     </title>
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="css/project.css" rel="stylesheet" />
     <link href="css/BaliTeak.css" rel="stylesheet" />
     <link href="../app.css" rel="stylesheet" />
@@ -309,13 +310,65 @@
             <h2 class="capsule fw-semibold capsule-border-project project-section__title">
                 Another Pages
             </h2>
+
             <div class="rounded-4 mt-3">
-                <p class="fs-6 fw-semibold mb-2">About Page</p>
-                <img alt="Bali Teak About Page" class="w-100 rounded-4" src="image/BaliTeak/About Page.png"
-                    style="object-fit: contain; object-position: top;" />
-                <p class="fs-6 fw-bold mt-4 mb-2">Home Owner Page</p>
-                <img alt="Bali Teak Home Owner Page" class="w-100 rounded-4" src="image/BaliTeak/Home Owener Page.png"
-                    style="object-fit: contain; object-position: top;" />
+
+                <!-- Tabs -->
+                <ul class="nav nav-pills gap-2 mb-3" id="anotherPagesTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active rounded-pill px-3 ds-badge" id="about-page-tab"
+                            data-bs-toggle="pill" data-bs-target="#about-page-pane" type="button" role="tab"
+                            aria-controls="about-page-pane" aria-selected="true">
+                            About
+                        </button>
+                    </li>
+
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link rounded-pill px-3 ds-badge" id="home-owner-page-tab"
+                            data-bs-toggle="pill" data-bs-target="#home-owner-page-pane" type="button" role="tab"
+                            aria-controls="home-owner-page-pane" aria-selected="false">
+                            Home Owner
+                        </button>
+                    </li>
+                </ul>
+
+                <!-- Tab Content -->
+                <div class="tab-content" id="anotherPagesTabContent">
+
+                    <!-- About -->
+                    <div class="tab-pane fade show active" id="about-page-pane" role="tabpanel"
+                        aria-labelledby="about-page-tab" tabindex="0">
+
+                        <div class="scroll-frame scroll-frame--tall">
+                            <div class="scroll-frame__body">
+                                <img loading="lazy" class="zoom-image lazy-img" alt="Bali Teak About Page"
+                                    src="image/BaliTeak/About Page.png">
+                            </div>
+                            <div class="scroll-frame__hint">
+                                <span><i class="bi bi-arrow-down"></i> Scroll to see full page</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Home Owner -->
+                    <div class="tab-pane fade" id="home-owner-page-pane" role="tabpanel"
+                        aria-labelledby="home-owner-page-tab" tabindex="0">
+
+                        <div class="scroll-frame scroll-frame--tall">
+                            <div class="scroll-frame__body">
+                                <img loading="lazy" class="zoom-image lazy-img" alt="Bali Teak Home Owner Page"
+                                    src="image/BaliTeak/Home Owener Page.png">
+                            </div>
+                            <div class="scroll-frame__hint">
+                                <span><i class="bi bi-arrow-down"></i> Scroll to see full page</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
         </section>
         <section class="project-section" id="ux-audit">
@@ -613,7 +666,7 @@
 
 
         <section class="project-section" id="seo-technical-optimisation">
-            <div class="">
+            <div class="project-surface-muted rounded-4 p-4 p-md-5">
 
                 <!-- Section Heading -->
                 <h2 class="capsule fw-semibold capsule-border-project project-section__title mb-3">
@@ -631,11 +684,11 @@
 
 
                 <!-- Accordion -->
-                <div class="accordion" id="seoAccordion">
+                <div class="accordion ds-variables-accordion" id="seoAccordion">
 
 
                     <!-- 01. Heading Structure -->
-                    <div class="accordion-item">
+                    <div class="accordion-item border-0 rounded-4 overflow-hidden">
 
                         <h3 class="accordion-header">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
@@ -648,7 +701,7 @@
 
                         <div id="pageStructure" class="accordion-collapse collapse show" data-bs-parent="#seoAccordion">
 
-                            <div class="accordion-body">
+                            <div class="accordion-body p-3 p-md-4">
 
                                 <p class="fs-6 mb-3">
                                     <strong>Finding:</strong>
@@ -674,7 +727,7 @@
 
 
                     <!-- 02. Meta Tags -->
-                    <div class="accordion-item">
+                    <div class="accordion-item border-0 rounded-4 overflow-hidden mt-2">
 
                         <h3 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -687,7 +740,7 @@
 
                         <div id="metaTags" class="accordion-collapse collapse" data-bs-parent="#seoAccordion">
 
-                            <div class="accordion-body">
+                            <div class="accordion-body p-3 p-md-4">
 
                                 <p class="fs-6 mb-3">
                                     <strong>Finding:</strong>
@@ -737,7 +790,7 @@
 
 
                     <!-- 03. Responsive -->
-                    <div class="accordion-item">
+                    <div class="accordion-item border-0 rounded-4 overflow-hidden mt-2">
 
                         <h3 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -751,7 +804,7 @@
 
                         <div id="mobileExperience" class="accordion-collapse collapse" data-bs-parent="#seoAccordion">
 
-                            <div class="accordion-body">
+                            <div class="accordion-body p-3 p-md-4">
 
                                 <p class="fs-6 mb-3">
                                     <strong>Finding:</strong>
@@ -774,7 +827,7 @@
 
 
                     <!-- 04. XML Sitemap -->
-                    <div class="accordion-item">
+                    <div class="accordion-item border-0 rounded-4 overflow-hidden mt-2">
 
                         <h3 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -787,7 +840,7 @@
 
                         <div id="xmlSitemap" class="accordion-collapse collapse" data-bs-parent="#seoAccordion">
 
-                            <div class="accordion-body">
+                            <div class="accordion-body p-3 p-md-4">
 
                                 <p class="fs-6 mb-3">
                                     <strong>Finding:</strong>
@@ -828,7 +881,7 @@
 
 
                     <!-- 05. Crawlability -->
-                    <div class="accordion-item">
+                    <div class="accordion-item border-0 rounded-4 overflow-hidden mt-2">
 
                         <h3 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -841,7 +894,7 @@
 
                         <div id="crawlability" class="accordion-collapse collapse" data-bs-parent="#seoAccordion">
 
-                            <div class="accordion-body">
+                            <div class="accordion-body p-3 p-md-4">
 
                                 <p class="fs-6 mb-3">
                                     <strong>Finding:</strong>
@@ -879,7 +932,7 @@
 
 
                     <!-- 06. Image Optimisation -->
-                    <div class="accordion-item">
+                    <div class="accordion-item border-0 rounded-4 overflow-hidden mt-2">
 
                         <h3 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -893,7 +946,7 @@
 
                         <div id="imageOptimisation" class="accordion-collapse collapse" data-bs-parent="#seoAccordion">
 
-                            <div class="accordion-body">
+                            <div class="accordion-body p-3 p-md-4">
 
                                 <p class="fs-6 mb-3">
                                     <strong>Finding:</strong>
@@ -916,7 +969,7 @@
 
 
                     <!-- 07. Technical Foundation -->
-                    <div class="accordion-item">
+                    <div class="accordion-item border-0 rounded-4 overflow-hidden mt-2">
 
                         <h3 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -931,7 +984,7 @@
                         <div id="technicalFoundation" class="accordion-collapse collapse"
                             data-bs-parent="#seoAccordion">
 
-                            <div class="accordion-body">
+                            <div class="accordion-body p-3 p-md-4">
 
                                 <p class="fs-6 mb-0">
                                     SEO considerations were incorporated into the

@@ -173,6 +173,18 @@ const testimonials = [
     role: "Executive Assistant",
     company: "1zero",
     quote: " was always impressed by her passion and dedication to her work. She is highly responsible, responsive, and efficient, and it is clear that she genuinely enjoys what she does. Risa is also always willing to learn new things and continuously improve her skills. I truly enjoyed working alongside Risa and would highly recommend her to any team or company looking for a passionate, dedicated, talented, and supportive UI/UX professional. I’m confident she will continue to grow and achieve great things in her career."
+  },
+  {
+    name: "Chandra Kusuma",
+    role: "Operation Manager",
+    company: "1zero",
+    quote: "Risa is one of those teammates who makes every collaboration seamless. Her multi-disciplinary skill set-spanning UI/UX, WordPress/React development, and digital marketing-allows her to look at digital products holistically. She's extremely responsive, detail-oriented, and always eager to learn and tackle complex challenges. Highly recommend her to any organization!"
+  },
+  {
+    name: "Mark Treleaven",
+    role: "Chief Technology Officer",
+    company: "Mission Pawsible Bali",
+    quote: "Working with Risa at 1zero has been awesome. I've loved watching her evolve from a UI/UX Designer into a true UI/UX Developer. She naturally has a great eye for detail and really thinks through the user experience, but what sets her apart is her drive to learn. She stepped right out of her comfort zone to teach herself software and web development, bridging the gap between design and code. She's proactive, dependable, and just gets things done. Risa would be a huge asset to any team, and I highly recommend her."
   }
 ];
 
