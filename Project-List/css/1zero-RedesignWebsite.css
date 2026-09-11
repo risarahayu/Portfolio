@@ -5,7 +5,7 @@
     --sea-salt: #fafafa;
     --ivory: #f3f5e9;
     --dun: #d6caad;
-    --seo-warning: #c0392b;
+    --seo-warning: #d6a500;
 }
 
 /* =========================================================
@@ -33,6 +33,7 @@
 .scroll-frame__body {
     max-height: var(--scroll-frame-max-h);
     overflow-y: auto;
+    height: 80vh;
     overflow-x: hidden;
     scrollbar-width: thin;
     scrollbar-color: rgba(29, 87, 69, 0.4) transparent;
@@ -441,7 +442,7 @@
 
 .design-iteration__feedback p,
 .design-iteration__image+div p {
-    color: rgba(39, 39, 39, 0.65);
+    color: rgb(24, 24, 24);
     font-size: 0.875rem;
     line-height: 1.7;
 }
@@ -473,7 +474,7 @@
 .before-after__description {
     margin: 0;
 
-    color: rgba(39, 39, 39, 0.68);
+    color: rgb(39, 39, 39);
 
     font-size: 1rem;
     line-height: 1.75;
@@ -677,8 +678,8 @@
 /* Rows that did not fully pass the audit — same card shape, warm
    accent instead of the default neutral one. */
 .seo-audit-item--warning {
-    border-color: rgba(192, 57, 43, 0.25);
-    background: rgba(192, 57, 43, 0.04);
+    border-color: rgba(190, 192, 43, 0.25);
+    background: rgba(165, 192, 43, 0.04);
 }
 
 .seo-audit-item--warning .seo-audit-item__label {
@@ -691,7 +692,7 @@
     padding: 0.2rem 0.6rem;
     margin-bottom: 0.5rem;
     border-radius: 999px;
-    background: rgba(192, 57, 43, 0.12);
+    background: rgba(192, 170, 43, 0.12);
     color: var(--seo-warning);
     font-size: 0.875rem;
     font-weight: 700;
@@ -798,7 +799,7 @@
 
 .before-after__caption {
     margin: 0.75rem 0 0;
-    color: rgba(39, 39, 39, 0.55);
+    color: rgb(39, 39, 39);
     font-size: 0.875rem;
     line-height: 1.5;
 }
@@ -855,4 +856,353 @@
 
 .ux-audit-item__after p:first-child {
     color: var(--project-primary);
+}
+
+/* ==================================================
+   SEO AUDIT
+================================================== */
+
+.seo-audit {
+    width: 100%;
+}
+
+
+/* ==================================================
+   INTRO
+================================================== */
+
+.seo-audit__intro {
+    max-width: 900px;
+    margin-bottom: 4rem;
+}
+
+.seo-audit__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    margin-bottom: 1rem;
+
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.seo-audit__headline {
+    margin: 0 0 1rem;
+
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.seo-audit__description {
+    max-width: 720px;
+    margin: 0;
+
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+
+/* ==================================================
+   TABLE
+================================================== */
+
+.seo-audit-table {
+    width: 100%;
+
+    border: 1px solid rgba(39, 39, 39, 0.15);
+    border-radius: 1.5rem;
+
+    overflow: hidden;
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.seo-audit-table__header {
+    display: grid;
+
+    grid-template-columns:
+        150px minmax(220px, 1fr) minmax(320px, 1.4fr) minmax(220px, 1fr);
+
+    background: #272727;
+    color: #3a3a3a;
+}
+
+.seo-audit-table__header .seo-audit-table__cell {
+    padding: 1.25rem 1.5rem;
+    background-color: #272727;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+
+/* ==================================================
+   ROW
+================================================== */
+
+.seo-audit-table__row {
+    display: grid;
+    background-color: #ffffff;
+
+    grid-template-columns:
+        150px minmax(220px, 1fr) minmax(320px, 1.4fr) minmax(220px, 1fr);
+
+    border-top: 1px solid rgba(39, 39, 39, 0.12);
+}
+
+.seo-audit-table__row:first-of-type {
+    border-top: none;
+}
+
+
+/* ==================================================
+   CELL
+================================================== */
+
+.seo-audit-table__cell {
+    min-width: 0;
+
+    padding: 1.5rem;
+
+    border-right: 1px solid rgba(39, 39, 39, 0.12);
+
+    line-height: 1.6;
+}
+
+.seo-audit-table__cell :last-child {
+    border-right: none;
+}
+
+
+/* ==================================================
+   PAGE
+================================================== */
+
+.seo-audit-table__cell --page {
+    display: flex;
+    align-items: flex-start;
+}
+
+.seo-audit-table__page {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+
+    font-weight: 700;
+}
+
+.seo-audit-table__page .check-list__icon {
+    width: 1rem;
+    height: 1rem;
+
+    flex: 0 0 auto;
+}
+
+
+/* ==================================================
+   CODE
+================================================== */
+
+.seo-audit-table__result {
+    min-width: 0;
+}
+
+.seo-audit-table code {
+    display: block;
+
+    width: 100%;
+
+    padding: 0.75rem 0.875rem;
+
+    border-radius: 0.75rem;
+    font-family:
+        "JetBrains Mono",
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+    font-size: 0.75rem;
+    line-height: 1.7;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+
+/* ==================================================
+   MOBILE LABEL
+================================================== */
+
+.seo-audit-table__mobile-label {
+    display: none;
+}
+
+
+/* ==================================================
+   SIMPLE ROW
+================================================== */
+
+.seo-audit-table__row--simple {
+    grid-template-columns: 150px 1fr;
+}
+
+.seo-audit-table__cell --full {
+    border-right: none;
+}
+
+.seo-audit-table__cell --full p {
+    margin: 0;
+
+    font-weight: 500;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 1100px) {
+
+    .seo-audit-table {
+        overflow-x: auto;
+    }
+
+    .seo-audit-table__header,
+    .seo-audit-table__row {
+        min-width: 950px;
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 767px) {
+
+    .seo-audit__intro {
+        margin-bottom: 2.5rem;
+    }
+
+    .seo-audit-table {
+        border-radius: 1rem;
+
+        overflow: hidden;
+    }
+
+
+    /* Hide desktop table header */
+    .seo-audit-table__header {
+        display: none;
+    }
+
+
+    /* Convert each row into a card */
+    .seo-audit-table__row,
+    .seo-audit-table__row--simple {
+        display: block;
+
+        min-width: 0;
+
+        padding: 0;
+    }
+
+
+    /* Page name */
+    .seo-audit-table__cell --page {
+        display: block;
+
+        padding: 1.25rem;
+
+        background: #272727;
+        color: #fafafa;
+
+        border-right: none;
+    }
+
+    .seo-audit-table__page {
+        font-size: 0.95rem;
+    }
+
+
+    /* Other cells */
+    .seo-audit-table__cell {
+        display: block;
+
+        padding: 1.25rem;
+
+        border-right: none;
+        border-bottom: 1px solid rgba(39, 39, 39, 0.12);
+    }
+
+    .seo-audit-table__cell :last-child {
+        border-bottom: none;
+    }
+
+
+    /* Mobile labels */
+    .seo-audit-table__mobile-label {
+        display: block;
+
+        margin-bottom: 0.625rem;
+
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        opacity: 0.65;
+    }
+
+
+    /* Code */
+    .seo-audit-table code {
+        font-size: 0.7rem;
+
+        padding: 0.75rem;
+
+        border-radius: 0.625rem;
+    }
+
+
+    /* Simple row */
+    .seo-audit-table__row--simple .seo-audit-table__cell --full {
+        border-bottom: none;
+    }
+
+}
+
+.check-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+}
+
+.check-list li {
+    padding: 0.65rem 1rem;
+
+    border: 1px solid rgba(39, 39, 39, 0.15);
+    border-radius: 999px;
+    width: fit-content;
+
+    font-size: 0.875rem;
+    line-height: 1.4;
+
+    white-space: nowrap;
 }

@@ -574,7 +574,7 @@ function renderPortfolioFooter() {
   if (!footerPortfolio) return;
 
   footerPortfolio.innerHTML = `
-            <div class="container  contact-inner p-3 rounded-4">
+            <div class=" contact-inner p-3 rounded-4">
 
         <!-- Animated blobs in background -->
         <div class="contact-blob blob-1"></div>
