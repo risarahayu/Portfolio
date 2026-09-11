@@ -687,37 +687,6 @@
     gap: 0.6rem 1.25rem;
 }
 
-
-/* =========================================================
-   UX AUDIT LIST — replaces a bordered compare-row table with a
-   card list matching the ds-item / ds-label design system language.
-========================================================= */
-
-.ux-audit-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.ux-audit-item {
-    padding: 1.25rem 1.5rem;
-}
-
-.ux-audit-item__before,
-.ux-audit-item__after {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.6rem;
-}
-
-.ux-audit-item__before .ds-description {
-    color: rgba(39, 39, 39, 0.55);
-}
-
-.ux-audit-item__after p:first-child {
-    color: var(--project-primary);
-}
-
 /* ==================================================
    SEO AUDIT
 ================================================== */

@@ -679,3 +679,79 @@
 .ds-variables-accordion .accordion-body {
   background: color-mix(in srgb, var(--project-primary) 6%, white);
 }
+
+/* ==========================================================================
+   UX audit list — an Area / Issue / New Direction comparison as a card
+   list, replacing a bordered <table>. Each item stacks to one column
+   below 992px.
+   ========================================================================== */
+
+.ux-audit-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ux-audit-item {
+  display: grid;
+  grid-template-columns: 160px 1fr 1fr;
+  gap: 1rem;
+  align-items: start;
+  padding: 1.25rem 1.5rem;
+  background: #fff;
+  border: 1px solid rgba(39, 39, 39, 0.08);
+  border-radius: 1rem;
+}
+
+.ux-audit-item__area {
+  padding-top: 0.15rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--project-text);
+}
+
+.ux-audit-item__before,
+.ux-audit-item__after {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.ux-audit-item__icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.ux-audit-item__before p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgba(39, 39, 39, 0.65);
+}
+
+.ux-audit-item__after p:first-child {
+  margin: 0 0 0.35rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--project-primary);
+}
+
+.ux-audit-item__after p:last-child {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgba(39, 39, 39, 0.65);
+}
+
+@media (max-width: 991.98px) {
+  .ux-audit-item {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .ux-audit-item__area {
+    padding-top: 0;
+  }
+}

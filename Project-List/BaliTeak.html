@@ -379,167 +379,76 @@
                 <p class="fs-6 mt-3">
                     Why a Redesign Was Needed?
                 </p>
-                <div class="table-responsive rounded-4">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">
-                                    Area
-                                </th>
-                                <th scope="col">
-                                    Issue
-                                </th>
-                                <th scope="col">
-                                    New Direction
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">
-                                    Visual Design
-                                </th>
-                                <td>
-                                    <div class="compare-row cross-container">
-                                        <img loading="lazy" width="20" height="20" alt="" class="cross mt-1 lazy-img"
-                                            src="image/cross red.svg" />
-                                        <p class="m-0">
-                                            <strong>
-                                                Outdated visual
-                                            </strong>
-                                            style that did not reflect a premium
-                                            brand.
-                                        </p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="compare-row compare-row--stacked check-container">
-                                        <div class="d-flex flex-row gap-2 align-items-center">
-                                            <img loading="lazy" width="20" height="20" alt="" class="check lazy-img"
-                                                src="image/tick green.svg" />
-                                            <p class="m-0">
-                                                <strong>
-                                                    Modern, premium visual language
-                                                </strong>
-                                            </p>
-                                        </div>
-                                        <p class="fs-6">
-                                            Clean layout, consistent typography, refined spacing, and a
-                                            restrained
-                                            color palette to reflect a high-end brand.
-                                        </p>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    Information Hierarchy
-                                </th>
-                                <td>
-                                    <div class="compare-row cross-container">
-                                        <img loading="lazy" width="20" height="20" alt="" class="cross mt-1 lazy-img"
-                                            src="image/cross red.svg" />
-                                        <p class="m-0">
-                                            <strong>
-                                                Products were not clearly
-                                            </strong>
-                                            showcased, reducing
-                                            product
-                                            visibility.
-                                        </p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="compare-row compare-row--stacked check-container">
-                                        <div class="d-flex flex-row gap-2 align-items-center">
-                                            <img loading="lazy" width="20" height="20" alt="" class="check lazy-img"
-                                                src="image/tick green.svg" />
-                                            <p class="m-0">
-                                                <strong>
-                                                    Product-first presentation
-                                                </strong>
-                                            </p>
-                                        </div>
-                                        <p class="fs-6">
-                                            Prominently showcase products using high-quality imagery and clear
-                                            categorization to improve visibility and clarity.
-                                        </p>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    Product Presentation
-                                </th>
-                                <td>
-                                    <div class="compare-row cross-container">
-                                        <img loading="lazy" width="20" height="20" alt="" class="cross mt-1 lazy-img"
-                                            src="image/cross red.svg" />
-                                        <p class="m-0">
-                                            <strong>
-                                                Poor information
-                                            </strong>
-                                            hierarchy, making the content
-                                            difficult
-                                            to scan.
-                                        </p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="compare-row compare-row--stacked check-container">
-                                        <div class="d-flex flex-row gap-2 align-items-center">
-                                            <img loading="lazy" width="20" height="20" alt="" class="check lazy-img"
-                                                src="image/tick green.svg" />
-                                            <p class="m-0">
-                                                <strong>
-                                                    Clear information hierarchy
-                                                </strong>
-                                            </p>
-                                        </div>
-                                        <p class="fs-6">
-                                            Structured content with strong headings, concise copy, and
-                                            intentional
-                                            spacing for easier scanning.
-                                        </p>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    Responsiveness
-                                </th>
-                                <td>
-                                    <div class="compare-row cross-container">
-                                        <img loading="lazy" width="20" height="20" alt="" class="cross mt-1 lazy-img"
-                                            src="image/cross red.svg" />
-                                        <p class="m-0">
-                                            Layout was
-                                            <strong>
-                                                not optimized for mobile devices.
-                                            </strong>
-                                        </p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="compare-row compare-row--stacked check-container">
-                                        <div class="d-flex flex-row gap-2 align-items-center">
-                                            <img loading="lazy" width="20" height="20" alt="" class="check lazy-img"
-                                                src="image/tick green.svg" />
-                                            <p class="m-0">
-                                                <strong>
-                                                    Mobile-first responsive layout
-                                                </strong>
-                                            </p>
-                                        </div>
-                                        <p class="fs-6">
-                                            Optimized layouts, spacing, and typography to ensure a seamless
-                                            experience across all devices.
-                                        </p>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="ux-audit-list mt-4">
+
+                    <!-- Visual Design -->
+                    <div class="ux-audit-item">
+                        <span class="ux-audit-item__area">Visual Design</span>
+                        <div class="ux-audit-item__before">
+                            <img loading="lazy" alt="" class="ux-audit-item__icon lazy-img" src="image/cross red.svg" />
+                            <p><strong>Outdated visual</strong> style that did not reflect a premium brand.</p>
+                        </div>
+                        <div class="ux-audit-item__after">
+                            <img loading="lazy" alt="" class="ux-audit-item__icon lazy-img" src="image/tick green.svg" />
+                            <div>
+                                <p><strong>Modern, premium visual language</strong></p>
+                                <p>Clean layout, consistent typography, refined spacing, and a restrained color
+                                    palette to reflect a high-end brand.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Information Hierarchy -->
+                    <div class="ux-audit-item">
+                        <span class="ux-audit-item__area">Information Hierarchy</span>
+                        <div class="ux-audit-item__before">
+                            <img loading="lazy" alt="" class="ux-audit-item__icon lazy-img" src="image/cross red.svg" />
+                            <p><strong>Products were not clearly</strong> showcased, reducing product visibility.</p>
+                        </div>
+                        <div class="ux-audit-item__after">
+                            <img loading="lazy" alt="" class="ux-audit-item__icon lazy-img" src="image/tick green.svg" />
+                            <div>
+                                <p><strong>Product-first presentation</strong></p>
+                                <p>Prominently showcase products using high-quality imagery and clear
+                                    categorization to improve visibility and clarity.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Presentation -->
+                    <div class="ux-audit-item">
+                        <span class="ux-audit-item__area">Product Presentation</span>
+                        <div class="ux-audit-item__before">
+                            <img loading="lazy" alt="" class="ux-audit-item__icon lazy-img" src="image/cross red.svg" />
+                            <p><strong>Poor information</strong> hierarchy, making the content difficult to scan.</p>
+                        </div>
+                        <div class="ux-audit-item__after">
+                            <img loading="lazy" alt="" class="ux-audit-item__icon lazy-img" src="image/tick green.svg" />
+                            <div>
+                                <p><strong>Clear information hierarchy</strong></p>
+                                <p>Structured content with strong headings, concise copy, and intentional
+                                    spacing for easier scanning.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Responsiveness -->
+                    <div class="ux-audit-item">
+                        <span class="ux-audit-item__area">Responsiveness</span>
+                        <div class="ux-audit-item__before">
+                            <img loading="lazy" alt="" class="ux-audit-item__icon lazy-img" src="image/cross red.svg" />
+                            <p>Layout was <strong>not optimized for mobile devices.</strong></p>
+                        </div>
+                        <div class="ux-audit-item__after">
+                            <img loading="lazy" alt="" class="ux-audit-item__icon lazy-img" src="image/tick green.svg" />
+                            <div>
+                                <p><strong>Mobile-first responsive layout</strong></p>
+                                <p>Optimized layouts, spacing, and typography to ensure a seamless
+                                    experience across all devices.</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
