@@ -52,60 +52,8 @@
 .brand-color-item__hex {
   margin: 0;
   font-family: monospace;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   color: rgba(39, 39, 39, 0.55);
-}
-
-/* ==========================================================================
-   "No asset yet" placeholder — PPT Slide Master (still the old deck, no
-   redesigned version to show yet).
-   ========================================================================== */
-
-.visual-asset-placeholder {
-  width: 100%;
-  min-height: 220px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 2rem;
-
-  background: linear-gradient(135deg,
-      rgba(29, 87, 69, 0.04),
-      rgba(214, 202, 173, 0.18));
-
-  border: 1px dashed rgba(29, 87, 69, 0.25);
-
-  border-radius: 1rem;
-
-  text-align: center;
-}
-
-.visual-asset-placeholder__badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 0.45rem 0.8rem;
-
-  border-radius: 999px;
-
-  background: rgba(29, 87, 69, 0.08);
-
-  color: var(--project-primary);
-
-  font-size: 0.7rem;
-  font-weight: 700;
-
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.visual-asset-placeholder p {
-  color: rgba(39, 39, 39, 0.55);
-  font-size: 0.8rem;
-  line-height: 1.6;
 }
 
 /* ==========================================================================
@@ -119,4 +67,44 @@
   width: 100%;
   max-width: 640px;
   margin-inline: auto;
+}
+
+/* ==========================================================================
+   Visual asset category divider — same rhythm as .seo-audit-group on the
+   1zero landing redesign page (1.5rem gap + hairline), so the categories
+   inside #visual-assets read consistently with that page.
+   ========================================================================== */
+
+.visual-asset-category {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(39, 39, 39, 0.08);
+}
+
+.visual-asset-category:first-of-type {
+  margin-top: 1rem;
+  padding-top: 0;
+  border-top: 0;
+}
+
+/* ==========================================================================
+   Slide thumbnail grid — PowerPoint Slides category. Every source slide is
+   a fixed 960x540 (16:9) export, so thumbnails are pinned to that ratio
+   instead of relying on each SVG's intrinsic size.
+   ========================================================================== */
+
+.slide-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #fff;
+}
+
+.slide-group-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(39, 39, 39, 0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }

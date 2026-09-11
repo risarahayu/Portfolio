@@ -291,7 +291,7 @@
 
 
                 <!-- Design Principles -->
-                <div class="row g-4 mt-2">
+                <div class="row g-4 mt-3">
 
                     <!-- Principle 01 -->
                     <div class="col-12 col-md-6">
@@ -376,7 +376,7 @@
 
 
                 <!-- Brand Colors -->
-                <div class="mt-5 pt-3">
+                <div class="mt-3 pt-4">
 
                     <h3 class="fs-5 fw-semibold mb-2">
                         Brand Colors
@@ -691,7 +691,7 @@
                 <!-- ==========================================
                      02 — SOCIAL MEDIA
                 =========================================== -->
-                <div class="visual-asset-category mt-5 pt-5">
+                <div class="visual-asset-category">
 
                     <div class="mb-4">
                         <span class="small text-uppercase fw-semibold">
@@ -711,7 +711,7 @@
 
                     <!-- Company Account -->
                     <div class="mt-4">
-                        <h4 class="fs-5 fw-semibold mb-2">
+                        <h4 class="fs-6 fw-bold mb-2">
                             Company Account
                         </h4>
 
@@ -726,7 +726,7 @@
                                 <h5 class="fs-6 fw-bold mb-3">Previous Direction</h5>
                                 <img loading="lazy" width="5917" height="6654"
                                     alt="1zero LinkedIn Company Cover Previous Design"
-                                    class="w-100 rounded-4 zoom-image lazy-img border"
+                                    class="visual-asset-image--capped rounded-4 zoom-image lazy-img border"
                                     src="image/1zero/Visual Asset/Linkedin Banner Versi 1.svg" />
                             </div>
 
@@ -743,8 +743,7 @@
                     <!-- Personal Account (Diperbaiki) -->
                     <div class="mt-5 pt-3">
 
-                        <!-- Penambahan tag H4 agar hierarki setara dengan Company Account -->
-                        <h4 class="fs-5 fw-semibold mb-2">
+                        <h4 class="fs-6 fw-bold mb-2">
                             Personal Account
                         </h4>
 
@@ -789,7 +788,7 @@
                 <!-- ==========================================
                      03 — BUSINESS COLLATERAL
                 =========================================== -->
-                <div class="visual-asset-category mt-5 pt-5">
+                <div class="visual-asset-category">
 
                     <div class="mb-4">
 
@@ -842,7 +841,7 @@
                 <!-- ==========================================
                      04 — DIGITAL WORKSPACE
                 =========================================== -->
-                <div class="visual-asset-category mt-5 pt-5">
+                <div class="visual-asset-category">
 
                     <div class="mb-4">
 
@@ -896,178 +895,272 @@
 
                 </div>
 
+
+                <!-- ==========================================
+                     05 — PRESENTATION TEMPLATE (POWERPOINT)
+                =========================================== -->
+                <div class="visual-asset-category">
+
+                    <div class="mb-4">
+                        <span class="small text-uppercase fw-semibold">
+                            05 — Presentation Template
+                        </span>
+
+                        <h3 class="fs-4 fw-semibold mt-2 mb-2">
+                            PowerPoint Slides
+                        </h3>
+
+                        <p class="fs-6 mb-0">
+                            A comprehensive set of presentation slides designed for various functional needs, ensuring
+                            consistency in every pitch deck, report, and company profile.
+                        </p>
+                    </div>
+
+                    <!-- Filter Tabs Navigation -->
+                    <ul class="nav nav-pills gap-2 mb-3" id="ppt-tabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active rounded-pill px-3 ds-badge" id="tab-opening"
+                                data-bs-toggle="pill" data-bs-target="#pane-opening" type="button" role="tab"
+                                aria-controls="pane-opening" aria-selected="true">
+                                Opening &amp; Title
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link rounded-pill px-3 ds-badge" id="tab-toc" data-bs-toggle="pill"
+                                data-bs-target="#pane-toc" type="button" role="tab" aria-controls="pane-toc"
+                                aria-selected="false">
+                                Table of Contents
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link rounded-pill px-3 ds-badge" id="tab-text" data-bs-toggle="pill"
+                                data-bs-target="#pane-text" type="button" role="tab" aria-controls="pane-text"
+                                aria-selected="false">
+                                Text &amp; Headline
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link rounded-pill px-3 ds-badge" id="tab-image" data-bs-toggle="pill"
+                                data-bs-target="#pane-image" type="button" role="tab" aria-controls="pane-image"
+                                aria-selected="false">
+                                Image Layout
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link rounded-pill px-3 ds-badge" id="tab-card" data-bs-toggle="pill"
+                                data-bs-target="#pane-card" type="button" role="tab" aria-controls="pane-card"
+                                aria-selected="false">
+                                Cards &amp; Icons
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link rounded-pill px-3 ds-badge" id="tab-graphic" data-bs-toggle="pill"
+                                data-bs-target="#pane-graphic" type="button" role="tab" aria-controls="pane-graphic"
+                                aria-selected="false">
+                                Graphic
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link rounded-pill px-3 ds-badge" id="tab-footer" data-bs-toggle="pill"
+                                data-bs-target="#pane-footer" type="button" role="tab" aria-controls="pane-footer"
+                                aria-selected="false">
+                                Footer &amp; Closing
+                            </button>
+                        </li>
+                    </ul>
+
+                    <!-- Tab Content -->
+                    <div class="tab-content mt-4" id="ppt-tabsContent">
+
+                        <!-- 1. Opening & Title -->
+                        <div class="tab-pane fade show active" id="pane-opening" role="tabpanel"
+                            aria-labelledby="tab-opening" tabindex="0">
+                            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3">
+                                <div class="col">
+                                    <img loading="lazy" class="slide-thumb rounded-3 zoom-image lazy-img border"
+                                        alt="Title Slide — Version 1"
+                                        src="image/1zero/Visual Asset/Slide/slide - title - v1.svg" />
+                                </div>
+                                <div class="col">
+                                    <img loading="lazy" class="slide-thumb rounded-3 zoom-image lazy-img border"
+                                        alt="Title Slide — Version 2"
+                                        src="image/1zero/Visual Asset/Slide/slide - title - v2.svg" />
+                                </div>
+                                <div class="col">
+                                    <img loading="lazy" class="slide-thumb rounded-3 zoom-image lazy-img border"
+                                        alt="Title Slide — Version 3"
+                                        src="image/1zero/Visual Asset/Slide/slide - title - v3.svg" />
+                                </div>
+                                <div class="col">
+                                    <img loading="lazy" class="slide-thumb rounded-3 zoom-image lazy-img border"
+                                        alt="Title Slide — Version 4"
+                                        src="image/1zero/Visual Asset/Slide/slide - title - v4.svg" />
+                                </div>
+                                <div class="col">
+                                    <img loading="lazy" class="slide-thumb rounded-3 zoom-image lazy-img border"
+                                        alt="Title Slide — Version 5"
+                                        src="image/1zero/Visual Asset/Slide/slide - title - v5.svg" />
+                                </div>
+                                <div class="col">
+                                    <img loading="lazy" class="slide-thumb rounded-3 zoom-image lazy-img border"
+                                        alt="Title Slide — Version 6"
+                                        src="image/1zero/Visual Asset/Slide/slide - title - v6.svg" />
+                                </div>
+                                <div class="col">
+                                    <img loading="lazy" class="slide-thumb rounded-3 zoom-image lazy-img border"
+                                        alt="Title Slide — Version 7"
+                                        src="image/1zero/Visual Asset/Slide/slide - title - v7.svg" />
+                                </div>
+                                <div class="col">
+                                    <img loading="lazy" class="slide-thumb rounded-3 zoom-image lazy-img border"
+                                        alt="Title Slide — Version 8"
+                                        src="image/1zero/Visual Asset/Slide/slide - title - v8.svg" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. Table of Contents -->
+                        <div class="tab-pane fade" id="pane-toc" role="tabpanel" aria-labelledby="tab-toc"
+                            tabindex="0">
+                            <div class="row g-3">
+                                <div class="col-12 col-md-6">
+                                    <img loading="lazy" class="slide-thumb rounded-3 zoom-image lazy-img border"
+                                        alt="Table of Contents Slide"
+                                        src="image/1zero/Visual Asset/Slide/slide - table of content - v1.svg" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Text & Headline -->
+                        <div class="tab-pane fade" id="pane-text" role="tabpanel" aria-labelledby="tab-text"
+                            tabindex="0">
+                            <div class="row g-3">
+                                <div class="col-12 col-md-6">
+                                    <img loading="lazy" class="slide-thumb rounded-3 zoom-image lazy-img border"
+                                        alt="Text &amp; Headline Slide"
+                                        src="image/1zero/Visual Asset/Slide/slide - content - v1.svg" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Image Layout -->
+                        <div class="tab-pane fade" id="pane-image" role="tabpanel" aria-labelledby="tab-image"
+                            tabindex="0">
+                            <div class="row row-cols-1 row-cols-sm-2 g-3">
+                                <div class="col">
+                                    <img loading="lazy" class="slide-thumb rounded-3 zoom-image lazy-img border"
+                                        alt="Content Image Slide — Version 1"
+                                        src="image/1zero/Visual Asset/Slide/slide - content - image - v1.svg" />
+                                </div>
+                                <div class="col">
+                                    <img loading="lazy" class="slide-thumb rounded-3 zoom-image lazy-img border"
+                                        alt="Content Image Slide — Version 2"
+                                        src="image/1zero/Visual Asset/Slide/slide - content - image - v2.svg" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5. Cards & Icons -->
+                        <div class="tab-pane fade" id="pane-card" role="tabpanel" aria-labelledby="tab-card"
+                            tabindex="0">
+                            <p class="slide-group-label mb-2">Card</p>
+                            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3 mb-4">
+                                <div class="col">
+                                    <img loading="lazy" class="slide-thumb rounded-3 zoom-image lazy-img border"
+                                        alt="Content Card Slide — Version 1"
+                                        src="image/1zero/Visual Asset/Slide/slide - content - card - v1.svg" />
+                                </div>
+                                <div class="col">
+                                    <img loading="lazy" class="slide-thumb rounded-3 zoom-image lazy-img border"
+                                        alt="Content Card Slide — Version 2"
+                                        src="image/1zero/Visual Asset/Slide/slide - content - card - v2.svg" />
+                                </div>
+                                <div class="col">
+                                    <img loading="lazy" class="slide-thumb rounded-3 zoom-image lazy-img border"
+                                        alt="Content Card Slide — Version 3"
+                                        src="image/1zero/Visual Asset/Slide/slide - content - card - v3.svg" />
+                                </div>
+                                <div class="col">
+                                    <img loading="lazy" class="slide-thumb rounded-3 zoom-image lazy-img border"
+                                        alt="Content Card Slide — Version 4"
+                                        src="image/1zero/Visual Asset/Slide/slide - content - card - v4.svg" />
+                                </div>
+                            </div>
+                            <p class="slide-group-label mb-2">Card + Icon</p>
+                            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3">
+                                <div class="col">
+                                    <img loading="lazy" class="slide-thumb rounded-3 zoom-image lazy-img border"
+                                        alt="Content Card with Icon Slide — Version 1"
+                                        src="image/1zero/Visual Asset/Slide/slide - content - card - icon - v1.svg" />
+                                </div>
+                                <div class="col">
+                                    <img loading="lazy" class="slide-thumb rounded-3 zoom-image lazy-img border"
+                                        alt="Content Card with Icon Slide — Version 2"
+                                        src="image/1zero/Visual Asset/Slide/slide - content - card - icon - v2.svg" />
+                                </div>
+                                <div class="col">
+                                    <img loading="lazy" class="slide-thumb rounded-3 zoom-image lazy-img border"
+                                        alt="Content Card with Icon Slide — Version 3"
+                                        src="image/1zero/Visual Asset/Slide/slide - content - card - icon - v3.svg" />
+                                </div>
+                                <div class="col">
+                                    <img loading="lazy" class="slide-thumb rounded-3 zoom-image lazy-img border"
+                                        alt="Content Card with Icon Slide — Version 4"
+                                        src="image/1zero/Visual Asset/Slide/slide - content - card - icon - v4.svg" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6. Graphic -->
+                        <div class="tab-pane fade" id="pane-graphic" role="tabpanel" aria-labelledby="tab-graphic"
+                            tabindex="0">
+                            <div class="row g-3">
+                                <div class="col-12 col-md-6">
+                                    <img loading="lazy" class="slide-thumb rounded-3 zoom-image lazy-img border"
+                                        alt="Content Graphic Slide"
+                                        src="image/1zero/Visual Asset/Slide/slide - content - graphic - v1.svg" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 7. Footer & Closing -->
+                        <div class="tab-pane fade" id="pane-footer" role="tabpanel" aria-labelledby="tab-footer"
+                            tabindex="0">
+                            <p class="slide-group-label mb-2">Footer</p>
+                            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3 mb-4">
+                                <div class="col">
+                                    <img loading="lazy" class="slide-thumb rounded-3 zoom-image lazy-img border"
+                                        alt="Footer Slide — Version 1"
+                                        src="image/1zero/Visual Asset/Slide/slide - footer - v1.svg" />
+                                </div>
+                                <div class="col">
+                                    <img loading="lazy" class="slide-thumb rounded-3 zoom-image lazy-img border"
+                                        alt="Footer Slide — Version 2"
+                                        src="image/1zero/Visual Asset/Slide/slide - footer - v2.svg" />
+                                </div>
+                                <div class="col">
+                                    <img loading="lazy" class="slide-thumb rounded-3 zoom-image lazy-img border"
+                                        alt="Footer Slide — Version 3"
+                                        src="image/1zero/Visual Asset/Slide/slide - footer - v3.svg" />
+                                </div>
+                            </div>
+                            <p class="slide-group-label mb-2">Section Divider</p>
+                            <div class="row g-3">
+                                <div class="col-12 col-md-6">
+                                    <img loading="lazy" class="slide-thumb rounded-3 zoom-image lazy-img border"
+                                        alt="Section Divider Slide"
+                                        src="image/1zero/Visual Asset/Slide/slide - devide - v1.svg" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
 
         </section>
-        <!-- ==========================================
-                     05 — PRESENTATION TEMPLATE (POWERPOINT)
-                =========================================== -->
-        <div class="visual-asset-category mt-5 pt-5 border-top">
-
-            <div class="mb-4">
-                <span class="small text-uppercase fw-semibold">
-                    05 — Presentation Template
-                </span>
-
-                <h3 class="fs-4 fw-semibold mt-2 mb-2">
-                    PowerPoint Slides
-                </h3>
-
-                <p class="fs-6 mb-0">
-                    A comprehensive set of presentation slides designed for various functional needs, ensuring
-                    consistency in every pitch deck, report, and company profile.
-                </p>
-            </div>
-
-            <!-- Filter Tabs Navigation -->
-            <ul class="nav nav-pills mb-4 gap-2" id="ppt-tabs" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active rounded-pill px-3 py-2 small fw-semibold" id="tab-opening"
-                        data-bs-toggle="pill" data-bs-target="#pane-opening" type="button" role="tab"
-                        aria-controls="pane-opening" aria-selected="true">
-                        Opening & Title
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link rounded-pill px-3 py-2 small fw-semibold" id="tab-toc" data-bs-toggle="pill"
-                        data-bs-target="#pane-toc" type="button" role="tab" aria-controls="pane-toc"
-                        aria-selected="false">
-                        Daftar Konten
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link rounded-pill px-3 py-2 small fw-semibold" id="tab-text"
-                        data-bs-toggle="pill" data-bs-target="#pane-text" type="button" role="tab"
-                        aria-controls="pane-text" aria-selected="false">
-                        Text & Headline
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link rounded-pill px-3 py-2 small fw-semibold" id="tab-image"
-                        data-bs-toggle="pill" data-bs-target="#pane-image" type="button" role="tab"
-                        aria-controls="pane-image" aria-selected="false">
-                        Image Layout
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link rounded-pill px-3 py-2 small fw-semibold" id="tab-card"
-                        data-bs-toggle="pill" data-bs-target="#pane-card" type="button" role="tab"
-                        aria-controls="pane-card" aria-selected="false">
-                        Cards & Icons
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link rounded-pill px-3 py-2 small fw-semibold" id="tab-chart"
-                        data-bs-toggle="pill" data-bs-target="#pane-chart" type="button" role="tab"
-                        aria-controls="pane-chart" aria-selected="false">
-                        Graphic & Chart
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link rounded-pill px-3 py-2 small fw-semibold" id="tab-footer"
-                        data-bs-toggle="pill" data-bs-target="#pane-footer" type="button" role="tab"
-                        aria-controls="pane-footer" aria-selected="false">
-                        Footer & Closing
-                    </button>
-                </li>
-            </ul>
-
-            <!-- Tab Content -->
-            <div class="tab-content mt-4" id="ppt-tabsContent">
-
-                <!-- 1. Opening & Title -->
-                <div class="tab-pane fade show active" id="pane-opening" role="tabpanel" aria-labelledby="tab-opening"
-                    tabindex="0">
-                    <div class="row row-cols-1 row-cols-md-2 g-4">
-                        <!-- Ulangi kolom ini s/d 4 kali -->
-                        <div class="col">
-                            <img loading="lazy" alt="Slide Opening 1"
-                                class="w-100 rounded-3 zoom-image lazy-img border shadow-sm"
-                                src="image/1zero/Visual Asset/PPT/opening-1.svg" />
-                        </div>
-                        <div class="col">
-                            <img loading="lazy" alt="Slide Opening 2"
-                                class="w-100 rounded-3 zoom-image lazy-img border shadow-sm"
-                                src="image/1zero/Visual Asset/PPT/opening-2.svg" />
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2. Daftar Konten -->
-                <div class="tab-pane fade" id="pane-toc" role="tabpanel" aria-labelledby="tab-toc" tabindex="0">
-                    <div class="row row-cols-1 row-cols-md-2 g-4">
-                        <div class="col">
-                            <img loading="lazy" alt="Table of Content 1"
-                                class="w-100 rounded-3 zoom-image lazy-img border shadow-sm"
-                                src="image/1zero/Visual Asset/PPT/toc-1.svg" />
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 3. Text & Headline -->
-                <div class="tab-pane fade" id="pane-text" role="tabpanel" aria-labelledby="tab-text" tabindex="0">
-                    <div class="row row-cols-1 row-cols-md-2 g-4">
-                        <div class="col">
-                            <img loading="lazy" alt="Text Only Slide 1"
-                                class="w-100 rounded-3 zoom-image lazy-img border shadow-sm"
-                                src="image/1zero/Visual Asset/PPT/text-1.svg" />
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 4. Image Layout -->
-                <div class="tab-pane fade" id="pane-image" role="tabpanel" aria-labelledby="tab-image" tabindex="0">
-                    <div class="row row-cols-1 row-cols-md-2 g-4">
-                        <div class="col">
-                            <img loading="lazy" alt="Image Layout 1"
-                                class="w-100 rounded-3 zoom-image lazy-img border shadow-sm"
-                                src="image/1zero/Visual Asset/PPT/image-1.svg" />
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 5. Cards & Icons -->
-                <div class="tab-pane fade" id="pane-card" role="tabpanel" aria-labelledby="tab-card" tabindex="0">
-                    <div class="row row-cols-1 row-cols-md-2 g-4">
-                        <div class="col">
-                            <p class="small text-secondary mb-2 fw-semibold">With Icons</p>
-                            <img loading="lazy" alt="Card Layout with Icon"
-                                class="w-100 rounded-3 zoom-image lazy-img border shadow-sm"
-                                src="image/1zero/Visual Asset/PPT/card-icon-1.svg" />
-                        </div>
-                        <div class="col">
-                            <p class="small text-secondary mb-2 fw-semibold">Without Icons</p>
-                            <img loading="lazy" alt="Card Layout without Icon"
-                                class="w-100 rounded-3 zoom-image lazy-img border shadow-sm"
-                                src="image/1zero/Visual Asset/PPT/card-no-icon-1.svg" />
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 6. Graphic & Chart -->
-                <div class="tab-pane fade" id="pane-chart" role="tabpanel" aria-labelledby="tab-chart" tabindex="0">
-                    <div class="row row-cols-1 row-cols-md-2 g-4">
-                        <div class="col">
-                            <img loading="lazy" alt="Chart Layout 1"
-                                class="w-100 rounded-3 zoom-image lazy-img border shadow-sm"
-                                src="image/1zero/Visual Asset/PPT/chart-1.svg" />
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 7. Footer & Closing -->
-                <div class="tab-pane fade" id="pane-footer" role="tabpanel" aria-labelledby="tab-footer" tabindex="0">
-                    <div class="row row-cols-1 row-cols-md-2 g-4">
-                        <div class="col">
-                            <img loading="lazy" alt="Footer Slide 1"
-                                class="w-100 rounded-3 zoom-image lazy-img border shadow-sm"
-                                src="image/1zero/Visual Asset/PPT/footer-1.svg" />
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
 
 
         <!-- ==================================================
