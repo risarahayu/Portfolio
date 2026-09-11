@@ -9,11 +9,11 @@
    reuses the new LinkedIn company cover as a stand-in — swap this for a
    purpose-built banner whenever one is ready. */
 :root {
-  --project-hero-image: url('../image/1zero/Visual Asset/Linekdin Cover - company account.svg');
+  --project-hero-image: url('../image/1zero/Visual Asset/Hero.svg');
 }
 
 .project-hero__banner {
-  background-color: #0a0a0a;
+  background-color: #040404;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

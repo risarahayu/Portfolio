@@ -76,6 +76,22 @@ const experienceData = [
 const projectsData = [
   {
     id: 1,
+    projectTitle: "1zero - Redesign Website",
+    company: "1zero",
+    companyURL: "https://1zero.biz",
+    projectURL: "Project-List/1zero-landing-page-redesign.html",
+    description: "A business consulting landing page redesign that aims to improve clarity, user experience, and the presentation of business credibility and services.",
+    impact: ["Clearer Service Presentation", "Stronger Business Credibility", "Improved User Journey"],
+    role: ["UI/UX", "Web Development"],
+    projectType: ["Redesign", "Platform Building"],
+    tools: ["Figma", "React JS", "Tailwindcss"],
+    images: [
+      "image/portfolio img/UIUX/1zero landing page.jpg",
+      "image/portfolio img/UIUX/1zero landing page 2.jpg"
+    ]
+  },
+  {
+    id: 2,
     projectTitle: "4Ocean - Impact Portal Dashboard",
     company: "4Ocean",
     companyURL: "https://www.4ocean.com/",
@@ -91,7 +107,7 @@ const projectsData = [
     ]
   },
   {
-    id: 2,
+    id: 3,
     projectTitle: "Bali Teak - Redesign Website",
     company: "Bali Teak",
     companyURL: "https://baliteak.ca",
@@ -109,7 +125,7 @@ const projectsData = [
     ]
   },
   {
-    id: 3,
+    id: 4,
     projectTitle: "1zero - AI Assisted Content Generation",
     company: "1zero",
     companyURL: "https://1zero.biz",
@@ -118,28 +134,13 @@ const projectsData = [
     impact: ["Faster Content Production", "Expanded Visual Asset Creation", "Faster Creative Exploration"],
     role: ["Digital Marketing"],
     projectType: ["Content Creation"],
-    tools: ["Figma", "ChatGPT"],
+    tools: ["Figma", "ChatGPT", "Google Flow"],
     images: [
       "image/portfolio img/Content Generate/AI Video Generate 1zero.jpg",
       "Project-List/image/1zero/social-media-copy.png"
     ]
   },
-  // {
-  //   id: 4,
-  //   projectTitle: "1zero - Redesign Website",
-  //   company: "1zero",
-  //   companyURL: "https://1zero.biz",
-  //   projectURL: "Project-List/1zero-landing-page-redesign.html",
-  //   description: "A business consulting landing page redesign that aims to improve clarity, user experience, and the presentation of business credibility and services.",
-  //   impact: ["Clearer Service Presentation", "Stronger Business Credibility", "Improved User Journey"],
-  //   role: ["UI/UX", "Web Development"],
-  //   projectType: ["Redesign", "Platform Building"],
-  //   tools: ["Figma", "React JS", "HTML", "Tailwind"],
-  //   images: [
-  //     "image/portfolio img/UIUX/1zero landing page.jpg",
-  //     "image/portfolio img/UIUX/1zero landing page 2.jpg"
-  //   ]
-  // },
+
   // {
   //   id: 4,
   //   projectTitle: "Stray Dog Adoption Website",
@@ -423,6 +424,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Tool → logo image path mapping
     const toolLogoMap = {
+      "Google Flow": "image/logo/tools/GoogleFlow.png",
       "Figma": "image/logo/tools/figma-color.svg",
       "ChatGPT": "image/logo/tools/ChatGPT.svg",
       "Adobe XD": "image/logo/tools/adobe xd.png",
