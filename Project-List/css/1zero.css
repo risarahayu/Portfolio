@@ -322,6 +322,35 @@
   flex-shrink: 0;
 }
 
+/* Chip list — short, tag-like items (technique/skill names) read better
+   as a flowing row of pills than a stacked bordered list. */
+.ds-chip-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.ds-chip-list li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  background: #fff;
+  border: 1px solid rgba(39, 39, 39, 0.08);
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--project-text);
+}
+
+.ds-chip-list .ds-check-list__icon {
+  width: 1rem;
+  height: 1rem;
+}
+
 /* Note callout — a left-accented tip/aside, distinct from a plain
    paragraph (e.g. explaining a grouping or design decision). */
 .ds-note {
