@@ -1,0 +1,102 @@
+/* ==========================================================
+   KOALA SKINCARE & GENERAL PORTFOLIO THEME CSS
+   Brand Color Palette & Design System
+   ========================================================== */
+
+:root {
+    /* Koala Skincare Brand Palette */
+    --koala-primary: #2D5A27;
+    /* Forest Green / Natural */
+    --koala-primary-rgb: 45, 90, 39;
+    --koala-secondary: #4A7C59;
+    /* Sage Green */
+    --koala-accent: #E9B44C;
+    /* Lemon / Honey Gold */
+    --koala-bg-light: #F9F8F6;
+    /* Warm Cream / Eco Background */
+    --koala-card-bg: #FFFFFF;
+    /* Clean White */
+    --koala-text-dark: #1F2937;
+    /* Charcoal Text */
+    --koala-text-muted: #6B7280;
+    /* Muted Gray */
+    --koala-border: #E5E7EB;
+    /* Light Border */
+    --koala-success: #10B981;
+    /* Success Green */
+}
+
+/* General Portfolio Base Styling */
+body {
+    background-color: var(--koala-bg-light);
+    color: var(--koala-text-dark);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Capsule & Badges */
+.capsule-border-koala {
+    border: 1px solid var(--koala-primary);
+    color: var(--koala-primary);
+    background-color: rgba(45, 90, 39, 0.05);
+    padding: 0.5rem 1rem;
+    border-radius: 50rem;
+    display: inline-block;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* Project Hero specific to Koala Skincare */
+.project-hero.koala-hero {
+    background: linear-gradient(135deg, var(--koala-primary) 0%, var(--koala-secondary) 100%);
+    color: #FFFFFF;
+    padding: 4rem 0 3rem;
+    border-radius: 0 0 2rem 2rem;
+    margin-bottom: 2rem;
+}
+
+.koala-hero .project-hero__title {
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+/* Design Compare & Feature Callout */
+.design-compare-callout {
+    background-color: var(--koala-card-bg);
+    border-left: 4px solid var(--koala-primary);
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+}
+
+/* Metrics and Highlights */
+.before-after__metric {
+    background: var(--koala-card-bg);
+    border: 1px solid var(--koala-border);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.before-after__metric-value {
+    color: var(--koala-primary);
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+/* Buttons and Interactive Elements */
+.btn-koala {
+    background-color: var(--koala-primary);
+    color: #FFFFFF;
+    border-radius: 50rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.btn-koala:hover {
+    background-color: #23461E;
+    color: #FFFFFF;
+}
