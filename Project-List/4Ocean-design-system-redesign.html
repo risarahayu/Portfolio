@@ -1,0 +1,2006 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4Ocean</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="css/project.css" rel="stylesheet">
+    <link href="css/4Ocean.css" rel="stylesheet">
+    <link href="../app.css" rel="stylesheet">
+    <style>
+        .design-system {
+            --ds-text: #171717;
+            --ds-muted: #6b6b6b;
+            --ds-border: #e8e8e8;
+            --ds-surface: #fff;
+            --ds-soft: #f7f8fa;
+            --ds-primary: #0057b7;
+            --ds-secondary: #1700b7;
+            --ds-radius: 18px;
+            color: var(--ds-text)
+        }
+
+        .design-system * {
+            box-sizing: border-box
+        }
+
+        .design-system__layout {
+            display: grid;
+            grid-template-columns: 220px minmax(0, 1fr);
+            gap: 48px;
+            align-items: start
+        }
+
+        .design-system__sidebar {
+            position: sticky;
+            top: 90px;
+            align-self: start
+        }
+
+        .design-system__nav-title {
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .08em;
+            margin-bottom: 22px
+        }
+
+        .design-system__nav {
+            display: flex;
+            flex-direction: column;
+            gap: 3px
+        }
+
+        .design-system__nav-group {
+            margin-top: 22px
+        }
+
+        .design-system__nav-group-title {
+            margin: 0 0 8px;
+            padding-left: 13px;
+            color: #999;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .1em
+        }
+
+        .design-system__nav-item {
+            width: 100%;
+            border: 0;
+            background: transparent;
+            color: #666;
+            text-align: left;
+            padding: 9px 13px;
+            border-radius: 10px;
+            font: inherit;
+            font-size: 14px;
+            cursor: pointer;
+            transition: .2s
+        }
+
+        .design-system__nav-item:hover {
+            background: var(--ds-soft);
+            color: var(--ds-text)
+        }
+
+        .design-system__nav-item.is-active {
+            background: #edf5ff;
+            color: var(--ds-primary);
+            font-weight: 700
+        }
+
+        .design-system__page {
+            display: none
+        }
+
+        .design-system__page.is-active {
+            display: block;
+            animation: dsFade .22s ease
+        }
+
+        @keyframes dsFade {
+            from {
+                opacity: 0;
+                transform: translateY(4px)
+            }
+
+            to {
+                opacity: 1;
+                transform: none
+            }
+        }
+
+        .design-system__intro,
+        .design-system__page-heading {
+            max-width: 760px;
+            margin-bottom: 32px
+        }
+
+        .design-system__eyebrow,
+        .ds-card-label,
+        .ds-rule__label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--ds-primary);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .11em
+        }
+
+        .design-system__title,
+        .design-system__page-heading h2 {
+            margin: 0 0 12px;
+            color: var(--ds-text);
+            font-size: clamp(32px, 4vw, 52px);
+            line-height: 1.05;
+            font-weight: 700
+        }
+
+        .design-system__description,
+        .design-system__page-heading p {
+            max-width: 680px;
+            margin: 0;
+            color: var(--ds-muted);
+            font-size: 16px;
+            line-height: 1.65
+        }
+
+        .design-system__overview-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px
+        }
+
+        .ds-overview-card {
+            min-width: 0;
+            min-height: 220px;
+            padding: 24px;
+            border: 1px solid var(--ds-border);
+            border-radius: var(--ds-radius);
+            background: #fff;
+            text-align: left;
+            color: inherit;
+            cursor: pointer;
+            transition: .2s;
+            box-shadow: none
+        }
+
+        .ds-overview-card:hover {
+            transform: translateY(-2px);
+            border-color: #d6d6d6;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .05)
+        }
+
+        .ds-overview-card--large {
+            min-height: 250px
+        }
+
+        .ds-overview-card--wide {
+            grid-column: 1/-1;
+            min-height: 190px
+        }
+
+        .ds-overview-card h3 {
+            margin: 0 0 18px;
+            font-size: 22px;
+            color: var(--ds-text)
+        }
+
+        .ds-overview-card p {
+            margin: 16px 0 0;
+            color: var(--ds-muted);
+            font-size: 14px;
+            line-height: 1.5
+        }
+
+        .ds-color-preview {
+            display: flex;
+            gap: 6px
+        }
+
+        .ds-color-preview span {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, .08)
+        }
+
+        .ds-type-preview {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            color: #777
+        }
+
+        .ds-type-preview__display {
+            color: var(--ds-text);
+            font-size: 52px;
+            line-height: .9;
+            font-weight: 700
+        }
+
+        .ds-spacing-preview {
+            height: 56px;
+            display: flex;
+            align-items: end;
+            gap: 8px
+        }
+
+        .ds-spacing-preview i {
+            display: block;
+            height: 14px;
+            border-radius: 99px;
+            background: var(--ds-primary)
+        }
+
+        .ds-shape-preview {
+            display: flex;
+            gap: 12px;
+            align-items: center
+        }
+
+        .ds-shape-preview span {
+            width: 48px;
+            height: 48px;
+            display: block;
+            background: #edf5ff;
+            border: 1px solid #b9d8ff
+        }
+
+        .ds-radius-sm {
+            border-radius: 4px
+        }
+
+        .ds-radius-md {
+            border-radius: 12px
+        }
+
+        .ds-radius-lg {
+            border-radius: 22px
+        }
+
+        .ds-icon-preview {
+            display: flex;
+            gap: 22px;
+            align-items: center;
+            font-size: 28px;
+            color: var(--ds-primary)
+        }
+
+        .ds-button-preview,
+        .ds-button-states {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center
+        }
+
+        .ds-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 40px;
+            padding: 0 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            white-space: nowrap
+        }
+
+        .ds-btn--primary {
+            color: #fff;
+            background: var(--ds-primary)
+        }
+
+        .ds-btn--secondary {
+            color: #fff;
+            background: var(--ds-secondary)
+        }
+
+        .ds-btn--outline {
+            color: var(--ds-primary);
+            background: #fff;
+            border: 1px solid var(--ds-primary)
+        }
+
+        .ds-btn--disabled {
+            opacity: .4
+        }
+
+        .ds-section {
+            margin-top: 32px
+        }
+
+        .ds-section>h3 {
+            margin: 0 0 16px;
+            color: var(--ds-text);
+            font-size: 18px
+        }
+
+        .ds-color-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px
+        }
+
+        .ds-color-token {
+            padding: 14px;
+            border: 1px solid var(--ds-border);
+            border-radius: 14px;
+            background: #fff
+        }
+
+        .ds-swatch {
+            display: block;
+            width: 100%;
+            height: 72px;
+            margin-bottom: 12px;
+            border-radius: 9px;
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .08)
+        }
+
+        .ds-color-token strong,
+        .ds-color-token small {
+            display: block
+        }
+
+        .ds-color-token strong {
+            font-size: 13px
+        }
+
+        .ds-color-token small {
+            margin-top: 3px;
+            color: #888;
+            font-size: 11px
+        }
+
+        .ds-rule {
+            display: grid;
+            grid-template-columns: minmax(180px, .75fr) minmax(0, 1.25fr);
+            gap: 28px;
+            margin-top: 32px;
+            padding: 22px 24px;
+            border-left: 3px solid var(--ds-primary);
+            border-radius: 0 14px 14px 0;
+            background: var(--ds-soft)
+        }
+
+        .ds-rule h3 {
+            margin: 0;
+            font-size: 17px
+        }
+
+        .ds-rule p {
+            margin: 0;
+            color: #666;
+            font-size: 14px;
+            line-height: 1.65
+        }
+
+        .ds-type-system {
+            border-top: 1px solid var(--ds-border)
+        }
+
+        .ds-type-row {
+            display: grid;
+            grid-template-columns: 145px minmax(160px, 1fr) minmax(150px, .7fr);
+            gap: 20px;
+            align-items: center;
+            padding: 22px 0;
+            border-bottom: 1px solid var(--ds-border)
+        }
+
+        .ds-type-row>div:first-child {
+            display: flex;
+            flex-direction: column;
+            gap: 3px
+        }
+
+        .ds-token-name {
+            font-size: 13px;
+            font-weight: 700
+        }
+
+        .ds-type-row small,
+        .ds-type-row p {
+            margin: 0;
+            color: #888;
+            font-size: 11px
+        }
+
+        .ds-type-row p {
+            line-height: 1.5
+        }
+
+        .ds-type-display {
+            font-size: 52px;
+            line-height: 1
+        }
+
+        .ds-type-h1 {
+            font-size: 32px
+        }
+
+        .ds-type-h2 {
+            font-size: 24px
+        }
+
+        .ds-type-body {
+            font-size: 18px;
+            line-height: 1.55
+        }
+
+        .ds-type-label {
+            font-size: 16px
+        }
+
+        .ds-type-small {
+            font-size: 14px
+        }
+
+        .ds-spacing-scale {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 14px;
+            min-height: 170px;
+            padding: 20px;
+            border: 1px solid var(--ds-border);
+            border-radius: 16px;
+            overflow-x: auto
+        }
+
+        .ds-spacing-scale>div {
+            min-width: 48px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            color: #777;
+            font-size: 11px
+        }
+
+        .ds-spacing-scale i {
+            display: block;
+            max-width: 128px;
+            height: 16px;
+            border-radius: 4px;
+            background: var(--ds-primary)
+        }
+
+        .ds-spacing-rules {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 16px
+        }
+
+        .ds-rule-card {
+            padding: 20px;
+            border: 1px solid var(--ds-border);
+            border-radius: 14px
+        }
+
+        .ds-rule-card>span {
+            display: block;
+            margin-bottom: 12px;
+            color: var(--ds-primary);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .1em
+        }
+
+        .ds-rule-card strong {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px
+        }
+
+        .ds-rule-card p {
+            margin: 0;
+            color: #777;
+            font-size: 13px;
+            line-height: 1.55
+        }
+
+        .ds-shape-system,
+        .ds-icon-system,
+        .ds-button-showcase {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px
+        }
+
+        .ds-shape-item,
+        .ds-icon-size,
+        .ds-button-example {
+            min-height: 180px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border: 1px solid var(--ds-border);
+            border-radius: 16px
+        }
+
+        .ds-shape-demo {
+            width: 82px;
+            height: 62px;
+            margin-bottom: 18px;
+            background: #edf5ff;
+            border: 1px solid #b9d8ff
+        }
+
+        .ds-shape-demo--sm {
+            border-radius: 4px
+        }
+
+        .ds-shape-demo--md {
+            border-radius: 12px
+        }
+
+        .ds-shape-demo--lg {
+            border-radius: 22px
+        }
+
+        .ds-shape-demo--pill {
+            border-radius: 999px
+        }
+
+        .ds-shape-item strong,
+        .ds-icon-size strong {
+            font-size: 13px
+        }
+
+        .ds-shape-item span,
+        .ds-icon-size small,
+        .ds-button-example small {
+            margin-top: 4px;
+            color: #888;
+            font-size: 11px
+        }
+
+        .ds-icon-demo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            color: var(--ds-primary);
+            font-weight: 700;
+            line-height: 1
+        }
+
+        .ds-icon-demo--16 {
+            width: 16px;
+            height: 16px;
+            font-size: 16px
+        }
+
+        .ds-icon-demo--20 {
+            width: 20px;
+            height: 20px;
+            font-size: 20px
+        }
+
+        .ds-icon-demo--24 {
+            width: 24px;
+            height: 24px;
+            font-size: 24px
+        }
+
+        .ds-button-showcase {
+            grid-template-columns: repeat(3, minmax(0, 1fr))
+        }
+
+        .ds-button-example {
+            min-height: 150px;
+            gap: 12px
+        }
+
+        @media(max-width:991.98px) {
+            .design-system__layout {
+                grid-template-columns: 180px minmax(0, 1fr);
+                gap: 28px
+            }
+
+            .ds-color-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .ds-shape-system,
+            .ds-icon-system {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .ds-type-row {
+                grid-template-columns: 120px minmax(160px, 1fr)
+            }
+
+            .ds-type-row p {
+                grid-column: 2
+            }
+        }
+
+        @media(max-width:767.98px) {
+            .design-system__layout {
+                display: block
+            }
+
+            .design-system__sidebar {
+                position: sticky;
+                top: 0;
+                z-index: 20;
+                margin: 0 0 28px;
+                padding: 10px 0;
+                background: rgba(255, 255, 255, .96);
+                backdrop-filter: blur(10px);
+                border-bottom: 1px solid var(--ds-border)
+            }
+
+            .design-system__nav-title {
+                margin-bottom: 9px;
+                font-size: 12px
+            }
+
+            .design-system__nav {
+                display: flex;
+                flex-direction: row;
+                gap: 6px;
+                overflow-x: auto;
+                padding-bottom: 4px;
+                scrollbar-width: thin
+            }
+
+            .design-system__nav-group {
+                display: contents
+            }
+
+            .design-system__nav-group-title {
+                display: none
+            }
+
+            .design-system__nav-item {
+                width: auto;
+                flex: 0 0 auto;
+                white-space: nowrap;
+                padding: 8px 12px;
+                border: 1px solid var(--ds-border);
+                background: #fff
+            }
+
+            .design-system__nav-item.is-active {
+                border-color: #c8ddf7;
+                background: #edf5ff
+            }
+
+            .design-system__overview-grid,
+            .ds-color-grid,
+            .ds-spacing-rules,
+            .ds-shape-system,
+            .ds-icon-system,
+            .ds-button-showcase {
+                grid-template-columns: 1fr
+            }
+
+            .ds-overview-card--wide {
+                grid-column: auto
+            }
+
+            .ds-rule {
+                grid-template-columns: 1fr;
+                gap: 10px
+            }
+
+            .ds-type-row {
+                grid-template-columns: 1fr;
+                gap: 12px
+            }
+
+            .ds-type-row p {
+                grid-column: auto
+            }
+
+            .ds-type-display {
+                font-size: 44px
+            }
+
+            .ds-spacing-scale {
+                justify-content: flex-start
+            }
+        }
+
+        @media(max-width:480px) {
+
+            .design-system__title,
+            .design-system__page-heading h2 {
+                font-size: 34px
+            }
+
+            .ds-overview-card {
+                min-height: 190px;
+                padding: 20px
+            }
+
+            .ds-color-preview span {
+                width: 40px;
+                height: 40px
+            }
+
+            .ds-rule {
+                padding: 18px
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- =========================
+         PAGE LOADER
+    ========================== -->
+    <div id="pageLoader" class="page-loader" role="status" aria-live="polite" aria-label="Loading page">
+        <div class="page-loader__avatar">
+            <span class="page-loader__ring"></span>
+            <img src="../image/face.png" alt="" class="page-loader__face">
+        </div>
+        <p class="page-loader__brand">Risa Rahayu</p>
+        <p class="page-loader__hint">Loading experience…</p>
+    </div>
+
+    <div id="breadcrumb"></div>
+
+    <header class="project-hero">
+        <div class="project-hero__inner">
+            <div class="project-hero__banner">
+            </div>
+            <div class="project-hero__panel">
+                <div class="project-hero__intro">
+                    <h1 class="project-hero__title">
+                        Clean up - Impact Dashboard
+                    </h1>
+                    <div class="project-hero__highlights">
+                        <div class="project-hero__highlight">
+                            <img src="image/4Ocean/clarity--shield-check-line.svg" width="24" alt="">
+                            <p>Improved donors engagement with real-time clean-up data.</p>
+                        </div>
+                        <div class="project-hero__highlight">
+                            <img src="image/4Ocean/ant-design--field-time-outlined.svg" width="24" alt="">
+                            <p>Enhanced transparency of environmental clean-up efforts.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-hero__meta">
+                    <div class="project-hero__meta-item">
+                        <p class="project-hero__meta-label">Role: </p>
+                        <p class="project-hero__meta-value">UI/UX Designer & Web Developer</p>
+                    </div>
+                    <div class="project-hero__meta-item">
+                        <p class="project-hero__meta-label">Tools: </p>
+                        <p class="project-hero__meta-value">Figma, React JS, Tailwind CSS, Next JS, Typescript JS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section id="selected-ui" class="project-section">
+            <h2 class="capsule fw-semibold capsule-border-project project-section__title m-0">Selected UI</h2>
+            <div class="media-marquee mt-3">
+                <div class="media-marquee__track">
+                    <img src="image/4Ocean/mockup/Mockup_Splash Screen.jpg" alt="4ocean mobile app splash screen"
+                        width="623" height="432" loading="lazy" class="media-marquee__image lazy-img preview-image">
+                    <img src="image/4Ocean/mockup/Mockup _ DCA Login.jpg" alt="4ocean mobile app login screen"
+                        width="216" height="432" loading="lazy" class="media-marquee__image lazy-img preview-image">
+                    <img src="image/4Ocean/mockup/Mockup _DCA Clean up History.jpg"
+                        alt="4ocean mobile app clean-up list screen" width="216" height="432" loading="lazy"
+                        class="media-marquee__image lazy-img preview-image">
+                    <img src="image/4Ocean/mockup/Mockup_DCA Summary Clean up.jpg"
+                        alt="4ocean mobile app clean-up submission screen" width="648" height="432" loading="lazy"
+                        class="media-marquee__image lazy-img preview-image">
+
+                    <video src="video/4Ocean/4Ocean - Animation Explore.mp4" width="626" height="432" autoplay muted
+                        loop playsinline preload="metadata" class="media-marquee__image lazy-img preview-image"
+                        aria-label="4Ocean mobile app animation">
+                    </video>
+                    <!-- duplicated so the marquee loop reads as seamless -->
+                    <img src="image/4Ocean/mockup/Mockup_Splash Screen.jpg" alt="" width="623" height="432"
+                        loading="lazy" class="media-marquee__image lazy-img preview-image" aria-hidden="true">
+                    <img src="image/4Ocean/mockup/Mockup _ DCA Login.jpg" alt="" width="216" height="432" loading="lazy"
+                        class="media-marquee__image lazy-img preview-image" aria-hidden="true">
+                    <img src="image/4Ocean/mockup/Mockup _DCA Clean up History.jpg" alt="" width="216" height="432"
+                        loading="lazy" class="media-marquee__image lazy-img preview-image" aria-hidden="true">
+                    <img src="image/4Ocean/mockup/Mockup_DCA Summary Clean up.jpg" alt="" width="648" height="432"
+                        loading="lazy" class="media-marquee__image lazy-img preview-image" aria-hidden="true">
+
+                    <video src="video/4Ocean/4Ocean - Animation Explore.mp4" width="626" height="432" autoplay muted
+                        loop playsinline preload="metadata" class="media-marquee__image lazy-img preview-image"
+                        aria-hidden="true"></video>
+                </div>
+            </div>
+        </section>
+
+        <section id="project-scope" class="project-section info-block">
+            <h2 class="capsule fw-semibold capsule-border-project project-section__title m-0">Project Scope</h2>
+            <div class="info-block__row mt-3">
+                <div class="info-block__prose">
+                    <p>4ocean is a mission-driven organization operating at the intersection of
+                        environmental impact and global commerce. As the organization scaled, its digital platform
+                        struggled to keep up with growing operational and communication needs.</p>
+                    <p>
+                        The existing setup was built incrementally over time, resulting in fragmented user journeys,
+                        limited flexibility, and increasing maintenance overhead. While the mission remained strong, the
+                        digital experience no longer reflected the scale, clarity, and credibility of the organization.
+                    </p>
+
+                </div>
+                <div class="info-block__summary">
+                    <div class="info-block__group">
+                        <p class="info-block__label">Duration</p>
+                        <p class="info-block__value">6 Months</p>
+                    </div>
+                    <div class="info-block__group">
+                        <p class="info-block__label">Timeline: </p>
+                        <div class="info-block__timeline">
+                            <div class="info-block__phase">
+                                <p class="info-block__phase-label m-0"><strong>Phase 1:</strong></p>
+                                <p class="m-0">Planning & Discovery</p>
+                            </div>
+                            <div class="info-block__phase">
+                                <p class="info-block__phase-label m-0"><strong>Phase 2:</strong></p>
+                                <p class="m-0">Requirement Analysis</p>
+                            </div>
+                            <div class="info-block__phase">
+                                <p class="info-block__phase-label m-0"><strong>Phase 3:</strong></p>
+                                <p class="m-0">UI Design</p>
+                            </div>
+                            <div class="info-block__phase">
+                                <p class="info-block__phase-label m-0"><strong>Phase 4:</strong></p>
+                                <p class="m-0">Development & Testing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="processDiscovery" class="project-section process-discovery">
+            <h2 class="capsule fw-semibold capsule-border-project project-section__title">Stakeholder & Process
+                Discovery</h2>
+            <div class="process-discovery__row mt-3">
+                <div class="process-discovery__column gap-3">
+                    <div class="process-discovery__column-header rounded-4">
+                        <img loading="lazy" width="57" height="73" src="image/4Ocean/cleanup-team.png" alt=""
+                            class="process-discovery__column-icon lazy-img">
+                        <div class="process-discovery__column-heading">
+                            <h3 class="process-discovery__column-title text-18">Cleanup Team</h3>
+                            <p class="text-16">Responsibility : Collect and record daily waste collection data in the
+                                field.</p>
+                        </div>
+                    </div>
+                    <div class="process-discovery__column-body rounded-4">
+                        <p class="text-16">
+                            Cleanup teams <span class="text-primary-soft fw-semibold">conduct waste collection
+                                activities across
+                                assigned locations</span>
+                            , including
+                            collecting waste in the field, transporting it to the facility, sorting and categorizing the
+                            collected materials, and weighing each category of waste.<br><br>
+                            This process allows the team to <span class="text-primary-soft fw-semibold">separate mixed
+                                waste</span>
+                            and produce clean, measurable
+                            <span class="text-primary-soft fw-semibold">data based on the type and weight</span>
+                            of the materials collected.<br><br>
+                            All activity data, including the cleanup location, collection activities, waste categories,
+                            and final weights, is <span class="text-primary-soft fw-semibold">manually recorded in
+                                paper logbooks</span>
+                            during or after the cleanup
+                            process.<br><br>
+                            The completed logbooks are then submitted to the Team Captain for reporting and further
+                            processing.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="process-discovery__column gap-3">
+                    <div class="process-discovery__connector">
+                        <span class="process-discovery__connector-label text-16">Paper logbook Manual Recap</span>
+                        <img loading="lazy" width="130" height="130" src="image/4Ocean/arrow.png" alt=""
+                            class="process-discovery__connector-arrow lazy-img">
+                    </div>
+                    <div class="process-discovery__column-header">
+                        <img loading="lazy" width="97" height="97" src="image/4Ocean/4ocean-admin.webp" alt=""
+                            class="process-discovery__column-icon lazy-img">
+                        <div class="process-discovery__column-heading">
+                            <h3 class="process-discovery__column-title text-18">4Ocean Admin</h3>
+                            <p class="text-16">Responsibility : Get data from Cleanup Team, monitor, validate, and
+                                report operational performance data.</p>
+                        </div>
+                    </div>
+                    <div class="process-discovery__column-body rounded-4">
+                        <p class="text-16">
+                            After <span class="text-primary-soft fw-semibold">receiving the paper logbooks and reports
+                                from the field teams</span>, 4ocean Admin manually
+                            reviews, compiles, and recaps the data from multiple cleanup activities and
+                            locations.<br><br>
+                            The information is then organized and processed for operational monitoring, reporting, and
+                            impact tracking, with the entire workflow still relying on <span
+                                class="text-primary-soft fw-semibold">manual, paper-based documentation</span>
+                            rather than a centralized digital system. <br><br>
+                            Then the admin will <span class="text-primary-soft fw-semibold">send the report manually and
+                                personally</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="process-discovery__column gap-3">
+                    <div class="process-discovery__connector">
+                        <span class="process-discovery__connector-label text-16">Manual Report (need 2 weeks)</span>
+                        <img loading="lazy" width="130" height="130" src="image/4Ocean/arrow.png" alt=""
+                            class="process-discovery__connector-arrow lazy-img">
+                    </div>
+                    <div class="process-discovery__column-header">
+                        <img loading="lazy" width="85" height="73" src="image/4Ocean/investors.png" alt=""
+                            class="process-discovery__column-icon lazy-img">
+                        <div class="process-discovery__column-heading">
+                            <h3 class="process-discovery__column-title text-18">Donors</h3>
+                            <p class="text-16">Responsibility : Track environmental impact and operational transparency.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="process-discovery__column-body rounded-4">
+                        <p class="text-16">
+                            Donors rely on impact and operational reports provided by 4ocean, typically in PDF
+                            format, to <span class="text-primary-soft fw-semibold">review environmental performance and
+                                assess the organization's measurable impact.</span><br><br>
+                            They use these reports to understand the results of cleanup operations, track progress over
+                            time, and evaluate whether the organization's reported impact is supported by transparent
+                            and reliable data.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="problems" class="project-section">
+            <h2 class="capsule fw-semibold capsule-border-project project-section__title">Problem</h2>
+            <div class="card-grid card-grid--cols-3 mt-3">
+                <div class="card-grid__card card-grid__card--bordered">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                        class="challenge-icon color-project mb-2">
+                        <path d="M0 0h20v20H0z" fill="none" />
+                        <path fill="currentColor"
+                            d="M4.5 4A2.5 2.5 0 0 0 2 6.5v7A2.5 2.5 0 0 0 4.5 16h11a2.5 2.5 0 0 0 2.5-2.5v-7A2.5 2.5 0 0 0 15.5 4zM3 6.5A1.5 1.5 0 0 1 4.5 5h11A1.5 1.5 0 0 1 17 6.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 3 13.5zM4.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h8a.5.5 0 0 0 0-1zm.5 3a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1z" />
+                    </svg>
+                    <h3 class="card-grid__title">Non-Standardized Field Data Collection</h3>
+                    <p class="card-grid__text">Cleanup teams need a <b>standardized and efficient</b> way
+                        to record and submit cleanup data because paper-based logbooks make data collection
+                        inconsistent, difficult to manage, and prone to delays when multiple teams conduct cleanup
+                        activities simultaneously across different locations.</p>
+                </div>
+
+                <div class="card-grid__card card-grid__card--bordered">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048"
+                        class="challenge-icon color-project mb-2">
+                        <path d="M0 0h2048v2048H0z" fill="none" />
+                        <path fill="currentColor"
+                            d="M1920 512v1408H768v-256H512v-256H256V0h731l256 256h421v256zm-896-128h165l-165-165zm256 896V512H896V128H384v1152zm256 256V384h-128v1024H640v128zm257-896h-129v1024H896v128h897z" />
+                    </svg>
+                    <h3 class="card-grid__title">Manual Data Consolidation</h3>
+                    <p class="card-grid__text">4ocean Admins need a more <b>efficient and centralized way
+                            to collect</b>, review, and consolidate cleanup data because manually processing paper
+                        logbooks from multiple teams and locations is time-consuming, difficult to standardize, and can
+                        result in delayed or scattered information.</p>
+                </div>
+
+                <div class="card-grid__card card-grid__card--bordered">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
+                        class="challenge-icon color-project mb-2">
+                        <path d="M0 0h32v32H0z" fill="none" />
+                        <path fill="currentColor"
+                            d="m26 24.586l-5.115-5.115a6 6 0 0 0 .96-4.843c-.497-2.208-2.278-3.99-4.488-4.478a6.015 6.015 0 0 0-7.207 7.207c.487 2.21 2.27 3.992 4.478 4.489a6 6 0 0 0 4.843-.96L24.586 26zm-8.915-4.73a4.014 4.014 0 0 1-4.94-4.944a3.95 3.95 0 0 1 2.77-2.768a4.014 4.014 0 0 1 4.94 4.945a3.95 3.95 0 0 1-2.77 2.768m11.981-3.5l-.065-.17C27.01 10.948 21.423 7 16 7S4.99 10.948 3 16.183l-.067.173a1 1 0 0 1-1.868-.715l.066-.17C3.399 9.501 9.792 5 16 5s12.602 4.502 14.87 10.474l.064.168M16 27C9.792 27 3.4 22.497 1.131 16.526l-.064-.166a1 1 0 0 1 1.866-.72l.066.171C4.99 21.051 10.58 25 16 25z" />
+                    </svg>
+                    <h3 class="card-grid__title">Limited Real-Time Transparency</h3>
+                    <p class="card-grid__text">Donors need more <b>transparent and accessible visibility
+                            into 4ocean's environmental impact</b> and operational performance because relying on static
+                        PDF reports limits their ability to track measurable impact, understand ongoing activities, and
+                        access up-to-date information about how impact is being created.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="solutions" class="project-section solution">
+            <h2 class="capsule fw-semibold capsule-border-project project-section__title">Solution</h2>
+            <div class="solution__row mt-3">
+                <div class="solution__column">
+                    <p class="solution__column-title text-16">How might we help cleanup teams collect and submit
+                        standardized field data more efficiently across multiple cleanup locations?</p>
+                    <img loading="lazy" width="20" height="20" src="image/4Ocean/arrow-down.png" alt=""
+                        class="solution__arrow lazy-img">
+                    <div class="solution__content">
+                        <img loading="lazy" width="55" height="55" src="image/4Ocean/digital.png" alt=""
+                            class="solution__icon lazy-img">
+                        <p class="solution__column-text text-16 fw-bold">A <span class="solution__highlight">Digital
+                                Collection</span> Application (DCA) for field data entry</p>
+                    </div>
+                </div>
+
+                <div class="solution__column">
+                    <p class="solution__column-title text-16">How might we enable 4ocean Admins to automatically
+                        centralize and synchronize cleanup data from multiple teams and locations?</p>
+                    <img loading="lazy" width="20" height="20" src="image/4Ocean/arrow-down.png" alt=""
+                        class="solution__arrow lazy-img">
+                    <div class="solution__content">
+                        <img loading="lazy" width="55" height="55" src="image/4Ocean/database.png" alt=""
+                            class="solution__icon lazy-img">
+                        <p class="solution__column-text text-16 fw-bold">A centralized <span
+                                class="solution__highlight">database</span> for automated synchronization</p>
+                    </div>
+                </div>
+
+                <div class="solution__column">
+                    <p class="solution__column-title text-16">How might we provide 4ocean stakeholders with real-time
+                        visibility into cleanup operations and environmental impact data?</p>
+                    <img loading="lazy" width="20" height="20" src="image/4Ocean/arrow-down.png" alt=""
+                        class="solution__arrow lazy-img">
+                    <div class="solution__content">
+                        <img loading="lazy" width="55" height="55" src="image/4Ocean/dashboard.png" alt=""
+                            class="solution__icon lazy-img">
+                        <p class="solution__column-text text-16 fw-bold">A real-time operational <span
+                                class="solution__highlight">dashboard</span> for monitoring and analytics</p>
+                    </div>
+                </div>
+
+                <div class="solution__column">
+                    <p class="solution__column-title text-16">How might we give donors secure and transparent access
+                        to real-time environmental impact and operational data while ensuring access is limited to their
+                        own relevant data?</p>
+                    <img loading="lazy" width="20" height="20" src="image/4Ocean/arrow-down.png" alt=""
+                        class="solution__arrow lazy-img">
+                    <div class="solution__content">
+                        <img loading="lazy" width="55" height="55" src="image/4Ocean/access.png" alt=""
+                            class="solution__icon lazy-img">
+                        <p class="solution__column-text text-16 fw-bold"><span class="solution__highlight">Role-based
+                                access control</span> for Team, Admin, and Donors</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="userFlow" class="project-section">
+
+            <h2 class="capsule fw-semibold capsule-border-project project-section__title">
+                User Flow & Interface Exploration
+            </h2>
+            <div class="fs-6 text-center text-muted d-block d-md-none mt-3">
+                <p class="text-start">👋 Hi, there! this is a bit challenge to see the wireframe. Please click the
+                    picture and zoom in
+                    to see it.</p>
+            </div>
+
+            <div class="accordion mt-3" id="userFlowAccordion">
+
+                <!-- START CLEANUP FLOW -->
+                <div class="accordion-item border-0 rounded-4 overflow-hidden mb-3">
+
+                    <h3 class="accordion-header">
+                        <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#startCleanupFlow" aria-expanded="true" aria-controls="startCleanupFlow">
+
+                            Start Cleanup Flow
+
+                        </button>
+                    </h3>
+
+                    <div id="startCleanupFlow" class="accordion-collapse collapse show"
+                        data-bs-parent="#userFlowAccordion">
+
+                        <div class="accordion-body project-surface-muted p-3">
+
+                            <p class="text-16" style="width: stretch;">
+                                Stakeholder : <br>
+                                <b class="fs-6">Cleanup Team</b>
+                            </p>
+
+                            <p class="fs-6" style="width: stretch;">
+                                <b>Start Cleanup Flow:</b><br>
+                                Login →
+                                View Cleanup List → Create New Cleanup →
+                                Double Check Location → Take Pre-Cleanup Photo →
+                                Start Cleanup
+                            </p>
+
+                            <img loading="lazy" width="1366" height="521" src="image/4Ocean/start-cleanup.png"
+                                alt="Start Cleanup Flow" class="media-block__image zoom-image lazy-img">
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- DURING CLEANUP FLOW -->
+                <div class="accordion-item border-0 rounded-4 overflow-hidden mb-3">
+
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#duringCleanupFlow" aria-expanded="false" aria-controls="duringCleanupFlow">
+
+                            During Cleanup Flow
+
+                        </button>
+                    </h3>
+
+                    <div id="duringCleanupFlow" class="accordion-collapse collapse" data-bs-parent="#userFlowAccordion">
+
+                        <div class="accordion-body project-surface-muted p-3">
+
+                            <p class="text-16" style="width: stretch;">
+                                Stakeholder : <br>
+                                <b class="fs-6">Cleanup Team</b>
+                            </p>
+
+                            <p class="fs-6" style="width: stretch;">
+                                <b>During Cleanup Flow:</b><br>
+                                Cleanup Ongoing →
+                                Capture Progress Photos → Submit Progress Photos
+                            </p>
+
+                            <img loading="lazy" width="1227" height="802" src="image/4Ocean/during-cleanup.png"
+                                alt="During Cleanup Flow" class="media-block__image zoom-image lazy-img">
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- FINISHING CLEANUP FLOW -->
+                <div class="accordion-item border-0 rounded-4 overflow-hidden mb-3">
+
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#finishingCleanupFlow" aria-expanded="false"
+                            aria-controls="finishingCleanupFlow">
+
+                            Finishing Cleanup Flow
+
+                        </button>
+                    </h3>
+
+                    <div id="finishingCleanupFlow" class="accordion-collapse collapse"
+                        data-bs-parent="#userFlowAccordion">
+
+                        <div class="accordion-body project-surface-muted p-3">
+
+                            <p class="text-16" style="width: stretch;">
+                                Stakeholder : <br>
+                                <b class="fs-6">Cleanup Team</b>
+                            </p>
+
+                            <p class="fs-6" style="width: stretch;">
+                                <b>Finishing Cleanup Flow:</b><br>
+                                Capture Post-Cleanup Photo →
+                                Enter Daily Cleanup Data → Review →
+                                Submit Finish Cleanup
+                            </p>
+
+                            <img loading="lazy" width="1317" height="634" src="image/4Ocean/after-cleanup.png"
+                                alt="After Cleanup Flow" class="media-block__image zoom-image lazy-img">
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- WASTE SORTING FLOW -->
+                <div class="accordion-item border-0 rounded-4 overflow-hidden mb-3">
+
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#wasteSortingFlow" aria-expanded="false" aria-controls="wasteSortingFlow">
+
+                            Waste Sorting Flow
+
+                        </button>
+                    </h3>
+
+                    <div id="wasteSortingFlow" class="accordion-collapse collapse" data-bs-parent="#userFlowAccordion">
+
+                        <div class="accordion-body project-surface-muted p-3">
+
+                            <p class="text-16" style="width: stretch;">
+                                Stakeholder : <br>
+                                <b class="fs-6">
+                                    Cleanup Team / Warehouse Team
+                                </b>
+                            </p>
+
+                            <p class="fs-6" style="width: stretch;">
+                                <b>Waste Sorting Flow:</b><br>
+                                Get QR Code →
+                                Scan Barcode at Facility → Add New Cleanup →
+                                Input Total Weight → Upload Weight Photo →
+                                Sorter Review Cleanup → Input Sorting Data →
+                                View Sorting Summary
+                            </p>
+
+                            <img loading="lazy" width="1370" height="510" src="image/4Ocean/waste-sorting.png"
+                                alt="Waste Sorting Flow" class="media-block__image zoom-image lazy-img">
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- DASHBOARD / REPORT FLOW -->
+                <div class="accordion-item border-0 rounded-4 overflow-hidden mb-3">
+
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#dashboardReportFlow" aria-expanded="false"
+                            aria-controls="dashboardReportFlow">
+
+                            Dashboard / Report Flow
+
+                        </button>
+                    </h3>
+
+                    <div id="dashboardReportFlow" class="accordion-collapse collapse"
+                        data-bs-parent="#userFlowAccordion">
+
+                        <div class="accordion-body project-surface-muted p-3">
+
+                            <p class="text-16" style="width: stretch;">
+                                Stakeholder : <br>
+                                <b class="fs-6">
+                                    Donors / 4Ocean Management
+                                </b>
+                            </p>
+
+                            <p class="fs-6" style="width: stretch;">
+                                <b>Dashboard / Report Flow:</b><br>
+                                <span class="text-muted">
+                                    Note: This is dummy data.
+                                </span><br>
+                                Login →
+                                View Latest Impact Summary → View Cleanup Data Table →
+                                View Cleanup Map → View Impact Spotlight
+                            </p>
+
+                            <img loading="lazy" width="1317" height="900" src="image/4Ocean/Dashboard-lo fi.png"
+                                alt="Dashboard / Report Flow" class="media-block__image zoom-image lazy-img">
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section id="workflow" class="project-section">
+            <h2 class="capsule fw-semibold capsule-border-project project-section__title">
+                Workflow Transformation
+            </h2>
+            <div class="table-responsive rounded-4 mt-3">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Area</th>
+                            <th scope="col">Issue</th>
+                            <th scope="col">New Direction</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Field Data Collection</th>
+                            <td>
+                                <div class="compare-row cross-container">
+                                    <img loading="lazy" width="20" height="20" src="image/cross red.svg" alt=""
+                                        class="cross mt-1  lazy-img">
+                                    <p class="m-0">Dozens team manually recorded daily collection result on paper</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="compare-row check-container">
+                                    <img loading="lazy" width="20" height="20" src="image/tick green.svg" alt=""
+                                        class="check lazy-img">
+                                    <p class="m-0">Each team member inputs data directly into the Digital Collection
+                                        Application(DCA)</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Data Consolidation</th>
+                            <td>
+                                <div class="compare-row cross-container">
+                                    <img loading="lazy" width="20" height="20" src="image/cross red.svg" alt=""
+                                        class="cross mt-1  lazy-img">
+                                    <p class="m-0">Manual recording of each bag leads to inconsitent data and no
+                                        tranparency in verification</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="compare-row check-container">
+                                    <img loading="lazy" width="20" height="20" src="image/tick green.svg" alt=""
+                                        class="check lazy-img">
+                                    <p class="m-0">Data is automatically synced to a centralized system. One bag, one
+                                        photo, ensuring transparent weigth verification and proper process documentation
+                                    </p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Impact Transparency</th>
+                            <td>
+                                <div class="compare-row cross-container">
+                                    <img loading="lazy" width="20" height="20" src="image/cross red.svg" alt=""
+                                        class="cross mt-1  lazy-img">
+                                    <p class="m-0">Time-confuming reporting process after field operations</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="compare-row check-container">
+                                    <img loading="lazy" width="20" height="20" src="image/tick green.svg" alt=""
+                                        class="check lazy-img">
+                                    <p class="m-0">Reporting time is significantly reduced</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <td>
+                                <div class="compare-row cross-container">
+                                    <img loading="lazy" width="20" height="20" src="image/cross red.svg" alt=""
+                                        class="cross mt-1  lazy-img">
+                                    <p class="m-0">No real-time visibility of total team progress</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="compare-row check-container">
+                                    <img loading="lazy" width="20" height="20" src="image/tick green.svg" alt=""
+                                        class="check lazy-img">
+                                    <p class="m-0">Real-time visibility of team performance</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- =========================
+             DESIGN SYSTEM
+        ========================== -->
+        <section id="wireframing" class="project-section design-system">
+            <div class="design-system__layout">
+
+                <!-- Desktop sidebar / Mobile horizontal navigation -->
+                <aside class="design-system__sidebar" aria-label="Design system navigation">
+                    <div class="design-system__nav-title">DESIGN SYSTEM</div>
+
+                    <nav class="design-system__nav">
+                        <button class="design-system__nav-item is-active" type="button"
+                            data-ds-target="ds-overview">Overview</button>
+
+                        <div class="design-system__nav-group">
+                            <p class="design-system__nav-group-title">FOUNDATIONS</p>
+                            <button class="design-system__nav-item" type="button"
+                                data-ds-target="ds-color">Color</button>
+                            <button class="design-system__nav-item" type="button"
+                                data-ds-target="ds-typography">Typography</button>
+                            <button class="design-system__nav-item" type="button" data-ds-target="ds-spacing">Spacing &
+                                Layout</button>
+                            <button class="design-system__nav-item" type="button"
+                                data-ds-target="ds-shape">Shape</button>
+                            <button class="design-system__nav-item" type="button"
+                                data-ds-target="ds-iconography">Iconography</button>
+                        </div>
+
+                        <div class="design-system__nav-group">
+                            <p class="design-system__nav-group-title">COMPONENTS</p>
+                            <button class="design-system__nav-item" type="button"
+                                data-ds-target="ds-button">Button</button>
+                        </div>
+                    </nav>
+                </aside>
+
+                <div class="design-system__content">
+
+                    <!-- OVERVIEW -->
+                    <article id="ds-overview" class="design-system__page is-active">
+                        <div class="design-system__intro">
+                            <p class="design-system__eyebrow">VISUAL SYSTEM & UI DESIGN</p>
+                            <h2 class="design-system__title">Design System</h2>
+                            <p class="design-system__description">
+                                A reusable visual foundation created to keep the 4ocean dashboard
+                                consistent, structured, and scalable across screens and interactions.
+                            </p>
+                        </div>
+
+                        <div class="design-system__overview-grid">
+                            <button class="ds-overview-card ds-overview-card--large" type="button"
+                                data-ds-target="ds-color">
+                                <span class="ds-card-label">FOUNDATION</span>
+                                <h3>Color</h3>
+                                <div class="ds-color-preview">
+                                    <span style="background:#0057b7"></span>
+                                    <span style="background:#1700b7"></span>
+                                    <span style="background:#ffffff"></span>
+                                    <span style="background:#171717"></span>
+                                    <span style="background:#eb7600"></span>
+                                </div>
+                                <p>Semantic colors and their interface roles.</p>
+                            </button>
+
+                            <button class="ds-overview-card ds-overview-card--large" type="button"
+                                data-ds-target="ds-typography">
+                                <span class="ds-card-label">FOUNDATION</span>
+                                <h3>Typography</h3>
+                                <div class="ds-type-preview">
+                                    <span class="ds-type-preview__display">Aa</span>
+                                    <span>Heading · Body · Label</span>
+                                </div>
+                                <p>Type scale, hierarchy, and line-height rules.</p>
+                            </button>
+
+                            <button class="ds-overview-card" type="button" data-ds-target="ds-spacing">
+                                <span class="ds-card-label">FOUNDATION</span>
+                                <h3>Spacing & Layout</h3>
+                                <div class="ds-spacing-preview">
+                                    <i style="width:24px"></i>
+                                    <i style="width:40px"></i>
+                                    <i style="width:64px"></i>
+                                </div>
+                                <p>Gap, padding, and layout margin.</p>
+                            </button>
+
+                            <button class="ds-overview-card" type="button" data-ds-target="ds-shape">
+                                <span class="ds-card-label">FOUNDATION</span>
+                                <h3>Shape</h3>
+                                <div class="ds-shape-preview">
+                                    <span class="ds-radius-sm"></span>
+                                    <span class="ds-radius-md"></span>
+                                    <span class="ds-radius-lg"></span>
+                                </div>
+                                <p>Border radius and container treatment.</p>
+                            </button>
+
+                            <button class="ds-overview-card" type="button" data-ds-target="ds-iconography">
+                                <span class="ds-card-label">FOUNDATION</span>
+                                <h3>Iconography</h3>
+                                <div class="ds-icon-preview">
+                                    <span>◇</span><span>+</span><span>→</span>
+                                </div>
+                                <p>Icon sizing, alignment, and usage.</p>
+                            </button>
+
+                            <button class="ds-overview-card ds-overview-card--wide" type="button"
+                                data-ds-target="ds-button">
+                                <span class="ds-card-label">COMPONENT</span>
+                                <h3>Button</h3>
+                                <div class="ds-button-preview">
+                                    <span class="ds-btn ds-btn--primary">Primary</span>
+                                    <span class="ds-btn ds-btn--secondary">Secondary</span>
+                                    <span class="ds-btn ds-btn--outline">Outline</span>
+                                </div>
+                                <p>Variants, hierarchy, states, and usage rules.</p>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- COLOR -->
+                    <article id="ds-color" class="design-system__page">
+                        <div class="design-system__page-heading">
+                            <span class="ds-card-label">FOUNDATIONS</span>
+                            <h2>Color</h2>
+                            <p>Color tokens are assigned by purpose so the interface remains consistent
+                                instead of relying on individual screen-by-screen color choices.</p>
+                        </div>
+
+                        <div class="ds-section">
+                            <h3>Color Tokens</h3>
+                            <div class="ds-color-grid">
+                                <div class="ds-color-token">
+                                    <span class="ds-swatch" style="background:#0057b7"></span>
+                                    <strong>Primary</strong>
+                                    <small>#0057B7</small>
+                                </div>
+                                <div class="ds-color-token">
+                                    <span class="ds-swatch" style="background:#1700b7"></span>
+                                    <strong>Secondary</strong>
+                                    <small>#1700B7</small>
+                                </div>
+                                <div class="ds-color-token ds-color-token--light">
+                                    <span class="ds-swatch" style="background:#ffffff"></span>
+                                    <strong>White Neutral</strong>
+                                    <small>#FFFFFF</small>
+                                </div>
+                                <div class="ds-color-token">
+                                    <span class="ds-swatch" style="background:#171717"></span>
+                                    <strong>Text</strong>
+                                    <small>#171717</small>
+                                </div>
+                                <div class="ds-color-token">
+                                    <span class="ds-swatch" style="background:#eb7600"></span>
+                                    <strong>Accent</strong>
+                                    <small>#EB7600</small>
+                                </div>
+                                <div class="ds-color-token">
+                                    <span class="ds-swatch" style="background:#cac8c8"></span>
+                                    <strong>Disabled</strong>
+                                    <small>#CAC8C8</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ds-rule">
+                            <div>
+                                <span class="ds-rule__label">USAGE RULE</span>
+                                <h3>Choose color by semantic role</h3>
+                            </div>
+                            <p>Use Primary for prominent actions and important interactive elements.
+                                Use neutral and surface colors to establish hierarchy without competing
+                                with the main action.</p>
+                        </div>
+                    </article>
+
+                    <!-- TYPOGRAPHY -->
+                    <article id="ds-typography" class="design-system__page">
+                        <div class="design-system__page-heading">
+                            <span class="ds-card-label">FOUNDATIONS</span>
+                            <h2>Typography</h2>
+                            <p>A responsive type hierarchy keeps dashboard information scannable while
+                                maintaining a clear relationship between size, weight, and line height.</p>
+                        </div>
+
+                        <div class="ds-type-system">
+                            <div class="ds-type-row">
+                                <div><span class="ds-token-name">Display</span><small>96px / Black</small></div>
+                                <strong class="ds-type-display">Aa</strong>
+                                <p>Hero and high-level dashboard emphasis.</p>
+                            </div>
+                            <div class="ds-type-row">
+                                <div><span class="ds-token-name">Heading 1</span><small>Bold</small></div>
+                                <strong class="ds-type-h1">Heading 1</strong>
+                                <p>Primary page and section hierarchy.</p>
+                            </div>
+                            <div class="ds-type-row">
+                                <div><span class="ds-token-name">Heading 2</span><small>Bold</small></div>
+                                <strong class="ds-type-h2">Heading 2</strong>
+                                <p>Subsection hierarchy.</p>
+                            </div>
+                            <div class="ds-type-row">
+                                <div><span class="ds-token-name">Body</span><small>18px</small></div>
+                                <span class="ds-type-body">Body text for longer descriptions and supporting
+                                    content.</span>
+                                <p>Readable interface and explanatory content.</p>
+                            </div>
+                            <div class="ds-type-row">
+                                <div><span class="ds-token-name">Label</span><small>16px / Bold</small></div>
+                                <strong class="ds-type-label">BUTTON LABEL</strong>
+                                <p>Controls, metadata, and compact UI.</p>
+                            </div>
+                            <div class="ds-type-row">
+                                <div><span class="ds-token-name">Small</span><small>14px</small></div>
+                                <span class="ds-type-small">Supporting information</span>
+                                <p>Notes and secondary information.</p>
+                            </div>
+                        </div>
+
+                        <div class="ds-rule">
+                            <div>
+                                <span class="ds-rule__label">USAGE RULE</span>
+                                <h3>Hierarchy before decoration</h3>
+                            </div>
+                            <p>Use size, weight, and line height to communicate hierarchy first.
+                                Avoid using color or bold weight as the only way to distinguish information.</p>
+                        </div>
+                    </article>
+
+                    <!-- SPACING -->
+                    <article id="ds-spacing" class="design-system__page">
+                        <div class="design-system__page-heading">
+                            <span class="ds-card-label">FOUNDATIONS</span>
+                            <h2>Spacing & Layout</h2>
+                            <p>A shared spacing language creates predictable relationships between
+                                content, components, and larger layout sections.</p>
+                        </div>
+
+                        <div class="ds-section">
+                            <h3>Spacing Scale</h3>
+                            <div class="ds-spacing-scale">
+                                <div><i style="width:16px"></i><span>4</span></div>
+                                <div><i style="width:24px"></i><span>8</span></div>
+                                <div><i style="width:36px"></i><span>12</span></div>
+                                <div><i style="width:48px"></i><span>16</span></div>
+                                <div><i style="width:72px"></i><span>24</span></div>
+                                <div><i style="width:96px"></i><span>32</span></div>
+                                <div><i style="width:128px"></i><span>48</span></div>
+                            </div>
+                        </div>
+
+                        <div class="ds-spacing-rules">
+                            <div class="ds-rule-card">
+                                <span>GAP</span>
+                                <strong>Between related elements</strong>
+                                <p>Use gap to control the relationship between items in the same group.</p>
+                            </div>
+                            <div class="ds-rule-card">
+                                <span>PADDING</span>
+                                <strong>Inside components</strong>
+                                <p>Use padding to create breathing room between content and a component boundary.</p>
+                            </div>
+                            <div class="ds-rule-card">
+                                <span>MARGIN</span>
+                                <strong>Between layout sections</strong>
+                                <p>Use larger spacing to separate distinct sections and establish page hierarchy.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- SHAPE -->
+                    <article id="ds-shape" class="design-system__page">
+                        <div class="design-system__page-heading">
+                            <span class="ds-card-label">FOUNDATIONS</span>
+                            <h2>Shape</h2>
+                            <p>Border radius creates a consistent visual language across controls,
+                                cards, and larger containers.</p>
+                        </div>
+
+                        <div class="ds-shape-system">
+                            <div class="ds-shape-item">
+                                <div class="ds-shape-demo ds-shape-demo--sm"></div>
+                                <strong>Small</strong>
+                                <span>Compact controls</span>
+                            </div>
+                            <div class="ds-shape-item">
+                                <div class="ds-shape-demo ds-shape-demo--md"></div>
+                                <strong>Medium</strong>
+                                <span>Buttons & UI elements</span>
+                            </div>
+                            <div class="ds-shape-item">
+                                <div class="ds-shape-demo ds-shape-demo--lg"></div>
+                                <strong>Large</strong>
+                                <span>Cards & containers</span>
+                            </div>
+                            <div class="ds-shape-item">
+                                <div class="ds-shape-demo ds-shape-demo--pill"></div>
+                                <strong>Pill</strong>
+                                <span>Tags & compact statuses</span>
+                            </div>
+                        </div>
+
+                        <div class="ds-rule">
+                            <div>
+                                <span class="ds-rule__label">USAGE RULE</span>
+                                <h3>Radius follows component hierarchy</h3>
+                            </div>
+                            <p>Use smaller radii for compact controls and stronger rounding for larger
+                                containers. Avoid mixing unrelated radius values within the same component group.</p>
+                        </div>
+                    </article>
+
+                    <!-- ICONOGRAPHY -->
+                    <article id="ds-iconography" class="design-system__page">
+                        <div class="design-system__page-heading">
+                            <span class="ds-card-label">FOUNDATIONS</span>
+                            <h2>Iconography</h2>
+                            <p>Icons support recognition and navigation while staying visually secondary
+                                to the content they represent.</p>
+                        </div>
+
+                        <div class="ds-icon-system">
+                            <div class="ds-icon-size">
+                                <span class="ds-icon-demo ds-icon-demo--16">+</span>
+                                <strong>16px</strong>
+                                <small>Compact / supporting UI</small>
+                            </div>
+                            <div class="ds-icon-size">
+                                <span class="ds-icon-demo ds-icon-demo--20">+</span>
+                                <strong>20px</strong>
+                                <small>Standard controls</small>
+                            </div>
+                            <div class="ds-icon-size">
+                                <span class="ds-icon-demo ds-icon-demo--24">+</span>
+                                <strong>24px</strong>
+                                <small>Primary UI controls</small>
+                            </div>
+                        </div>
+
+                        <div class="ds-rule">
+                            <div>
+                                <span class="ds-rule__label">USAGE RULE</span>
+                                <h3>Keep icon sizing and alignment consistent</h3>
+                            </div>
+                            <p>Choose icon size based on the surrounding component and align icons
+                                consistently with the text baseline or control center.</p>
+                        </div>
+                    </article>
+
+                    <!-- BUTTON -->
+                    <article id="ds-button" class="design-system__page">
+                        <div class="design-system__page-heading">
+                            <span class="ds-card-label">COMPONENT</span>
+                            <h2>Button</h2>
+                            <p>Buttons communicate actions through clear hierarchy, consistent sizing,
+                                and predictable states.</p>
+                        </div>
+
+                        <div class="ds-section">
+                            <h3>Variants</h3>
+                            <div class="ds-button-showcase">
+                                <div class="ds-button-example">
+                                    <span class="ds-btn ds-btn--primary">Primary</span>
+                                    <small>Main action</small>
+                                </div>
+                                <div class="ds-button-example">
+                                    <span class="ds-btn ds-btn--secondary">Secondary</span>
+                                    <small>Supporting action</small>
+                                </div>
+                                <div class="ds-button-example">
+                                    <span class="ds-btn ds-btn--outline">Outline</span>
+                                    <small>Lower emphasis action</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ds-section">
+                            <h3>States</h3>
+                            <div class="ds-button-states">
+                                <span class="ds-btn ds-btn--primary">Default</span>
+                                <span class="ds-btn ds-btn--primary ds-btn--disabled">Disabled</span>
+                            </div>
+                        </div>
+
+                        <div class="ds-rule">
+                            <div>
+                                <span class="ds-rule__label">USAGE RULE</span>
+                                <h3>One clear primary action</h3>
+                            </div>
+                            <p>Use Primary for the main action within a section. Use Secondary or
+                                Outline when an action is supportive or lower in visual priority.</p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="iterasi" class="project-section">
+
+            <h2 class="capsule fw-semibold capsule-border-project project-section__title">
+                Iterasi
+            </h2>
+
+            <div class="accordion mt-3" id="iterasiAccordion">
+
+
+                <!-- FIRST VERSION -->
+                <div class="accordion-item border-0 rounded-4 overflow-hidden mb-3">
+
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#firstVersion" aria-expanded="false" aria-controls="firstVersion">
+
+                            First Version
+
+                        </button>
+                    </h3>
+
+                    <div id="firstVersion" class="accordion-collapse collapse" data-bs-parent="#iterasiAccordion">
+
+                        <div class="accordion-body project-surface-muted p-3">
+                            <p class="text-20 fw-bold">A Simple Dashboard Concept</p>
+                            <p class="text-16">
+                                The first iteration focused on creating a simple, single-screen dashboard to present the
+                                key cleanup information at a glance. However, this approach was considered too limited,
+                                as 4ocean had a substantial amount of information and impact data to communicate to
+                                users. The single-screen layout could not provide enough space to present the
+                                information clearly and effectively.
+                            </p>
+
+                            <img loading="lazy" width="958" height="683" src="image/4Ocean/iterasi-1.jpg"
+                                alt="First Version Iteration"
+                                class="media-block__image media-block__image--capped zoom-image lazy-img">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SECOND VERSION -->
+                <div class="accordion-item border-0 rounded-4 overflow-hidden mb-3">
+
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#secondVersion" aria-expanded="false" aria-controls="secondVersion">
+
+                            Second Version
+
+                        </button>
+                    </h3>
+
+                    <div id="secondVersion" class="accordion-collapse collapse" data-bs-parent="#iterasiAccordion">
+
+                        <div class="accordion-body project-surface-muted p-3">
+                            <p class="text-20 fw-bold">Expanding the Dashboard Experience</p>
+                            <p class="text-16">
+                                In the second iteration, the dashboard was redesigned into a long-form, vertically
+                                structured layout to accommodate more information. This allowed users to explore a wider
+                                range of cleanup data and impact metrics within a single dashboard.
+                                <br><br>
+                                Along with the structural change, the UI was refined and several information sections
+                                were reorganized to improve hierarchy, readability, and how the data was presented to
+                                users.
+                            </p>
+
+                            <img loading="lazy" width="1303" height="927" src="image/4Ocean/iterasi-2.png"
+                                alt="Second Version Iteration"
+                                class="media-block__image media-block__image--capped zoom-image lazy-img">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FINAL VERSION -->
+                <div class="accordion-item border-0 rounded-4 overflow-hidden mb-3">
+
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#finalVersion" aria-expanded="false" aria-controls="finalVersion">
+
+                            Final Version
+
+                        </button>
+                    </h3>
+
+                    <div id="finalVersion" class="accordion-collapse collapse" data-bs-parent="#iterasiAccordion">
+
+                        <div class="accordion-body project-surface-muted p-3">
+                            <p class="text-20 fw-bold">Refining the Dashboard Experience</p>
+                            <p class="text-16">
+                                The third iteration focused on refining the overall dashboard experience based on the
+                                previous version. The information hierarchy, layout, and data presentation were further
+                                improved to make the dashboard clearer, more structured, and easier to navigate.
+                                <br><br>
+                                The final design balanced the amount of information 4ocean needed to communicate with
+                                the user's need to quickly understand cleanup activities, environmental impact, and key
+                                results.
+                            </p>
+                            <img loading="lazy" width="1317" height="900" src="image/4Ocean/iterasi-3.png"
+                                alt="Final Version Iteration"
+                                class="media-block__image media-block__image--capped zoom-image lazy-img">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <section id="learnings" class="project-section">
+            <h2 class="capsule fw-semibold capsule-border-project project-section__title">Key Learnings</h2>
+            <div class="card-grid card-grid--cols-3 mt-3">
+                <div class="card-grid__card card-grid__card--background">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="challenge-icon color-project mb-2">
+
+                        <rect x="3" y="3" width="7" height="7" rx="1" />
+                        <rect x="14" y="3" width="7" height="7" rx="1" />
+                        <rect x="3" y="14" width="7" height="7" rx="1" />
+                        <rect x="14" y="14" width="7" height="7" rx="1" />
+
+                    </svg>
+                    <h3 class="card-grid__title text-primary-4Ocean">Designing for Complex Systems</h3>
+                    <p class="card-grid__text">Working with a large organization like 4ocean meant working
+                        with a large amount of existing data, processes, and interconnected systems. One of the biggest
+                        challenges was <span class="fw-bold ">ensuring that new features could support their existing
+                            workflows from end
+                            to
+                            end </span>, rather than solving only a single part of the process.
+                        <br><br>
+                        This taught me to think beyond individual screens and consider how each feature fits into the
+                        broader system and user journey.
+                    </p>
+                </div>
+
+                <div class="card-grid__card card-grid__card--background">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="challenge-icon color-project mb-2">
+
+                        <rect width="8" height="4" x="8" y="2" rx="1" />
+                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+                        <path d="m9 14 2 2 4-4" />
+                    </svg>
+                    <h3 class="card-grid__title text-primary-4Ocean">Validating Before Building</h3>
+                    <p class="card-grid__text">Requirements and feature requests could change frequently
+                        throughout the project. As a UI/UX Designer, I learned the importance of <span class="fw-bold">
+                            validating assumptions
+                            before moving</span> into design and development.
+                        <br><br>
+                        Whenever a new feature was proposed, I would encourage the CTO and team to validate the actual
+                        need and expected outcome with 4ocean stakeholders/users first. This helped reduce the risk of
+                        building features based on assumptions and ensured that design decisions were grounded in real
+                        user and business needs.
+                    </p>
+                </div>
+
+                <div class="card-grid__card card-grid__card--background">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+                        class="challenge-icon color-project mb-2">
+                        <path d="M0 0h48v48H0z" fill="none" />
+                        <path fill="currentColor"
+                            d="M40.75 6a1.25 1.25 0 1 1 0 2.5h-3.469l5.62 13.263c.066.154.099.32.099.487a7.5 7.5 0 0 1-15 0c0-.167.033-.333.099-.487L33.719 8.5h-8.446l.456 25.5H35a4 4 0 0 1 0 8H13a4 4 0 0 1 0-8h10.228L22.77 8.5h-8.49l5.62 13.263c.066.154.099.32.099.487a7.5 7.5 0 0 1-15 0c0-.167.033-.333.099-.487L10.719 8.5H7.25a1.25 1.25 0 1 1 0-2.5zM13 36.5a1.5 1.5 0 0 0 0 3h22a1.5 1.5 0 0 0 0-3zm-5.343-13a5.002 5.002 0 0 0 9.686 0zm23 0a5.002 5.002 0 0 0 9.686 0zM8.137 21h8.725L12.5 10.704zm23 0h8.725L35.5 10.704z" />
+                    </svg>
+                    <h3 class="card-grid__title text-primary-4Ocean">Balancing User Needs & Business Complexity</h3>
+                    <p class="card-grid__text">The project taught me that designing for a large
+                        organization is not simply about creating a visually clear interface. The <span
+                            class="fw-bold">solution also needs to
+                            accommodate business processes</span> , existing systems, data requirements, and operational
+                        constraints.
+                        <br><br>
+                        As a result, I became more aware of designing solutions that are not only usable for the end
+                        user, but also feasible and scalable within the organization's existing ecosystem.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer px-5 pt-5" id="portfolioFooter">
+        <div class="container d-flex flex-column flex-md-row justify-content-between gap-3">
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <script>
+        (() => {
+            const buttons = document.querySelectorAll("[data-ds-target]");
+            const pages = document.querySelectorAll(".design-system__page");
+
+            function showDesignSystemPage(targetId) {
+                pages.forEach(page => {
+                    page.classList.toggle("is-active", page.id === targetId);
+                });
+
+                document.querySelectorAll(".design-system__nav-item").forEach(item => {
+                    item.classList.toggle("is-active", item.dataset.dsTarget === targetId);
+                });
+
+                const activePage = document.getElementById(targetId);
+                if (activePage) {
+                    activePage.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+            }
+
+            buttons.forEach(button => {
+                button.addEventListener("click", () => {
+                    showDesignSystemPage(button.dataset.dsTarget);
+                });
+            });
+        })();
+    </script>
+
+    <script src="../app.js"></script>
+</body>
+
+</html>
