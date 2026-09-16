@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4Ocean</title>
+    <title>Clean up - Impact Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -262,6 +262,21 @@
             border-radius: 22px
         }
 
+        .ds-layout-preview {
+            display: flex;
+            align-items: stretch;
+            gap: 8px;
+            height: 48px
+        }
+
+        .ds-layout-preview span {
+            flex: 1;
+            display: block;
+            border-radius: 8px;
+            background: #edf5ff;
+            border: 1px solid #b9d8ff
+        }
+
         .ds-icon-preview {
             display: flex;
             gap: 22px;
@@ -320,41 +335,27 @@
             font-size: 18px
         }
 
-        .ds-color-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 12px
-        }
-
-        .ds-color-token {
-            padding: 14px;
-            border: 1px solid var(--ds-border);
-            border-radius: 14px;
-            background: #fff
-        }
-
-        .ds-swatch {
-            display: block;
-            width: 100%;
-            height: 72px;
-            margin-bottom: 12px;
-            border-radius: 9px;
-            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .08)
-        }
-
-        .ds-color-token strong,
-        .ds-color-token small {
-            display: block
-        }
-
-        .ds-color-token strong {
+        .ds-section__intro {
+            margin: -8px 0 16px;
+            color: #888;
             font-size: 13px
         }
 
-        .ds-color-token small {
-            margin-top: 3px;
-            color: #888;
-            font-size: 11px
+        .ds-token-swatch {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            border-radius: 7px;
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .12)
+        }
+
+        .ds-data-table {
+            margin-bottom: 0;
+            font-size: 13px
+        }
+
+        .ds-data-table code {
+            font-size: 12px
         }
 
         .ds-rule {
@@ -443,36 +444,6 @@
         .ds-type-small {
             font-size: 14px;
             line-height: 20px
-        }
-
-        .ds-spacing-scale {
-            display: flex;
-            align-items: end;
-            justify-content: space-between;
-            gap: 14px;
-            min-height: 170px;
-            padding: 20px;
-            border: 1px solid var(--ds-border);
-            border-radius: 16px;
-            overflow-x: auto
-        }
-
-        .ds-spacing-scale>div {
-            min-width: 48px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            color: #777;
-            font-size: 11px
-        }
-
-        .ds-spacing-scale i {
-            display: block;
-            max-width: 128px;
-            height: 16px;
-            border-radius: 4px;
-            background: var(--ds-primary)
         }
 
         .ds-spacing-rules {
@@ -612,10 +583,6 @@
                 gap: 28px
             }
 
-            .ds-color-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr))
-            }
-
             .ds-shape-system,
             .ds-icon-system {
                 grid-template-columns: repeat(2, minmax(0, 1fr))
@@ -683,7 +650,6 @@
             }
 
             .design-system__overview-grid,
-            .ds-color-grid,
             .ds-spacing-rules,
             .ds-shape-system,
             .ds-icon-system,
@@ -712,10 +678,6 @@
             .ds-type-display {
                 font-size: 56px;
                 line-height: 68px
-            }
-
-            .ds-spacing-scale {
-                justify-content: flex-start
             }
         }
 
@@ -798,20 +760,20 @@
             <h2 class="capsule fw-semibold capsule-border-project project-section__title m-0">Selected UI</h2>
             <div class="media-marquee mt-3">
                 <div class="media-marquee__track">
-                    <img src="image/4Ocean/mockup/Mockup_9.png" alt="4ocean mobile app splash screen"
+                    <img src="image/4Ocean/mockup/Mockup_9.png" alt="Mobile app splash screen"
                         width="623" height="432" loading="lazy" class="media-marquee__image lazy-img preview-image">
-                    <img src="image/4Ocean/mockup/Mockup _ DCA Login.jpg" alt="4ocean mobile app login screen"
+                    <img src="image/4Ocean/mockup/Mockup _ DCA Login.jpg" alt="Mobile app login screen"
                         width="216" height="432" loading="lazy" class="media-marquee__image lazy-img preview-image">
                     <img src="image/4Ocean/mockup/Mockup _DCA Clean up History.jpg"
-                        alt="4ocean mobile app clean-up list screen" width="216" height="432" loading="lazy"
+                        alt="Mobile app clean-up list screen" width="216" height="432" loading="lazy"
                         class="media-marquee__image lazy-img preview-image">
                     <img src="image/4Ocean/mockup/Mockup_DCA Summary Clean up.jpg"
-                        alt="4ocean mobile app clean-up submission screen" width="648" height="432" loading="lazy"
+                        alt="Mobile app clean-up submission screen" width="648" height="432" loading="lazy"
                         class="media-marquee__image lazy-img preview-image">
 
                     <video src="video/4Ocean/4Ocean - Animation Explore.mp4" width="626" height="432" autoplay muted
                         loop playsinline preload="metadata" class="media-marquee__image lazy-img preview-image"
-                        aria-label="4Ocean mobile app animation">
+                        aria-label="Mobile app animation">
                     </video>
                     <!-- duplicated so the marquee loop reads as seamless -->
                     <img src="image/4Ocean/mockup/Mockup_9.png" alt="" width="623" height="432"
@@ -834,8 +796,8 @@
             <h2 class="capsule fw-semibold capsule-border-project project-section__title m-0">Project Scope</h2>
             <div class="info-block__row mt-3">
                 <div class="info-block__prose">
-                    <p>4ocean is a mission-driven organization operating at the intersection of
-                        environmental impact and global commerce. As the organization scaled, its digital platform
+                    <p>The organization is mission-driven, operating at the intersection of
+                        environmental impact and global commerce. As it scaled, its digital platform
                         struggled to keep up with growing operational and communication needs.</p>
                     <p>
                         The existing setup was built incrementally over time, resulting in fragmented user journeys,
@@ -923,7 +885,7 @@
                         <img loading="lazy" width="97" height="97" src="image/4Ocean/4ocean-admin.webp" alt=""
                             class="process-discovery__column-icon lazy-img">
                         <div class="process-discovery__column-heading">
-                            <h3 class="process-discovery__column-title text-18">4Ocean Admin</h3>
+                            <h3 class="process-discovery__column-title text-18">Organization Admin</h3>
                             <p class="text-16">Responsibility : Get data from Cleanup Team, monitor, validate, and
                                 report operational performance data.</p>
                         </div>
@@ -931,7 +893,7 @@
                     <div class="process-discovery__column-body rounded-4">
                         <p class="text-16">
                             After <span class="text-primary-soft fw-semibold">receiving the paper logbooks and reports
-                                from the field teams</span>, 4ocean Admin manually
+                                from the field teams</span>, Organization Admin manually
                             reviews, compiles, and recaps the data from multiple cleanup activities and
                             locations.<br><br>
                             The information is then organized and processed for operational monitoring, reporting, and
@@ -961,7 +923,7 @@
                     </div>
                     <div class="process-discovery__column-body rounded-4">
                         <p class="text-16">
-                            Donors rely on impact and operational reports provided by 4ocean, typically in PDF
+                            Donors rely on impact and operational reports provided by the organization, typically in PDF
                             format, to <span class="text-primary-soft fw-semibold">review environmental performance and
                                 assess the organization's measurable impact.</span><br><br>
                             They use these reports to understand the results of cleanup operations, track progress over
@@ -998,7 +960,7 @@
                             d="M1920 512v1408H768v-256H512v-256H256V0h731l256 256h421v256zm-896-128h165l-165-165zm256 896V512H896V128H384v1152zm256 256V384h-128v1024H640v128zm257-896h-129v1024H896v128h897z" />
                     </svg>
                     <h3 class="card-grid__title">Manual Data Consolidation</h3>
-                    <p class="card-grid__text">4ocean Admins need a more <b>efficient and centralized way
+                    <p class="card-grid__text">Organization Admins need a more <b>efficient and centralized way
                             to collect</b>, review, and consolidate cleanup data because manually processing paper
                         logbooks from multiple teams and locations is time-consuming, difficult to standardize, and can
                         result in delayed or scattered information.</p>
@@ -1013,7 +975,7 @@
                     </svg>
                     <h3 class="card-grid__title">Limited Real-Time Transparency</h3>
                     <p class="card-grid__text">Donors need more <b>transparent and accessible visibility
-                            into 4ocean's environmental impact</b> and operational performance because relying on static
+                            into the organization's environmental impact</b> and operational performance because relying on static
                         PDF reports limits their ability to track measurable impact, understand ongoing activities, and
                         access up-to-date information about how impact is being created.</p>
                 </div>
@@ -1037,7 +999,7 @@
                 </div>
 
                 <div class="solution__column">
-                    <p class="solution__column-title text-16">How might we enable 4ocean Admins to automatically
+                    <p class="solution__column-title text-16">How might we enable Organization Admins to automatically
                         centralize and synchronize cleanup data from multiple teams and locations?</p>
                     <img loading="lazy" width="20" height="20" src="image/4Ocean/arrow-down.png" alt=""
                         class="solution__arrow lazy-img">
@@ -1050,7 +1012,7 @@
                 </div>
 
                 <div class="solution__column">
-                    <p class="solution__column-title text-16">How might we provide 4ocean stakeholders with real-time
+                    <p class="solution__column-title text-16">How might we provide the organization's stakeholders with real-time
                         visibility into cleanup operations and environmental impact data?</p>
                     <img loading="lazy" width="20" height="20" src="image/4Ocean/arrow-down.png" alt=""
                         class="solution__arrow lazy-img">
@@ -1263,7 +1225,7 @@
                             <p class="text-16" style="width: stretch;">
                                 Stakeholder : <br>
                                 <b class="fs-6">
-                                    Donors / 4Ocean Management
+                                    Donors / Organization Management
                                 </b>
                             </p>
 
@@ -1401,6 +1363,8 @@
                                 data-ds-target="ds-typography">Typography</button>
                             <button class="design-system__nav-item" type="button" data-ds-target="ds-spacing">Spacing &
                                 Layout</button>
+                            <button class="design-system__nav-item" type="button" data-ds-target="ds-layout-grid">Layout
+                                & Grid</button>
                             <button class="design-system__nav-item" type="button"
                                 data-ds-target="ds-shape">Shape</button>
                             <button class="design-system__nav-item" type="button"
@@ -1423,7 +1387,7 @@
                             <p class="design-system__eyebrow">VISUAL SYSTEM & UI DESIGN</p>
                             <h2 class="design-system__title">Design System</h2>
                             <p class="design-system__description">
-                                A reusable visual foundation created to keep the 4ocean dashboard
+                                A reusable visual foundation created to keep the dashboard
                                 consistent, structured, and scalable across screens and interactions.
                             </p>
                         </div>
@@ -1463,6 +1427,17 @@
                                     <i style="width:64px"></i>
                                 </div>
                                 <p>Gap, padding, and layout margin.</p>
+                            </button>
+
+                            <button class="ds-overview-card" type="button" data-ds-target="ds-layout-grid">
+                                <span class="ds-card-label">FOUNDATION</span>
+                                <h3>Layout & Grid</h3>
+                                <div class="ds-layout-preview">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <p>Page margins, section rhythm, and grid gaps.</p>
                             </button>
 
                             <button class="ds-overview-card" type="button" data-ds-target="ds-shape">
@@ -1509,38 +1484,221 @@
                         </div>
 
                         <div class="ds-section">
-                            <h3>Color Tokens</h3>
-                            <div class="ds-color-grid">
-                                <div class="ds-color-token">
-                                    <span class="ds-swatch" style="background:#0057b7"></span>
-                                    <strong>Primary</strong>
-                                    <small>#0057B7</small>
-                                </div>
-                                <div class="ds-color-token">
-                                    <span class="ds-swatch" style="background:#1700b7"></span>
-                                    <strong>Secondary</strong>
-                                    <small>#1700B7</small>
-                                </div>
-                                <div class="ds-color-token ds-color-token--light">
-                                    <span class="ds-swatch" style="background:#ffffff"></span>
-                                    <strong>White Neutral</strong>
-                                    <small>#FFFFFF</small>
-                                </div>
-                                <div class="ds-color-token">
-                                    <span class="ds-swatch" style="background:#171717"></span>
-                                    <strong>Text</strong>
-                                    <small>#171717</small>
-                                </div>
-                                <div class="ds-color-token">
-                                    <span class="ds-swatch" style="background:#eb7600"></span>
-                                    <strong>Accent</strong>
-                                    <small>#EB7600</small>
-                                </div>
-                                <div class="ds-color-token">
-                                    <span class="ds-swatch" style="background:#cac8c8"></span>
-                                    <strong>Disabled</strong>
-                                    <small>#CAC8C8</small>
-                                </div>
+                            <h3>Primitive Color Tokens</h3>
+                            <p class="ds-section__intro">Base palette values that every semantic token below
+                                references.</p>
+                            <div class="table-responsive">
+                                <table class="table table-sm align-middle ds-data-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Swatch</th>
+                                            <th scope="col">Group</th>
+                                            <th scope="col">Token Name</th>
+                                            <th scope="col">Hex</th>
+                                            <th scope="col">Primary Role / Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#0057B7"></span></td>
+                                            <td>blue</td>
+                                            <td><code>color/primitive/blue/500</code></td>
+                                            <td><code>#0057B7</code></td>
+                                            <td>Base primary brand blue</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#EFC81C"></span></td>
+                                            <td>yellow</td>
+                                            <td><code>color/primitive/yellow/500</code></td>
+                                            <td><code>#EFC81C</code></td>
+                                            <td>Base secondary brand yellow</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#EB7600"></span></td>
+                                            <td>orange</td>
+                                            <td><code>color/primitive/orange/500</code></td>
+                                            <td><code>#EB7600</code></td>
+                                            <td>Orange accent / Warning state</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#5FEF1C"></span></td>
+                                            <td>green</td>
+                                            <td><code>color/primitive/green/500</code></td>
+                                            <td><code>#5FEF1C</code></td>
+                                            <td>Green accent / Success state</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#FFFFFF"></span></td>
+                                            <td>neutral</td>
+                                            <td><code>color/primitive/neutral/0</code></td>
+                                            <td><code>#FFFFFF</code></td>
+                                            <td>Pure white (Canvas / Surface)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#FAFAFA"></span></td>
+                                            <td>neutral</td>
+                                            <td><code>color/primitive/neutral/50</code></td>
+                                            <td><code>#FAFAFA</code></td>
+                                            <td>Off-white / Subtle background tint</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#CAC8C8"></span></td>
+                                            <td>neutral</td>
+                                            <td><code>color/primitive/neutral/300</code></td>
+                                            <td><code>#CAC8C8</code></td>
+                                            <td>Light grey / Disabled states</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#4C5763"></span></td>
+                                            <td>neutral</td>
+                                            <td><code>color/primitive/neutral/600</code></td>
+                                            <td><code>#4C5763</code></td>
+                                            <td>Medium grey / Secondary elements</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#171717"></span></td>
+                                            <td>neutral</td>
+                                            <td><code>color/primitive/neutral/900</code></td>
+                                            <td><code>#171717</code></td>
+                                            <td>Deep dark grey / Primary text</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="ds-section">
+                            <h3>Semantic Color Tokens</h3>
+                            <p class="ds-section__intro">Functional tokens used across components, each mapped to a
+                                primitive above.</p>
+                            <div class="table-responsive">
+                                <table class="table table-sm align-middle ds-data-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Swatch</th>
+                                            <th scope="col">Category</th>
+                                            <th scope="col">Semantic Token Name</th>
+                                            <th scope="col">Referenced Primitive</th>
+                                            <th scope="col">Functional UI Context</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#0057B7"></span></td>
+                                            <td><strong>primary</strong></td>
+                                            <td><code>color/semantic/primary/default</code></td>
+                                            <td><code>color/primitive/blue/500</code></td>
+                                            <td>Primary button background, active elements</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch"
+                                                    style="background:rgba(0,87,183,.5)"></span></td>
+                                            <td><strong>primary</strong></td>
+                                            <td><code>color/semantic/primary/50-opacity</code></td>
+                                            <td><code>color/primitive/blue/500</code> (50%)</td>
+                                            <td>Primary button hover/pressed state, backdrop overlay</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#4C5763"></span></td>
+                                            <td><strong>outline</strong></td>
+                                            <td><code>color/semantic/outline/Outline</code></td>
+                                            <td><code>.../primitive/neutral/600</code></td>
+                                            <td>Default card/input border, separator lines</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#EFC81C"></span></td>
+                                            <td><strong>secondary</strong></td>
+                                            <td><code>color/semantic/secondary/default</code></td>
+                                            <td><code>.../primitive/yellow/500</code></td>
+                                            <td>Secondary button background, accent badges</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch"
+                                                    style="background:rgba(239,200,28,.5)"></span></td>
+                                            <td><strong>secondary</strong></td>
+                                            <td><code>color/semantic/secondary/50-opacity</code></td>
+                                            <td><code>.../primitive/yellow/500</code> (50%)</td>
+                                            <td>Secondary button transparent hover state</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#FFFFFF"></span></td>
+                                            <td><strong>surface</strong></td>
+                                            <td><code>color/semantic/surface/default</code></td>
+                                            <td><code>.../primitive/neutral/0</code></td>
+                                            <td>Main canvas background, card &amp; modal surface</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#FAFAFA"></span></td>
+                                            <td><strong>surface</strong></td>
+                                            <td><code>color/semantic/surface/subtle</code></td>
+                                            <td><code>.../primitive/neutral/50</code></td>
+                                            <td>Subtle section background, alternating table rows</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#4C5763"></span></td>
+                                            <td><strong>text</strong></td>
+                                            <td><code>color/semantic/text/secondary</code></td>
+                                            <td><code>.../primitive/neutral/600</code></td>
+                                            <td>Subtitles, captions, placeholders, secondary labels</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#CAC8C8"></span></td>
+                                            <td><strong>text</strong></td>
+                                            <td><code>color/semantic/text/disabled</code></td>
+                                            <td><code>.../primitive/neutral/300</code></td>
+                                            <td>Inactive / disabled text labels</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#FFFFFF"></span></td>
+                                            <td><strong>text</strong></td>
+                                            <td><code>color/semantic/text/inverse</code></td>
+                                            <td><code>#FFFFFF</code></td>
+                                            <td>High-contrast text on dark backgrounds</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#0057B7"></span></td>
+                                            <td><strong>text</strong></td>
+                                            <td><code>color/semantic/text/brand</code></td>
+                                            <td><code>color/primitive/blue/500</code></td>
+                                            <td>Brand-highlighted text</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#171717"></span></td>
+                                            <td><strong>text</strong></td>
+                                            <td><code>color/semantic/text/default</code></td>
+                                            <td><code>.../primitive/neutral/900</code></td>
+                                            <td>Main body text, primary headings</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#0057B7"></span></td>
+                                            <td><strong>text</strong></td>
+                                            <td><code>color/semantic/text/link</code></td>
+                                            <td><code>color/primitive/blue/500</code></td>
+                                            <td>Interactive hyperlink text</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#CAC8C8"></span></td>
+                                            <td><strong>state</strong></td>
+                                            <td><code>color/semantic/state/disabled</code></td>
+                                            <td><code>.../primitive/neutral/300</code></td>
+                                            <td>Disabled component background / border</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#EB7600"></span></td>
+                                            <td><strong>accent</strong></td>
+                                            <td><code>color/semantic/accent/orange</code></td>
+                                            <td><code>.../primitive/orange/500</code></td>
+                                            <td>Visual accent / Warning alerts</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#5FEF1C"></span></td>
+                                            <td><strong>accent</strong></td>
+                                            <td><code>color/semantic/accent/green</code></td>
+                                            <td><code>.../primitive/green/500</code></td>
+                                            <td>Visual accent / Success badges</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
 
@@ -1618,20 +1776,171 @@
                         <div class="design-system__page-heading">
                             <span class="ds-card-label">FOUNDATIONS</span>
                             <h2>Spacing & Layout</h2>
-                            <p>A shared spacing language creates predictable relationships between
-                                content, components, and larger layout sections.</p>
+                            <p>An 8pt spacing scale (with a 4pt sub-grid for tight UI elements) keeps
+                                padding, gaps, and layout rhythm predictable across components and page
+                                sections.</p>
                         </div>
 
                         <div class="ds-section">
-                            <h3>Spacing Scale</h3>
-                            <div class="ds-spacing-scale">
-                                <div><i style="width:16px"></i><span>4</span></div>
-                                <div><i style="width:24px"></i><span>8</span></div>
-                                <div><i style="width:36px"></i><span>12</span></div>
-                                <div><i style="width:48px"></i><span>16</span></div>
-                                <div><i style="width:72px"></i><span>24</span></div>
-                                <div><i style="width:96px"></i><span>32</span></div>
-                                <div><i style="width:128px"></i><span>48</span></div>
+                            <h3>Base Spacing Scale</h3>
+                            <p class="ds-section__intro">Core scale tokens referenced by every component
+                                spacing value below.</p>
+                            <div class="table-responsive">
+                                <table class="table table-sm align-middle ds-data-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Token Name</th>
+                                            <th scope="col">Rem</th>
+                                            <th scope="col">Pixel</th>
+                                            <th scope="col">Spatial Intent / Use Case</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>space/3xs</code></td>
+                                            <td>0.125rem</td>
+                                            <td>2px</td>
+                                            <td>Fine-grain alignment, micro-borders</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>space/2xs</code></td>
+                                            <td>0.25rem</td>
+                                            <td>4px</td>
+                                            <td>Badge padding, icon-to-text micro gap, compact tag padding</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>space/xs</code></td>
+                                            <td>0.5rem</td>
+                                            <td>8px</td>
+                                            <td>Small button vertical padding, icon gap, tight list item gap</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>space/sm</code></td>
+                                            <td>0.75rem</td>
+                                            <td>12px</td>
+                                            <td>Standard button vertical padding, input field padding, card
+                                                item gap</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>space/md</code></td>
+                                            <td>1rem</td>
+                                            <td>16px</td>
+                                            <td>Standard button horizontal padding, card internal padding,
+                                                form row gap</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>space/lg</code></td>
+                                            <td>1.5rem</td>
+                                            <td>24px</td>
+                                            <td>Large button horizontal padding, card content padding, grid
+                                                gap</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>space/xl</code></td>
+                                            <td>2rem</td>
+                                            <td>32px</td>
+                                            <td>Modal dialog padding, section component gap, header
+                                                container gap</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>space/2xl</code></td>
+                                            <td>3rem</td>
+                                            <td>48px</td>
+                                            <td>Small section padding, hero content gap</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>space/3xl</code></td>
+                                            <td>4rem</td>
+                                            <td>64px</td>
+                                            <td>Standard page section padding (Desktop)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>space/4xl</code></td>
+                                            <td>6rem</td>
+                                            <td>96px</td>
+                                            <td>Major page section padding, hero section top/bottom spacing
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="ds-section">
+                            <h3>Component Spacing</h3>
+                            <p class="ds-section__intro">Base spacing tokens applied to specific component
+                                states, to keep padding and gaps consistent between instances.</p>
+                            <div class="table-responsive">
+                                <table class="table table-sm align-middle ds-data-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Component</th>
+                                            <th scope="col">Token Name</th>
+                                            <th scope="col">Y (Top/Bottom)</th>
+                                            <th scope="col">X (Left/Right)</th>
+                                            <th scope="col">Gap</th>
+                                            <th scope="col">Usage Context</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Button / Small</td>
+                                            <td><code>spacing/button/sm</code></td>
+                                            <td>8px (<code>space/xs</code>)</td>
+                                            <td>12px (<code>space/sm</code>)</td>
+                                            <td>6px</td>
+                                            <td>Dense UIs, table actions, toolbar buttons</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Button / Medium</td>
+                                            <td><code>spacing/button/md</code></td>
+                                            <td>12px (<code>space/sm</code>)</td>
+                                            <td>16px (<code>space/md</code>)</td>
+                                            <td>8px (<code>space/xs</code>)</td>
+                                            <td>Default primary &amp; secondary action buttons</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Button / Large</td>
+                                            <td><code>spacing/button/lg</code></td>
+                                            <td>16px (<code>space/md</code>)</td>
+                                            <td>24px (<code>space/lg</code>)</td>
+                                            <td>12px (<code>space/sm</code>)</td>
+                                            <td>Hero CTA buttons, prominent modal actions</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Form Input</td>
+                                            <td><code>spacing/input/md</code></td>
+                                            <td>12px (<code>space/sm</code>)</td>
+                                            <td>16px (<code>space/md</code>)</td>
+                                            <td>8px (<code>space/xs</code>)</td>
+                                            <td>Text fields, select dropdowns, search bars</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Card Container</td>
+                                            <td><code>spacing/card/md</code></td>
+                                            <td>24px (<code>space/lg</code>)</td>
+                                            <td>24px (<code>space/lg</code>)</td>
+                                            <td>16px (<code>space/md</code>)</td>
+                                            <td>Standard dashboard cards, content blocks</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Layout / Grid Gap</td>
+                                            <td><code>gap/layout/grid</code></td>
+                                            <td>—</td>
+                                            <td>—</td>
+                                            <td>24px (<code>space/lg</code>)</td>
+                                            <td>Responsive multi-column grid layouts</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Layout / Stack Gap</td>
+                                            <td><code>gap/layout/stack</code></td>
+                                            <td>—</td>
+                                            <td>—</td>
+                                            <td>16px (<code>space/md</code>)</td>
+                                            <td>Vertical form group stack, list gap</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
 
@@ -1650,6 +1959,159 @@
                                 <span>MARGIN</span>
                                 <strong>Between layout sections</strong>
                                 <p>Use larger spacing to separate distinct sections and establish page hierarchy.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- LAYOUT & GRID -->
+                    <article id="ds-layout-grid" class="design-system__page">
+                        <div class="design-system__page-heading">
+                            <span class="ds-card-label">FOUNDATIONS</span>
+                            <h2>Layout & Grid</h2>
+                            <p>A responsive grid system — page margins, section rhythm, and card/feature
+                                grids — keeps content readable and consistently spaced from mobile to wide
+                                desktop.</p>
+                        </div>
+
+                        <div class="ds-section">
+                            <h3>Page Margins & Breakpoints</h3>
+                            <p class="ds-section__intro">Container width and left/right page margin at each
+                                breakpoint, so content never sits flush against the screen edge.</p>
+                            <div class="table-responsive">
+                                <table class="table table-sm align-middle ds-data-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Breakpoint / Device</th>
+                                            <th scope="col">Screen Width Range</th>
+                                            <th scope="col">Container Max-Width</th>
+                                            <th scope="col">Page Margin (L/R)</th>
+                                            <th scope="col">Usage Context</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Mobile (sm)</td>
+                                            <td>&lt; 640px</td>
+                                            <td>100%</td>
+                                            <td>16px (<code>space/md</code>)</td>
+                                            <td>Smartphone screens (portrait)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tablet (md)</td>
+                                            <td>640px – 1024px</td>
+                                            <td>100%</td>
+                                            <td>32px (<code>space/xl</code>)</td>
+                                            <td>Tablets, iPad, large phone landscape</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Desktop (lg)</td>
+                                            <td>1024px – 1440px</td>
+                                            <td>1200px</td>
+                                            <td>48px (<code>space/2xl</code>)</td>
+                                            <td>Standard laptop &amp; desktop monitors</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wide Desktop (xl)</td>
+                                            <td>&gt; 1440px</td>
+                                            <td>1400px</td>
+                                            <td>Auto (Centered)</td>
+                                            <td>Ultra-wide monitors, large desktop displays</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="ds-section">
+                            <h3>Section Spacing</h3>
+                            <p class="ds-section__intro">Vertical space between sections, scaled per
+                                breakpoint so mobile doesn't waste space and desktop stays breathable.</p>
+                            <div class="table-responsive">
+                                <table class="table table-sm align-middle ds-data-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Token Name</th>
+                                            <th scope="col">Mobile</th>
+                                            <th scope="col">Tablet</th>
+                                            <th scope="col">Desktop</th>
+                                            <th scope="col">Applied Use Case</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>layout/section/compact</code></td>
+                                            <td>32px</td>
+                                            <td>48px</td>
+                                            <td>64px</td>
+                                            <td>Gap between small sub-sections, content groups within a
+                                                single page</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>layout/section/default</code></td>
+                                            <td>48px</td>
+                                            <td>64px</td>
+                                            <td>96px</td>
+                                            <td>Standard section gap (e.g. About → Features → Pricing)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>layout/section/spacious</code></td>
+                                            <td>64px</td>
+                                            <td>96px</td>
+                                            <td>128px</td>
+                                            <td>Gap between major sections / large block separator (e.g.
+                                                Hero → Content)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>layout/section/hero</code></td>
+                                            <td>48px</td>
+                                            <td>80px</td>
+                                            <td>120px</td>
+                                            <td>Top &amp; bottom padding for the Hero section</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="ds-section">
+                            <h3>Grid &amp; Gap</h3>
+                            <p class="ds-section__intro">Column counts and gaps for repeating layouts, such
+                                as card grids and multi-column feature sections.</p>
+                            <div class="table-responsive">
+                                <table class="table table-sm align-middle ds-data-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Token Name</th>
+                                            <th scope="col">Columns</th>
+                                            <th scope="col">Column Gap</th>
+                                            <th scope="col">Row Gap</th>
+                                            <th scope="col">Usage Context</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>layout/grid/cards</code></td>
+                                            <td>1 (Mobile) / 2 (Tablet) / 3–4 (Desktop)</td>
+                                            <td>24px (<code>space/lg</code>)</td>
+                                            <td>32px (<code>space/xl</code>)</td>
+                                            <td>Portfolio, service, and blog card grids</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>layout/grid/features</code></td>
+                                            <td>1 (Mobile) / 2 (Desktop)</td>
+                                            <td>32px (<code>space/xl</code>)</td>
+                                            <td>48px (<code>space/2xl</code>)</td>
+                                            <td>2-column feature section (text + image)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>layout/stack/form</code></td>
+                                            <td>1</td>
+                                            <td>—</td>
+                                            <td>16px / 24px</td>
+                                            <td>Form input layout, button stack</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </article>
@@ -1810,7 +2272,7 @@
                             <p class="text-16">
                                 The first iteration focused on creating a simple, single-screen dashboard to present the
                                 key cleanup information at a glance. However, this approach was considered too limited,
-                                as 4ocean had a substantial amount of information and impact data to communicate to
+                                as the organization had a substantial amount of information and impact data to communicate to
                                 users. The single-screen layout could not provide enough space to present the
                                 information clearly and effectively.
                             </p>
@@ -1893,7 +2355,7 @@
 
                     </svg>
                     <h3 class="card-grid__title text-primary-4Ocean">Designing for Complex Systems</h3>
-                    <p class="card-grid__text">Working with a large organization like 4ocean meant working
+                    <p class="card-grid__text">Working with a large organization meant working
                         with a large amount of existing data, processes, and interconnected systems. One of the biggest
                         challenges was <span class="fw-bold ">ensuring that new features could support their existing
                             workflows from end
@@ -1921,7 +2383,7 @@
                             before moving</span> into design and development.
                         <br><br>
                         Whenever a new feature was proposed, I would encourage the CTO and team to validate the actual
-                        need and expected outcome with 4ocean stakeholders/users first. This helped reduce the risk of
+                        need and expected outcome with the organization's stakeholders/users first. This helped reduce the risk of
                         building features based on assumptions and ensured that design decisions were grounded in real
                         user and business needs.
                     </p>
