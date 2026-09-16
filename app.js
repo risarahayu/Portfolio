@@ -95,7 +95,7 @@ const projectsData = [
     projectTitle: "4Ocean - Impact Portal Dashboard",
     company: "4Ocean",
     companyURL: "https://www.4ocean.com/",
-    projectURL: "Project-List/4ocean.html",
+    projectURL: "Project-List/Impact-dashboard.html",
     description: "A data-driven web dashboard and mobile app designed for investors to track and showcase 4ocean's clean-up impact with transparent daily results.",
     impact: ["Improved investor engagement with real-time clean-up data.", "Enhanced transparency of environmental clean-up efforts."],
     role: ["UI/UX", "Web Development"],
