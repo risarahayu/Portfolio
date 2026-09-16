@@ -4,12 +4,706 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4Ocean</title>
+    <title>Clean up - Impact Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="css/project.css" rel="stylesheet">
     <link href="css/4Ocean.css" rel="stylesheet">
     <link href="../app.css" rel="stylesheet">
+    <style>
+        .design-system {
+            --ds-text: #171717;
+            --ds-muted: #6b6b6b;
+            --ds-border: #e8e8e8;
+            --ds-surface: #fff;
+            --ds-soft: #f7f8fa;
+            --ds-primary: #0057b7;
+            --ds-secondary: #1700b7;
+            --ds-radius: 18px;
+            color: var(--ds-text)
+        }
+
+        .design-system * {
+            box-sizing: border-box
+        }
+
+        .design-system__layout {
+            display: grid;
+            grid-template-columns: 220px minmax(0, 1fr);
+            gap: 48px;
+            align-items: start
+        }
+
+        .design-system__sidebar {
+            position: sticky;
+            top: 90px;
+            align-self: start
+        }
+
+        .design-system__nav-title {
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .08em;
+            margin-bottom: 22px
+        }
+
+        .design-system__nav {
+            display: flex;
+            flex-direction: column;
+            gap: 3px
+        }
+
+        .design-system__nav-group {
+            margin-top: 22px
+        }
+
+        .design-system__nav-group-title {
+            margin: 0 0 8px;
+            padding-left: 13px;
+            color: #999;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .1em
+        }
+
+        .design-system__nav-item {
+            width: 100%;
+            border: 0;
+            background: transparent;
+            color: #666;
+            text-align: left;
+            padding: 9px 13px;
+            border-radius: 10px;
+            font: inherit;
+            font-size: 14px;
+            cursor: pointer;
+            transition: .2s
+        }
+
+        .design-system__nav-item:hover {
+            background: var(--ds-soft);
+            color: var(--ds-text)
+        }
+
+        .design-system__nav-item.is-active {
+            background: #edf5ff;
+            color: var(--ds-primary);
+            font-weight: 700
+        }
+
+        .design-system__page {
+            display: none
+        }
+
+        .design-system__page.is-active {
+            display: block;
+            animation: dsFade .22s ease
+        }
+
+        @keyframes dsFade {
+            from {
+                opacity: 0;
+                transform: translateY(4px)
+            }
+
+            to {
+                opacity: 1;
+                transform: none
+            }
+        }
+
+        .design-system__intro,
+        .design-system__page-heading {
+            max-width: 760px;
+            margin-bottom: 32px
+        }
+
+        .design-system__eyebrow,
+        .ds-card-label,
+        .ds-rule__label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--ds-primary);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .11em
+        }
+
+        .design-system__title,
+        .design-system__page-heading h2 {
+            margin: 0 0 12px;
+            color: var(--ds-text);
+            font-size: clamp(32px, 4vw, 52px);
+            line-height: 1.05;
+            font-weight: 700
+        }
+
+        .design-system__description,
+        .design-system__page-heading p {
+            max-width: 680px;
+            margin: 0;
+            color: var(--ds-muted);
+            font-size: 16px;
+            line-height: 1.65
+        }
+
+        .design-system__overview-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px
+        }
+
+        .ds-overview-card {
+            min-width: 0;
+            min-height: 220px;
+            padding: 24px;
+            border: 1px solid var(--ds-border);
+            border-radius: var(--ds-radius);
+            background: #fff;
+            text-align: left;
+            color: inherit;
+            cursor: pointer;
+            transition: .2s;
+            box-shadow: none
+        }
+
+        .ds-overview-card:hover {
+            transform: translateY(-2px);
+            border-color: #d6d6d6;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .05)
+        }
+
+        .ds-overview-card--large {
+            min-height: 250px
+        }
+
+        .ds-overview-card--wide {
+            grid-column: 1/-1;
+            min-height: 190px
+        }
+
+        .ds-overview-card h3 {
+            margin: 0 0 18px;
+            font-size: 22px;
+            color: var(--ds-text)
+        }
+
+        .ds-overview-card p {
+            margin: 16px 0 0;
+            color: var(--ds-muted);
+            font-size: 14px;
+            line-height: 1.5
+        }
+
+        .ds-color-preview {
+            display: flex;
+            gap: 6px
+        }
+
+        .ds-color-preview span {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, .08)
+        }
+
+        .ds-type-preview {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            color: #777
+        }
+
+        .ds-type-preview__display {
+            color: var(--ds-text);
+            font-size: 52px;
+            line-height: .9;
+            font-weight: 700
+        }
+
+        .ds-spacing-preview {
+            height: 56px;
+            display: flex;
+            align-items: end;
+            gap: 8px
+        }
+
+        .ds-spacing-preview i {
+            display: block;
+            height: 14px;
+            border-radius: 99px;
+            background: var(--ds-primary)
+        }
+
+        .ds-shape-preview {
+            display: flex;
+            gap: 12px;
+            align-items: center
+        }
+
+        .ds-shape-preview span {
+            width: 48px;
+            height: 48px;
+            display: block;
+            background: #edf5ff;
+            border: 1px solid #b9d8ff
+        }
+
+        .ds-radius-sm {
+            border-radius: 4px
+        }
+
+        .ds-radius-md {
+            border-radius: 12px
+        }
+
+        .ds-radius-lg {
+            border-radius: 22px
+        }
+
+        .ds-layout-preview {
+            display: flex;
+            align-items: stretch;
+            gap: 8px;
+            height: 48px
+        }
+
+        .ds-layout-preview span {
+            flex: 1;
+            display: block;
+            border-radius: 8px;
+            background: #edf5ff;
+            border: 1px solid #b9d8ff
+        }
+
+        .ds-icon-preview {
+            display: flex;
+            gap: 22px;
+            align-items: center;
+            font-size: 28px;
+            color: var(--ds-primary)
+        }
+
+        .ds-button-preview,
+        .ds-button-states {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center
+        }
+
+        .ds-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 40px;
+            padding: 0 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            white-space: nowrap
+        }
+
+        .ds-btn--primary {
+            color: #fff;
+            background: var(--ds-primary)
+        }
+
+        .ds-btn--secondary {
+            color: #fff;
+            background: var(--ds-secondary)
+        }
+
+        .ds-btn--outline {
+            color: var(--ds-primary);
+            background: #fff;
+            border: 1px solid var(--ds-primary)
+        }
+
+        .ds-btn--disabled {
+            opacity: .4
+        }
+
+        .ds-section {
+            margin-top: 32px
+        }
+
+        .ds-section>h3 {
+            margin: 0 0 16px;
+            color: var(--ds-text);
+            font-size: 18px
+        }
+
+        .ds-section__intro {
+            margin: -8px 0 16px;
+            color: #888;
+            font-size: 13px
+        }
+
+        .ds-token-swatch {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            border-radius: 7px;
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .12)
+        }
+
+        .ds-data-table {
+            margin-bottom: 0;
+            font-size: 13px
+        }
+
+        .ds-data-table code {
+            font-size: 12px
+        }
+
+        .ds-rule {
+            display: grid;
+            grid-template-columns: minmax(180px, .75fr) minmax(0, 1.25fr);
+            gap: 28px;
+            margin-top: 32px;
+            padding: 22px 24px;
+            border-left: 3px solid var(--ds-primary);
+            border-radius: 0 14px 14px 0;
+            background: var(--ds-soft)
+        }
+
+        .ds-rule h3 {
+            margin: 0;
+            font-size: 17px
+        }
+
+        .ds-rule p {
+            margin: 0;
+            color: #666;
+            font-size: 14px;
+            line-height: 1.65
+        }
+
+        .ds-type-system {
+            border-top: 1px solid var(--ds-border)
+        }
+
+        .ds-type-row {
+            display: grid;
+            grid-template-columns: 145px minmax(160px, 1fr) minmax(150px, .7fr);
+            gap: 20px;
+            align-items: center;
+            padding: 22px 0;
+            border-bottom: 1px solid var(--ds-border)
+        }
+
+        .ds-type-row>div:first-child {
+            display: flex;
+            flex-direction: column;
+            gap: 3px
+        }
+
+        .ds-token-name {
+            font-size: 13px;
+            font-weight: 700
+        }
+
+        .ds-type-row small,
+        .ds-type-row p {
+            margin: 0;
+            color: #888;
+            font-size: 11px
+        }
+
+        .ds-type-row p {
+            line-height: 1.5
+        }
+
+        .ds-type-display {
+            font-size: 96px;
+            line-height: 112px
+        }
+
+        .ds-type-h1 {
+            font-size: 40px;
+            line-height: 48px
+        }
+
+        .ds-type-h2 {
+            font-size: 30px;
+            line-height: 38px
+        }
+
+        .ds-type-body {
+            font-size: 18px;
+            line-height: 28px
+        }
+
+        .ds-type-label {
+            font-size: 16px;
+            line-height: 22px
+        }
+
+        .ds-type-small {
+            font-size: 14px;
+            line-height: 20px
+        }
+
+        .ds-spacing-rules {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 16px
+        }
+
+        .ds-rule-card {
+            padding: 20px;
+            border: 1px solid var(--ds-border);
+            border-radius: 14px
+        }
+
+        .ds-rule-card>span {
+            display: block;
+            margin-bottom: 12px;
+            color: var(--ds-primary);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .1em
+        }
+
+        .ds-rule-card strong {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px
+        }
+
+        .ds-rule-card p {
+            margin: 0;
+            color: #777;
+            font-size: 13px;
+            line-height: 1.55
+        }
+
+        .ds-shape-system,
+        .ds-icon-system,
+        .ds-button-showcase {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px
+        }
+
+        .ds-shape-item,
+        .ds-icon-size,
+        .ds-button-example {
+            min-height: 180px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border: 1px solid var(--ds-border);
+            border-radius: 16px
+        }
+
+        .ds-shape-demo {
+            width: 82px;
+            height: 62px;
+            margin-bottom: 18px;
+            background: #edf5ff;
+            border: 1px solid #b9d8ff
+        }
+
+        .ds-shape-demo--sm {
+            border-radius: 4px
+        }
+
+        .ds-shape-demo--md {
+            border-radius: 12px
+        }
+
+        .ds-shape-demo--lg {
+            border-radius: 22px
+        }
+
+        .ds-shape-demo--pill {
+            border-radius: 999px
+        }
+
+        .ds-shape-item strong,
+        .ds-icon-size strong {
+            font-size: 13px
+        }
+
+        .ds-shape-item span,
+        .ds-icon-size small,
+        .ds-button-example small {
+            margin-top: 4px;
+            color: #888;
+            font-size: 11px
+        }
+
+        .ds-icon-demo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            color: var(--ds-primary);
+            font-weight: 700;
+            line-height: 1
+        }
+
+        .ds-icon-demo--16 {
+            width: 16px;
+            height: 16px;
+            font-size: 16px
+        }
+
+        .ds-icon-demo--20 {
+            width: 20px;
+            height: 20px;
+            font-size: 20px
+        }
+
+        .ds-icon-demo--24 {
+            width: 24px;
+            height: 24px;
+            font-size: 24px
+        }
+
+        .ds-button-showcase {
+            grid-template-columns: repeat(3, minmax(0, 1fr))
+        }
+
+        .ds-button-example {
+            min-height: 150px;
+            gap: 12px
+        }
+
+        @media(max-width:991.98px) {
+            .design-system__layout {
+                grid-template-columns: 180px minmax(0, 1fr);
+                gap: 28px
+            }
+
+            .ds-shape-system,
+            .ds-icon-system {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .ds-type-row {
+                grid-template-columns: 120px minmax(160px, 1fr)
+            }
+
+            .ds-type-row p {
+                grid-column: 2
+            }
+        }
+
+        @media(max-width:767.98px) {
+            .design-system__layout {
+                display: block
+            }
+
+            .design-system__sidebar {
+                position: sticky;
+                top: 0;
+                z-index: 20;
+                margin: 0 0 28px;
+                padding: 10px 0;
+                background: rgba(255, 255, 255, .96);
+                backdrop-filter: blur(10px);
+                border-bottom: 1px solid var(--ds-border)
+            }
+
+            .design-system__nav-title {
+                margin-bottom: 9px;
+                font-size: 12px
+            }
+
+            .design-system__nav {
+                display: flex;
+                flex-direction: row;
+                gap: 6px;
+                overflow-x: auto;
+                padding-bottom: 4px;
+                scrollbar-width: thin
+            }
+
+            .design-system__nav-group {
+                display: contents
+            }
+
+            .design-system__nav-group-title {
+                display: none
+            }
+
+            .design-system__nav-item {
+                width: auto;
+                flex: 0 0 auto;
+                white-space: nowrap;
+                padding: 8px 12px;
+                border: 1px solid var(--ds-border);
+                background: #fff
+            }
+
+            .design-system__nav-item.is-active {
+                border-color: #c8ddf7;
+                background: #edf5ff
+            }
+
+            .design-system__overview-grid,
+            .ds-spacing-rules,
+            .ds-shape-system,
+            .ds-icon-system,
+            .ds-button-showcase {
+                grid-template-columns: 1fr
+            }
+
+            .ds-overview-card--wide {
+                grid-column: auto
+            }
+
+            .ds-rule {
+                grid-template-columns: 1fr;
+                gap: 10px
+            }
+
+            .ds-type-row {
+                grid-template-columns: 1fr;
+                gap: 12px
+            }
+
+            .ds-type-row p {
+                grid-column: auto
+            }
+
+            .ds-type-display {
+                font-size: 56px;
+                line-height: 68px
+            }
+        }
+
+        @media(max-width:480px) {
+
+            .design-system__title,
+            .design-system__page-heading h2 {
+                font-size: 34px
+            }
+
+            .ds-overview-card {
+                min-height: 190px;
+                padding: 20px
+            }
+
+            .ds-color-preview span {
+                width: 40px;
+                height: 40px
+            }
+
+            .ds-rule {
+                padding: 18px
+            }
+        }
+    </style>
+
 </head>
 
 <body>
@@ -29,12 +723,12 @@
 
     <header class="project-hero">
         <div class="project-hero__inner">
-            <div class="project-hero__banner">
+            <div class="project-hero__banner" style="background-image: url('image/4Ocean/Hero_3.png');">
             </div>
             <div class="project-hero__panel">
                 <div class="project-hero__intro">
                     <h1 class="project-hero__title">
-                        4Ocean - Impact Dashboard
+                        Clean up - Impact Dashboard
                     </h1>
                     <div class="project-hero__highlights">
                         <div class="project-hero__highlight">
@@ -66,24 +760,24 @@
             <h2 class="capsule fw-semibold capsule-border-project project-section__title m-0">Selected UI</h2>
             <div class="media-marquee mt-3">
                 <div class="media-marquee__track">
-                    <img src="image/4Ocean/mockup/Mockup_Splash Screen.jpg" alt="4ocean mobile app splash screen"
-                        width="623" height="432" loading="lazy" class="media-marquee__image lazy-img preview-image">
-                    <img src="image/4Ocean/mockup/Mockup _ DCA Login.jpg" alt="4ocean mobile app login screen"
-                        width="216" height="432" loading="lazy" class="media-marquee__image lazy-img preview-image">
+                    <img src="image/4Ocean/mockup/Mockup_9.png" alt="Mobile app splash screen" width="623" height="432"
+                        loading="lazy" class="media-marquee__image lazy-img preview-image">
+                    <img src="image/4Ocean/mockup/Mockup _ DCA Login.jpg" alt="Mobile app login screen" width="216"
+                        height="432" loading="lazy" class="media-marquee__image lazy-img preview-image">
                     <img src="image/4Ocean/mockup/Mockup _DCA Clean up History.jpg"
-                        alt="4ocean mobile app clean-up list screen" width="216" height="432" loading="lazy"
+                        alt="Mobile app clean-up list screen" width="216" height="432" loading="lazy"
                         class="media-marquee__image lazy-img preview-image">
                     <img src="image/4Ocean/mockup/Mockup_DCA Summary Clean up.jpg"
-                        alt="4ocean mobile app clean-up submission screen" width="648" height="432" loading="lazy"
+                        alt="Mobile app clean-up submission screen" width="648" height="432" loading="lazy"
                         class="media-marquee__image lazy-img preview-image">
 
                     <video src="video/4Ocean/4Ocean - Animation Explore.mp4" width="626" height="432" autoplay muted
                         loop playsinline preload="metadata" class="media-marquee__image lazy-img preview-image"
-                        aria-label="4Ocean mobile app animation">
+                        aria-label="Mobile app animation">
                     </video>
                     <!-- duplicated so the marquee loop reads as seamless -->
-                    <img src="image/4Ocean/mockup/Mockup_Splash Screen.jpg" alt="" width="623" height="432"
-                        loading="lazy" class="media-marquee__image lazy-img preview-image" aria-hidden="true">
+                    <img src="image/4Ocean/mockup/Mockup_9.png" alt="" width="623" height="432" loading="lazy"
+                        class="media-marquee__image lazy-img preview-image" aria-hidden="true">
                     <img src="image/4Ocean/mockup/Mockup _ DCA Login.jpg" alt="" width="216" height="432" loading="lazy"
                         class="media-marquee__image lazy-img preview-image" aria-hidden="true">
                     <img src="image/4Ocean/mockup/Mockup _DCA Clean up History.jpg" alt="" width="216" height="432"
@@ -102,8 +796,8 @@
             <h2 class="capsule fw-semibold capsule-border-project project-section__title m-0">Project Scope</h2>
             <div class="info-block__row mt-3">
                 <div class="info-block__prose">
-                    <p>4ocean is a mission-driven organization operating at the intersection of
-                        environmental impact and global commerce. As the organization scaled, its digital platform
+                    <p>The organization is mission-driven, operating at the intersection of
+                        environmental impact and global commerce. As it scaled, its digital platform
                         struggled to keep up with growing operational and communication needs.</p>
                     <p>
                         The existing setup was built incrementally over time, resulting in fragmented user journeys,
@@ -191,7 +885,7 @@
                         <img loading="lazy" width="97" height="97" src="image/4Ocean/4ocean-admin.webp" alt=""
                             class="process-discovery__column-icon lazy-img">
                         <div class="process-discovery__column-heading">
-                            <h3 class="process-discovery__column-title text-18">4Ocean Admin</h3>
+                            <h3 class="process-discovery__column-title text-18">Organization Admin</h3>
                             <p class="text-16">Responsibility : Get data from Cleanup Team, monitor, validate, and
                                 report operational performance data.</p>
                         </div>
@@ -199,7 +893,7 @@
                     <div class="process-discovery__column-body rounded-4">
                         <p class="text-16">
                             After <span class="text-primary-soft fw-semibold">receiving the paper logbooks and reports
-                                from the field teams</span>, 4ocean Admin manually
+                                from the field teams</span>, Organization Admin manually
                             reviews, compiles, and recaps the data from multiple cleanup activities and
                             locations.<br><br>
                             The information is then organized and processed for operational monitoring, reporting, and
@@ -229,7 +923,7 @@
                     </div>
                     <div class="process-discovery__column-body rounded-4">
                         <p class="text-16">
-                            Donors rely on impact and operational reports provided by 4ocean, typically in PDF
+                            Donors rely on impact and operational reports provided by the organization, typically in PDF
                             format, to <span class="text-primary-soft fw-semibold">review environmental performance and
                                 assess the organization's measurable impact.</span><br><br>
                             They use these reports to understand the results of cleanup operations, track progress over
@@ -266,7 +960,7 @@
                             d="M1920 512v1408H768v-256H512v-256H256V0h731l256 256h421v256zm-896-128h165l-165-165zm256 896V512H896V128H384v1152zm256 256V384h-128v1024H640v128zm257-896h-129v1024H896v128h897z" />
                     </svg>
                     <h3 class="card-grid__title">Manual Data Consolidation</h3>
-                    <p class="card-grid__text">4ocean Admins need a more <b>efficient and centralized way
+                    <p class="card-grid__text">Organization Admins need a more <b>efficient and centralized way
                             to collect</b>, review, and consolidate cleanup data because manually processing paper
                         logbooks from multiple teams and locations is time-consuming, difficult to standardize, and can
                         result in delayed or scattered information.</p>
@@ -281,7 +975,8 @@
                     </svg>
                     <h3 class="card-grid__title">Limited Real-Time Transparency</h3>
                     <p class="card-grid__text">Donors need more <b>transparent and accessible visibility
-                            into 4ocean's environmental impact</b> and operational performance because relying on static
+                            into the organization's environmental impact</b> and operational performance because relying
+                        on static
                         PDF reports limits their ability to track measurable impact, understand ongoing activities, and
                         access up-to-date information about how impact is being created.</p>
                 </div>
@@ -305,7 +1000,7 @@
                 </div>
 
                 <div class="solution__column">
-                    <p class="solution__column-title text-16">How might we enable 4ocean Admins to automatically
+                    <p class="solution__column-title text-16">How might we enable Organization Admins to automatically
                         centralize and synchronize cleanup data from multiple teams and locations?</p>
                     <img loading="lazy" width="20" height="20" src="image/4Ocean/arrow-down.png" alt=""
                         class="solution__arrow lazy-img">
@@ -318,7 +1013,8 @@
                 </div>
 
                 <div class="solution__column">
-                    <p class="solution__column-title text-16">How might we provide 4ocean stakeholders with real-time
+                    <p class="solution__column-title text-16">How might we provide the organization's stakeholders with
+                        real-time
                         visibility into cleanup operations and environmental impact data?</p>
                     <img loading="lazy" width="20" height="20" src="image/4Ocean/arrow-down.png" alt=""
                         class="solution__arrow lazy-img">
@@ -531,7 +1227,7 @@
                             <p class="text-16" style="width: stretch;">
                                 Stakeholder : <br>
                                 <b class="fs-6">
-                                    Donors / 4Ocean Management
+                                    Donors / Organization Management
                                 </b>
                             </p>
 
@@ -647,336 +1343,907 @@
             </div>
         </section>
 
-        <section id="wireframing" class="project-section">
+        <!-- =========================
+             DESIGN SYSTEM
+        ========================== -->
+        <section id="wireframing" class="project-section design-system">
+            <div class="design-system__layout">
 
-            <h2 class="capsule fw-semibold capsule-border-project project-section__title">
-                Visual System & UI Design
-            </h2>
+                <!-- Desktop sidebar / Mobile horizontal navigation -->
+                <aside class="design-system__sidebar" aria-label="Design system navigation">
+                    <div class="design-system__nav-title">DESIGN SYSTEM</div>
 
-            <div class="accordion mt-3" id="wireframingAccordion">
+                    <nav class="design-system__nav">
+                        <button class="design-system__nav-item is-active" type="button"
+                            data-ds-target="ds-overview">Overview</button>
 
+                        <div class="design-system__nav-group">
+                            <p class="design-system__nav-group-title">FOUNDATIONS</p>
+                            <button class="design-system__nav-item" type="button"
+                                data-ds-target="ds-color">Color</button>
+                            <button class="design-system__nav-item" type="button"
+                                data-ds-target="ds-typography">Typography</button>
+                            <button class="design-system__nav-item" type="button" data-ds-target="ds-spacing">Spacing &
+                                Layout</button>
+                            <button class="design-system__nav-item" type="button" data-ds-target="ds-layout-grid">Layout
+                                & Grid</button>
+                            <button class="design-system__nav-item" type="button"
+                                data-ds-target="ds-shape">Shape</button>
+                            <button class="design-system__nav-item" type="button"
+                                data-ds-target="ds-iconography">Iconography</button>
+                        </div>
 
-                <!-- DESIGN SYSTEM -->
-                <div class="accordion-item border-0 rounded-4 overflow-hidden mb-3">
+                        <div class="design-system__nav-group">
+                            <p class="design-system__nav-group-title">COMPONENTS</p>
+                            <button class="design-system__nav-item" type="button"
+                                data-ds-target="ds-button">Button</button>
+                        </div>
+                    </nav>
+                </aside>
 
-                    <h3 class="accordion-header">
-                        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#ColorSystem" aria-expanded="false" aria-controls="ColorSystem">
+                <div class="design-system__content">
 
-                            Color System
+                    <!-- OVERVIEW -->
+                    <article id="ds-overview" class="design-system__page is-active">
+                        <div class="design-system__intro">
+                            <p class="design-system__eyebrow">VISUAL SYSTEM & UI DESIGN</p>
+                            <h2 class="design-system__title">Design System</h2>
+                            <p class="design-system__description">
+                                A reusable visual foundation created to keep the dashboard
+                                consistent, structured, and scalable across screens and interactions.
+                            </p>
+                        </div>
 
-                        </button>
-                    </h3>
-
-                    <div id="ColorSystem" class="accordion-collapse collapse" data-bs-parent="#wireframingAccordion">
-
-                        <div class="accordion-body project-surface-muted p-3">
-
-                            <div class="wireframing__row">
-
-                                <!-- COLOR -->
-                                <div class="wireframing__column">
-
-                                    <h3 class="text-20">
-                                        Color
-                                    </h3>
-
-                                    <p class="text-16">
-                                        Figma Variable Color Collection
-                                    </p>
-
-                                    <img loading="lazy" width="497" height="338"
-                                        src="image/4Ocean/wireframing-color.png" alt="4Ocean Color"
-                                        class="media-block__image zoom-image lazy-img">
-
+                        <div class="design-system__overview-grid">
+                            <button class="ds-overview-card ds-overview-card--large" type="button"
+                                data-ds-target="ds-color">
+                                <span class="ds-card-label">FOUNDATION</span>
+                                <h3>Color</h3>
+                                <div class="ds-color-preview">
+                                    <span style="background:#0057b7"></span>
+                                    <span style="background:#1700b7"></span>
+                                    <span style="background:#ffffff"></span>
+                                    <span style="background:#171717"></span>
+                                    <span style="background:#eb7600"></span>
                                 </div>
+                                <p>Semantic colors and their interface roles.</p>
+                            </button>
 
-
-                                <!-- TAILWIND CSS -->
-                                <div class="wireframing__column">
-
-                                    <h3 class="text-20">
-                                        Tailwind CSS
-                                    </h3>
-
-                                    <pre class="text-20"><b>:root {</b>
-  --secondary: #1700b7;
-  --primary: #0057b7;
-  --white-neutral: #ffffff;
-  --orange-accent: #eb7600;
-  --green-accent: #5fef1c;
-  --text: #171717;
-  --disable: #cac8c8;
-<b>}</b>
-
-<b>@theme {</b>
-  --color-secondary: var(--secondary);
-  --color-primary: var(--primary);
-  --color-white-neutral: var(--white-neutral);
-  --color-orange-accent: var(--orange-accent);
-  --color-green-accent: var(--green-accent);
-  --color-text: var(--text);
-  --color-disable: var(--disable);
-<b>}</b></pre>
-
+                            <button class="ds-overview-card ds-overview-card--large" type="button"
+                                data-ds-target="ds-typography">
+                                <span class="ds-card-label">FOUNDATION</span>
+                                <h3>Typography</h3>
+                                <div class="ds-type-preview">
+                                    <span class="ds-type-preview__display">Aa</span>
+                                    <span>Heading · Body · Label</span>
                                 </div>
+                                <p>Type scale, hierarchy, and line-height rules.</p>
+                            </button>
 
-
-                                <!-- LOGO -->
-                                <div class="wireframing__column">
-
-                                    <h3 class="text-20">
-                                        Logo
-                                    </h3>
-
-                                    <img loading="lazy" width="193" height="81" src="image/4Ocean/4ocean-logo.png"
-                                        alt="4Ocean Logo" class="wireframing__logo lazy-img">
-
+                            <button class="ds-overview-card" type="button" data-ds-target="ds-spacing">
+                                <span class="ds-card-label">FOUNDATION</span>
+                                <h3>Spacing & Layout</h3>
+                                <div class="ds-spacing-preview">
+                                    <i style="width:24px"></i>
+                                    <i style="width:40px"></i>
+                                    <i style="width:64px"></i>
                                 </div>
+                                <p>Gap, padding, and layout margin.</p>
+                            </button>
 
+                            <button class="ds-overview-card" type="button" data-ds-target="ds-layout-grid">
+                                <span class="ds-card-label">FOUNDATION</span>
+                                <h3>Layout & Grid</h3>
+                                <div class="ds-layout-preview">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <p>Page margins, section rhythm, and grid gaps.</p>
+                            </button>
+
+                            <button class="ds-overview-card" type="button" data-ds-target="ds-shape">
+                                <span class="ds-card-label">FOUNDATION</span>
+                                <h3>Shape</h3>
+                                <div class="ds-shape-preview">
+                                    <span class="ds-radius-sm"></span>
+                                    <span class="ds-radius-md"></span>
+                                    <span class="ds-radius-lg"></span>
+                                </div>
+                                <p>Border radius and container treatment.</p>
+                            </button>
+
+                            <button class="ds-overview-card" type="button" data-ds-target="ds-iconography">
+                                <span class="ds-card-label">FOUNDATION</span>
+                                <h3>Iconography</h3>
+                                <div class="ds-icon-preview">
+                                    <span>◇</span><span>+</span><span>→</span>
+                                </div>
+                                <p>Icon sizing, alignment, and usage.</p>
+                            </button>
+
+                            <button class="ds-overview-card ds-overview-card--wide" type="button"
+                                data-ds-target="ds-button">
+                                <span class="ds-card-label">COMPONENT</span>
+                                <h3>Button</h3>
+                                <div class="ds-button-preview">
+                                    <span class="ds-btn ds-btn--primary">Primary</span>
+                                    <span class="ds-btn ds-btn--secondary">Secondary</span>
+                                    <span class="ds-btn ds-btn--outline">Outline</span>
+                                </div>
+                                <p>Variants, hierarchy, states, and usage rules.</p>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- COLOR -->
+                    <article id="ds-color" class="design-system__page">
+                        <div class="design-system__page-heading">
+                            <span class="ds-card-label">FOUNDATIONS</span>
+                            <h2>Color</h2>
+                            <p>Color tokens are assigned by purpose so the interface remains consistent
+                                instead of relying on individual screen-by-screen color choices.</p>
+                        </div>
+
+                        <div class="ds-section">
+                            <h3>Primitive Color Tokens</h3>
+                            <p class="ds-section__intro">Base palette values that every semantic token below
+                                references.</p>
+                            <div class="table-responsive">
+                                <table class="table table-sm align-middle ds-data-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Swatch</th>
+                                            <th scope="col">Group</th>
+                                            <th scope="col">Token Name</th>
+                                            <th scope="col">Hex</th>
+                                            <th scope="col">Primary Role / Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#0057B7"></span></td>
+                                            <td>blue</td>
+                                            <td><code>color/primitive/blue/500</code></td>
+                                            <td><code>#0057B7</code></td>
+                                            <td>Base primary brand blue</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#EFC81C"></span></td>
+                                            <td>yellow</td>
+                                            <td><code>color/primitive/yellow/500</code></td>
+                                            <td><code>#EFC81C</code></td>
+                                            <td>Base secondary brand yellow</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#EB7600"></span></td>
+                                            <td>orange</td>
+                                            <td><code>color/primitive/orange/500</code></td>
+                                            <td><code>#EB7600</code></td>
+                                            <td>Orange accent / Warning state</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#5FEF1C"></span></td>
+                                            <td>green</td>
+                                            <td><code>color/primitive/green/500</code></td>
+                                            <td><code>#5FEF1C</code></td>
+                                            <td>Green accent / Success state</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#FFFFFF"></span></td>
+                                            <td>neutral</td>
+                                            <td><code>color/primitive/neutral/0</code></td>
+                                            <td><code>#FFFFFF</code></td>
+                                            <td>Pure white (Canvas / Surface)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#FAFAFA"></span></td>
+                                            <td>neutral</td>
+                                            <td><code>color/primitive/neutral/50</code></td>
+                                            <td><code>#FAFAFA</code></td>
+                                            <td>Off-white / Subtle background tint</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#CAC8C8"></span></td>
+                                            <td>neutral</td>
+                                            <td><code>color/primitive/neutral/300</code></td>
+                                            <td><code>#CAC8C8</code></td>
+                                            <td>Light grey / Disabled states</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#4C5763"></span></td>
+                                            <td>neutral</td>
+                                            <td><code>color/primitive/neutral/600</code></td>
+                                            <td><code>#4C5763</code></td>
+                                            <td>Medium grey / Secondary elements</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#171717"></span></td>
+                                            <td>neutral</td>
+                                            <td><code>color/primitive/neutral/900</code></td>
+                                            <td><code>#171717</code></td>
+                                            <td>Deep dark grey / Primary text</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
-
                         </div>
-                    </div>
-                </div>
 
-
-                <!-- TYPOGRAPHY -->
-                <div class="accordion-item border-0 rounded-4 overflow-hidden mb-3">
-
-                    <h3 class="accordion-header">
-                        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#typography" aria-expanded="false" aria-controls="typography">
-
-                            Typography
-
-                        </button>
-                    </h3>
-
-                    <div id="typography" class="accordion-collapse collapse" data-bs-parent="#wireframingAccordion">
-
-                        <div class="accordion-body project-surface-muted p-3">
-
-                            <!-- FIGMA TEXT STYLE -->
-                            <div class="wireframing__column">
-
-                                <h3 class="text-20">
-                                    Figma Text Style
-                                </h3>
-
-                                <img loading="lazy" width="228" height="208" src="image/4Ocean/wireframing-text.png"
-                                    alt="4Ocean Typography"
-                                    class="media-block__image media-block__image--capped zoom-image lazy-img">
-
+                        <div class="ds-section">
+                            <h3>Semantic Color Tokens</h3>
+                            <p class="ds-section__intro">Functional tokens used across components, each mapped to a
+                                primitive above.</p>
+                            <div class="table-responsive">
+                                <table class="table table-sm align-middle ds-data-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Swatch</th>
+                                            <th scope="col">Category</th>
+                                            <th scope="col">Semantic Token Name</th>
+                                            <th scope="col">Referenced Primitive</th>
+                                            <th scope="col">Functional UI Context</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#0057B7"></span></td>
+                                            <td><strong>primary</strong></td>
+                                            <td><code>color/semantic/primary/default</code></td>
+                                            <td><code>color/primitive/blue/500</code></td>
+                                            <td>Primary button background, active elements</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch"
+                                                    style="background:rgba(0,87,183,.5)"></span></td>
+                                            <td><strong>primary</strong></td>
+                                            <td><code>color/semantic/primary/50-opacity</code></td>
+                                            <td><code>color/primitive/blue/500</code> (50%)</td>
+                                            <td>Primary button hover/pressed state, backdrop overlay</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#4C5763"></span></td>
+                                            <td><strong>outline</strong></td>
+                                            <td><code>color/semantic/outline/Outline</code></td>
+                                            <td><code>.../primitive/neutral/600</code></td>
+                                            <td>Default card/input border, separator lines</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#EFC81C"></span></td>
+                                            <td><strong>secondary</strong></td>
+                                            <td><code>color/semantic/secondary/default</code></td>
+                                            <td><code>.../primitive/yellow/500</code></td>
+                                            <td>Secondary button background, accent badges</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch"
+                                                    style="background:rgba(239,200,28,.5)"></span></td>
+                                            <td><strong>secondary</strong></td>
+                                            <td><code>color/semantic/secondary/50-opacity</code></td>
+                                            <td><code>.../primitive/yellow/500</code> (50%)</td>
+                                            <td>Secondary button transparent hover state</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#FFFFFF"></span></td>
+                                            <td><strong>surface</strong></td>
+                                            <td><code>color/semantic/surface/default</code></td>
+                                            <td><code>.../primitive/neutral/0</code></td>
+                                            <td>Main canvas background, card &amp; modal surface</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#FAFAFA"></span></td>
+                                            <td><strong>surface</strong></td>
+                                            <td><code>color/semantic/surface/subtle</code></td>
+                                            <td><code>.../primitive/neutral/50</code></td>
+                                            <td>Subtle section background, alternating table rows</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#4C5763"></span></td>
+                                            <td><strong>text</strong></td>
+                                            <td><code>color/semantic/text/secondary</code></td>
+                                            <td><code>.../primitive/neutral/600</code></td>
+                                            <td>Subtitles, captions, placeholders, secondary labels</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#CAC8C8"></span></td>
+                                            <td><strong>text</strong></td>
+                                            <td><code>color/semantic/text/disabled</code></td>
+                                            <td><code>.../primitive/neutral/300</code></td>
+                                            <td>Inactive / disabled text labels</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#FFFFFF"></span></td>
+                                            <td><strong>text</strong></td>
+                                            <td><code>color/semantic/text/inverse</code></td>
+                                            <td><code>#FFFFFF</code></td>
+                                            <td>High-contrast text on dark backgrounds</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#0057B7"></span></td>
+                                            <td><strong>text</strong></td>
+                                            <td><code>color/semantic/text/brand</code></td>
+                                            <td><code>color/primitive/blue/500</code></td>
+                                            <td>Brand-highlighted text</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#171717"></span></td>
+                                            <td><strong>text</strong></td>
+                                            <td><code>color/semantic/text/default</code></td>
+                                            <td><code>.../primitive/neutral/900</code></td>
+                                            <td>Main body text, primary headings</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#0057B7"></span></td>
+                                            <td><strong>text</strong></td>
+                                            <td><code>color/semantic/text/link</code></td>
+                                            <td><code>color/primitive/blue/500</code></td>
+                                            <td>Interactive hyperlink text</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#CAC8C8"></span></td>
+                                            <td><strong>state</strong></td>
+                                            <td><code>color/semantic/state/disabled</code></td>
+                                            <td><code>.../primitive/neutral/300</code></td>
+                                            <td>Disabled component background / border</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#EB7600"></span></td>
+                                            <td><strong>accent</strong></td>
+                                            <td><code>color/semantic/accent/orange</code></td>
+                                            <td><code>.../primitive/orange/500</code></td>
+                                            <td>Visual accent / Warning alerts</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ds-token-swatch" style="background:#5FEF1C"></span></td>
+                                            <td><strong>accent</strong></td>
+                                            <td><code>color/semantic/accent/green</code></td>
+                                            <td><code>.../primitive/green/500</code></td>
+                                            <td>Visual accent / Success badges</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
+                        </div>
 
+                        <div class="ds-rule">
+                            <div>
+                                <span class="ds-rule__label">USAGE RULE</span>
+                                <h3>Choose color by semantic role</h3>
+                            </div>
+                            <p>Use Primary for prominent actions and important interactive elements.
+                                Use neutral and surface colors to establish hierarchy without competing
+                                with the main action.</p>
+                        </div>
+                    </article>
 
-                            <!-- RESPONSIVE TYPOGRAPHY -->
-                            <div class="wireframing__column mt-5">
+                    <!-- TYPOGRAPHY -->
+                    <article id="ds-typography" class="design-system__page">
+                        <div class="design-system__page-heading">
+                            <span class="ds-card-label">FOUNDATIONS</span>
+                            <h2>Typography</h2>
+                            <p>A responsive type hierarchy keeps dashboard information scannable while
+                                maintaining a clear relationship between size, weight, and line height.</p>
+                        </div>
 
-                                <h3 class="text-20">
-                                    Responsive Dashboard Typography
-                                </h3>
+                        <div class="ds-type-system">
+                            <div class="ds-type-row">
+                                <div><span class="ds-token-name">Display</span><small>96px · 112px LH (116%)</small>
+                                </div>
+                                <strong class="ds-type-display">Aa</strong>
+                                <p>Hero and high-level dashboard emphasis.</p>
+                            </div>
+                            <div class="ds-type-row">
+                                <div><span class="ds-token-name">Heading 1</span><small>40px · 48px LH (120%)</small>
+                                </div>
+                                <strong class="ds-type-h1">Heading 1</strong>
+                                <p>Primary page and section hierarchy.</p>
+                            </div>
+                            <div class="ds-type-row">
+                                <div><span class="ds-token-name">Heading 2</span><small>30px · 38px LH (~126%)</small>
+                                </div>
+                                <strong class="ds-type-h2">Heading 2</strong>
+                                <p>Subsection hierarchy.</p>
+                            </div>
+                            <div class="ds-type-row">
+                                <div><span class="ds-token-name">Body</span><small>18px · 28px LH (~155%)</small></div>
+                                <span class="ds-type-body">Body text for longer descriptions and supporting
+                                    content.</span>
+                                <p>Readable interface and explanatory content.</p>
+                            </div>
+                            <div class="ds-type-row">
+                                <div><span class="ds-token-name">Label</span><small>16px · 22px LH (~137%)</small>
+                                </div>
+                                <strong class="ds-type-label">BUTTON LABEL</strong>
+                                <p>Controls, metadata, and compact UI.</p>
+                            </div>
+                            <div class="ds-type-row">
+                                <div><span class="ds-token-name">Small</span><small>14px · 20px LH (~143%)</small>
+                                </div>
+                                <span class="ds-type-small">Supporting information</span>
+                                <p>Notes and secondary information.</p>
+                            </div>
+                        </div>
 
-                                <p class="text-16">
-                                    Tailwind Variable
-                                </p>
+                        <div class="ds-rule">
+                            <div>
+                                <span class="ds-rule__label">USAGE RULE</span>
+                                <h3>Hierarchy before decoration</h3>
+                            </div>
+                            <p>Use size, weight, and line height to communicate hierarchy first.
+                                Avoid using color or bold weight as the only way to distinguish information.</p>
+                        </div>
+                    </article>
 
-                                <div class="wireframing__type-list">
+                    <!-- SPACING -->
+                    <article id="ds-spacing" class="design-system__page">
+                        <div class="design-system__page-heading">
+                            <span class="ds-card-label">FOUNDATIONS</span>
+                            <h2>Spacing & Layout</h2>
+                            <p>An 8pt spacing scale (with a 4pt sub-grid for tight UI elements) keeps
+                                padding, gaps, and layout rhythm predictable across components and page
+                                sections.</p>
+                        </div>
 
-                                    <div class="wireframing__type-item">
-                                        <p class="text-96 fw-bold">
-                                            Display 96px / Black<br>
-                                            <span class="text-16 fw-normal">
-                                                Hero Text | Responsive:
-                                                small screen text-4xl,
-                                                medium to big screen md:text-8xl
-                                            </span>
-                                        </p>
-                                    </div>
+                        <div class="ds-section">
+                            <h3>Base Spacing Scale</h3>
+                            <p class="ds-section__intro">Core scale tokens referenced by every component
+                                spacing value below.</p>
+                            <div class="table-responsive">
+                                <table class="table table-sm align-middle ds-data-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Token Name</th>
+                                            <th scope="col">Rem</th>
+                                            <th scope="col">Pixel</th>
+                                            <th scope="col">Spatial Intent / Use Case</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>space/3xs</code></td>
+                                            <td>0.125rem</td>
+                                            <td>2px</td>
+                                            <td>Fine-grain alignment, micro-borders</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>space/2xs</code></td>
+                                            <td>0.25rem</td>
+                                            <td>4px</td>
+                                            <td>Badge padding, icon-to-text micro gap, compact tag padding</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>space/xs</code></td>
+                                            <td>0.5rem</td>
+                                            <td>8px</td>
+                                            <td>Small button vertical padding, icon gap, tight list item gap</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>space/sm</code></td>
+                                            <td>0.75rem</td>
+                                            <td>12px</td>
+                                            <td>Standard button vertical padding, input field padding, card
+                                                item gap</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>space/md</code></td>
+                                            <td>1rem</td>
+                                            <td>16px</td>
+                                            <td>Standard button horizontal padding, card internal padding,
+                                                form row gap</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>space/lg</code></td>
+                                            <td>1.5rem</td>
+                                            <td>24px</td>
+                                            <td>Large button horizontal padding, card content padding, grid
+                                                gap</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>space/xl</code></td>
+                                            <td>2rem</td>
+                                            <td>32px</td>
+                                            <td>Modal dialog padding, section component gap, header
+                                                container gap</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>space/2xl</code></td>
+                                            <td>3rem</td>
+                                            <td>48px</td>
+                                            <td>Small section padding, hero content gap</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>space/3xl</code></td>
+                                            <td>4rem</td>
+                                            <td>64px</td>
+                                            <td>Standard page section padding (Desktop)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>space/4xl</code></td>
+                                            <td>6rem</td>
+                                            <td>96px</td>
+                                            <td>Major page section padding, hero section top/bottom spacing
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
 
-                                    <div class="wireframing__type-item">
-                                        <p class="h1">
-                                            Heading 1 / Bold<br>
-                                            <span class="text-16">
-                                                H1 tag | Responsive:
-                                                small screen text-2xl,
-                                                medium to big screen md:text-5xl
-                                            </span>
-                                        </p>
-                                    </div>
+                        <div class="ds-section">
+                            <h3>Component Spacing</h3>
+                            <p class="ds-section__intro">Base spacing tokens applied to specific component
+                                states, to keep padding and gaps consistent between instances.</p>
+                            <div class="table-responsive">
+                                <table class="table table-sm align-middle ds-data-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Component</th>
+                                            <th scope="col">Token Name</th>
+                                            <th scope="col">Y (Top/Bottom)</th>
+                                            <th scope="col">X (Left/Right)</th>
+                                            <th scope="col">Gap</th>
+                                            <th scope="col">Usage Context</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Button / Small</td>
+                                            <td><code>spacing/button/sm</code></td>
+                                            <td>8px (<code>space/xs</code>)</td>
+                                            <td>12px (<code>space/sm</code>)</td>
+                                            <td>6px</td>
+                                            <td>Dense UIs, table actions, toolbar buttons</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Button / Medium</td>
+                                            <td><code>spacing/button/md</code></td>
+                                            <td>12px (<code>space/sm</code>)</td>
+                                            <td>16px (<code>space/md</code>)</td>
+                                            <td>8px (<code>space/xs</code>)</td>
+                                            <td>Default primary &amp; secondary action buttons</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Button / Large</td>
+                                            <td><code>spacing/button/lg</code></td>
+                                            <td>16px (<code>space/md</code>)</td>
+                                            <td>24px (<code>space/lg</code>)</td>
+                                            <td>12px (<code>space/sm</code>)</td>
+                                            <td>Hero CTA buttons, prominent modal actions</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Form Input</td>
+                                            <td><code>spacing/input/md</code></td>
+                                            <td>12px (<code>space/sm</code>)</td>
+                                            <td>16px (<code>space/md</code>)</td>
+                                            <td>8px (<code>space/xs</code>)</td>
+                                            <td>Text fields, select dropdowns, search bars</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Card Container</td>
+                                            <td><code>spacing/card/md</code></td>
+                                            <td>24px (<code>space/lg</code>)</td>
+                                            <td>24px (<code>space/lg</code>)</td>
+                                            <td>16px (<code>space/md</code>)</td>
+                                            <td>Standard dashboard cards, content blocks</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Layout / Grid Gap</td>
+                                            <td><code>gap/layout/grid</code></td>
+                                            <td>—</td>
+                                            <td>—</td>
+                                            <td>24px (<code>space/lg</code>)</td>
+                                            <td>Responsive multi-column grid layouts</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Layout / Stack Gap</td>
+                                            <td><code>gap/layout/stack</code></td>
+                                            <td>—</td>
+                                            <td>—</td>
+                                            <td>16px (<code>space/md</code>)</td>
+                                            <td>Vertical form group stack, list gap</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
 
-                                    <div class="wireframing__type-item">
-                                        <p class="h2">
-                                            Heading 2 / Bold<br>
-                                            <span class="text-16">
-                                                H2 tag | Responsive:
-                                                small screen text-xl,
-                                                medium to big screen md:text-3xl
-                                            </span>
-                                        </p>
-                                    </div>
+                        <div class="ds-spacing-rules">
+                            <div class="ds-rule-card">
+                                <span>GAP</span>
+                                <strong>Between related elements</strong>
+                                <p>Use gap to control the relationship between items in the same group.</p>
+                            </div>
+                            <div class="ds-rule-card">
+                                <span>PADDING</span>
+                                <strong>Inside components</strong>
+                                <p>Use padding to create breathing room between content and a component boundary.</p>
+                            </div>
+                            <div class="ds-rule-card">
+                                <span>MARGIN</span>
+                                <strong>Between layout sections</strong>
+                                <p>Use larger spacing to separate distinct sections and establish page hierarchy.</p>
+                            </div>
+                        </div>
+                    </article>
 
-                                    <div class="wireframing__type-item">
-                                        <p class="h3">
-                                            Heading 3 / Bold<br>
-                                            <span class="text-16">
-                                                H3 tag | Responsive:
-                                                small screen text-lg,
-                                                medium to big screen md:text-2xl
-                                            </span>
-                                        </p>
-                                    </div>
+                    <!-- LAYOUT & GRID -->
+                    <article id="ds-layout-grid" class="design-system__page">
+                        <div class="design-system__page-heading">
+                            <span class="ds-card-label">FOUNDATIONS</span>
+                            <h2>Layout & Grid</h2>
+                            <p>A responsive grid system — page margins, section rhythm, and card/feature
+                                grids — keeps content readable and consistently spaced from mobile to wide
+                                desktop.</p>
+                        </div>
 
-                                    <div class="wireframing__type-item">
-                                        <p class="text-18">
-                                            Body<br>
-                                            <span class="text-14">
-                                                Paragraph | Responsive:
-                                                small to big screen text-lg
-                                            </span>
-                                        </p>
-                                    </div>
+                        <div class="ds-section">
+                            <h3>Page Margins & Breakpoints</h3>
+                            <p class="ds-section__intro">Container width and left/right page margin at each
+                                breakpoint, so content never sits flush against the screen edge.</p>
+                            <div class="table-responsive">
+                                <table class="table table-sm align-middle ds-data-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Breakpoint / Device</th>
+                                            <th scope="col">Screen Width Range</th>
+                                            <th scope="col">Container Max-Width</th>
+                                            <th scope="col">Page Margin (L/R)</th>
+                                            <th scope="col">Usage Context</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Mobile (sm)</td>
+                                            <td>&lt; 640px</td>
+                                            <td>100%</td>
+                                            <td>16px (<code>space/md</code>)</td>
+                                            <td>Smartphone screens (portrait)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tablet (md)</td>
+                                            <td>640px – 1024px</td>
+                                            <td>100%</td>
+                                            <td>32px (<code>space/xl</code>)</td>
+                                            <td>Tablets, iPad, large phone landscape</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Desktop (lg)</td>
+                                            <td>1024px – 1440px</td>
+                                            <td>1200px</td>
+                                            <td>48px (<code>space/2xl</code>)</td>
+                                            <td>Standard laptop &amp; desktop monitors</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wide Desktop (xl)</td>
+                                            <td>&gt; 1440px</td>
+                                            <td>1400px</td>
+                                            <td>Auto (Centered)</td>
+                                            <td>Ultra-wide monitors, large desktop displays</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
 
-                                    <div class="wireframing__type-item">
-                                        <p class="text-16 fw-bold">
-                                            Label Regular<br>
-                                            <span class="text-14 fw-normal">
-                                                Button Text | Responsive:
-                                                small to big screen text-base
-                                            </span>
-                                        </p>
-                                    </div>
+                        <div class="ds-section">
+                            <h3>Section Spacing</h3>
+                            <p class="ds-section__intro">Vertical space between sections, scaled per
+                                breakpoint so mobile doesn't waste space and desktop stays breathable.</p>
+                            <div class="table-responsive">
+                                <table class="table table-sm align-middle ds-data-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Token Name</th>
+                                            <th scope="col">Mobile</th>
+                                            <th scope="col">Tablet</th>
+                                            <th scope="col">Desktop</th>
+                                            <th scope="col">Applied Use Case</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>layout/section/compact</code></td>
+                                            <td>32px</td>
+                                            <td>48px</td>
+                                            <td>64px</td>
+                                            <td>Gap between small sub-sections, content groups within a
+                                                single page</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>layout/section/default</code></td>
+                                            <td>48px</td>
+                                            <td>64px</td>
+                                            <td>96px</td>
+                                            <td>Standard section gap (e.g. About → Features → Pricing)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>layout/section/spacious</code></td>
+                                            <td>64px</td>
+                                            <td>96px</td>
+                                            <td>128px</td>
+                                            <td>Gap between major sections / large block separator (e.g.
+                                                Hero → Content)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>layout/section/hero</code></td>
+                                            <td>48px</td>
+                                            <td>80px</td>
+                                            <td>120px</td>
+                                            <td>Top &amp; bottom padding for the Hero section</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
 
-                                    <div class="wireframing__type-item">
-                                        <p class="text-14">
-                                            Small Text<br>
-                                            <span class="text-14">
-                                                Note / Additional text |
-                                                Responsive:
-                                                small to big screen text-sm
-                                            </span>
-                                        </p>
-                                    </div>
+                        <div class="ds-section">
+                            <h3>Grid &amp; Gap</h3>
+                            <p class="ds-section__intro">Column counts and gaps for repeating layouts, such
+                                as card grids and multi-column feature sections.</p>
+                            <div class="table-responsive">
+                                <table class="table table-sm align-middle ds-data-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Token Name</th>
+                                            <th scope="col">Columns</th>
+                                            <th scope="col">Column Gap</th>
+                                            <th scope="col">Row Gap</th>
+                                            <th scope="col">Usage Context</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>layout/grid/cards</code></td>
+                                            <td>1 (Mobile) / 2 (Tablet) / 3–4 (Desktop)</td>
+                                            <td>24px (<code>space/lg</code>)</td>
+                                            <td>32px (<code>space/xl</code>)</td>
+                                            <td>Portfolio, service, and blog card grids</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>layout/grid/features</code></td>
+                                            <td>1 (Mobile) / 2 (Desktop)</td>
+                                            <td>32px (<code>space/xl</code>)</td>
+                                            <td>48px (<code>space/2xl</code>)</td>
+                                            <td>2-column feature section (text + image)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>layout/stack/form</code></td>
+                                            <td>1</td>
+                                            <td>—</td>
+                                            <td>16px / 24px</td>
+                                            <td>Form input layout, button stack</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </article>
 
+                    <!-- SHAPE -->
+                    <article id="ds-shape" class="design-system__page">
+                        <div class="design-system__page-heading">
+                            <span class="ds-card-label">FOUNDATIONS</span>
+                            <h2>Shape</h2>
+                            <p>Border radius creates a consistent visual language across controls,
+                                cards, and larger containers.</p>
+                        </div>
+
+                        <div class="ds-shape-system">
+                            <div class="ds-shape-item">
+                                <div class="ds-shape-demo ds-shape-demo--sm"></div>
+                                <strong>Small</strong>
+                                <span>Compact controls</span>
+                            </div>
+                            <div class="ds-shape-item">
+                                <div class="ds-shape-demo ds-shape-demo--md"></div>
+                                <strong>Medium</strong>
+                                <span>Buttons & UI elements</span>
+                            </div>
+                            <div class="ds-shape-item">
+                                <div class="ds-shape-demo ds-shape-demo--lg"></div>
+                                <strong>Large</strong>
+                                <span>Cards & containers</span>
+                            </div>
+                            <div class="ds-shape-item">
+                                <div class="ds-shape-demo ds-shape-demo--pill"></div>
+                                <strong>Pill</strong>
+                                <span>Tags & compact statuses</span>
+                            </div>
+                        </div>
+
+                        <div class="ds-rule">
+                            <div>
+                                <span class="ds-rule__label">USAGE RULE</span>
+                                <h3>Radius follows component hierarchy</h3>
+                            </div>
+                            <p>Use smaller radii for compact controls and stronger rounding for larger
+                                containers. Avoid mixing unrelated radius values within the same component group.</p>
+                        </div>
+                    </article>
+
+                    <!-- ICONOGRAPHY -->
+                    <article id="ds-iconography" class="design-system__page">
+                        <div class="design-system__page-heading">
+                            <span class="ds-card-label">FOUNDATIONS</span>
+                            <h2>Iconography</h2>
+                            <p>Icons support recognition and navigation while staying visually secondary
+                                to the content they represent.</p>
+                        </div>
+
+                        <div class="ds-icon-system">
+                            <div class="ds-icon-size">
+                                <span class="ds-icon-demo ds-icon-demo--16">+</span>
+                                <strong>16px</strong>
+                                <small>Compact / supporting UI</small>
+                            </div>
+                            <div class="ds-icon-size">
+                                <span class="ds-icon-demo ds-icon-demo--20">+</span>
+                                <strong>20px</strong>
+                                <small>Standard controls</small>
+                            </div>
+                            <div class="ds-icon-size">
+                                <span class="ds-icon-demo ds-icon-demo--24">+</span>
+                                <strong>24px</strong>
+                                <small>Primary UI controls</small>
+                            </div>
+                        </div>
+
+                        <div class="ds-rule">
+                            <div>
+                                <span class="ds-rule__label">USAGE RULE</span>
+                                <h3>Keep icon sizing and alignment consistent</h3>
+                            </div>
+                            <p>Choose icon size based on the surrounding component and align icons
+                                consistently with the text baseline or control center.</p>
+                        </div>
+                    </article>
+
+                    <!-- BUTTON -->
+                    <article id="ds-button" class="design-system__page">
+                        <div class="design-system__page-heading">
+                            <span class="ds-card-label">COMPONENT</span>
+                            <h2>Button</h2>
+                            <p>Buttons communicate actions through clear hierarchy, consistent sizing,
+                                and predictable states.</p>
+                        </div>
+
+                        <div class="ds-section">
+                            <h3>Variants</h3>
+                            <div class="ds-button-showcase">
+                                <div class="ds-button-example">
+                                    <span class="ds-btn ds-btn--primary">Primary</span>
+                                    <small>Main action</small>
+                                </div>
+                                <div class="ds-button-example">
+                                    <span class="ds-btn ds-btn--secondary">Secondary</span>
+                                    <small>Supporting action</small>
+                                </div>
+                                <div class="ds-button-example">
+                                    <span class="ds-btn ds-btn--outline">Outline</span>
+                                    <small>Lower emphasis action</small>
                                 </div>
                             </div>
-
                         </div>
-                    </div>
-                </div>
 
-
-                <!-- ICON -->
-                <div class="accordion-item border-0 rounded-4 overflow-hidden mb-3">
-
-                    <h3 class="accordion-header">
-                        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#icons" aria-expanded="false" aria-controls="icons">
-
-                            Icon
-
-                        </button>
-                    </h3>
-
-                    <div id="icons" class="accordion-collapse collapse" data-bs-parent="#wireframingAccordion">
-
-                        <div class="accordion-body project-surface-muted p-3">
-
-                            <img loading="lazy" width="1211" height="432" src="image/4Ocean/wireframing-icon-1.png"
-                                alt="4Ocean Icon 1"
-                                class="media-block__image media-block__image--capped zoom-image lazy-img">
-
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- COMPONENT -->
-                <div class="accordion-item border-0 rounded-4 overflow-hidden mb-3">
-
-                    <h3 class="accordion-header">
-                        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#components" aria-expanded="false" aria-controls="components">
-
-                            Component
-
-                        </button>
-                    </h3>
-
-                    <div id="components" class="accordion-collapse collapse" data-bs-parent="#wireframingAccordion">
-
-                        <div class="accordion-body project-surface-muted p-3">
-                            <div class="d-flex flex-wrap gap-3 justify-content-center">
-                                <div class="d-flex gap-3 align-items-center flex-wrap">
-                                    <div>
-                                        <p class="text-16 fw-bold">
-                                            Figma Techniques
-                                        </p>
-                                        <ul class="check-list">
-                                            <li><img loading="lazy" width="20" height="20" src="image/tick green.svg"
-                                                    alt="" class="check-list__icon lazy-img">Component
-                                                Property</li>
-                                            <li><img loading="lazy" width="20" height="20" src="image/tick green.svg"
-                                                    alt="" class="check-list__icon lazy-img">Auto
-                                                Layout</li>
-                                            <li><img loading="lazy" width="20" height="20" src="image/tick green.svg"
-                                                    alt="" class="check-list__icon lazy-img">Component
-                                                Variation</li>
-                                            <li><img loading="lazy" width="20" height="20" src="image/tick green.svg"
-                                                    alt="" class="check-list__icon lazy-img">Nested
-                                                Component</li>
-                                        </ul>
-                                    </div>
-                                    <img loading="lazy" width="194" height="165"
-                                        src="image/4Ocean/wireframing-icon-3.png" alt="4Ocean Icon 3"
-                                        class="media-block__image media-block__image--capped zoom-image lazy-img">
-                                </div>
-                                <img loading="lazy" width="389" height="266" src="image/4Ocean/wireframing-icon-2.png"
-                                    alt="4Ocean Icon 2"
-                                    class="media-block__image media-block__image--capped mt-4 zoom-image lazy-img">
+                        <div class="ds-section">
+                            <h3>States</h3>
+                            <div class="ds-button-states">
+                                <span class="ds-btn ds-btn--primary">Default</span>
+                                <span class="ds-btn ds-btn--primary ds-btn--disabled">Disabled</span>
                             </div>
-
-                            <img loading="lazy" width="809" height="524" src="image/4Ocean/wireframing-component-1.png"
-                                alt="4Ocean Component 1"
-                                class="media-block__image media-block__image--capped mt-4 mx-auto zoom-image lazy-img">
-
-                            <img loading="lazy" width="951" height="709" src="image/4Ocean/wireframing-component-2.png"
-                                alt="4Ocean Component 2"
-                                class="media-block__image media-block__image--capped mt-4 mx-auto zoom-image lazy-img">
-
                         </div>
-                    </div>
-                </div>
 
-
-                <!-- RESPONSIVE -->
-                <div class="accordion-item border-0 rounded-4 overflow-hidden mb-3">
-
-                    <h3 class="accordion-header">
-                        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#responsive" aria-expanded="false" aria-controls="responsive">
-
-                            Responsive Dashboard UI
-
-                        </button>
-                    </h3>
-
-                    <div id="responsive" class="accordion-collapse collapse" data-bs-parent="#wireframingAccordion">
-
-                        <div class="accordion-body project-surface-muted p-3">
-
-                            <img loading="lazy" width="1255" height="1010" src="image/4Ocean/wireframing-responsive.png"
-                                alt="4Ocean Responsive Design"
-                                class="media-block__image media-block__image--capped zoom-image lazy-img">
-
+                        <div class="ds-rule">
+                            <div>
+                                <span class="ds-rule__label">USAGE RULE</span>
+                                <h3>One clear primary action</h3>
+                            </div>
+                            <p>Use Primary for the main action within a section. Use Secondary or
+                                Outline when an action is supportive or lower in visual priority.</p>
                         </div>
-                    </div>
+                    </article>
+
                 </div>
-
-
             </div>
-
         </section>
 
         <section id="iterasi" class="project-section">
@@ -1007,14 +2274,21 @@
                             <p class="text-16">
                                 The first iteration focused on creating a simple, single-screen dashboard to present the
                                 key cleanup information at a glance. However, this approach was considered too limited,
-                                as 4ocean had a substantial amount of information and impact data to communicate to
+                                as the organization had a substantial amount of information and impact data to
+                                communicate to
                                 users. The single-screen layout could not provide enough space to present the
                                 information clearly and effectively.
                             </p>
 
-                            <img loading="lazy" width="958" height="683" src="image/4Ocean/iterasi-1.jpg"
-                                alt="First Version Iteration"
-                                class="media-block__image media-block__image--capped zoom-image lazy-img">
+                            <div class="scroll-frame mt-3">
+                                <div class="scroll-frame__body">
+                                    <img loading="lazy" src="image/4Ocean/dashboard old.svg"
+                                        alt="First Version Iteration" class="zoom-image lazy-img">
+                                </div>
+                                <div class="scroll-frame__hint">
+                                    <span><i class="bi bi-arrow-down"></i> Scroll to see full design</span>
+                                </div>
+                            </div>
 
                         </div>
 
@@ -1030,7 +2304,7 @@
                         <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
                             data-bs-target="#secondVersion" aria-expanded="false" aria-controls="secondVersion">
 
-                            Second Version
+                            Final Version
 
                         </button>
                     </h3>
@@ -1049,52 +2323,21 @@
                                 users.
                             </p>
 
-                            <img loading="lazy" width="1303" height="927" src="image/4Ocean/iterasi-2.png"
-                                alt="Second Version Iteration"
-                                class="media-block__image media-block__image--capped zoom-image lazy-img">
+                            <div class="scroll-frame mt-3">
+                                <div class="scroll-frame__body">
+                                    <img loading="lazy" src="image/4Ocean/Dashboard_New.jpg"
+                                        alt="Second Version Iteration" class="zoom-image lazy-img">
+                                </div>
+                                <div class="scroll-frame__hint">
+                                    <span><i class="bi bi-arrow-down"></i> Scroll to see full design</span>
+                                </div>
+                            </div>
 
                         </div>
 
                     </div>
 
                 </div>
-
-
-                <!-- FINAL VERSION -->
-                <div class="accordion-item border-0 rounded-4 overflow-hidden mb-3">
-
-                    <h3 class="accordion-header">
-                        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#finalVersion" aria-expanded="false" aria-controls="finalVersion">
-
-                            Final Version
-
-                        </button>
-                    </h3>
-
-                    <div id="finalVersion" class="accordion-collapse collapse" data-bs-parent="#iterasiAccordion">
-
-                        <div class="accordion-body project-surface-muted p-3">
-                            <p class="text-20 fw-bold">Refining the Dashboard Experience</p>
-                            <p class="text-16">
-                                The third iteration focused on refining the overall dashboard experience based on the
-                                previous version. The information hierarchy, layout, and data presentation were further
-                                improved to make the dashboard clearer, more structured, and easier to navigate.
-                                <br><br>
-                                The final design balanced the amount of information 4ocean needed to communicate with
-                                the user's need to quickly understand cleanup activities, environmental impact, and key
-                                results.
-                            </p>
-                            <img loading="lazy" width="1317" height="900" src="image/4Ocean/iterasi-3.png"
-                                alt="Final Version Iteration"
-                                class="media-block__image media-block__image--capped zoom-image lazy-img">
-
-                        </div>
-
-                    </div>
-
-                </div>
-
 
             </div>
 
@@ -1115,7 +2358,7 @@
 
                     </svg>
                     <h3 class="card-grid__title text-primary-4Ocean">Designing for Complex Systems</h3>
-                    <p class="card-grid__text">Working with a large organization like 4ocean meant working
+                    <p class="card-grid__text">Working with a large organization meant working
                         with a large amount of existing data, processes, and interconnected systems. One of the biggest
                         challenges was <span class="fw-bold ">ensuring that new features could support their existing
                             workflows from end
@@ -1143,7 +2386,8 @@
                             before moving</span> into design and development.
                         <br><br>
                         Whenever a new feature was proposed, I would encourage the CTO and team to validate the actual
-                        need and expected outcome with 4ocean stakeholders/users first. This helped reduce the risk of
+                        need and expected outcome with the organization's stakeholders/users first. This helped reduce
+                        the risk of
                         building features based on assumptions and ensured that design decisions were grounded in real
                         user and business needs.
                     </p>
@@ -1179,6 +2423,35 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+
+    <script>
+        (() => {
+            const buttons = document.querySelectorAll("[data-ds-target]");
+            const pages = document.querySelectorAll(".design-system__page");
+
+            function showDesignSystemPage(targetId) {
+                pages.forEach(page => {
+                    page.classList.toggle("is-active", page.id === targetId);
+                });
+
+                document.querySelectorAll(".design-system__nav-item").forEach(item => {
+                    item.classList.toggle("is-active", item.dataset.dsTarget === targetId);
+                });
+
+                const activePage = document.getElementById(targetId);
+                if (activePage) {
+                    activePage.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+            }
+
+            buttons.forEach(button => {
+                button.addEventListener("click", () => {
+                    showDesignSystemPage(button.dataset.dsTarget);
+                });
+            });
+        })();
+    </script>
+
     <script src="../app.js"></script>
 </body>
 
